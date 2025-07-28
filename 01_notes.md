@@ -350,4 +350,9 @@ Why is it needed?
 
    when updating the microservice suddenly a latency spike happnes y? due to bugs, traffic, or dependencies,More pods or servers are started (auto-scaling) to handle the load.New Problem(Now the database is struggling. It starts timing out.),The service becomes fully unavailable .
 
+DATAOPS:
+
+Q. Why observability needs dataOps?
+Ans: <img width="1571" height="676" alt="image" src="https://github.com/user-attachments/assets/b7a2094b-1d96-402b-b5e5-b010f6735157" />
+
 
