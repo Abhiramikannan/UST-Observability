@@ -220,6 +220,17 @@ SLOs help you measure and improve user experience realistically, not just legall
 KEY BENEFITS OF OBSERVABILITY:
 <img width="1375" height="844" alt="image" src="https://github.com/user-attachments/assets/ba647408-8baa-49e9-8675-91fd70917501" />
 
+GOOGLES GOLDEN SIGNALS OF MONITORING:
+1. traffic:  How much demand your system is handling eg: requests
+2. errors:  How often your system fails
+3. latency:  How long your system takes to respond
+4. saturation: How full or overworked your system is. eg: CPU at 100%, database connections maxed out
+
+Tools used to monitor these signals:
+      Logs, Events, Metrics, Tracing 
+
+
+
    
    
   
