@@ -314,7 +314,30 @@ OBSERVABILITY MODEL:
         Predict issues before they happen.
         
         Improve system reliability and automation.
-   
 
+
+SERVICE MAP:
+	shows connections b/w services.
+ 	service map displays those connections graphically.
+  	displaying relationships graphically.
+  
+TOPOLOGY BASED OBSERVABILITY:
+	Topology shows how everything in your system is connected, and helps you spot issues quickly — like a GPS for your services.
+ 	Red colour=problem
+  	green colour=good
+   It's like having a map of your system that shows who is talking to whom, and using that map to find out where problems are happening and why.
+   eg:
+   Imagine your system has:
+
+		Frontend → API → Auth service → Database
+		If the frontend is slow, topology-based observability helps you see the entire path and quickly detect which connection is causing the delay.
+
+TIME TRAVEL OBSERVABILITY:
+It means being able to go back in time and see what happened in your system when something went wrong — like rewinding a video to find the exact moment an issue started.
+
+Why is it needed?
+<img width="811" height="346" alt="image" src="https://github.com/user-attachments/assets/c941d17f-9f52-4393-9d96-84cc75be890d" />
+
+<img width="881" height="474" alt="image" src="https://github.com/user-attachments/assets/2372538c-2268-49e5-9574-acc5a4c2ddee" />
 
 
