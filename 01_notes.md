@@ -7,7 +7,42 @@ It helps teams detect, diagnose, and resolve issues in complex software systems.
 BIG PUZZLE:
 <img width="1354" height="845" alt="image" src="https://github.com/user-attachments/assets/5cab3c59-9b08-4236-8563-12756fc375b2" />
 
+ 1. Known-Knowns :
+    We know the problem AND the solution.
+    have 10 no of users,move to 100 no of users->scale(could be on cloud,on-premise ->depends on saying that u defined the threshholds)
+    eg: You know CPU usage goes high when user traffic increases.
+        You already know to scale the app up in such cases.
+        Tools/Actions:Dashboards,Dynamic thresholding,Alerts,Automation
+        Goal: Make what you know work even better (optimize).
+ 2. Known-Unknowns:
+    We know something is wrong, but we don’t know why.
+    eg: Latency spike is visible in the dashboard, but you don’t know the root cause.
+         Latency is the time between a user making a request and the system responding to it.
+         A latency spike means the response time suddenly increased — maybe for a few seconds, or minutes.
+         Your normal response time = 200ms
+         But suddenly, it becomes = 1.5 seconds
+         tools/actions: Auto-correlation,Real-time analytics,Business process mining
+    Goal: Use smart tools to dig into the data and figure out the reason.
+ 3. Unknown-Knowns:
+    We have the data but didn’t realize something’s wrong until analysis.
+         eg: You already collect disk usage metrics, but never noticed it's been slowly increasing.Once you do anomaly detection, you discover this issue.
+         Tools/Actions: Anomaly detection,Predictive alerts,Log analysis
+    Goal: Turn hidden problems into known ones before they cause failure.
+    anolomy detection: where u look upon ur existing system.Because u defined ur monitoring,threshhold->see whats deviating: maybe ur cpu,memory,etc.
 
+4. Unknown-Unknowns:
+   We don’t know there’s a problem, and we don’t know what to look for.
+   eg:
+        Suddenly your system fails for no apparent reason,
+        There were no symptoms. Everything looked fine,
+        Like a sudden heart attack with no warning.
+    Tools/Actions: Deep observability, AI/ML to detect patterns, Flexible monitoring (ingest all data, open-ended queries)
+    Goal: Prepare for the unexpected. Build a system that can tell you: "Hey, something strange is happening, even if you didn’t know to check for it!"
+
+key points:
+We want to become predictable — to avoid surprises.We can’t know everything in advance — especially unknown unknowns.That’s where observability becomes powerful:It helps us see what we didn’t even think to monitor.
+
+    
 
 CORE ANALYSIS LOOP:
 <img width="1391" height="707" alt="image" src="https://github.com/user-attachments/assets/7c4258f1-87ec-45fb-927f-07254435a38d" />
