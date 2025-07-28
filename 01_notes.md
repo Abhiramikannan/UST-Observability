@@ -431,6 +431,7 @@ Kibana – Shows the logs visually on dashboards and graphs.
 
 
 Q. shift from monitoring to observability?
+
 	1. Do metrix, traces, logs
  
  	2. Opentelemetry: An emerging open standard (by Cloud Native Computing Foundation) that automatically collects data from your systems (auto-instrumentation).
