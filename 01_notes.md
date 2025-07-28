@@ -10,6 +10,7 @@ It helps teams detect, diagnose, and resolve issues in complex software systems.
  
 2. reliablity and resilience?
 	reliability->ability of a system to perform its desired function without undergoing failure
+
 	resilience: fails but how to come back to norml state?
 
 4. if code is not optimized-code optimization needed.
