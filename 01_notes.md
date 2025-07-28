@@ -444,3 +444,46 @@ Q. shift from monitoring to observability?
 
 	 Auto Remediation:
 		Fix issues automatically so you save time and resolve problems faster.
+
+  OPENTELEMETRY:
+  <img width="1523" height="695" alt="image" src="https://github.com/user-attachments/assets/5b3941c2-956d-428f-945d-1aeca74acc7b" />
+
+  Challenges with the current tools with openTelemetry?
+
+  1. OpenTelemetry:
+      It's a vendor-neutral open-source project.
+      Helps collect logs, metrics, and traces.
+      Supported by the Cloud Native Computing Foundation (CNCF).
+
+ 2. Why OpenTelemetry?
+    	Replaces multiple agents/tools with one unified standard.
+    	Reduces vendor lock-in
+    	Makes auto-instrumentation easier for microservices.
+
+CHALLENGES OF OBSERVABILITY
+ 1. Environment Inconsistency: ur code works in 1 env(dev) not in other(prod). It makes debugging difficult because bugs don’t happen everywhere.
+    
+ 2. Too Many Traces: The system collects a lot of tracing data.It's hard to find useful information, and storage/performance is affected.
+    
+ 3.  Unnecessary Alerts: You get too many alerts, even for minor or non-critical issues.Teams start ignoring alerts, and might miss real problems.
+    
+ 4.  Losing Focus on Customer Experience: Dashboards show everything is fine, but users still face problems.Teams look only at system health, not at user issues.
+    
+ 4.  Too Many Dashboards: There are many dashboards showing different data.Teams get confused, don’t know where to look for answers.
+    
+ 5. Can’t Trace the Full Request (End-to-End):  Logs or traces don’t show the complete journey of a user request.It’s hard to find out exactly where things went wrong.
+
+    OBSERVABILITY TOOL:
+    1. user friendly  interface (ease of navigation and commercial value)
+    2. supplies real time data (API's to collect real data)
+    3. works on open source agents(reduce system memory & cpu, security and configuration.
+    4. Easy to implement
+    5. Integrates with current tools(current stacks,languages,container platform,messaging)
+
+
+
+
+
+
+     
+
