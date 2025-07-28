@@ -230,9 +230,46 @@ GOOGLES GOLDEN SIGNALS OF MONITORING:
 Tools used to monitor these signals:
       Logs, Events, Metrics, Tracing 
 
+business metrix:
+  number=tells how well ur company is going
+  eg: customer churn(how many customers leave)
+      revenue
 
+Distributed Tracing:
+   Distributed Tracing helps you track a request as it moves through multiple microservices, so you can find where delays or errors happen in complex systems.
+   Shows the full journey of a request (e.g., frontend → auth service → payment service → DB)
+   Imagine one request takes 3 seconds:
 
-   
+          0.2s in frontend
+          
+          0.5s in auth
+          
+          2.3s in payment → 🛑 here’s the bottleneck!
+          
+          Distributed tracing helps visualize and debug these chains.
+          
+ RED and USE Metrics Frameworks: Monitoring Strategies
+     RED: Requests, Errors, Duration
+     Used mainly for web services (e.g., REST APIs)
+     
+| Metric   | Meaning                           |
+| -------- | --------------------------------- |
+| Requests | Number of requests per second     |
+| Errors   | Rate of failed requests           |
+| Duration | Time taken to handle each request |
+
+Helps you track how your service is behaving from a user’s view.
+
+   USE = Utilization, Saturation, Errors:
+   Used for infrastructure (e.g., servers, VMs, containers)
+
+| Metric      | Meaning                                               |
+| ----------- | ----------------------------------------------------- |
+| Utilization | % of time a resource is busy (e.g., CPU usage)        |
+| Saturation  | How much demand exceeds capacity (e.g., queue length) |
+| Errors      | Count of failures (e.g., disk read/write errors)      |
+
+Helps you monitor resource health — CPU, disk, memory, network, etc.
    
   
       
