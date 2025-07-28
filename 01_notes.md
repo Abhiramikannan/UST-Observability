@@ -4,6 +4,10 @@ Observability:
 Observability is the ability to understand what is happening inside a system just by looking at its external outputs (like logs, metrics, and traces). 
 It helps teams detect, diagnose, and resolve issues in complex software systems.
 
+BIG PUZZLE:
+<img width="1354" height="845" alt="image" src="https://github.com/user-attachments/assets/5cab3c59-9b08-4236-8563-12756fc375b2" />
+
+
 
 CORE ANALYSIS LOOP:
 <img width="1391" height="707" alt="image" src="https://github.com/user-attachments/assets/7c4258f1-87ec-45fb-927f-07254435a38d" />
