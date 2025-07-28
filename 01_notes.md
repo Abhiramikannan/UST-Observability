@@ -370,4 +370,16 @@ Ans: <img width="1571" height="676" alt="image" src="https://github.com/user-att
 	Extracting Value from Data:
  		Raw data is messy and hard to understand.
 		DataOps cleans and prepares the data, so we can find issues faster and make better decisions.
+TRAID:
+<img width="1445" height="705" alt="image" src="https://github.com/user-attachments/assets/353b1f73-bff9-4c36-9129-0abb7aa3ce18" />
 
+
+CIA TRAID:
+1. confidentiality: Ensures only authorized people can access the data
+2. integrity: Ensures data is accurate and not tampered with. (e.g., checksums, hashing)
+3. availability: Ensures systems/data are available when needed. (e.g., backups, load balancing)
+
+DEI TRAID:
+1. distributed: Systems are spread across many servers or locations (e.g., microservices in different regions)
+2. Ephimeral: Components don’t last long — they can be created and destroyed quickly. (e.g., containers)
+3. immutable: Once created, they don’t change. Instead of editing, new versions are deployed. (e.g., immutable infrastructure)
