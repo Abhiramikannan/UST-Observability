@@ -341,3 +341,13 @@ Why is it needed?
 <img width="881" height="474" alt="image" src="https://github.com/user-attachments/assets/2372538c-2268-49e5-9574-acc5a4c2ddee" />
 
 
+4 T'S:
+1. Topology
+2. Telemetry
+3. Tracing
+4. Time
+   <img width="1364" height="502" alt="image" src="https://github.com/user-attachments/assets/eb139d17-38f2-42f9-9f3d-2610c90987d1" />
+
+   when updating the microservice suddenly a latency spike happnes y? due to bugs, traffic, or dependencies,More pods or servers are started (auto-scaling) to handle the load.New Problem(Now the database is struggling. It starts timing out.),The service becomes fully unavailable .
+
+
