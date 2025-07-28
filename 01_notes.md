@@ -354,5 +354,20 @@ DATAOPS:
 
 Q. Why observability needs dataOps?
 Ans: <img width="1571" height="676" alt="image" src="https://github.com/user-attachments/assets/b7a2094b-1d96-402b-b5e5-b010f6735157" />
+	Data Agility:
+		Systems keep changing — new apps, updates, errors.
+	 	DataOps helps observability adapt quickly to these changes.
+   	Data Flow Management:
+    		 Tons of data (logs, metrics, traces) are coming in.
+       		 DataOps organizes and controls how this data moves — so nothing important is missed.
+	Automation:
+ 		You can’t handle observability manually — too much data.
+   		DataOps automates how data is collected, processed, and sent to tools (like Grafana, Splunk, etc.)
+     	Data Security:
+      		Observability data might contain sensitive info.
+		DataOps keeps the data safe — by controlling access, masking, encrypting, etc.
 
+	Extracting Value from Data:
+ 		Raw data is messy and hard to understand.
+		DataOps cleans and prepares the data, so we can find issues faster and make better decisions.
 
