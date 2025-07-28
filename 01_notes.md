@@ -216,6 +216,10 @@ So, we observe things like:
 
 SLOs help you measure and improve user experience realistically, not just legally.
 
+
+KEY BENEFITS OF OBSERVABILITY:
+<img width="1375" height="844" alt="image" src="https://github.com/user-attachments/assets/ba647408-8baa-49e9-8675-91fd70917501" />
+
    
    
   
