@@ -83,4 +83,29 @@ Why This Is a Loop?
 | 3. Analyze     | Filter/group by attributes                                  | Only `v1.2.4` in `us-east` is affected             |
 | 4. Evaluate    | Did this help? If yes, go deeper. If not, try another view. | Found faulty pod, or repeat with different filters |
 
+SYMPTOMS VS CAUSES:
+<img width="1423" height="852" alt="image" src="https://github.com/user-attachments/assets/ab37c224-7aa8-4dc5-bc25-c1d4d1a0200a" />
+ 1. Symptoms (Top of the Temple):
+      “Something is broken” – you can see the impact, but not yet know why.
+       Examples:High latency, Errors in dashboard, App not loading, Service down
+    This is what traditional monitoring shows — the “what”.
+    Monitoring: when it reaches above threshold(cpu,memory) -we take actions(alerts).
+
+    
+ 2. The Pillars (Middle) — Logs, Metrics, Traces, etc.
+      These are your data signals — used to investigate and debug. They help answer the question:"Why is this broken?"
+    | Pillar       | What it helps you do                                           |
+| ------------ | -------------------------------------------------------------- |
+| **Logs**     | Detailed events and errors (e.g. error 500 in payment service) |
+| **Events**   | Changes like deployments, restarts                             |
+| **Metrics**  | Numbers over time (CPU, memory, latency, request count)        |
+| **Profiles** | System behavior (CPU time per function, memory leaks)          |
+| **Traces**   | End-to-end request flow (microservices call chain)             |
+
+These are used during debugging, profiling, and tracing — part of observability (not just monitoring).
+
+3. Causes (Bottom)
+   The root cause of the issue. What exactly failed and why?
+      
+
 
