@@ -94,7 +94,8 @@ SYMPTOMS VS CAUSES:
     
  2. The Pillars (Middle) — Logs, Metrics, Traces, etc.
       These are your data signals — used to investigate and debug. They help answer the question:"Why is this broken?"
-    | Pillar       | What it helps you do                                           |
+    
+| Pillar       | What it helps you do                                           |
 | ------------ | -------------------------------------------------------------- |
 | **Logs**     | Detailed events and errors (e.g. error 500 in payment service) |
 | **Events**   | Changes like deployments, restarts                             |
