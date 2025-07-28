@@ -5,14 +5,18 @@ Observability is the ability to understand what is happening inside a system jus
 It helps teams detect, diagnose, and resolve issues in complex software systems.
 
 
-1.What is the cost of downtime?
+1. What is the cost of downtime?
 	morethan 150 dollars
-2.reliablity and resilience?
+ 
+2. reliablity and resilience?
 	reliability->ability of a system to perform its desired function without undergoing failure
 	resilience: fails but how to come back to norml state?
+
 4. if code is not optimized-code optimization needed.
-3.refactoring? companies focus?-helps to do code optimization.
-4.Monitoring
+   
+5. refactoring? companies focus?-helps to do code optimization.
+   
+6. Monitoring
 	infrastructure monitoring
 	application monitoring
 threshold will be defined in monitoring,if it goes above-need action
