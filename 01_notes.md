@@ -383,3 +383,64 @@ DEI TRAID:
 1. distributed: Systems are spread across many servers or locations (e.g., microservices in different regions)
 2. Ephimeral: Components don’t last long — they can be created and destroyed quickly. (e.g., containers)
 3. immutable: Once created, they don’t change. Instead of editing, new versions are deployed. (e.g., immutable infrastructure)
+
+OBSERVABILITY PIPELINE:
+An observability pipeline is the system or flow that collects, processes, and routes observability data (like logs, metrics, and traces) from your applications and infrastructure to tools like Grafana, Datadog, or Azure Monitor.
+collects data and sents to monitoring tools.
+
+<img width="1417" height="712" alt="image" src="https://github.com/user-attachments/assets/53d2a82c-bf74-4c5a-9d53-ef9c63e9d485" />
+
+1.Transmission:
+	 (How data moves through the pipeline)
+  	The movement of observability data (logs, metrics, traces) from source to destination.
+  	 Push-based: The agent sends data to the backend (e.g., Prometheus Pushgateway).
+
+	Pull-based: The backend pulls data from the source (e.g., Prometheus scraping metrics).
+ 
+ 2.  Protocols (Rules for communication between tools)
+    
+| Type          | Examples                              | Used For            |
+| ------------- | ------------------------------------- | ------------------- |
+| **Logs**      | Syslog, Fluent Protocol, HTTP         | Log forwarding      |
+| **Metrics**   | Prometheus, OpenMetrics, StatsD       | Time-series data    |
+| **Traces**    | OTLP (OpenTelemetry Protocol), Jaeger | Distributed tracing |
+| **Transport** | HTTP, gRPC, Kafka, MQTT               | Sending data        |
+
+3. Storage (Where observability data is stored)
+   	Once collected and processed, data must be stored for querying, alerting, and analysis.
+   
+| Data Type | Storage Tools                       | Notes                       |
+| --------- | ----------------------------------- | --------------------------- |
+| Logs      | Elasticsearch, Loki, Splunk         | Searchable, compressed      |
+| Metrics   | Prometheus, InfluxDB, Azure Monitor | Stored as time series       |
+| Traces    | Jaeger, Tempo, Zipkin               | Stored in trace DBs or blob |
+
+Q. What is the ELK Stack?
+<img width="1332" height="804" alt="image" src="https://github.com/user-attachments/assets/63aef745-bc8a-4b16-817b-a72198e39541" />
+ELK = Elasticsearch + Logstash + Kibana
+Elasticsearch=storage
+Logstash=Processor
+Kibana=UI
+
+
+Logstash – Collects and processes logs from different sources.
+
+Elasticsearch – Stores and searches the logs efficiently.
+
+Kibana – Shows the logs visually on dashboards and graphs.
+
+
+Q. shift from monitoring to observability?
+	1. Do metrix, traces, logs
+ 
+ 	2. Opentelemetry: An emerging open standard (by Cloud Native Computing Foundation) that automatically collects data from your systems (auto-instrumentation).
+  
+  	3. AI & Machine Learning: Used to analyze and learn from the collected data for smarter decisions.
+
+   	4. Data Aggregation: Combine all data into a single source of truth so it’s easier to understand and work with
+
+    	5.  Data Analysis:
+     		Use slicing and dicing to extract useful insights from that data.
+
+	 Auto Remediation:
+		Fix issues automatically so you save time and resolve problems faster.
