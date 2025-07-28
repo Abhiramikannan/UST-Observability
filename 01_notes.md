@@ -4,6 +4,26 @@ Observability:
 Observability is the ability to understand what is happening inside a system just by looking at its external outputs (like logs, metrics, and traces). 
 It helps teams detect, diagnose, and resolve issues in complex software systems.
 
+
+1.What is the cost of downtime?
+	morethan 150 dollars
+2.reliablity and resilience?
+	reliability->ability of a system to perform its desired function without undergoing failure
+	resilience: fails but how to come back to norml state?
+4. if code is not optimized-code optimization needed.
+3.refactoring? companies focus?-helps to do code optimization.
+4.Monitoring
+	infrastructure monitoring
+	application monitoring
+threshold will be defined in monitoring,if it goes above-need action
+eg: are u healthy? you will be looking ur sugar level,values-> if it goes beyond threshhold->take actions.
+
+in monitoring -> multiple reasons will be there to fail-> observability comes into picture
+
+what percentage of issues coming again and again on ur service desk?
+	automatically creating ticketing service
+	organization looks->preventing incidents happening again
+
 BIG PUZZLE:
 <img width="1354" height="845" alt="image" src="https://github.com/user-attachments/assets/5cab3c59-9b08-4236-8563-12756fc375b2" />
 
