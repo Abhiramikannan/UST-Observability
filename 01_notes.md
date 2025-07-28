@@ -272,6 +272,24 @@ Helps you track how your service is behaving from a user’s view.
 Helps you monitor resource health — CPU, disk, memory, network, etc.
    
   
+OBSERVABILITY MODEL:
+<img width="1442" height="762" alt="image" src="https://github.com/user-attachments/assets/862c2711-9806-4331-8417-dfdd2e39141a" />
+
+1. monitoring: traffic,latency,thoughput
+2. Observability: Involves Metrics, Events, Logs, and Traces (often called MELT).Helps you understand why something went wrong.
+3. Causal Observability: Goes deeper into finding the root cause:
+       Looks at topology (how services are connected).
+
+      Checks the exact time something failed.
       
+      Uses historical data to investigate the issue.
+4. Proactive Observability: Goes beyond just reacting to problems.
+   Uses AI/ML to:
+
+        Predict issues before they happen.
+        
+        Improve system reliability and automation.
+   
+
 
 
