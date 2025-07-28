@@ -208,6 +208,7 @@ So, we observe things like:
 
 6. SLA → SLO → SLI
    "Move from Service Level Agreements to Service Level Objectives."
+   
 | Term    | What it Means                                                                    |
 | ------- | -------------------------------------------------------------------------------- |
 | **SLA** | External, legal: "We promise 99.9% uptime"                                       |
