@@ -14,10 +14,12 @@ It helps teams detect, diagnose, and resolve issues in complex software systems.
 	resilience: fails but how to come back to norml state?
 
 4. if code is not optimized-code optimization needed.
+5. code optimization: Improve the performance of the code i.e, making it faster, use less memory, or consume fewer resources.
    
-5. refactoring? companies focus?-helps to do code optimization.
+6. refactoring? companies focus?-helps to do code optimization.
+7. refactoring: Improving the structure, readability, and maintainability of code without changing its functionality.
    
-6. Monitoring
+8. Monitoring
 	infrastructure monitoring
 	application monitoring
 threshold will be defined in monitoring,if it goes above-need action
