@@ -7,8 +7,11 @@ It helps teams detect, diagnose, and resolve issues in complex software systems.
 
 1. What is the cost of downtime?
 	morethan 150 dollars
+2. Downtime: Downtime simply means the time when a system, website, or service is not working or unavailable. eg: If a website is down for 2 hours due to maintenance, that 2 hours is called downtime.
+
+ In short: "Time when something is not working."
  
-2. reliablity and resilience?
+3. reliablity and resilience?
 	reliability->ability of a system to perform its desired function without undergoing failure
 
 	resilience: fails but how to come back to norml state?
