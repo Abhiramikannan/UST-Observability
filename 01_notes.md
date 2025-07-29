@@ -23,9 +23,13 @@ It helps teams detect, diagnose, and resolve issues in complex software systems.
 7. refactoring: Improving the structure, readability, and maintainability of code without changing its functionality.
    
 8. Monitoring
+   
 	infrastructure monitoring
+
 	application monitoring
+
 threshold will be defined in monitoring,if it goes above-need action
+
 eg: are u healthy? you will be looking ur sugar level,values-> if it goes beyond threshhold->take actions.
 
 in monitoring -> multiple reasons will be there to fail-> observability comes into picture
