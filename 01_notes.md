@@ -1,5 +1,7 @@
 28/07/2025
 
+video link: https://ustglobal.sharepoint.com/:v:/r/teams/SREPractice/Shared%20Documents/General/SRE-%20Learning%20reference%20docs/Training%20Recording/Observability%20Basics%20Training.mov?csf=1&web=1&e=Rc6J1E
+
 Observability:
 Observability is the ability to understand what is happening inside a system just by looking at its external outputs (like logs, metrics, and traces). 
 It helps teams detect, diagnose, and resolve issues in complex software systems.
