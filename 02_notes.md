@@ -23,8 +23,10 @@ SRE=middle role b/w development and operations
          4. Leverage Tooling and Automation: Use tools to automate repetitive tasks like: Deployment, Monitoring, Infra
          5. Measure Everything: Track everything using metrics:->App performance, Deployment time, Error rates, System health.
 
-5. SRE approaches to Operations:
+4. SRE approaches to Operations:
+   
    SREs treat operations like a software problem — they apply coding, automation, and metrics to make systems more reliable and scalable.
+   
 | Principle                          | Explanation                                                                                                                                         |
 | ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **1. Eliminate Toil**              | Repetitive manual tasks (like restarting services, checking logs) are automated using scripts, tools, or code.                                      |
@@ -34,13 +36,17 @@ SRE=middle role b/w development and operations
 | **5. Automate Everything**         | From deployments to rollbacks to scaling — everything is automated through code.                                                                    |
 | **6. Blameless Postmortems**       | After a failure, SREs do analysis without blaming anyone, to learn and prevent it in the future.                                                    |
 
+
+
 | Traditional Ops         | SRE Approach                                    |
 | ----------------------- | ----------------------------------------------- |
 | Manual deployment steps | CI/CD pipeline auto-deploys code                |
 | Fix issues manually     | Self-healing systems (auto-restart, auto-scale) |
 | Wait for alerts         | Proactive monitoring and health checks          |
 
-6. What do SRE teams do?
+
+
+5. What do SRE teams do?
    SRE (Site Reliability Engineering) teams are responsible for making sure that systems, services, and applications are reliable, scalable, and efficient.
    1. Monitor Systems and Services:
       
@@ -50,25 +56,25 @@ SRE=middle role b/w development and operations
 
       Keep track of latency, traffic, errors, uptime, and saturation
       
-  2.  Automate Operations
+    2.  Automate Operations
 
-     Write scripts or use tools to automate repetitive manual tasks
-
-    Example: auto-scaling, backup, log rotation, restarting services
-
-    Tools: Bash, Python, Terraform, Ansible, Jenkins, etc.
+       Write scripts or use tools to automate repetitive manual tasks
+  
+      Example: auto-scaling, backup, log rotation, restarting services
+  
+      Tools: Bash, Python, Terraform, Ansible, Jenkins, etc.
     
-  3. Set and Track SLOs/SLIs/SLAs
+    3. Set and Track SLOs/SLIs/SLAs
 
-     Define SLOs (Service Level Objectives) like "99.9% uptime"
+       Define SLOs (Service Level Objectives) like "99.9% uptime"
+  
+       Measure SLIs (like latency, error rate)
+  
+       Ensure systems meet SLAs (agreements with customers)
 
-     Measure SLIs (like latency, error rate)
-
-    Ensure systems meet SLAs (agreements with customers)
-
-  4. Improve System Reliability
-  5. Support CI/CD Pipelines
-  6.  Ensure Security and Compliance
+    4. Improve System Reliability
+    5. Support CI/CD Pipelines
+    6.  Ensure Security and Compliance
    
 
 
