@@ -60,7 +60,7 @@ SRE=middle role b/w development and operations
       
     2.  Automate Operations
 
-       Write scripts or use tools to automate repetitive manual tasks
+      write scripts or use tools to automate repetitive manual tasks
   
       Example: auto-scaling, backup, log rotation, restarting services
   
