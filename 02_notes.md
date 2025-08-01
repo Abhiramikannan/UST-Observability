@@ -15,7 +15,7 @@ SRE=middle role b/w development and operations
    It encourages collaboration between teams that usually work separately: Developers,Operations,Architecture,Networking.
    ...work separately (like they are in different "silos" or isolated rooms). That causes confusion, delays, and bugs.
    
-3. 5 Key Areas of DevOps
+3. 5 Key Areas of DevOps. SRE implements Devops
    
          1. Reduce Organizational Silos: Instead of working separately, all teams work together with shared goals.
          2. Accept Failure as Normal: Focus on recovering quickly and learning from failures.
