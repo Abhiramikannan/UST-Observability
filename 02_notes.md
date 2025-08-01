@@ -47,7 +47,9 @@ SRE=middle role b/w development and operations
 
 
 5. What do SRE teams do?
+   
    SRE (Site Reliability Engineering) teams are responsible for making sure that systems, services, and applications are reliable, scalable, and efficient.
+   
    1. Monitor Systems and Services:
       
       Set up real-time monitoring and alerting systems
