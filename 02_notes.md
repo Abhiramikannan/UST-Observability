@@ -77,6 +77,102 @@ SRE=middle role b/w development and operations
     4. Improve System Reliability
     5. Support CI/CD Pipelines
     6.  Ensure Security and Compliance
+  
+  6. What are the Key features of SRE?
+           1.  Not Everything Has to Be Perfect: They focus on keeping services good enough while still allowing new features to go live.
+
+           2.  Set Clear Goals for Reliability (SLO & SLI):
+                       SLI (Service Level Indicator): What you measure (like uptime, speed, errors).
+
+                       SLO (Service Level Objective): The target you want to reach (like “we want 99.9% uptime”).
+     
+           3.  Error Budget:
+                     Think of an error budget like your "allowed limit" for mistakes or downtime.
+     
+                      Example:  Your goal (SLO) is 99.9% uptime. So you are allowed to be down for 0.1% of the time (about 43 minutes per month). That 0.1% is your error budget
+
+                      if you stay within the budget: u can release new features , else :  Stop new changes and fix the system first.
+
+           4. Automate Repetitive Work (Toil):
+
+                   SREs don’t like doing the same boring manual tasks again and again.
+
+                  So they write scripts or use tools to do it automatically.
+                  
+                  Example: Restarting servers, checking logs, deployments.
+
+          5. Keep an Eye on Everything (Monitoring):
+
+                     SREs build dashboards and alerts to know:
+
+                          Is the website slow?
+                          
+                          Is something broken?
+                          
+                          This helps fix issues before users even notice.
+
+        6.  Learn from Mistakes (Blameless Postmortems)
+                               
+                    If something breaks, they don’t blame anyone.
+                    
+                    Instead, they write down what happened, why, and how to fix it.
+                    
+                    Everyone learns and improves from the mistake.
+            
+7.  What is SRE,SLI,SLO,SLA?
+       
+         SRE (Site Reliability Engineering) is a role or team that:
+
+                  Makes sure systems (like websites or apps) run reliably
+                  
+                  Fixes problems before users see them
+                  
+                  Uses coding and automation to manage infrastructure and systems
+                  
+                  Think of SREs as engineers who keep things running smoothly.
+    
+
+        An SLI is a measurement of how well a system is working.
+
+                  Examples:
+                  
+                  Website uptime
+                  
+                  API response time
+                  
+                  Error rate
+                  
+                  👉 It's the actual number you measure.
+                  
+                  Example:
+                  
+                  "Our website was up 99.92% this month." → That’s the SLI
+
+      An SLO is a goal you set based on your SLIs.
+
+                Example:
+                
+                "We want the website to be up 99.9% of the time every month."
+                
+                That’s your target or promise to yourself.
+                If your SLI is lower than your SLO — you’re not meeting your goal.
+
+
+    An SLA is a formal agreement with your customers.
+
+              It says:
+              
+              “We promise to keep your service up 99.9% of the time, or we’ll give you a refund.”
+              
+              SLA is legally binding
+              
+              It's based on your SLOs
+              
+              Usually used between companies and clients
+
+
+
+
    
 
 
