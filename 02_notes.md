@@ -131,6 +131,15 @@ SRE=middle role b/w development and operations
                   Uses coding and automation to manage infrastructure and systems
                   
                   Think of SREs as engineers who keep things running smoothly.
+
+    SLI:
+        It is a metric that tells how well your system is working.
+        Example: % of requests with no errors, or % of time the website is up.
+        “How often was the service successful?”
+        This number comes from monitoring data.
+
+                  🔧 Format: Function(metric) < threshold
+                  Example: error_rate < 0.01 (i.e., <1%)
     
          An SLI is a measurement of how well a system is working.
 
@@ -147,6 +156,14 @@ SRE=middle role b/w development and operations
                   Example:
                   
                   "Our website was up 99.92% this month." → That’s the SLI
+    SLO:
+        This is a goal based on the SLI.
+
+        It tells what level of service you want to provide.
+        eg: “We want 99.9% of requests to succeed every month.”
+        SLO = SLI + goal
+                      So:
+                      If the SLI is measuring uptime →  Your SLO could be "99.9% uptime in 30 days"
 
       An SLO is a goal you set based on your SLIs.
 
@@ -157,8 +174,9 @@ SRE=middle role b/w development and operations
                 That’s your target or promise to yourself.
                 If your SLI is lower than your SLO — you’re not meeting your goal.
 
+SLA:
 
-    An SLA is a formal agreement with your customers.
+    An SLA is a formal agreement with your customers. It includes the SLO + some margin and penalties if you break it.
 
               It says:
               
@@ -170,7 +188,55 @@ SRE=middle role b/w development and operations
               
               Usually used between companies and clients
 
+9. How to measure reliability?
 
+         1. availability = Good time/Total time
+
+         2. handles distributed request/response services
+
+10. What is an Error Budget?
+
+        "Error budget = how much failure is okay."
+
+    1. SRE + Product Team set a target (example: “System must be available 99.9% of the time”)
+
+    2. 100% - 99.9% = 0.1% error budget
+        
+           That 0.1% is the allowed downtime or failure
+
+          For example, around 43 minutes per month
+
+    3. Monitoring checks real uptime
+   
+                If the site is down for 20 minutes → you're still okay
+
+                If it goes beyond 43 mins → you're over budget
+       
+   4. Control loop: Based on usage, teams decide whether to slow down or speed up releases
+  
+
+  11. Why is the Error Budget Useful?
+
+| 🟧 Point                             | 🔍 Simple Meaning                                                                     |
+| ------------------------------------ | ------------------------------------------------------------------------------------- |
+| ✅ **Common incentive for Dev & SRE** | Devs want to release fast. SREs want reliability. Error budgets help them agree.      |
+| ✅ **Dev team can manage risk**       | Developers decide when to release based on how much budget is left.                   |
+| ✅ **Stops unrealistic expectations** | You don’t have to aim for 100% uptime (which is very hard and expensive).             |
+| ✅ **Dev team becomes self-policing** | They are more careful about what they deploy, because failures reduce their budget.   |
+| ✅ **Shared responsibility**          | If infrastructure fails, both Dev and Ops share the impact — not just blame one team. |
+
+
+  Imagine your app should be up 99.9% of the month (SLO).
+
+  That gives:
+
+    ⏱ 43 minutes of acceptable downtime per month (Error Budget)
+    
+    If the app crashes for:
+    
+    🔹 10 mins → you’re still safe (can deploy new features)
+    
+    🔹 50 mins → over budget (stop releasing new changes until it's stable again)
 
 
    
