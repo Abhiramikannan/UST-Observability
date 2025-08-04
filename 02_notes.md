@@ -187,6 +187,7 @@ SLA:
               It's based on your SLOs
               
               Usually used between companies and clients
+                SLA= (SLO + margin) + consequences = SLI + goals +consequences
 
 9. How to measure reliability?
 
@@ -212,7 +213,7 @@ SLA:
 
                 If it goes beyond 43 mins → you're over budget
        
-   4. Control loop: Based on usage, teams decide whether to slow down or speed up releases
+     4. Control loop: Based on usage, teams decide whether to slow down or speed up releases
   
 
   11. Why is the Error Budget Useful?
