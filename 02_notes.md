@@ -157,7 +157,7 @@ SRE=middle role b/w development and operations
                   
                   "Our website was up 99.92% this month." → That’s the SLI
     SLO:
-        This is a goal based on the SLI.
+        This is a goal based on the SLI. SLO = a goal or target for how well a service should perform over time
 
         It tells what level of service you want to provide.
         eg: “We want 99.9% of requests to succeed every month.”
@@ -173,6 +173,39 @@ SRE=middle role b/w development and operations
                 
                 That’s your target or promise to yourself.
                 If your SLI is lower than your SLO — you’re not meeting your goal.
+
+    sum(SLI met) / time window >= target %
+
+        meaning: If you're measuring successful responses in a 30-day period:
+
+                  Out of 1,000,000 requests, 999,000 were successful →
+                  Your SLI is 99.9%
+                  
+                  ✅ So if your SLO is 99.9%, you've met your target.
+
+    “Try to exceed SLO target, but not by much.”
+
+        Why not too much?
+    
+        Because if your system is always way better, then maybe your goal is too easy and you're not innovating enough (wasting potential error budget).
+
+    How to Choose a Good SLO?
+
+      Don’t try for 100% perfection (it’s unrealistic and costly)
+
+      Avoid strict “always” or “never” rules
+
+    Why Does It Matter?
+                Sets priorities
+                
+                        Helps teams (Dev + SRE) know where to focus effort
+                        
+                        If you're close to SLO limits, slow down releases and improve reliability
+                
+                Sets user expectations
+                
+                        Customers know what level of performance to expect
+
 
 SLA:
 
