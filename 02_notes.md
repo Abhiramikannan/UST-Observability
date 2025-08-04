@@ -77,6 +77,9 @@ SRE=middle role b/w development and operations
     4. Improve System Reliability
     5. Support CI/CD Pipelines
     6.  Ensure Security and Compliance
+
+
+  04/08/2025
   
   6. What are the Key features of SRE?
      
@@ -476,3 +479,12 @@ Blamelessness:  "Blamelessness" means when problems happen, focus on fixing syst
                 2. Can't Automate Everything: Some tasks are too complex or rare to automate perfectly. Humans are still needed for unique situations.
             
                 3. Know What to Automate: By doing these manual tasks, you see patterns and discover which tasks are the most annoying or frequent. This tells you exactly what to prioritize for automation to save the most effort.
+
+24. How SRE helps make cloud services reliable ?
+
+    SRE helps make cloud services reliable by:
+
+* **Growing smart:** As your system gets bigger, the amount of manual work to run it shouldn't explode.
+* **Automating everything possible:** Use computers to manage growth, not just hiring more people.
+* **Working together:** Make sure the teams building new things and keeping them running work as one.
+* **Balancing speed and stability:** Use an "error budget" to know how much downtime is okay, so you can release new features faster without breaking everything.
