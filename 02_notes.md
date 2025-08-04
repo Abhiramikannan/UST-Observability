@@ -272,6 +272,11 @@ SLA:
     
     🔹 50 mins → over budget (stop releasing new changes until it's stable again)
 
+  12. PRODUCT LIFECYCLE?
+      
+      <img width="1384" height="723" alt="image" src="https://github.com/user-attachments/assets/d98010d7-118d-4fe2-af54-2aa71c930798" />
+
+
 
    
 
