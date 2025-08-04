@@ -79,6 +79,7 @@ SRE=middle role b/w development and operations
     6.  Ensure Security and Compliance
   
   6. What are the Key features of SRE?
+     
            1.  Not Everything Has to Be Perfect: They focus on keeping services good enough while still allowing new features to go live.
 
            2.  Set Clear Goals for Reliability (SLO & SLI):
@@ -111,7 +112,7 @@ SRE=middle role b/w development and operations
                           
                           This helps fix issues before users even notice.
 
-        6.  Learn from Mistakes (Blameless Postmortems)
+          6.  Learn from Mistakes (Blameless Postmortems)
                                
                     If something breaks, they don’t blame anyone.
                     
@@ -131,8 +132,7 @@ SRE=middle role b/w development and operations
                   
                   Think of SREs as engineers who keep things running smoothly.
     
-
-        An SLI is a measurement of how well a system is working.
+         An SLI is a measurement of how well a system is working.
 
                   Examples:
                   
