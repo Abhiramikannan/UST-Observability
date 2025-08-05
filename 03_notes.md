@@ -204,3 +204,59 @@ It stores and shows traces – the full path of a request through different serv
 It displays dashboards to monitor your system using data from Tempo (traces), Prometheus (metrics), Loki (logs), etc.
 
 App → OpenTelemetry Collector → Tempo (traces), Prometheus (metrics), Loki (logs) → Grafana (visualize all)
+
+
+MODULE 2
+USING METRICES AS SERVICE LEVEL INDICATORS
+
+service level objectives: SLOs are targets or goals you set for how well a service should perform over time.
+
+success rate: status code = 2xx
+
+<img width="1296" height="613" alt="image" src="https://github.com/user-attachments/assets/c8c43d68-2a26-4cb4-b5e6-5197fb8a5b33" />
+Total successful requests = 100
+Total requests = 100 (successful) + 3 (failed) = 103
+Success rate = (100 / 103) * 100% = approximately 97%
+
+97% indicates that this performance does NOT meet the SLO of 99.9%. You're currently at 97% success, which is below the target.
+
+
+response time:
+<img width="1323" height="491" alt="image" src="https://github.com/user-attachments/assets/0a794924-4a14-45e1-a092-8a6a9de6d1dc" />
+
+Total duration of successful requests = 28 seconds
+
+Total number of successful requests = 100
+
+Average response time = 28 / 100 = 0.28 seconds
+
+
+SERVICE LEVEL INDICATORS: latency, traffic, errors
+INFRASTRUCTURE METRIC: saturation
+
+
+SRE REQUIREMENTS FOR METRIC COLLECTION:
+                  collect->process->store
+                  storage=time series database 
+                  every metric stored along with timestamp
+                  metricname label value ->see bottom eg
+                  eg:metric: process_cpu_seconds_total{state="user"} 3.072
+                  process_cpu_seconds_total is a metric that tracks the total CPU time consumed by a particular software process on a computer system. The state="user" label then specifies how that CPU time was spent by the process (in this case, in "user mode," meaning the time spent executing the application's own code).
+
+
+MUST:
+      1. every component must public metric in prometheous format(prometheous-collect and store metrix in text)
+      2. Naming standards (prefix)
+      3. cheap collection ( Keep collection lightweight and scalable.)
+      4. standard units
+      
+SHOULD:
+      1. configurable port ->collect metrices on seperate port..not to available to users
+      2. use OTEL library -> bring instrumentation -> libararies(prometheous client libraries)
+
+COULD:
+      1. include exporters: collector to fetch from exportor metric endpoints and convert to prometheous format
+
+
+Q. What is PromQL?
+            PromQL (Prometheus Query Language) is the language used to query and analyze metrics stored in Prometheus.
