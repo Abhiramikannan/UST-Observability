@@ -259,4 +259,12 @@ COULD:
 
 
 Q. What is PromQL?
-            PromQL (Prometheus Query Language) is the language used to query and analyze metrics stored in Prometheus.
+            PromQL (Prometheus Query Language) is the language used to query and analyze metrics stored in Prometheus
+
+Q. HTTP status codes?
+
+            1. 1xx – Informational
+            2. 2xx – Success
+            3. 3xx – Redirection
+            4. 4xx – Client Errors
+            5. 5xx – Server Errors
