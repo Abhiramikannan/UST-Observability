@@ -148,3 +148,45 @@ Good logs are clear, structured, and useful for debugging, while bad logs are va
 
 KIBANA:
 Kibana is a data visualization and dashboard tool used to explore and visualize data stored in Elasticsearch.
+
+
+KEY REQUIREMENTS OF TRACING:
+
+<img width="1298" height="657" alt="image" src="https://github.com/user-attachments/assets/39d50381-fe10-4efc-8d4b-8c00a5047664" />
+
+user req -> goes to api service(entry point of app) ->The API or subsequent services interact with a database to retrieve or store data.->user interaction to the app
+
+Fluentd: This is a popular open-source data collector. In this setup, Fluentd is likely collecting logs directly from the application containers. It processes these raw logs (e.g., parsing them into a structured format like JSON).
+
+Elasticsearch: This is a powerful, distributed search and analytics engine. Fluentd sends the processed (and likely structured JSON) logs to Elasticsearch for storage and indexing. This makes the logs quickly searchable.
+
+Kibana: This is a data visualization and exploration tool. It connects to Elasticsearch and allows users (like "Nina" in a different role, e.g., an SRE or developer) to query, filter, analyze, and visualize the log data stored in Elasticsearch. You can build dashboards, look for specific errors, or track trends.
+
+ Fluentd collects the notes, Elasticsearch stores them neatly, and Kibana lets people search through and understand those notes to see what's happening inside the application.
+
+
+
+ <img width="1371" height="745" alt="image" src="https://github.com/user-attachments/assets/c1b16f83-4ab9-4808-b829-08c4ba8a5007" />
+
+ Q. how a single request is tracked.
+       Span - GET (Multiple): These rectangles represent Spans. A Span is a single, identifiable unit of work within the overall request.The "START" circle means when that piece of work began.The "END" circle means when that piece of work finished.GET indicates an operation, like getting data from a service.
+       Span - Load: This is another span, specifically for a loading operation, likely from a database.
+       Parent Arrows: These show the hierarchy of the spans. A larger "parent" span (like the initial request) breaks down into smaller, dependent "child" spans (like calling another service or a database load).
+       The Chain Icon: This reinforces the idea that these are all linked together as part of one complete trace.
+
+Every trace have unique id.
+
+
+DIFFERENEC B/W SPAN AND TRACE
+
+TRACE: whole journey of users requests
+SPAN: individual steps of that journey . eg: A service calling another service
+
+TRACES- should,must,could 
+
+<img width="1402" height="648" alt="image" src="https://github.com/user-attachments/assets/02c96b1e-fea2-4620-b3d0-fab5c3e49c95" />
+
+Otel-Opentelemetry
+Publish to OTel: Your application must send its trace data to an OpenTelemetry collector or endpoint. This ensures that the traces are centrally gathered and available for processing and analysis
+.Include context: Traces should include relevant contextual information beyond just the basic operation. This could be things like a user_id, order_id, or customer_name. This extra data helps you filter traces and understand what specific business operations were happening during a trace.
+
