@@ -190,3 +190,15 @@ Otel-Opentelemetry
 Publish to OTel: Your application must send its trace data to an OpenTelemetry collector or endpoint. This ensures that the traces are centrally gathered and available for processing and analysis
 .Include context: Traces should include relevant contextual information beyond just the basic operation. This could be things like a user_id, order_id, or customer_name. This extra data helps you filter traces and understand what specific business operations were happening during a trace.
 
+
+IMPORTANT TERMS:
+OpenTelemetry Collector (OTel Collector)
+It collects logs, metrics, and traces from apps and sends them to tools like Grafana, Prometheus, or Tempo.
+
+Tempo
+It stores and shows traces – the full path of a request through different services.
+
+ Grafana
+It displays dashboards to monitor your system using data from Tempo (traces), Prometheus (metrics), Loki (logs), etc.
+
+App → OpenTelemetry Collector → Tempo (traces), Prometheus (metrics), Loki (logs) → Grafana (visualize all)
