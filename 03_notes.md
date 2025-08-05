@@ -96,7 +96,7 @@ some components working for that:
 
 4. traces:
 
-        <img width="1919" height="1069" alt="image" src="https://github.com/user-attachments/assets/68f65c24-1f3d-494c-8923-d4c18107cd2a" />
+ <img width="1919" height="1069" alt="image" src="https://github.com/user-attachments/assets/68f65c24-1f3d-494c-8923-d4c18107cd2a" />
 
         Get product service -> taking 0.38 seconds.
         GET /authz | 0.09s -> authorization service was called, taking 0.09 seconds.
