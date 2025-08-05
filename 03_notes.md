@@ -192,6 +192,8 @@ Publish to OTel: Your application must send its trace data to an OpenTelemetry c
 
 
 IMPORTANT TERMS:
+
+TRACING SUBSYSTEM
 OpenTelemetry Collector (OTel Collector)
 It collects logs, metrics, and traces from apps and sends them to tools like Grafana, Prometheus, or Tempo.
 
