@@ -132,11 +132,13 @@ Result:
            Alerts resolve once error rate drops.
 -------------------------------------------------------------------------
 Q. why alerting strategies get complicated?
+
            1. previously its given that 
                       (rate(errors[5m]) / rate(total_requests[5m])) > 0.001  - “Trigger an alert if the error rate is more than 0.1% in the last 5 minutes.”
                       here are some problems.
                       there will be an alert if there is a small issue
                       SRE 's will get unimp alerts
+                      
            2. why SRE's dont want these alerts:
                       SRE teams don’t want alerts unless something is seriously affecting the system.
                       Alerts should protect the error budget (the amount of errors allowed over time).
