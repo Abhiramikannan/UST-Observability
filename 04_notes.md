@@ -223,3 +223,45 @@ Q. What is FailureFactor?
 It’s a simulated error rate — used to inject controlled failures so you can test alerting, monitoring, and error-handling logic.
            Observability__Metrics__FailureFactor: 0.001 
 "Generate failures at a rate of 0.1% of total requests."To test how your system reacts to different levels of failure.
+
+
+Q.   Why Good Alerting Rules Matter
+           Setting up alert rules is tricky.
+           If alerts fire too often (false positives), the SRE team becomes overwhelmed or ignores them.
+            So the alert parameters must be tuned to only fire when there’s a real, actionable problem.
+            
+Q. opsgenie and pagerduty?
+            Opsgenie or PagerDuty to create tickets or pages depending on severity.
+            Opsgenie and PagerDuty are key tools for managing system alerts and incidents. They automatically receive alerts, determine their urgency, and then send critical "pages" or create follow-up "tickets." This ensures the right on-call team members are quickly notified, streamlining responses and reducing downtime.
+
+Q.  How Good Alerting Rules Work?
+A good alerting rule:
+
+           Checks the average error rate over two time windows:
+           A long window (e.g. 1 hour) → gives good recall (it sees all real problems).
+           A short window (e.g. 5 minutes) → gives good precision (makes sure the issue is still happening).
+           ➡️ The alert only fires if the error rate is high over both windows.
+This combination:
+           Avoids false alerts (for issues that already resolved).
+           Triggers quickly enough on real problems.
+           Stops firing quickly once things are better (good reset time).
+Burn Rate-Based Alerting:
+           Burn rate = how fast you're using up your SLO error budget.
+           Example:
+           If your SLO allows 0.1% errors (99.9% success), and you're running at 1% error rate, you're burning 10x faster than allowed (burn rate = 10).
+ Severity 1 (Page Now):
+            Trigger an urgent alert (Severity 1) if:
+           Burn rate > 14.4 over the last 1 hour AND 5 minutes
+           Burn rate > 6 over the last 6 hours AND 30 minutes
+           These indicate serious issues consuming the error budget too fast — someone needs to jump in now.
+ Severity 3 (Ticket)
+           Trigger a lower-priority alert (Severity 3) if:
+           Burn rate > 3 over the last 24 hours AND 2 hours
+            Burn rate > 1 over the last 3 days AND 6 hours
+           These are less urgent, but still real issues — worth tracking, but don’t wake someone up.
+Using this method ensures:
+
+           High precision (alerts only when needed)
+           High recall (detects real issues)
+           Reasonable detection time (not too fast, not too slow)
+           Good reset time (stops alerting once fixed)
