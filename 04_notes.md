@@ -60,6 +60,8 @@ Q. metric collection and promql
 ​
 Q.NOde Exporter?
            Node Exporter: Exposes system-level metrics (CPU, disk, memory) for Prometheus to scrape.
+           "Scrape" = collect metrics from a source (like Node Exporter) by pulling the data regularly.
+           scrape=collect
 
 Q. imp:
            prometheus is collecting the data and giving to grafana and grafana shows this in dashboards.
@@ -121,10 +123,52 @@ Testing the Alert:
            Instance 2: 1% errors
            
            Instance 3: 10% errors (deliberately fails)
+           
 Instance 3 starts/stops in cycles, causing the overall error rate to spike above the threshold temporarily.
 
 Result:
            Alerts fire correctly when error rate > 0.1%.
            
            Alerts resolve once error rate drops.
+-------------------------------------------------------------------------
+Q. why alerting strategies get complicated?
+           1. previously its given that 
+                      (rate(errors[5m]) / rate(total_requests[5m])) > 0.001  - “Trigger an alert if the error rate is more than 0.1% in the last 5 minutes.”
+                      here are some problems.
+                      there will be an alert if there is a small issue
+                      SRE 's will get unimp alerts
+           2. why SRE's dont want these alerts:
+                      SRE teams don’t want alerts unless something is seriously affecting the system.
+                      Alerts should protect the error budget (the amount of errors allowed over time).
+                      If we alert too early or too often, we annoy people without helping.
+                      If we alert too late, we might miss serious problems.
 
+           3. error budget?
+                      Suppose your SLO is 99.9% success over 28 days.
+                      If you process 7 million requests, you're allowed up to 7,000 errors.
+                      That’s your error budget.
+                      A big error spike happens: 5,000 errors.
+                      A small error trickle happens later: 2,500 errors.
+                      If you catch both on time, you're under budget = ✅ All good.
+                      But if your alerts come too late, those same incidents might add up to over 7,000 errors = ❌ SLO breached = Change freeze (no new releases allowed).
+                      
+           4. What’s the Solution? Use Burn Rate
+                      Instead of just looking at the error rate, we look at how fast we’re using up the error budget. That’s called the burn rate.
+                      If burn rate = 1 → You're exactly matching the error budget.
+                      If burn rate = 3 → You're using errors 3x too fast.
+                      If burn rate = 10 → Budget will be gone in 3 days!
+                      
+           5. Smart Alerting Strategy
+                      Use multiple burn rate windows to decide:
+                                 When to page immediately (e.g., burn rate 14 over 5 minutes = fire page!)
+                                 When to just log a ticket (e.g., burn rate 2 over 1 hour)
+                      This gives:
+                                  Good precision: alerts only when needed
+                                  Good detection time: fast enough when it matters
+                                  Good reset time: clears when issue is fixed
+                                  Good recall: catches all serious problems
+                                   
+           
+                      Burn rate = how quickly you're burning the allowed errors
+
+           
