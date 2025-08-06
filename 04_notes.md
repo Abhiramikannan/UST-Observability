@@ -242,23 +242,29 @@ A good alerting rule:
            A short window (e.g. 5 minutes) → gives good precision (makes sure the issue is still happening).
            ➡️ The alert only fires if the error rate is high over both windows.
 This combination:
+
            Avoids false alerts (for issues that already resolved).
            Triggers quickly enough on real problems.
            Stops firing quickly once things are better (good reset time).
+           
 Burn Rate-Based Alerting:
+
            Burn rate = how fast you're using up your SLO error budget.
            Example:
            If your SLO allows 0.1% errors (99.9% success), and you're running at 1% error rate, you're burning 10x faster than allowed (burn rate = 10).
+           
  Severity 1 (Page Now):
             Trigger an urgent alert (Severity 1) if:
            Burn rate > 14.4 over the last 1 hour AND 5 minutes
            Burn rate > 6 over the last 6 hours AND 30 minutes
            These indicate serious issues consuming the error budget too fast — someone needs to jump in now.
+           
  Severity 3 (Ticket)
            Trigger a lower-priority alert (Severity 3) if:
            Burn rate > 3 over the last 24 hours AND 2 hours
             Burn rate > 1 over the last 3 days AND 6 hours
            These are less urgent, but still real issues — worth tracking, but don’t wake someone up.
+           
 Using this method ensures:
 
            High precision (alerts only when needed)
