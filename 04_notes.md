@@ -80,3 +80,46 @@ Q. Key Alerting Parameters in SRE?
            4. recall: How complete your alerting is.Are you alerting every time there's a real issue?Reduce false negatives (missing alerts when something is wrong).Suppose your service crashes sometimes, but no alert is triggered.
 That’s low recall — because the system didn’t catch the issue.
 
+
+Q. SLO-Based Alerting with Prometheus
+
+To show how we can use Prometheus metrics + PromQL + Grafana to define, trigger, and visualize alerts based on SLOs (Service Level Objectives).
+Fulfillment Processor App: Demo app generating metrics.
+
+                      Prometheus: Collects metrics and triggers alerts.
+                      
+                      Grafana: Visualizes metrics and alert status.
+                      
+                      Docker Compose: Manages multiple app instances.
+                      
+                      Alerting Rule: Based on error rate from the app.
+fulfillment_document_requests_count_total: Total documents processed (with label document_status = success or failed)
+
+Custom metrics:
+
+fulfillment_document_errors: Sum of errors
+
+fulfillment_document_total: Sum of all requests (success + failed)
+
+<img width="946" height="233" alt="image" src="https://github.com/user-attachments/assets/bc45219e-6b86-4fbd-8844-9084dfbf5323" />
+
+(rate(document_errors[5m]) / rate(document_total[5m])) > 0.001
+           trigger: When error rate > 0.1%
+
+           SLI: Error rate
+           
+           SLO: Error rate should stay under 0.1%
+           
+Testing the Alert:
+           Instance 1: No errors
+           
+           Instance 2: 1% errors
+           
+           Instance 3: 10% errors (deliberately fails)
+Instance 3 starts/stops in cycles, causing the overall error rate to spike above the threshold temporarily.
+
+Result:
+           Alerts fire correctly when error rate > 0.1%.
+           
+           Alerts resolve once error rate drops.
+
