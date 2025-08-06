@@ -171,4 +171,50 @@ Q. why alerting strategies get complicated?
            
                       Burn rate = how quickly you're burning the allowed errors
 
+--------------------------------------------------------------------
+Goal of the Demo
+To build smarter alerting rules using Prometheus that:
+
+           Don't alert too quickly or unnecessarily (good precision)
            
+           Don’t miss real problems (good recall)
+           
+           Alert on time (good detection time)
+           
+           Stop alerts once fixed (good reset time)
+           
+What's Happening in the Demo
+           The team (Nina & Aiden) is using a demo app that simulates errors.
+           
+           They visualize and monitor error rates over different time windows (5m, 10m, 30m, 1h, etc.) using Grafana.
+           
+           Prometheus scrapes the data, evaluates alerting rules, and fires alerts when needed.
+
+Types of Alerts:
+1. Page Alert (Severity 1): Triggered when there's a spike in errors.
+           Example Rule:
+
+                      Burn rate > 14.4 over 5 mins and 1 hour
+                      
+                      OR burn rate > 6 over 30 mins and 6 hours
+                      
+                      ⚠️ Meant for urgent, short-term problems needing immediate SRE action.
+   
+2. Ticket Alert (Severity 3): Triggered for lower error rates but over a longer time.
+
+Example Rule:
+
+           Burn rate > 3 over 2 hours and 24 hours
+           
+           OR burn rate > SLO (0.1%) over 6 hours and 3 days
+           
+           📩 Meant for less urgent, long-term issues — creates tickets.
+
+ Why Use Different Time Windows?
+            Catch fast-breaking incidents (short windows like 5m + 1h)
+
+           Catch slow-building issues (long windows like 6h + 3d)
+           
+           Avoid false alerts from tiny spikes that go away quickly.
+           
+Nina improved alerts by pre-calculating metrics like error rate over time windows.This lets Prometheus rules stay clean and understandable.Different types of issues trigger different alerts (pages vs. tickets).This smart setup helps balance alert fatigue vs. missing real problems.
