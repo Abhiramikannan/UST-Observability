@@ -218,3 +218,8 @@ Example Rule:
            Avoid false alerts from tiny spikes that go away quickly.
            
 Nina improved alerts by pre-calculating metrics like error rate over time windows.This lets Prometheus rules stay clean and understandable.Different types of issues trigger different alerts (pages vs. tickets).This smart setup helps balance alert fatigue vs. missing real problems.
+
+Q. What is FailureFactor?
+It’s a simulated error rate — used to inject controlled failures so you can test alerting, monitoring, and error-handling logic.
+           Observability__Metrics__FailureFactor: 0.001 
+"Generate failures at a rate of 0.1% of total requests."To test how your system reacts to different levels of failure.
