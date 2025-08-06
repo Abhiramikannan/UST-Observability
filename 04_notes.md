@@ -108,7 +108,7 @@ fulfillment_document_total: Sum of all requests (success + failed)
 
 This is your SLO threshold for error rate.
 
-(rate(document_errors[5m]) / rate(document_total[5m])) > 0.001
+(rate(document_errors[5m]) / rate(document_total[5m])) > 0.001   = This PromQL alert rule checks the error rate of your application over the past 5 minutes, and triggers an alert if the error rate is greater than 0.1% (i.e. > 0.001).
            trigger: When error rate > 0.1%
 
            SLI: Error rate
