@@ -102,6 +102,11 @@ fulfillment_document_errors: Sum of errors
 fulfillment_document_total: Sum of all requests (success + failed)
 
 <img width="946" height="233" alt="image" src="https://github.com/user-attachments/assets/bc45219e-6b86-4fbd-8844-9084dfbf5323" />
+           This PromQL expression checks whether the error rate (failures divided by total requests) is greater than 0.001 (or 0.1%).
+           The alert fires when more than 0.1% of requests are failing.
+           The part in the pink box is > 0.001, which is the threshold for triggering the alert.
+
+This is your SLO threshold for error rate.
 
 (rate(document_errors[5m]) / rate(document_total[5m])) > 0.001
            trigger: When error rate > 0.1%
