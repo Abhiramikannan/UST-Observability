@@ -59,10 +59,13 @@ Helps in identifying gaps in monitoring and alerting
        Normal values (green/blue), Warning ranges (yellow), Critical values (red)
 
 4. colours:  red-bad, blue-good , avoid combo of red and green'
+-------------------------------------------------
+
 
 
 6. choosing right metrics for your dashboard:
 ------------------------------------------------------
+
 1. to monitor ur service - red method (req rates,errors, duration-latency)
 2. use method (utilization,saturation,errors)-track infrastructure resources
 3. 4 golden signals of monitoring -latency,traffic,saturation,error
