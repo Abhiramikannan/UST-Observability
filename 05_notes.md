@@ -12,6 +12,7 @@ How much load can it handle before  breaking?
 
 How does it behave under stress?
 
+---------------------------------------------------------
 2.  What is MTTD (Mean Time to Detect)?
 MTTD is a metric used in observability and incident management.
 
@@ -26,7 +27,7 @@ Lower MTTD = Faster detection = Better reliability
 
 Helps in identifying gaps in monitoring and alerting
 
-
+-------------------------------
 3. designing dashboard
 -------------------------
 1.  graph panel
@@ -36,7 +37,7 @@ Helps in identifying gaps in monitoring and alerting
 5. dashboard should either tell a story or answer the question.
 
 
-
+-----------------------------------------
 4. DASHBOARD DESIGN BEST PRACTICES:
 -----------------------------------------
 1. scan pages in z pattern - imp(top-left,top right),center-supportve data,bottom-less critical
@@ -45,7 +46,7 @@ Helps in identifying gaps in monitoring and alerting
 4. shapes : circle -status indicators,rectangles-histogram/barcharts,triangle-change/alerts
 5. colourcoding Grafana feature: Stat panels, Table panels, Gauge and Bar panels. Example: If CPU usage > 90%, show red; if < 50%, show green.
 
-
+---------------------------------------
 5. UX CONCEPTS OF OBSERVABILITY DASHBOARD:
 -------------------------------------------
 1. Logical grouping
@@ -70,7 +71,7 @@ Helps in identifying gaps in monitoring and alerting
 2. use method (utilization,saturation,errors)-track infrastructure resources
 3. 4 golden signals of monitoring -latency,traffic,saturation,error
 
-
+-----------------------------
 7. organized dashboards
 ----------------------
 1. top down z pattern : humans scan-  Left to right, then down, left to right again — just like a “Z” shape. Put the most important panels (alerts, KPIs) in the top-left or center.
@@ -80,7 +81,7 @@ Helps in identifying gaps in monitoring and alerting
 
 
 
-
+------------------------------
 8. NOTES:
 ---------------------------
 ### 🔹 **Unannotated Panel vs Annotated Panel**
