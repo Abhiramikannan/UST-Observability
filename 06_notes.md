@@ -52,3 +52,4 @@ links:
     https://grafana.com/tutorials/alerting-get-started-pt6/?pg=tutorials&plcmt=results
     https://grafana.com/tutorials/alerting-get-started-pt4/?pg=tutorials&plcmt=results
            
+https://killercoda.com/grafana-labs/course/grafana/grafana-fundamentals
