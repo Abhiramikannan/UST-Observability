@@ -28,6 +28,7 @@ link: https://grafana.com/go/webinar/intro-to-alerting-with-grafana/?pg=tutorial
 
 ---------------------------------------------------------------------------
 
+
 3. TIGHTLY COUPLING:
           2 systems closely linked
           If one changes, the other reacts immediately because they’re deeply integrated.
@@ -44,7 +45,7 @@ You don’t have to waste time hunting for data after the incident → less toil
 
 You get the full context of the issue immediately, so you can understand and fix it faster → better insights.
   
-Handson:
+4. Handson:
 links:
 
     https://grafana.com/tutorials/grafana-fundamentals/?pg=tutorials&plcmt=results
