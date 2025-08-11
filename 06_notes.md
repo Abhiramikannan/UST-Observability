@@ -24,3 +24,25 @@
                            Sends an alert so you can fix it before it happens. Avoid incidents entirely.
                          eg: Your smart home predicts a high chance of fire tomorrow based on past cooking patterns.
                          Adaptive alerting → The system learns your normal patterns and automatically adjusts alert thresholds based on current trends.eg:If CPU normally runs at 10%, and suddenly jumps to 40%, it might alert you even though it’s below 90%, because that’s unusual for your system.
+
+
+---------------------------------------------------------------------------
+
+3. TIGHTLY COUPLING:
+          2 systems closely linked
+          If one changes, the other reacts immediately because they’re deeply integrated.
+   
+Q. Tight coupling between Observability and IRM means less toil and better insights. Why?
+
+Tight coupling = Observability tools and Incident Response Management (IRM) tools are directly connected.
+
+When there’s a problem, the observability tool automatically sends all the important data (logs, metrics, traces) to the IRM system along with the alert.
+
+This means:
+
+You don’t have to waste time hunting for data after the incident → less toil.
+
+You get the full context of the issue immediately, so you can understand and fix it faster → better insights.
+  
+
+           
