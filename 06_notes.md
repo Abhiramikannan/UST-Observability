@@ -1,5 +1,5 @@
 11/8/25
-
+link: https://grafana.com/go/webinar/intro-to-alerting-with-grafana/?pg=tutorials&plcmt=results
 1. IRM:IRM simply means Incident Response Management (sometimes called Incident and Request Management in ITSM). It’s the process of:
 
                   Detecting when something goes wrong in a system or service.
@@ -44,5 +44,10 @@ You don’t have to waste time hunting for data after the incident → less toil
 
 You get the full context of the issue immediately, so you can understand and fix it faster → better insights.
   
+Handson:
+links:
 
+    https://grafana.com/tutorials/grafana-fundamentals/?pg=tutorials&plcmt=results
+    https://grafana.com/tutorials/alerting-get-started-pt6/?pg=tutorials&plcmt=results
+    https://grafana.com/tutorials/alerting-get-started-pt4/?pg=tutorials&plcmt=results
            
