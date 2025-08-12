@@ -49,7 +49,9 @@ You get the full context of the issue immediately, so you can understand and fix
 links:
 
     https://grafana.com/tutorials/grafana-fundamentals/?pg=tutorials&plcmt=results
+   
     https://grafana.com/tutorials/alerting-get-started-pt6/?pg=tutorials&plcmt=results
+   
     https://grafana.com/tutorials/alerting-get-started-pt4/?pg=tutorials&plcmt=results
            
 https://killercoda.com/grafana-labs/course/grafana/grafana-fundamentals
