@@ -1,0 +1,80 @@
+lab 3:
+
+link: https://grafana.com/tutorials/alerting-get-started-pt4/?pg=tutorials&plcmt=results
+goal:
+1. understanding 2 types of grafana alerting
+       labels & annotations
+       notification templates
+
+labels & annotations: for adding extra info to alert rules
+                      Setting up alert rules with summary and description annotations.
+
+notification templates: for controlling the look/content of notifications
+                        Creating a custom notification template that works with your alert annotations.
+                        Using a built-in template to group and format multiple alert instances into one message.
+                        Previewing how the final notification will look, using sample alert instance data.
+---------------------------------------------------------------------------------------------------------------------
+Q. How templating works?
+
+In Grafana, templating lets you automatically insert live data into alert messages so they are more clear and useful.
+Labels & annotations → Used in alert rules to add details like instance names, metric values, or descriptions, so each alert contains real-time context.
+Notification templates → Control how alert messages are formatted and grouped. You can use them to:
+Combine multiple alerts into one clear message.
+Separate sections for firing and resolved alerts.
+Reuse the same format for different contact points.
+
+Goal → Instead of sending a flood of single-line alerts, you can send one well-organized message that’s easy to read, reduces noise, and shows exactly what’s wrong and where.
+
+----------------------------------------------------------------------------------------------------------------------
+Q. What is inserting live data?
+In Grafana alerting, “inserting live data” means that instead of putting fixed text in your alert message, you pull in actual, real-time values from the alert evaluation.
+Example:
+If your metric is CPU usage, instead of writing:
+  "CPU usage is high"
+
+You can insert live data:
+"CPU usage on server {{ $labels.instance }} is at {{ $values.A }}%"
+
+{{ $labels.instance }} → gets the actual server name when the alert triggers.
+{{ $values.A }} → gets the actual metric value at alert time.
+
+So every time the alert fires, the message changes automatically to reflect the real situation at that exact moment — that’s what “inserting live data” means.
+--------------------------------------------------------------------------------------------------------------------------
+
+2. defined alert rules:
+
+Datasource-> testdata
+
+region,cpu-usage,service,instance
+us-west,88,web-server-1,server-01
+us-west,81,web-server-1,server-02
+us-east,79,web-server-2,server-03
+us-east,52,web-server-2,server-04
+
+ This is the testdata -> csv content we added  in the alert rule, also set the condition above 75%
+
+summary annotation:
+            {{- "\n" -}}
+            Instance: {{ index $labels "instance" }}
+            {{- "\t" -}} Usage: {{ index $values "A"}}%{{- "\n" -}}
+
+This template is formatting a notification so that it shows:
+      Instance: <server_name>    Usage: <value>%
+This template automatically adds the instance name (from the $labels data) and its current CPU usage (from $values["A"]) into the alert summary.
+\t : Adds a tab space between the instance name and the value. And, \n : Inserts a new line after the value.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+3. template notifications:
+Adding a notification template ensures that the alert message contains only the most relevant details, such as the instance name and usage value, in a clean,
+human-readable format. This improves readability for engineers and allows faster troubleshooting compared to the default Grafana message format.
+
+select: Print firing and resolved alerts
+    you can see the fired and resolved alerts there
+
+-----------------------------------------------------------------------------------------------------------
+
+4. alerts-> pause and resume -> see notification in contact point
+
+----------------------------------------------------------------------------------------------------
+5. alerts -> view -> instances -> can see firing and normal alerts
