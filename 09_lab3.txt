@@ -71,7 +71,7 @@ human-readable format. This improves readability for engineers and allows faster
 
 select: Print firing and resolved alerts
     you can see the fired and resolved alerts there
-
+edit the payload and select the instances you wnat to see the data
 -----------------------------------------------------------------------------------------------------------
 
 4. alerts-> pause and resume -> see notification in contact point
