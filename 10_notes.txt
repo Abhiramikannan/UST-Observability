@@ -48,3 +48,9 @@
                   Uses instrumentation libraries (or the OTel Collector) that can gather all three kinds of telemetry data from your app or systems.
                   The OTel Collector can send that data to Grafana, Prometheus, Jaeger, Loki, or any backend that supports the standard.
                   dont need diff agent for diff things(traces,logs,metrices)
+
+5. TESTDATA - DATASOURCE?
+
+            Its a datasource only used to create dummy data means fake data inside grafana
+            It does not collect any real data(metrices/logs) from the system.
+            Just for practicing and study - it creates a dummy data for you.
