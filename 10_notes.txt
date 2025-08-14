@@ -1,0 +1,11 @@
+14/8/25
+
+1. NOTIFICATION POLICY?
+
+  Notification Policy – Think of it like a mailman’s delivery rule.
+    It decides where and to whom the alert should go, and when.
+    You can set rules:
+          “If the alert is about database, send it to the DB team.”
+          “If the alert is about frontend, send it to the web team.”
+          “If it’s at night, send it to the on-call person.”
+          Controls the route & timing of the message.
