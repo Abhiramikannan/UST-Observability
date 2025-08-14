@@ -513,7 +513,19 @@ CHALLENGES OF OBSERVABILITY
     4. Easy to implement
     5. Integrates with current tools(current stacks,languages,container platform,messaging)
 
+------------------------------------------------------------------------------------------------------------
+OPENTELEMETRY:
 
+<img width="994" height="583" alt="image" src="https://github.com/user-attachments/assets/5f78f54e-50e2-4ce9-94bc-d5b81a009ae4" />
+
+with open telemtry: dont want any agents to collect metrices,logs,traces
+					metrices - collects by prometheus,
+	 				logs -loki
+	  				traces -jaeger
+	   
+without open telemetry:
+		collect the metrices,logs,and traces by seperate agents
+  		 prometheus agent,loki agent,like that
 
 
 
