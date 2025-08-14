@@ -81,23 +81,18 @@ edit the payload and select the instances you wnat to see the data
 
 ----------------------------------------------------------------------------------------
 1. Notification Template – Think of it like a message format.
-
-It decides how your alert looks when it’s sent.
-
-Example:
+                     
+              It decides how your alert looks when it’s sent.
+       Example:
 
 Without a template:
-
 Alert: High CPU
-
-
 With a template:
 
-🚨 High CPU usage detected!
-Server: {{ $labels.instance }}
-Current value: {{ $value }}%
-Time: {{ $labels.time }}
-
+              🚨 High CPU usage detected!
+              Server: {{ $labels.instance }}
+              Current value: {{ $value }}%
+              Time: {{ $labels.time }}
 
 In Grafana, you can add variables (like $labels.instance) so the alert automatically includes details.
 
