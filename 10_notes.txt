@@ -9,3 +9,25 @@
           “If the alert is about frontend, send it to the web team.”
           “If it’s at night, send it to the on-call person.”
           Controls the route & timing of the message.
+
+2. LOKI?
+
+      Grafana's owm log system
+      Loki = stores logs (text details about what happened, like errors, warnings, events).
+      it only stores indexes labels (like app name, pod name, namespace).
+      In Grafana → Connections → Data Sources → Add Loki (URL: http://loki:3100).
+      Grafana -> explore -> datasource- loki -> querry language of loki type
+      Example: {filename="/var/log/tns-app.log"}
+              consider an app where u can provide title and url.. provide only title without url..in logs..u can see error
+
+3. ANNOTATIONS?
+
+        Annotations in Grafana are markers or notes you place directly on your graphs to show when something important happened.
+        Eg: “Oh, that spike happened right when we deployed a new version”.
+
+        2 types of annotations:
+              Manual annotations: You click on the graph and write something (e.g., "Migrated user database").
+                                  Or select a time range (region annotation) and describe what happened (e.g., "Load testing").
+
+              Automatic annotations: Grafana can pull events from data sources (like Loki logs) and add them automatically.
+                                     Example: Every time the log contains the word "error", an annotation appears on the graph.
