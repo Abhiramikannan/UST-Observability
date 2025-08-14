@@ -55,3 +55,12 @@ links:
     https://grafana.com/tutorials/alerting-get-started-pt4/?pg=tutorials&plcmt=results
            
 https://killercoda.com/grafana-labs/course/grafana/grafana-fundamentals
+
+
+The goal is to learn:
+
+      How to run ad-hoc (one-time) queries
+      
+      How to see how many requests your app is getting
+      
+      How to group that info in different ways
