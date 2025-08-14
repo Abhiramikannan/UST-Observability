@@ -31,3 +31,20 @@
 
               Automatic annotations: Grafana can pull events from data sources (like Loki logs) and add them automatically.
                                      Example: Every time the log contains the word "error", an annotation appears on the graph.
+
+4. OPENTELEMETRY?
+
+        Without opentelemetry:
+                  collect the metrices,logs,traces using agents.
+                  You need different agents/tools for different types of data:
+                        Metrics → Prometheus agent or Node Exporter
+                        Logs → Loki agent, Fluentd, or similar
+                        Traces → Jaeger agent, Zipkin agent
+                  Each has its own format, setup, and pipeline.
+                  This means more configuration, maintenance, and compatibility headaches.
+
+      with opentelemetry:
+                  collect the metrices,logs,traces by itself and sent to grafana,prometheus,jaeger,loki
+                  Uses instrumentation libraries (or the OTel Collector) that can gather all three kinds of telemetry data from your app or systems.
+                  The OTel Collector can send that data to Grafana, Prometheus, Jaeger, Loki, or any backend that supports the standard.
+                  dont need diff agent for diff things(traces,logs,metrices)
