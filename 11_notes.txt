@@ -1,0 +1,27 @@
+link: https://grafana.com/blog/2025/02/05/how-to-visualize-csv-data-with-grafana/
+
+1. INFINITY DATASOURCE:
+    Infinity datasource lets Grafana pull data from different sources like CSV, JSON, XML, or Google Sheets that are available online.
+    Access parameters →
+      Sometimes, the data source you want to connect to is protected (for example, requires an API key or Bearer token). In that case, you’d configure authentication details here.
+      If it’s public data, no extra setup is needed. If it’s private, you’d add authentication (like bearer tokens).
+
+2. create dashboard -> add visualization -> create with the instructions from the above link
+        select datasource that u created (infinity) -> csv -> get -> url -> table
+
+3. What is VISUALIZATION TYPE (right side while adding the visualization) while configuring the dashboard?
+            It indicates how u want to see ur data
+            
+            1. Table visualization: 
+                    data shown in table and rows
+            2. Geomap visualization:
+                      Data is plotted on a map (world map, region map, or custom map).
+
+            Table = good for detailed raw/structured data
+            Geo Data = good for visualizing metrics by location
+
+4. TRANSFORMATIONS:
+           In Grafana, when you pull data from a data source (like CSV, Prometheus, InfluxDB, etc.), 
+           the data might not always be in the exact format you want for visualization. That’s where Transformations come in.
+   
+
