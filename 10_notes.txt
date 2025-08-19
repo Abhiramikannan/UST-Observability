@@ -54,3 +54,21 @@
             Its a datasource only used to create dummy data means fake data inside grafana
             It does not collect any real data(metrices/logs) from the system.
             Just for practicing and study - it creates a dummy data for you.
+
+6. NOTIFICATION TEMPLATE? – Think of it like a message format.
+                     
+              It decides how your alert looks when it’s sent.
+       Example:
+
+Without a template:
+Alert: High CPU
+With a template:
+
+              🚨 High CPU usage detected!
+              Server: {{ $labels.instance }}
+              Current value: {{ $value }}%
+              Time: {{ $labels.time }}
+
+In Grafana, you can add variables (like $labels.instance) so the alert automatically includes details.
+
+notification template : automatically fetch the instance name, cpu % like that... means current value.. if it change automatically fetches the new value.we should only provide labels.
