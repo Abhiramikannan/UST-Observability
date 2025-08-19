@@ -146,9 +146,13 @@ Q. why alerting strategies get complicated?
                       If we alert too late, we might miss serious problems.
 
            3. error budget?
-                      Suppose your SLO is 99.9% success over 28 days.
-                      If you process 7 million requests, you're allowed up to 7,000 errors.
-                      That’s your error budget.
+                      Error Budget: Every system can have a small amount of failure allowed (since 100% uptime is impossible).
+                      This “allowed failure” = Error Budget.
+                      Example: If SLA is 99.9% uptime → error budget = 0.1% downtime (about 43 minutes in a month).
+
+                                 👉 Simple line:
+                                 "Error budget is the amount of failure or downtime we can allow without breaking our reliability promise."
+                                 
                       A big error spike happens: 5,000 errors.
                       A small error trickle happens later: 2,500 errors.
                       If you catch both on time, you're under budget = ✅ All good.
