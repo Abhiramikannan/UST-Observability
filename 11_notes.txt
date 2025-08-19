@@ -42,8 +42,22 @@ RESULT:
                     Give trends overtime -> not just current values, but historical data (eg: cpu usage spike over last 24 hrs)
                     Highlight problems -> errors,alerts,latency
 
+7. How to add datasource?
+            connections ->datasource ->add datasource ->(testdata,infinity,prometheous,loki)
 
-7. What all can in dashboards?
+
+8. What all can in dashboards?
         Threshholds -> To show good or bad ... users see green = good , red =bad
+
+9. How to create dashboard?
+            1. adding datasource
+            2. create dashboard -> add visualization
+            3. add panel -> give data 
+            4. if testdata -> select csv content to add csv data
+            5. visualization -> right top corner -> we can change to any type (table,stat,geomap..)
+            6. add visualization to add more panels.
+            7. In panels we can set threshhold colour(search threshhold for each metric),(search cel for each metric for coloured bg), (search unit->misk-> percent ->also decimal)
+            8. drag the panels to make it arranged
+
         
     
