@@ -28,3 +28,22 @@ connections -> data source -> infinity
                     ur panel -> querry type -> transformations
    
 
+RESULT:
+    The dashboard i configured will show the static dataset (Geo data + table).
+
+5. END USERS OF DASHBOARD?
+        developers - check dashboard to debug application issues, failures after the deployment.
+        managers/Product Owners- they want to see business level metrices like check revenue impacting issues, latency, user signup,no of req served
+        Sre/Dveops Engineer - monitor systems uptime,errors to make service reliable
+        support teams- user impacting problems
+
+6. What end users expect from the Observability team?
+                    single dashboard -> shows Is my system healthy?
+                    Give trends overtime -> not just current values, but historical data (eg: cpu usage spike over last 24 hrs)
+                    Highlight problems -> errors,alerts,latency
+
+
+7. What all can in dashboards?
+        Threshholds -> To show good or bad ... users see green = good , red =bad
+        
+    
