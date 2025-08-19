@@ -1,0 +1,339 @@
+Goal: Build a "Golden Signals Overview" Dashboard
+-----------------------------------------------------------
+
+You will create a new Grafana dashboard focusing on the four Golden Signals for a hypothetical web service or API. This will include:
+
+Latency: How long requests take.
+
+Traffic (or Throughput): How much demand is being placed on your system.
+
+Errors: The rate of requests that fail.
+
+Saturation: How "full" your service is.
+
+You'll use Grafana's Stat panels for a quick visual summary and Graph panels to see trends over time, applying thresholds for quick status checks.
+
+Step-by-Step Guide: Building the "Golden Signals" Dashboard
+Step 1: Access Grafana Cloud & Create a New Dashboard
+Log in to Grafana Cloud: Go to your Grafana Cloud instance.
+
+Create New Dashboard:
+
+On the left-hand menu, click the + icon.
+
+Select New dashboard.
+
+You'll see an empty canvas with an "Add visualization" button.
+
+Step 2: Add Panels for Latency
+We'll use both a Stat panel (for current status) and a Graph panel (for trends).
+
+Panel 1: Latency (Current Stat)
+Add Visualization: Click Add visualization.
+
+Choose Data Source: Select Test Data Source.
+
+Configure Query Tab:
+
+Scenario: Random Walk
+
+Min: 50 (milliseconds, for a healthy base)
+
+Max: 1000 (milliseconds, allowing for spikes)
+
+Interval: 1s (data changes every second)
+
+Alias: Service Latency
+
+Legend: Service Latency (ensure this is clear).
+
+Configure Visualization Tab:
+
+Type: Select Stat.
+
+Panel Title: Service Latency (Current)
+
+Unit: ms (milliseconds)
+
+Color mode: Background
+
+Graph mode: Area (shows a mini-graph behind the number)
+
+Justify space: Center
+
+Thresholds (Lower is Better):
+
+Value 200, Color Green
+
+Value 500, Color Orange
+
+(Values below 200ms will be Green, 200ms-499ms will be Orange, 500ms+ will be Red)
+
+Apply.
+
+Panel 2: Latency (Trend Graph)
+Add Visualization: Click Add visualization (or duplicate the previous panel and change type).
+
+Choose Data Source: Select Test Data Source.
+
+Configure Query Tab:
+
+Scenario: Random Walk (same as above)
+
+Min: 50
+
+Max: 1000
+
+Interval: 1s
+
+Alias: Service Latency Trend
+
+Configure Visualization Tab:
+
+Type: Select Graph.
+
+Panel Title: Service Latency (Trend)
+
+Axes -> Left Y -> Unit: ms (milliseconds)
+
+Thresholds (Add Lines to Graph):
+
+Click Add threshold.
+
+Value: 200, Color: Green, Fill: No, Y-axis: Left, Line: Solid (Label: "Warning")
+
+Click Add threshold.
+
+Value: 500, Color: Red, Fill: No, Y-axis: Left, Line: Solid (Label: "Critical")
+
+Apply.
+
+Step 3: Add Panels for Traffic (Requests Per Second)
+Panel 3: Traffic (Current Stat)
+Add Visualization: Click Add visualization.
+
+Choose Data Source: Select Test Data Source.
+
+Configure Query Tab:
+
+Scenario: Random Walk
+
+Min: 100 (requests/second, for a baseline)
+
+Max: 500 (requests/second, simulating higher load)
+
+Interval: 1s
+
+Alias: Service Traffic
+
+Configure Visualization Tab:
+
+Type: Select Stat.
+
+Panel Title: Service Traffic (Current)
+
+Unit: RPS (Requests Per Second - you might need to type this custom unit)
+
+Color mode: None (Traffic usually isn't red/green, just a measure of volume, unless you have specific capacity limits)
+
+Graph mode: Area
+
+Justify space: Center
+
+Thresholds: Not typically used for traffic unless there's a specific "too much traffic" or "too little traffic" alert. You can add one if you want to highlight very high or very low traffic.
+
+Apply.
+
+Panel 4: Traffic (Trend Graph)
+Add Visualization: Click Add visualization.
+
+Choose Data Source: Select Test Data Source.
+
+Configure Query Tab:
+
+Scenario: Random Walk (same as above)
+
+Min: 100
+
+Max: 500
+
+Interval: 1s
+
+Alias: Service Traffic Trend
+
+Configure Visualization Tab:
+
+Type: Select Graph.
+
+Panel Title: Service Traffic (Trend)
+
+Axes -> Left Y -> Unit: RPS
+
+Thresholds: (Optional) Add lines if you want to indicate normal operating range or capacity limits on the graph.
+
+Apply.
+
+Step 4: Add Panels for Errors (Error Rate)
+Panel 5: Error Rate (Current Stat)
+Add Visualization: Click Add visualization.
+
+Choose Data Source: Select Test Data Source.
+
+Configure Query Tab:
+
+Scenario: Random Walk
+
+Min: 0
+
+Max: 10 (simulating 0-10% error rate)
+
+Interval: 1s
+
+Alias: Service Error Rate
+
+Configure Visualization Tab:
+
+Type: Select Stat.
+
+Panel Title: Service Error Rate (Current)
+
+Unit: %
+
+Color mode: Background
+
+Graph mode: Area
+
+Justify space: Center
+
+Thresholds (Lower is Better):
+
+Value 1, Color Green (e.g., 1% or less is good)
+
+Value 5, Color Orange (e.g., 1%-5% is warning)
+
+(Values below 1% will be Green, 1%-4.99% will be Orange, 5%+ will be Red)
+
+Apply.
+
+Panel 6: Error Rate (Trend Graph)
+Add Visualization: Click Add visualization.
+
+Choose Data Source: Select Test Data Source.
+
+Configure Query Tab:
+
+Scenario: Random Walk (same as above)
+
+Min: 0
+
+Max: 10
+
+Interval: 1s
+
+Alias: Service Error Rate Trend
+
+Configure Visualization Tab:
+
+Type: Select Graph.
+
+Panel Title: Service Error Rate (Trend)
+
+Axes -> Left Y -> Unit: %
+
+Thresholds: (Add lines to graph)
+
+Value 1, Color Green
+
+Value 5, Color **Red`
+
+Apply.
+
+Step 5: Add Panels for Saturation (Resource Utilization)
+Panel 7: Saturation (Current Stat)
+Add Visualization: Click Add visualization.
+
+Choose Data Source: Select Test Data Source.
+
+Configure Query Tab:
+
+Scenario: Random Walk
+
+Min: 20
+
+Max: 100 (simulating 20-100% utilization)
+
+Interval: 1s
+
+Alias: Service Saturation
+
+Configure Visualization Tab:
+
+Type: Select Stat.
+
+Panel Title: Service Saturation (Current)
+
+Unit: %
+
+Color mode: Background
+
+Graph mode: Area
+
+Justify space: Center
+
+Thresholds (Lower is Better):
+
+Value 70, Color Green (e.g., <70% utilization is good)
+
+Value 90, Color Orange (e.g., 70%-89% utilization is warning)
+
+(Values below 70% will be Green, 70%-89% will be Orange, 90%+ will be Red)
+
+Apply.
+
+Panel 8: Saturation (Trend Graph)
+Add Visualization: Click Add visualization.
+
+Choose Data Source: Select Test Data Source.
+
+Configure Query Tab:
+
+Scenario: Random Walk (same as above)
+
+Min: 20
+
+Max: 100
+
+Interval: 1s
+
+Alias: Service Saturation Trend
+
+Configure Visualization Tab:
+
+Type: Select Graph.
+
+Panel Title: Service Saturation (Trend)
+
+Axes -> Left Y -> Unit: %
+
+Thresholds: (Add lines to graph)
+
+Value 70, Color Green
+
+Value 90, Color **Red`
+
+Apply.
+
+Step 6: Arrange and Save Your Dashboard
+Arrange Panels:
+
+Drag and resize the panels to create a clear layout. A good idea is to put the "Current Stat" next to its "Trend Graph" for each Golden Signal. You might organize them into four rows, one for each signal.
+
+Set Dashboard Time Range: At the top right of the dashboard, set the time range (e.g., Last 1 hour, Last 3 hours). Since the TestData Random Walk is dynamic, you'll see the graphs update.
+
+Set Dashboard Refresh Rate: Next to the time range, set a refresh interval (e.g., 5s, 15s). This will make your "Current Stat" panels update and your "Trend Graphs" scroll.
+
+Save Dashboard: Click the Save icon (floppy disk) at the top.
+
+Give your dashboard a Name (e.g., "Golden Signals Overview").
+
+Click Save.
