@@ -159,6 +159,9 @@ Q. why alerting strategies get complicated?
                       But if your alerts come too late, those same incidents might add up to over 7,000 errors = ❌ SLO breached = Change freeze (no new releases allowed).
                       
            4. What’s the Solution? Use Burn Rate
+                      Burn Rate
+                                 How fast you are consuming the error budget.
+                                            Example: If you used half of the month’s error budget in just 1 day, your burn rate is high → risky
                       Instead of just looking at the error rate, we look at how fast we’re using up the error budget. That’s called the burn rate.
                       If burn rate = 1 → You're exactly matching the error budget.
                       If burn rate = 3 → You're using errors 3x too fast.
