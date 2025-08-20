@@ -1,0 +1,33 @@
+1. ALERTS
+          I learned about how to create and manage alerts in Grafana.
+          Setting threshold -> so that if the threshold goes beyond that have setted -> notify it as an alert in the contact point(webhook)
+          
+         Notification template: It will make the alert well structured and can fetch the live data  from the alert labels/ annotations.(eg : instance name,cpu value)
+
+         Annotations: Markers shown in graph to see what happened.
+
+         Notification policy: It will make all alert msg(similar alerts) as a single msg (grouping) and forwards to particular team. eg: database related alert -> database team
+
+
+2. ERROR BUDGET AND BURN RATE:
+            Error budget : allowed failure eg: if SLA is 99% uptime ,error budget is 0.1 %
+            Burn rate: How fast u r using ur error budget
+
+3. METRICES:
+          RED = Rate, Errors, Duration(used in microservices,API monitoring) 
+          How many req are coming , how many fail, how long they take
+          
+          USE =  Utilization,Saturation,Errrors.(monitoring resources- used in infrastructure/resources like cpu,memory,disk
+          	  •  Utilization → How much of a resource is being used (CPU %, memory usage)
+              •  Saturation → How “full” it is (queue length, waiting processes)
+              •  Errors → Hardware or system errors
+
+
+4. DASHBOARD: what all i know still now?
+
+          panels creation
+          visualization type
+          datasource(infinity,testdata,prometheus,loki)
+          colour coded threshhold
+          unit
+          
