@@ -53,3 +53,14 @@
           SLI = actual measurement of metric
                 metric is uptime,errors,latency
                 calculated by anytime
+
+7. What end users except from dashboards?
+
+          simplicity: data should be clear not overloaded with too many panels
+          Relavance: shows only what matters to them(uptime for business users, error for developers)
+          visualization: graph,stat,table ..coloured threshold to highlight problem with colours
+          Problem: point to where problem is
+          Reliability: data should be live and accurate and trustable
+                              reliability means:  users should trust the system
+                                                  available when they needs
+                                                  works well without any unexpected failure
