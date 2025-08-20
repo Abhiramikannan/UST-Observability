@@ -16,6 +16,9 @@
 2. ERROR BUDGET AND BURN RATE:
             Error budget : allowed failure eg: if SLA is 99% uptime ,error budget is 0.1 %
             Burn rate: How fast u r using ur error budget
+                    eg: in 1 month allowed downtime is 43 mins
+                    normal burn rate: in 15 days ,20 mins downtime happened -> safe
+                    High burn rate: in 1 day 40 min down time happened -> very high risk
 
 3. METRICES:
           RED = Rate, Errors, Duration(used in microservices,API monitoring) 
