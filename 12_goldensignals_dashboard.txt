@@ -337,3 +337,15 @@ Save Dashboard: Click the Save icon (floppy disk) at the top.
 Give your dashboard a Name (e.g., "Golden Signals Overview").
 
 Click Save.
+
+
+
+
+QUESTION AND ANSWERS:
+
+1. Why we are using Random Walk and what the min and max value indicates?
+          Random Walk: We dont have any real data .. so by selecting Random walk , we can give Random min and max value
+          The value can be fluctuates or vary b/w the min and max value we setted...
+          so the value changes randomly 
+
+2. 
