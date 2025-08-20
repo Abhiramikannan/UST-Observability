@@ -37,3 +37,15 @@
           latency
           errors
           saturation : How overloaded ur system resources ? heavy load -> system breaks
+
+6. SLA AND SLO UPTIME:
+
+          SLA = b/w company and  customers.
+                promise them 99.9% uptime ,if not give refund
+
+          SLO = internal objective for teams
+                teams target(99.9% uptime)
+
+          SLI = actual measurement of metric
+                metric is uptime,errors,latency
+                calculated by anytime
