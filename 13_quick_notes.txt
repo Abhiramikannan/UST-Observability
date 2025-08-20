@@ -8,6 +8,10 @@
 
          Notification policy: It will make all alert msg(similar alerts) as a single msg (grouping) and forwards to particular team. eg: database related alert -> database team
 
+          Alerts can improve 
+                    end users experience(performance issues-user get a smooth and reliable service)
+                    reduce downtime
+                    faster fixes(alerts notify them quickly so fix them fast before affecting it bad)
 
 2. ERROR BUDGET AND BURN RATE:
             Error budget : allowed failure eg: if SLA is 99% uptime ,error budget is 0.1 %
