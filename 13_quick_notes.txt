@@ -31,3 +31,9 @@
           colour coded threshhold
           unit
           
+5. GOOGLES GOLDEN SIGNALS:
+
+          traffic
+          latency
+          errors
+          saturation : How overloaded ur system resources ? heavy load -> system breaks
