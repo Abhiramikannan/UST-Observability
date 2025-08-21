@@ -26,7 +26,7 @@ imp: In the query session give the same values in the panel(edit panel -> check 
 
 <img width="865" height="387" alt="image" src="https://github.com/user-attachments/assets/8c2200c1-67e8-4bb8-b374-040c0fab4f00" />
 
-imp: enable the advanced oprions to make A come on the left side then  only live data it will fetch.. because we used A in description
+imp: enable the advanced options to make A come on the left side then  only live data it will fetch.. because we used A in description
 
 
 <img width="1336" height="871" alt="image" src="https://github.com/user-attachments/assets/74db8068-1298-476a-b71c-ea55ed51bd74" />
