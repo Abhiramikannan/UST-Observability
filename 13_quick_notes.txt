@@ -59,7 +59,7 @@
 
 7. What end users except from dashboards?
 
-          simplicity: data should be clear not overloaded with too many panels
+          simplicity: data should be clear not overloaded with too many panels -> it shows from the first look -> is my system healthy?
           Relavance: shows only what matters to them(uptime for business users, error for developers)
           visualization: graph,stat,table ..coloured threshold to highlight problem with colours
           Problem: point to where problem is
