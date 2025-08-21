@@ -56,7 +56,7 @@ output:
 
 
 
-PROBLEM: The annottations are not fetching the current data . Because your Grafana TestData DB query (Random Walk) produces a time series (a graph), but the alert annotation expects a single, current number.
+PROBLEM: The annottations are not fetching the current data . Because your Grafana TestData DB query (Random Walk) produces a time series (a graph), but the alert annotation expects a single, current number. Also it only provides same description for resolved and firing alerts.
 
 
    
