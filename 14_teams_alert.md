@@ -2,7 +2,7 @@
 
       <img width="1917" height="1079" alt="image" src="https://github.com/user-attachments/assets/be5acb42-e6ed-4a92-98a8-84c0094b3e41" />
 -------------------------------------------------------------------------------------
-2. ur channel name ->manage channels-> edit connectors ->search incoming webhook ->add
+2. ur channel name ->3 dots -> manage channels-> edit connectors ->search incoming webhook ->add
    
     <img width="1919" height="1015" alt="image" src="https://github.com/user-attachments/assets/be4395c8-88fd-430e-9ea8-c8e6afc0a00a" />
    
