@@ -31,7 +31,7 @@ imp: In the query session give the same values in the panel(edit panel -> check 
 
  labels:  type and enter
 
-      <img width="849" height="552" alt="image" src="https://github.com/user-attachments/assets/2fa47eb1-76a8-4faa-8af5-ae0e0e7a3d73" />
+ <img width="849" height="552" alt="image" src="https://github.com/user-attachments/assets/2fa47eb1-76a8-4faa-8af5-ae0e0e7a3d73" />
 
 Folders: To make the alerts organized...eg: production alerts,development alerts...all alerts belonged to that category grouped into that folder for quick look and understanding.
 
