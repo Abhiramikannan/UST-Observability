@@ -18,7 +18,29 @@
  <img width="1600" height="714" alt="image" src="https://github.com/user-attachments/assets/98883143-0bc1-47f6-82a6-5e1eeb1f7a71" />
 
 ------------------------------------------------------------------------------
-5. 
+5. create alert rule
+
+ <img width="1577" height="769" alt="image" src="https://github.com/user-attachments/assets/217b09fa-c71e-40ca-b827-52bd2ea68105" />
+
+imp: In the query session give the same values in the panel(edit panel -> check min and max values and give)
+
+<img width="1336" height="871" alt="image" src="https://github.com/user-attachments/assets/74db8068-1298-476a-b71c-ea55ed51bd74" />
+
+            The condition says to notify alert if the error rate is above 5%.
+            added folders and also labels
+
+ labels:  type and enter
+
+      <img width="849" height="552" alt="image" src="https://github.com/user-attachments/assets/2fa47eb1-76a8-4faa-8af5-ae0e0e7a3d73" />
+
+Folders: To make the alerts organized...eg: production alerts,development alerts...all alerts belonged to that category grouped into that folder for quick look and understanding.
+
+labels: quickly find the alerts based on the labels. (easy for searching and filtering the alerts)
+
+evaluation behaviour: grafana will check alerts for every x mins and if it met any alert it will move to pending period .Grafana again checks the alert..is it true..and it last for Y mins..it will be sent to firing period and notification alert sents. Until the problem goes away it will be firing when its in firing state.
+
+
+
 
 
 
