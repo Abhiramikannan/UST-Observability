@@ -50,10 +50,13 @@ configuring contact points:
 
  <img width="1296" height="855" alt="image" src="https://github.com/user-attachments/assets/6a710a14-9c6c-4ec9-80ef-4d0c8abeb361" />
 
+output:
+
+<img width="1919" height="1037" alt="image" src="https://github.com/user-attachments/assets/43f7f9e4-84ab-4090-81a7-9e90183394f1" />
 
 
 
-
+PROBLEM: The annottations are not fetching the current data . Because your Grafana TestData DB query (Random Walk) produces a time series (a graph), but the alert annotation expects a single, current number.
 
 
    
