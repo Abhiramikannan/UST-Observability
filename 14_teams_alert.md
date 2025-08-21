@@ -41,6 +41,13 @@ evaluation behaviour: grafana will check alerts for every x mins and if it met a
 
 
 
+configuring contact points:
+
+<img width="1296" height="855" alt="image" src="https://github.com/user-attachments/assets/6a710a14-9c6c-4ec9-80ef-4d0c8abeb361" />
+
+
+
+
 
 
 
