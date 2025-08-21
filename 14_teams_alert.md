@@ -1,3 +1,8 @@
+created a dashboard for golden signals 
+
+<img width="1771" height="687" alt="image" src="https://github.com/user-attachments/assets/896777f9-9dbc-4d92-8504-e31137075b78" />
+
+
 1. create a channel in the teams
 
       <img width="1917" height="1079" alt="image" src="https://github.com/user-attachments/assets/be5acb42-e6ed-4a92-98a8-84c0094b3e41" />
