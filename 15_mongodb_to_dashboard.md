@@ -105,6 +105,29 @@ uploaded the csv content there so we can see in the cluster
 ---------------------------------
 7.connect to Grafana 
 ---------------------
+8. Directly uploading data to grafana
+   ---------------------------------------
+     1. create dashboard
+     2. select datasource as infinity
+     3. select source as inline
+     4. upload ur file
+     5. visualization-> table
+
+        <img width="1641" height="880" alt="image" src="https://github.com/user-attachments/assets/9a94b7c3-436e-48ac-93c5-97d1dc320449" />
+  
+-------------------
+IMP: Grafana considers the column to be text most of the tym unless we set the transformation(convert field type -number)
+---------------
+        <img width="1620" height="849" alt="image" src="https://github.com/user-attachments/assets/6995039d-c8f3-4d56-be09-c4d4d241c568" />
+
+-------------------------
+value mappining -> 
+----------------------
+      can be done to give colour only to particular values
+
+--------------------------------
+
+
 
 
 
