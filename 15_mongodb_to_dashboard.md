@@ -15,4 +15,9 @@ EXCEL: contains raw data + unwanted information(formulas,formatting,charts)
 
 CSV: raw data
 
+-------------------------------------------------------------------------------------------
+2. Create a mongodb atlas free account
+
+   <img width="1919" height="853" alt="image" src="https://github.com/user-attachments/assets/270b035b-138e-47a9-bd22-02eed4a90b42" />
+
 
