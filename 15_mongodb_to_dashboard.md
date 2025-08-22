@@ -126,6 +126,9 @@ value mappining ->
 
 --------------------------------
 
+Dashboard:
+--------------------------
+<img width="1614" height="838" alt="image" src="https://github.com/user-attachments/assets/ecf4e0a2-ccc7-4eb8-9851-cf8fcba707d5" />
 
 
 
