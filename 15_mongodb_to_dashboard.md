@@ -73,7 +73,49 @@ Got an error
 ----------------------
 <img width="1411" height="293" alt="image" src="https://github.com/user-attachments/assets/947786d7-0b53-4c43-aa0d-b8bc442cdbe9" />
 
-side bar-> network access->under security tab-> 
+side bar-> network access->under security tab-> ip address - allow from anywhere
+
+-------------------------------------------
+6. TRY CONNECTING THE MONGODB CLUSTER USING MONGODB COMPASS FROM PERSONAL LAPTOP
+   --------------------------------------------------
+   <img width="1492" height="775" alt="image" src="https://github.com/user-attachments/assets/abc101a5-3128-42a1-86c0-0e3b62258ef5" />
+
+         Connected
+   
+         browse collections->create the database ->can give name to databse and collection
+   
+         imported data in the collection
+   
+         u can see the datas in ur mongodb cluster -> click browse collections
+         
+
+
+   <img width="1169" height="492" alt="image" src="https://github.com/user-attachments/assets/94cd26fc-2290-44b8-aaf2-ff2a693ed148" />
+
+----------------------------------
+can see the database collection called telecom data
+-------------------------------------------------------
+   <img width="1919" height="952" alt="image" src="https://github.com/user-attachments/assets/00018160-37ca-4117-95e3-027bac01b063" />
+
+---------------------------------
+uploaded the csv content there so we can see in the cluster
+----------------------------------------------------------
+<img width="1696" height="580" alt="image" src="https://github.com/user-attachments/assets/342f0f05-e204-4a58-804d-aaf2df1ba7fb" />
+
+---------------------------------
+7.connect to Grafana 
+---------------------
+
+
+
+
+
+
+   
+
+         
+         
+   
 
 
 
