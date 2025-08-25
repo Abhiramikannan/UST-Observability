@@ -152,6 +152,11 @@ Dashboard:
          Group all your customers by their PlanType (e.g., grouping all "Prepaid" customers together).
 
          Calculate the sum of the MonthlyCharge for each of those groups.
+------------------------------------------------
+3. NewlyAdded panel:
+   -----------------------------
+   <img width="775" height="283" alt="image" src="https://github.com/user-attachments/assets/1d8cf81d-2fcb-4822-bc1b-641d9cb12a63" />
+
 
    
 
