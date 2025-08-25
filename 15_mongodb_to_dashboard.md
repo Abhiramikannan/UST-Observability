@@ -130,11 +130,28 @@ Dashboard:
 --------------------------
 <img width="1614" height="838" alt="image" src="https://github.com/user-attachments/assets/ecf4e0a2-ccc7-4eb8-9851-cf8fcba707d5" />
 
+-------------------------------
+25/08/2025
+-------------------------
 
+1. Adding a panel togroup your data and calculate a total value for each group  using the summarize feature of infinity data source . 
+   ----------------------------------------------------------------------------------------
+            summarize field = type of calculation u want to perform -> sum(MonthlyCharge)
+         
+            Summarize By field, type the column you want to group your data by. For your bar chart, this should be PlanType.
+            Parsing options & Result fields: add column ->PlanType ->string
+            summarized result= column ->TotalMonthlyCharge and set its type to number
+         
+<img width="906" height="234" alt="image" src="https://github.com/user-attachments/assets/f03c316e-e874-4541-8bd2-9fb574683d62" />
+<img width="751" height="257" alt="image" src="https://github.com/user-attachments/assets/602ef489-b9cf-472b-b533-495a85d84bab" />
+<img width="766" height="224" alt="image" src="https://github.com/user-attachments/assets/65c010be-989b-43a0-8a95-5a23cd2c1b11" />
 
+-------------------------------------------------------------------------------
+2. What I have done here?
+      -----------------------------------
+         Group all your customers by their PlanType (e.g., grouping all "Prepaid" customers together).
 
-
-
+         Calculate the sum of the MonthlyCharge for each of those groups.
 
    
 
