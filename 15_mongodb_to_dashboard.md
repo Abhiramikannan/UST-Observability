@@ -156,6 +156,12 @@ Dashboard:
 3. NewlyAdded panel:
    -----------------------------
    <img width="775" height="283" alt="image" src="https://github.com/user-attachments/assets/1d8cf81d-2fcb-4822-bc1b-641d9cb12a63" />
+---------------------------
+4. Sort the panel in increasing order
+   -----------------------------------
+   <img width="1254" height="178" alt="image" src="https://github.com/user-attachments/assets/ed900a13-727a-49cc-ae72-510e83315bb4" />
+   <img width="1250" height="391" alt="image" src="https://github.com/user-attachments/assets/e7c08031-d654-4b4d-a6a8-88f06245872f" />
+
 
 
    
