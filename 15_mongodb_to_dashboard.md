@@ -163,6 +163,14 @@ Dashboard:
    <img width="1250" height="391" alt="image" src="https://github.com/user-attachments/assets/e7c08031-d654-4b4d-a6a8-88f06245872f" />
 
 
+-------------------------
+5. TOTAL CUSTOMERS:
+   ------------------------------
+   <img width="942" height="197" alt="image" src="https://github.com/user-attachments/assets/90d8908c-2093-4c98-ab48-ceee38cedc6d" />
+   <img width="1085" height="165" alt="image" src="https://github.com/user-attachments/assets/89713a82-1f0d-43f2-a395-7da4b39f7aa0" />
+
+
+
 
    
 
