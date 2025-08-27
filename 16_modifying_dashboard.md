@@ -92,6 +92,12 @@ url:  d/cbc5mhv/error-details?var-service= Account Management&var-error_class=4x
   <img width="1509" height="298" alt="image" src="https://github.com/user-attachments/assets/ae2fcf00-7882-4641-b622-f4349cede6bf" />
   <img width="1553" height="326" alt="image" src="https://github.com/user-attachments/assets/249ff475-9078-42bd-a664-a9039186a226" />
 
+  -----------------------
+  FINAL DASHBOARD
+  -----------------------
+  <img width="1391" height="730" alt="image" src="https://github.com/user-attachments/assets/df324a4b-4e5b-4cf9-a56a-98872d4302f9" />
+
+
 
 
  
