@@ -29,6 +29,12 @@ ACCOUNT MANAGEMENT PANEL -> 4XX CLIENT ERROR
 <img width="1451" height="812" alt="image" src="https://github.com/user-attachments/assets/bbaa2abf-948e-43fa-a280-0906f4b342aa" />
 <img width="760" height="318" alt="image" src="https://github.com/user-attachments/assets/e5c397d7-fd0c-4409-a13d-b373caeb125f" />
 
+------------------------------------
+5xx errors
+-----------------------------------
+<img width="1547" height="838" alt="image" src="https://github.com/user-attachments/assets/e4eb724f-7085-4863-a55a-3b626c2d174f" />
+<img width="1537" height="405" alt="image" src="https://github.com/user-attachments/assets/8f3fd474-a20c-4c41-bacf-b309ab419188" />
+
 
 
 
