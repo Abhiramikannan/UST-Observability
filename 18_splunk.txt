@@ -54,3 +54,61 @@
               can save each specified search as 1 panel
               eg: ou run one specific search (for example, to count the number of failed logins), and that single count will be displayed in one panel on your dashboard.
               Each panel is dedicated to showing the result of its own specific search.
+
+7. Transforming commands?
+                  Transforming commands in Splunk change your raw data into a summarized view, like turning a long list of events into a simple chart or table.
+
+8. BOOLEAN OPERATIONS IN SPLUNK?
+            AND
+            OR
+            NOT
+            ()
+            ""
+            \""
+      AND is used to find events that contain all of the specified terms. This narrows your search. For example, login AND failed will only show events that have both the word "login" and the word "failed."
+      OR is used to find events that contain at least one of the specified terms. This broadens your search. For example, error OR warning will show you any event that contains either "error" or "warning" (or both).
+      NOT is used to exclude a specific term from your search results. For example, failed NOT password will show all events with the word "failed" but will remove any that also have the word "password." You can also use a minus sign         (-) as a shorthand for NOT, such as -password
+      You can also use parentheses () to group terms and control how the Boolean logic is applied. For example, (login AND failed) OR error will find events that are either "login failed" or just the word "error."
+
+9. Splunk search querry?
+            index=network sourcetype=cisco_wsa_squid usage=Violation 
+            | stats count(usage) as Visits by cs_username 
+            | search Visits > 1
+
+      | -> passes the outcome to the next
+      stats count(usage) as Visits: This is a transforming command. It tells Splunk to count the number of times usage appears. It renames the count to a new field called Visits.
+      search Visits > 1: This tells Splunk to show only the results where the new field Visits is greater than 1.
+
+10. KNOWLEDGE OBJECTS?
+             knowledge objects are things you create and save so Splunk can use them to better understand your data. They are the rules and definitions you build to make your data smarter.
+             eg: When you create a search command and save it to use again later, that is a type of knowledge object called a Saved Search or Report.
+                  It's a way to save your work so you don't have to rebuild the search every time, making it much easier and faster for you and others to get the same results.
+            lookup is a knowledge object -> Adds extra information to your data based on a separate file you provided.
+            Report is a knowledge object-> Re-runs the same search every time.
+
+11. 3 ROLES ?
+            ADMIN
+            POWER
+            USER
+
+12. KNOWLEDGE OBJECTS ARE GROUPED INTO 5 CATEGORIES?
+            Data Classification, -> classifying data into diff categories(tags to group similar events)
+            Data Normalization,-> This is the process of cleaning and standardizing your data. eg: making sure all the dates are in the same format 
+            Data Enrichment, and -> This step adds new, valuable information to your existing data. For instance, if your data has an IP address, you can "enrich" it by adding the city and country that IP address is from.
+                                    This is often done using a lookup table
+            Data Interpretation -> This is the final step where you look at the cleaned, enriched data to find meaningful insights, like trends or patterns. This is where you might create charts or reports to visualize your findings.
+                                    Data Interpretation is done by creating Reports and Dashboards which use your classified, normalized, and enriched data to find insights.
+
+13. can we add the report as panels in the dashboard in splunk?
+            yes
+            When you save a search as a report, it becomes a knowledge object that you can reuse. 
+            One of the most common ways to reuse a report is to add it as a panel on a dashboard. 
+            This allows you to display the results of that report alongside other information, providing a comprehensive, high-level view of your data in a single place.
+
+14. can also edit the drill down in each panel..why it is used?
+            detailed view of information
+
+15. what is dashboard studio?
+            Dashboard Studio is a modern dashboard-building environment in Splunk.
+            easy to customize ur dashboard.
+            
