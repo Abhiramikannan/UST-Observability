@@ -1,0 +1,56 @@
+1. SPLUNK:
+      like a search engine for all the machine generated data from ur computer,apps,devices..
+      collects all the messy,unstructured data like login failed,user login and organizes it into a searchable format.
+      it will make a label for similar data -> easier for search
+      This process makes it easy to find and analyze specific events across all your systems, even if they're from different types of devices or applications.
+      
+2. What is a Splunk Instance?   
+          A Splunk instance is a single installation of the Splunk software. 
+          Think of it as a single copy of the program running on a computer.
+          In a small setup, one instance can handle everything: taking in the data, organizing it, and letting you search it.
+          In larger companies, they often use many Splunk instances that work together.
+          Some are dedicated to collecting and organizing data (these are called indexers), and others are for running searches and showing dashboards (these are called search heads).
+          This setup allows Splunk to handle massive amounts of data and searches at the same time without slowing down.
+          
+3. What does "Ingesting the Data" mean?
+            Ingesting the data simply means getting the data into Splunk. It's the first step in the entire process
+            Imagine Splunk as a giant storage locker for all your digital notes and logs. 
+            Ingesting is the process of physically moving those notes from where they were created (like a web server or an app) and putting them inside that storage locker.
+            Splunk can ingest data in different ways:
+                        forwarders: like a delivery trucks put on all ur computers where they collect logs files as they are created and sent them to main splunk instance
+                        API and NETWORK PORTS: 
+                              NETWORK PORT : Its like a numbered door (eg: port 80)
+                                             each computer have many network ports where the applications are listening to
+                                             Imagine ur splunk instance is like a house
+                                             To get the data inside the house(splunk instance), you need to open the door
+                                             Each network port is like a different numbered door on the house
+                              Splunk Listens at the Door:
+                                             You can tell Splunk to stand at a specific door and wait for data to arrive. This is called "listening" on a port
+                              HEC (HTTP Event Collector) is a Special Mailbox:
+                                              Special Mailbox (HEC): HEC is like a special, secure mailbox you put outside your house (Splunk).
+                                              Applications can directly drop their data into this mailbox using a specific key (a "token").
+                                              This is a very clean and direct way to get data in, especially from modern web applications.
+                                              the data from different application talk to eachother using API so using spluck you can create a input acalled hec and it can sent the data to the port where splunk is listening
+                              Network Ports (TCP/UDP):
+                                            some data can be tranferred through port not api
+                                            sent log data over internet through certain ports
+                                            the data  comes through the port of tcp and udp can be fetched..
+                                            by setting up the port the splunk can listen on that port and grab the information
+                              
+                                                             
+
+4. Can Splunk get data from all environments?
+      yes. 
+      from cloud(aws,google),computers
+      It uses lightweight agents called forwarders to collect data from remote machines and forward it to a central Splunk instance.
+
+5. SPLUNK USES A DATABASE-SPL?
+           Splunk works with unstructured data (like logs), not the neat, organized tables of a traditional database. 
+           You don't use a standard database query language like SQL. 
+           Instead, you use Splunk's own flexible language, SPL (Search Processing Language), to find patterns and relationships within the data.
+           This makes it a powerful search tool, not a traditional database.
+           
+6. Dashboard and panels in splunk?
+              can save each specified search as 1 panel
+              eg: ou run one specific search (for example, to count the number of failed logins), and that single count will be displayed in one panel on your dashboard.
+              Each panel is dedicated to showing the result of its own specific search.
