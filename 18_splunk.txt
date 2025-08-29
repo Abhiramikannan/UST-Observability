@@ -112,3 +112,107 @@
             Dashboard Studio is a modern dashboard-building environment in Splunk.
             easy to customize ur dashboard.
             
+16. By default, who is able to view a saved report?
+
+                  Any user with the viewreports capability
+                  
+                  The user who created it -> CORRECT
+                  
+                  The user who created it or any user with an admin role
+                  
+                  Any user with a power or admin role
+17. What is the most efficient way to limit search results returned?
+
+                  host
+                  
+                  time
+                  
+                  indeX
+                  
+                  source
+
+18. search will active upto  10 mins
+
+19. DEFAULT ROLE OF SPLUNK ENTERPRICES:
+            USER
+            POWER
+            ADMIN
+
+20. Which search mode behaves differently depending on the type of search being run?
+
+                  Variable
+                  
+                  Smart 
+                  
+                  Verbose
+                  
+                  Fast
+21. By default, which of the following roles are required to share knowledge objects?
+
+                  Admin
+                  
+                  Power
+                  
+                  User
+                  
+                  Manager
+
+22. Which of the following searches will return results containing the terms failed, password, or failed password?
+
+                  failed OR password OR "failed password"
+                  
+                  failed OR password -> CORRECT
+                  
+                  failed password OR "failed password"
+                  
+                  fail*
+
+23. Which Splunk infrastructure component stores ingested data?
+
+      Index 
+      
+      Data models
+      
+      Dashboards
+      
+      Datasets
+
+24. Which command can be used to further filter results in a search?
+
+      search 
+      
+      subset
+      
+      subsearch
+      
+      filter
+
+25. When a search is run, in what order are events returned?
+
+            Reverse chronological order 
+            
+            Alphanumeric order
+            
+            Chronological order
+            
+            Reverse alphanumeric order
+
+26. Which character is used in a search before a command?
+
+            A quotation mark (")
+            
+            A backtick (`)
+            
+            A tilde (~)
+            
+            A pipe (|) 
+
+27. What determines the timestamp shown on returned events in a search?
+
+            Timestamps are displayed in epoch time
+            
+            The time zone where the event originated
+            
+            The time zone defined in user settings 
+            
+            Timestamps are displayed in Greenwich Mean Time
