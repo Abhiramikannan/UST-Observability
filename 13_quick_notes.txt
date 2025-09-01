@@ -67,3 +67,13 @@
                               reliability means:  users should trust the system
                                                   available when they needs
                                                   works well without any unexpected failure
+
+8. 4xx ANS 5XX ERRORS?
+
+                    4xx errors → Client-side issue
+                    The problem is in the request sent by the user/browser.
+                    Example: Trying to open a page that doesn’t exist → 404 Not Found
+                    
+                    5xx errors → Server-side issue
+                    The problem is in the server while processing the request.
+                    Example: Website is up, but the server crashes while handling your request → 500 Internal Server Error
