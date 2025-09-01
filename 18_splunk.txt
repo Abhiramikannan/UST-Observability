@@ -317,6 +317,10 @@ FIELDS IN SEARCH RESULTS:
       raw
 
 event: text ..like logs (user logged,A file being saved.)
+DEFAULT SELECT FIELDS:
+      HOST
+      SOURCE
+      SOURCETYPE
 
             --------------------------------------------------
       1. EVAL:
@@ -326,4 +330,281 @@ index=network sourcetype=cisco_wsa_squid
 | stats sum(sc_bytes) as Bytes by usage
 | eval bandwidth = Bytes/1024/1024
 
-      
+This search first calculates the total bytes for each type of network usage. The eval command then converts those total bytes into a more readable format (megabytes) and stores it in a new field called bandwidth
+
+-------------------------------------------------------------
+FIELD EXTRACTION:
+      used to extract fields from ur data
+-------------------------------------------------------
+COMMAND EXTRACTION:
+      |rex
+      |erex
+
+1. erex: The erex command is used to simplify the process of field extraction. It automatically generates a regular expression for you based on examples you provide.
+-----------
+index=games sourcetype=SimCubeBeta | erex Character fromfield=_raw examples="pixie, Kooby"
+            This search looks in the games index for data from SimCubeBeta. The erex command then tells Splunk to create a new field named Character by looking at the raw data (_raw) and using "pixie" and "Kooby" as examples of what to extract.
+
+
+index=games sourcetype=SimCubeBeta | erex Character fromfield=_raw examples="pixie, Kooby" | where isnull(Character)
+                  This query first extracts a new field called Character using erex. The where command then filters the results to show only the events where the Character field is null (meaning, it couldn't find a character to extract). This is a useful way to find and fix events that didn't follow the pattern you expected.
+
+click the job in the side to see REGULAR EXPRESSION.
+
+
+2. rex:
+--------------
+      index=games sourcetype=SimCubeBeta | rex field=_raw "^\S*\s*\h(?<User>[a-zA-Z0-9_-]+)@(?<Character>[a-zA-Z0-9-]+)"
+            This search query is used to find and extract two new fields—User and Character—from your raw event data.
+            | rex field=_raw "...": This is the command that applies a regular expression to the raw event data (_raw). The complex pattern in quotes is what tells Splunk exactly what to find and extract.
+            (?<User>[a-zA-Z0-9_-]+): This is the first part of the pattern. It tells Splunk to look for a username and save it into a new field called User.
+            @: This is a literal character that acts as a separator.
+            (?<Character>[a-zA-Z0-9-]+): This is the second part of the pattern, which finds the character name and saves it into a new field called Character
+
+
+The Difference between rex and erex:
+-------------------------------------------
+rex (Regular Expression): This is the manual way to extract fields. You have to write the entire regular expression yourself. This gives you very precise control but requires knowledge of regular expressions. It's used when you know the exact pattern you need to find.
+
+erex (Extract Regular Expression): This is the automatic way. You don't have to write a regular expression. Instead, you provide a few examples of the data you want to extract, and Splunk automatically figures out the pattern for you. It's much easier for users who aren't familiar with regular expressions.
+-------------------------------------------
+
+ENRICHING DATA WITH KNOWLEDGE OBJECTS:
+-----------------------------------------
+Enriching data with knowledge objects means using reusable, saved settings in Splunk to add new, valuable information to your events.The most common way to do this is with a lookup table. For example, if your logs only show an IP address like 10.1.2.3, you can use a lookup to automatically add the server's name (Sales_Server) and its location (Headquarters) to every event with that IP.
+
+This process adds context and makes your data much more useful for searching, reporting, and analysis.
+-------------------------------------------------------------
+
+
+
+VISUALIZATION:
+------------------------------------------------
+fields - fieldname fieldname : all fields after - should be affected if we give - and space after that
+fields -fieldname fieldname : only the field behind the - will get affected.
+
+|table
+--------------
+index=web sourcetype=access_combined product_name=*
+| table JSESSIONID product_name price
+
+This search finds all web access events that include a product_name. It then displays a table showing only the JSESSIONID, product_name, and price fields for each event. All other fields are dropped.
+The table command is a transforming command used to create a simple table from your search results. It's a key part of the search process because it lets you quickly see only the fields you care about.
+
+adding fields to limit the search:
+      index=web sourcetype=access_combined product_name=* | fields JSESSIONID price product_name
+      | table JSESSIONID price product_name
+
+      The | fields command then tells Splunk to keep only the JSESSIONID, price, and product_name fields. All other fields in the events are dropped at this point.
+
+----------------------------------
+|dedup command:
+
+      index=web sourcetype=access_combined product_name=*
+      | fields JSESSIONID price product_name
+      | table JSESSIONID price product_name
+       | dedup JSESSIONID price
+
+Remove duplicated values
+The dedup command is used to remove duplicate events from your search results. When you use dedup, Splunk keeps the first event that it finds with a unique combination of the fields you specify and discards all the rest. It's a useful way to clean up your search results and get a list of unique values.
+
+----------------------------------------------
+|addtotals
+======================================
+index=sales sourcetype=vendor_sales product_name=* VendorCountry="United States" OR VendorCountry="Canada"
+| chart sum(price) over product_name by VendorCountry
+| addtotals col=true
+
+
+addtotals → Adds a row total (sums down the columns).
+addtotals col=true → Adds a column total (sums across the row).
+
+without col=true example:
+| product\_name | United States | Canada |
+| ------------- | ------------- | ------ |
+| Laptop        | 5000          | 3000   |
+| Mobile        | 7000          | 2000   |
+| **Total**     | 12000         | 5000   |
+
+with col=true:
+| product\_name | United States | Canada | **Total** |
+| ------------- | ------------- | ------ | --------- |
+| Laptop        | 5000          | 3000   | 8000      |
+| Mobile        | 7000          | 2000   | 9000      |
+
+
+with label:
+======================
+index=sales sourcetype=vendor_sales product_name=* VendorCountry="United States" OR VendorCountry="Canada"
+| chart sum(price) over product_name by VendorCountry
+| addtotals col=true label="Total Sales" labelfield="product_name"
+
+without label field:
+            | addtotals col=true label="Total Sales"
+      The extra column appears, but in the product_name column, the cell for that totals row is blank.
+
+| product\_name | United States | Canada | Total Sales |
+| ------------- | ------------- | ------ | ----------- |
+| Laptop        | 5000          | 3000   | 8000        |
+| Mobile        | 7000          | 2000   | 9000        |
+| *(blank)*     | 12000         | 5000   | 17000       |
+
+With labelfield="product_name":
+            | addtotals col=true label="Total Sales" labelfield="product_name"
+Now the totals row is not blank in product_name. Instead, it shows the word “Total Sales”.
+
+| product\_name   | United States | Canada | Total Sales |
+| --------------- | ------------- | ------ | ----------- |
+| Laptop          | 5000          | 3000   | 8000        |
+| Mobile          | 7000          | 2000   | 9000        |
+| **Total Sales** | 12000         | 5000   | 17000       |
+
+Without labelfield → that row is blank.
+With labelfield="product_name" → it displays the text you gave in label.
+
+
+=====================================================
+index=sales sourcetype=vendor_sales product_name=* VendorCountry="United States" OR VendorCountry="Canada"
+| chart sum(price) over product_name by VendorCountry
+| addtotals col=true label="Total Sales" labelfield="product_name" fieldname="Total By Product"
+
+
+fieldname="Total By Product" → Renames the totals column itself from the default “Total” (or “Total Sales” if you used label) into “Total By Product”.
+
+| product\_name   | United States | Canada | **Total By Product** |
+| --------------- | ------------- | ------ | -------------------- |
+| Laptop          | 5000          | 3000   | 8000                 |
+| Mobile          | 7000          | 2000   | 9000                 |
+| **Total Sales** | 12000         | 5000   | 17000                |
+=============================================================================
+
+index=sales sourcetype=vendor_sales product_name=* VendorCountry="United States" OR VendorCountry="Canada"
+| chart sum(price) over product_name by VendorCountry
+| addtotals col=true label="Total Sales" labelfield="product_name" fieldname="Total By Product" row=false
+
+row=false → Prevents adding a totals row at the bottom.
+
+| product\_name | United States | Canada | Total By Product |
+| ------------- | ------------- | ------ | ---------------- |
+| Laptop        | 5000          | 3000   | 8000             |
+| Mobile        | 7000          | 2000   | 9000             |
+
+There is NO extra row at the bottom (because of row=false).
+
+============================================================================
+|fieldformat
+===============================================
+index=sales sourcetype=vendor_sales product_name=*
+| stats sum(price) as Total by product_name
+| addtotals col=t label="Total Sales" labelfield="product_name"
+| fieldformat Total = "$" + tostring(Total, "commas")
+
+fieldformat Total = "$" + tostring(Total, "commas")
+Formats the Total field.
+Adds $ sign in front.
+Converts numbers into comma-separated format (e.g., 12,000 instead of 12000).
+
+| product\_name   | Total    |
+| --------------- | -------- |
+| Laptop          | \$5,000  |
+| Mobile          | \$7,000  |
+| **Total Sales** | \$12,000 |
+
+
+SPLUNK TRANSFORMMING COMMANDS:
+==================================
+top
+rare
+stats
+chart
+timechart
+trendline
+
+
+1. top:
+
+index=sales sourcetype=vendor_sales
+| top Vendor
+
+
+The top command finds the most common values in a field.
+Here, it looks at the Vendor field.
+By default, it returns the top 10 most frequent Vendors along with:
+
+count → how many times each Vendor appeared
+percent → percentage of total events
+
+
+Example:
+
+Suppose your sales data has these vendors:
+Vendor A (100 sales)
+Vendor B (70 sales)
+Vendor C (30 sales)
+The top Vendor output will look like:
+
+| Vendor   | count | percent |
+| -------- | ----- | ------- |
+| Vendor A | 100   | 50%     |
+| Vendor B | 70    | 35%     |
+| Vendor C | 30    | 15%     |
+
+
+top Vendor helps you quickly find the most popular vendors in the dataset.
+You can also customize it, e.g., top 5 Vendor (only top 5 vendors) or top Vendor limit=3 (top 3 vendors).
+=========================================
+index=sales sourcetype=vendor_sales
+| top Vendor limit=20
+
+limits the vendors upto 20
+=========================================
+
+
+TOP COMMAND CLAUSE
+=======================
+countfield = string   ->COUNT COLUMN WILL BE RENAMED AS  STRING
+percentfield = string
+showcount = true/false
+      | top Vendor showcount=false
+                  Will not display the count column.
+
+showperc = true/false
+      | top Vendor showperc=false
+            Will not display the percent column.
+
+showother = true/false
+
+================================================
+
+CLAUSE:
+      1. BY:
+            index=sales sourcetype=vendor_sales
+            | top product_name by Vendor limit=3 countfield="Number of Sales" showperc=false
+
+Search in the sales index with data coming from vendor_sales sourcetype.
+For each Vendor, find the most common product_name values.
+Show only the top 3 products per Vendor.
+Rename the count column (normally just count) to Number of Sales.
+Don’t show the percentage column.
+
+====================================
+|rare
+=======================
+The rare command in Splunk is a powerful tool used to identify and display the least common values in a dataset.
+============================
+
+
+COMMON STAT FUNCTIONS
+===============================
+sum
+count
+distinct count
+average
+min
+max
+value
+list
+====================================
+
+usenull=f  -> to remove the null
+useother=f ->to remove other column
