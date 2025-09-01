@@ -614,3 +614,8 @@ Trendchart:
       sma(Simple Moving Average – equal weights)
       ema (Exponential Moving Average – higher weight to recent)
       wma (Weighted Moving Average – manual weights)
+
+
+|iplocation command:
+==========================
+add location information from a 3rd party database to an event
