@@ -216,3 +216,114 @@
             The time zone defined in user settings 
             
             Timestamps are displayed in Greenwich Mean Time
+
+
+
+1/9/25
+-------------------------------------------
+USING FIELDS:
+-------------------------------------
+sourcetype=linux_search  -> returns only that events.(values)
+field names are case sensitive,values are not
+
+FIELD OPERATORS:
+      =
+      != 
+      These are used in numerical and strings
+
+      >
+      <
+      >=
+      <= 
+      these are used with numericals.
+
+fields can added into search by clicking on the value in the fields window
+can also use boolean in field value pair
+
+eg:
+index=security sourcetype=linux_secure action=failure NOT (host="mail*" OR host=www1)
+
+index=security sourcetype=linux_secure action=failure: This part finds all events from the security index that are Linux security logs and have a "failure" action.
+
+NOT (host="mail*" OR host=www1): This is a Boolean filter. It excludes any of the previous results where the host name either starts with "mail" (the asterisk is a wildcard) or is exactly "www1."
+
+------------------------------------
+The Difference between != and NOT:
+----------------------------------------------------
+            != status should be there and check condition
+            Not: if status not there also it will return all the events after excluding status=200
+
+      Imagine you have three events:
+
+      status=200 user=john
+      status=404 user=jane
+      user=mary (no status field)
+
+Search for status!=200: This would return only event #2 (status=404) because event #1 is a match and event #3 doesn't even have a status field to compare.
+
+Search for NOT status=200: This would return events #2 and #3. It excludes event #1 because it has status=200, but includes event #3 because its status field is not 200 (it's null or non-existent).
+---------------------------------------------
+OR:
+--------------------------------------------
+             index=web (status=500 OR status=503 OR status=505)
+                  tells splunk to look only in the index=web first
+                  then go to paranthesis to group the condition -> status is either 500 or 503 or 505
+
+-----------------------------------------------
+IN:
+----------------------------------------------
+      index=web status IN ("500", "503", "505")
+            shortcut for a series of OR operator
+
+-----------------------------------------------------
+
+PLACE FIELDS COMMAND BEFORE STATS:
+----------------------------------------
+index=web status IN ("500", "503", "505")
+| fields status
+| stats count by status
+      
+      placing the fields command before the stats command is a best practice for search performance.
+      The fields command is a search filter. It tells Splunk to keep only the fields you specify.
+      The stats command is a powerful transforming command in Splunk. It's used to calculate statistics on your search results, like counts, averages, sums, and totals.
+
+
+also can give + to include the field and - to exclude the field 
+
+      index=web status IN ("500", "503", "505")
+      | fields +status
+      | stats count by status
+
+------------------------------------------------
+RENAME:
+      index=web status IN ("500", "503", "505")
+      | fields status
+      | stats count by status
+      | rename status as "HTTP Status", count as "Number of Events"
+
+            it changes the column name in the final tables.
+            status will be HTTP Status and Count will be Number of events.
+-------------------------------------------------------------------------
+
+FIELDS IN SEARCH RESULTS:
+      When Splunk ingests data, it automatically extracts a few key pieces of information from each event. These pieces are called default fields.
+      These fields always include the source, sourcetype, and host. Splunk also identifies and extracts the timestamp of the event, which it stores as the _time field.
+      This process happens automatically as soon as the data comes into Splunk, so you can immediately begin searching and filtering using these fields.
+
+      host
+      source
+      sourcetype
+      time
+      raw
+
+event: text ..like logs (user logged,A file being saved.)
+
+            --------------------------------------------------
+      1. EVAL:
+            The eval command is a powerful command that creates a new field in your search results by evaluating an expression. You can use eval to perform calculations, convert data types, or manipulate field values.
+
+index=network sourcetype=cisco_wsa_squid
+| stats sum(sc_bytes) as Bytes by usage
+| eval bandwidth = Bytes/1024/1024
+
+      
