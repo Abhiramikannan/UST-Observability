@@ -608,3 +608,9 @@ list
 
 usenull=f  -> to remove the null
 useother=f ->to remove other column
+=================================
+
+Trendchart:
+      sma(Simple Moving Average – equal weights)
+      ema (Exponential Moving Average – higher weight to recent)
+      wma (Weighted Moving Average – manual weights)
