@@ -619,3 +619,65 @@ Trendchart:
 |iplocation command:
 ==========================
 add location information from a 3rd party database to an event
+
+QUIZ
+===================
+Which of the following commands can return a count of all events matching search criteria over a specified time period? 
+where
+stats ->correct
+match
+count
+
+Which command changes the appearance of field values?
+
+rename
+fieldformat ->correct
+fields
+format
+
+
+In a single series data table, which column provides the x-axis values for a visualization?
+
+The third column
+The fourth column
+The second column
+The first column -> correct
+
+Which clause can be used with the rare command to specify whether or not a percentage column is created?
+
+showperc ->correct
+displayperc
+perccol
+percentage
+
+Which argument can be used with the geostats command to control the column count?
+
+collimit -> correct
+latfield
+globallimit
+longfield
+
+
+Which command can be used to exclude fields from search results?
+
+dedup
+exclude
+fields -> correct
+remove
+
+
+How can the order of columns in a table be changed?
+
+By changing the order of fields specified in the fields command
+By dragging and dropping in the table interface
+By selecting the "Move column" option in a column header's dropdown
+By changing the order of fields specified in the table command
+
+Which type of default map visualization uses shading to represent relative metrics?
+✅ Choropleth Map
+
+When using the timechart command, which axis represents time?
+✅ X-axis
+
+How many columns are displayed in a visualization by default when using the chart command?
+✅ 10
