@@ -750,4 +750,117 @@ Q. WHAT IS @?
        @h → Start of the current hour (like 10:00, 11:00, etc.).
        @m → Start of the minute (like 10:15:00).
       
-    
+---------------------------------------------------------------------    
+Q. earliest=@d+3h what it means?
+            @d =start of the day (00:00 =12 o clock)
+            +3h = 12+3 hr =3 o clock
+            from 3 o clock to current time(9.45 am)
+      from 3 o clock it take logs
+
+-------------------------------------------------------------------------
+Q. DEFAULT TIME FIELDS:
+
+Whenever you upload data into Splunk, it automatically attaches **time-related fields** to each event. These fields help you search and filter events by time.
+
+### The main **default time fields** are:
+
+1. **\_time**
+
+   * The most important time field.
+   * It shows the timestamp of the event.
+   * Example: `2025-09-01T13:30:00.000+05:30`
+
+2. **\_indextime**
+
+   * The time when Splunk **actually stored (indexed)** the event.
+   * Example: You upload logs today, but the log line has a date from last week → `_time` is last week’s date, `_indextime` is today.
+
+3. **date\_year**
+
+   * Year of the event time.
+   * Example: `2025`
+
+4. **date\_month**
+
+   * Month of the event time.
+   * Example: `9` (for September)
+
+5. **date\_mday**
+
+   * Day of the month.
+   * Example: `1`
+
+6. **date\_hour**
+
+   * Hour of the event.
+   * Example: `13`
+
+7. **date\_minute**
+
+   * Minute of the event.
+   * Example: `30`
+
+8. **date\_second**
+
+   * Second of the event.
+   * Example: `45`
+
+---
+
+✅ Example:
+If an event happened at **1:30:45 PM, Sept 1, 2025**, the default fields look like:
+
+* `_time = 2025-09-01 13:30:45`
+* `date_year = 2025`
+* `date_month = 9`
+* `date_mday = 1`
+* `date_hour = 13`(stores hours of the event)
+* `date_minute = 30`
+* `date_second = 45`
+
+---
+
+----------------------------------------------------------
+IMP NOTES:
+      earliest =-2d@d means 2 days back at the begining of the day 12 o clock(midnight)
+      latest=@d means until today morning 12 o clock.
+
+===========================================================
+QUERRY:
+index=sales sourcetype=vendor_sales earliest=-2d@d latest=@d date_hour>=2 AND date_hour<5 | bin span=1h _time | stats sum(price) as "Hourly Sales" by _time
+
+means 2 day back from 12 am to today 12 am ..
+date_hour>=2 AND date_hour<5 → Only keep events that happened between 2 AM and 5 AM.
+Bucketing Time: | bin span=1h _time → Group (bucket) events into 1-hour blocks.
+                                    Example: 2:00–3:00, 3:00–4:00, 4:00–5:00.
+
+Aggregation: | stats sum(price) as "Hourly Sales" by _time → For each hour (_time):
+            Add up (sum) all the values in the price field. Show that total as Hourly Sales.
+
+
+OUTPUT:
+| \_time           | Hourly Sales |
+| ---------------- | ------------ |
+| 2025-08-30 02:00 | 1200         |
+| 2025-08-30 03:00 | 900          |
+| 2025-08-30 04:00 | 500          |
+| 2025-08-31 02:00 | 800          |
+| 2025-08-31 03:00 | 1100         |
+| 2025-08-31 04:00 | 650          |
+
+--------------------------------------------------------------------------------
+QUERRY:
+index=sales sourcetype=vendor_sales earliest=-2d@d latest=@d date_hour>=2 AND date_hour<5 | bin span=1h _time | stats sum(price) as "Hourly Sales" by _time| eval Hour=strftime(_time,"%b %d, %I%p")
+
+Format the hour: | eval Hour=strftime(_time,"%b%d,%i%p")
+
+strftime → formats _time into a readable string.
+%b = month abbreviation (e.g., Sep)
+%d = day (01–31)
+%i = minutes (00–59)
+%p = AM/PM
+
+OUTPUT:
+Sep 01, 02AM
+Sep 01, 03AM
+Sep 01, 04AM
