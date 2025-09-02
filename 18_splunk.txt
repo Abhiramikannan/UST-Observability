@@ -681,3 +681,8 @@ When using the timechart command, which axis represents time?
 
 How many columns are displayed in a visualization by default when using the chart command?
 ✅ 10
+-----------------------------------------------
+
+2/9/25
+----------------------------------------
+_time field: will take the timestamp
