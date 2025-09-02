@@ -686,3 +686,43 @@ How many columns are displayed in a visualization by default when using the char
 2/9/25
 ----------------------------------------
 _time field: will take the timestamp
+
+
+
+### 🔍 Searching by Time in Splunk:
+---------------------------------------------
+
+* Every log or event in Splunk has a **time stamp** (the time when it happened).
+* When you search, you usually don’t want *all* data, only from a certain time.
+* Example:
+
+  * "Last 15 minutes" → shows only events that happened in the last 15 minutes.
+  * "Yesterday" → shows only yesterday’s events.
+  * "Between Aug 25 and Aug 28" → shows only events in that range.
+
+👉 In Splunk, you can set this in the **time picker** (top-right of the search bar).
+
+---
+
+### ⏰ Time Formatting in Splunk
+-----------------------------------------
+
+* Time in Splunk is stored in a standard format (like `2025-09-01 14:30:00`).
+* But when showing or searching, Splunk can **format** it differently.
+* Example formats:
+
+  * `MM/DD/YYYY` → 09/01/2025
+  * `DD-MM-YYYY` → 01-09-2025
+  * `HH:MM:SS` → 14:30:00
+
+👉 You can use commands like `eval` and functions (e.g., `strftime`) to **change how the time looks** in your results.
+
+---
+
+✅ In short:
+
+* **Searching by time** = filter events by time range.
+* **Time formatting** = how you *display* or *convert* the time.
+
+
+
