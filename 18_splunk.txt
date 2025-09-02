@@ -824,7 +824,8 @@ If an event happened at **1:30:45 PM, Sept 1, 2025**, the default fields look li
 IMP NOTES:
       earliest =-2d@d means 2 days back at the begining of the day 12 o clock(midnight)
       latest=@d means until today morning 12 o clock.
-
+      bin → Used to "bucket" numeric or time fields into ranges.
+      span=5000 → Defines the size of each bucket.
 ===========================================================
 QUERRY:
 index=sales sourcetype=vendor_sales earliest=-2d@d latest=@d date_hour>=2 AND date_hour<5 | bin span=1h _time | stats sum(price) as "Hourly Sales" by _time
@@ -852,15 +853,157 @@ OUTPUT:
 QUERRY:
 index=sales sourcetype=vendor_sales earliest=-2d@d latest=@d date_hour>=2 AND date_hour<5 | bin span=1h _time | stats sum(price) as "Hourly Sales" by _time| eval Hour=strftime(_time,"%b %d, %I%p")
 
-Format the hour: | eval Hour=strftime(_time,"%b%d,%i%p")
+Format the hour: | eval Hour=strftime(_time,"%b%d,%I%p")
 
 strftime → formats _time into a readable string.
 %b = month abbreviation (e.g., Sep)
 %d = day (01–31)
-%i = minutes (00–59)
+%I = minutes (00–59)
 %p = AM/PM
 
 OUTPUT:
 Sep 01, 02AM
 Sep 01, 03AM
 Sep 01, 04AM
+==========================================================================
+QUERRY:
+index=sales sourcetype=vendor_sales earliest=-2d@d latest=@d date_hour>=2 AND date_hour<5 
+| bin span=1h _time 
+| stats sum(price) as "Hourly Sales" by _time
+| eval Hour=strftime(_time,"%b%d,%I%p") 
+| table Hour "Hourly Sales"
+
+
+Show only two columns in the output:
+      Hour (formatted time)
+      "Hourly Sales" (total sales that hour)
+====================================================================================
+QUERRY:
+index=web sourcetype=access_combined
+| stats sum(price) as revenue by product_name
+| bin revenue span=5000
+
+bin → Used to "bucket" numeric or time fields into ranges.
+span=5000 → Defines the size of each bucket.
+Here, the revenue values are grouped into ranges of 5000.
+So, if revenue = 7200, it will fall into the 5000–9999 bucket.
+If revenue = 10500, it will fall into the 10000–14999 bucket.
+If revenue = 15300, it will fall into the 15000–19999 bucket.
+
+=========================================================
+FORMATTED TIME:
+Common strftime Format Codes:
+| Specifier | Meaning                | Example   |
+| --------- | ---------------------- | --------- |
+| `%Y`      | Year (4 digits)        | 2025      |
+| `%y`      | Year (2 digits)        | 25        |
+| `%m`      | Month (01–12)          | 09        |
+| `%b`      | Abbreviated month name | Sep       |
+| `%B`      | Full month name        | September |
+| `%d`      | Day of month (01–31)   | 01        |
+| `%H`      | Hour (00–23)           | 14        |
+| `%I`      | Hour (01–12)           | 02        |
+| `%p`      | AM/PM                  | PM        |
+| `%M`      | Minute (00–59)         | 30        |
+| `%S`      | Seconds (00–59)        | 05        |
+
+=======================================================
+Q. DIFF B/W STRPTIME AND STRFTIME:
+            1. strftime: Converts an epoch time (numeric, in seconds) → into a formatted string (human-readable date/time).
+                        | eval mytime=strftime(_time,"%Y-%m-%d %H:%M:%S")
+                        If _time = 1735737600, output: 2025-01-01 00:00:00.
+
+            2. strptime:
+                        Converts a formatted date/time string → into an epoch time (numeric).
+                        | eval epoch=strptime("2025-01-01 00:00:00","%Y-%m-%d %H:%M:%S")
+                              Output: 1735737600
+
+strftime = Epoch → String
+strptime = String → Epoch
+================================================================
+Q. What is timechart?
+
+timechart is used when you want to see your data over time (like sales per day, errors per hour, users per minute).
+It automatically buckets events by time (1 minute, 1 hour, 1 day, etc.) and applies statistics on them.
+So instead of just counting or summing overall, it shows how values change over time.
+eg:
+index=sales
+| timechart span=1h sum(price) as Hourly_Revenue
+
+
+| \_time (hour) | Hourly\_Revenue |
+| ------------- | --------------- |
+| 9:00 AM       | 1200            |
+| 10:00 AM      | 1500            |
+| 11:00 AM      | 2000            |
+
+Revenue changing per hr
+=====================================================================
+Q. Why use timechart?
+
+To visualize trends (line chart, bar chart, etc.).
+To monitor changes over time (like errors spiking at 3 AM).
+To analyze seasonality (daily/weekly/monthly trends).
+
+=====================================================================
+Q. What is stats?
+
+stats is a general command to calculate totals, averages, counts, etc.
+BUT it doesn’t care about time unless you explicitly group it with _time.
+👉 stats = overall summary
+👉 timechart = summary with time buckets
+eg:
+index=sales
+| stats sum(price) as Total_Revenue
+Output: One single number → Total_Revenue = 100000
+(Doesn’t show per hour/day, just the overall total).
+=========================================================================
+
+Q. What is timewrap in Splunk?
+
+timewrap is a Splunk command used with timechart.
+It lets you compare time-based data across different time periods (like week-over-week, month-over-month, year-over-year).
+Basically, it "wraps" one time range on top of another so you can visualize trends or patterns over repeated periods.
+
+==================================================================
+Q. Why use timewrap?
+
+👉 To compare how metrics (sales, errors, traffic, etc.) behave in the same time window across different periods.
+Example: Compare today’s traffic by hour with yesterday’s traffic by hour.
+
+eg: Suppose you want to compare web traffic this week vs. last week:
+
+index=web sourcetype=access_combined
+| timechart span=1d count
+| timewrap 1w
+
+span=1d: The time buckets are 1 day each.
+count: We’re counting the number of events per day.
+👉 This gives you a daily trend of events (a line chart of counts per day).
+
+timewrap: Takes the timechart results and “wraps” them into time periods for comparison.
+1w: Means wrap the results into 1-week intervals.
+
+👉 This allows you to compare daily counts across different weeks side by side.
+Instead of seeing one continuous timeline, you see multiple weeks aligned — like comparing Monday vs Monday of last week, Tuesday vs Tuesday of last week, etc.
+
+eg: Imagine your data spans 3 weeks.
+Without timewrap:
+| \_time | count |
+| ------ | ----- |
+| 01-Aug | 100   |
+| 02-Aug | 120   |
+| 03-Aug | 90    |
+| …      | …     |
+
+With timewrap 1w:
+| \_time | this\_week | last\_week | 2weeks\_ago |
+| ------ | ---------- | ---------- | ----------- |
+| Mon    | 100        | 95         | 80          |
+| Tue    | 120        | 110        | 85          |
+| Wed    | 90         | 92         | 75          |
+| …      | …          | …          | …           |
+
+Adv:
+Makes it easier to compare trends between weeks (or months) without scrolling a long time series.
+=================================================================================================
