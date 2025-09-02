@@ -692,15 +692,26 @@ _time field: will take the timestamp
 ### 🔍 Searching by Time in Splunk:
 ---------------------------------------------
 
-* Every log or event in Splunk has a **time stamp** (the time when it happened).
-* When you search, you usually don’t want *all* data, only from a certain time.
-* Example:
-
-  * "Last 15 minutes" → shows only events that happened in the last 15 minutes.
-  * "Yesterday" → shows only yesterday’s events.
-  * "Between Aug 25 and Aug 28" → shows only events in that range.
+            * Every log or event in Splunk has a **time stamp** (the time when it happened).
+            * When you search, you usually don’t want *all* data, only from a certain time.
+            * Example:
+            
+              * "Last 15 minutes" → shows only events that happened in the last 15 minutes.
+              * "Yesterday" → shows only yesterday’s events.
+              * "Between Aug 25 and Aug 28" → shows only events in that range.
 
 👉 In Splunk, you can set this in the **time picker** (top-right of the search bar).
+
+eg: When you search in Splunk, you usually want results from a specific time range.
+
+      If you want to see today’s logs:
+                  index=web_logs earliest=@d latest=now
+      @d means start of the day.
+
+      If you want last 15 minutes logs: index=web_logs earliest=-15m
+                              -15m means go back 15 minutes from now.
+      If you want yesterday’s logs:
+                  index=web_logs earliest=-1d@d latest=@d
 
 ---
 
@@ -717,6 +728,10 @@ _time field: will take the timestamp
 
 👉 You can use commands like `eval` and functions (e.g., `strftime`) to **change how the time looks** in your results.
 
+eg: Convert to MM/DD/YYYY format:
+      ... | eval new_time=strftime(_time, "%m/%d/%Y")
+                        If _time = 2025-09-01 10:30:00,
+                        then new_time = 09/01/2025.
 ---
 
 ✅ In short:
@@ -724,5 +739,5 @@ _time field: will take the timestamp
 * **Searching by time** = filter events by time range.
 * **Time formatting** = how you *display* or *convert* the time.
 
-
+-----------------------------------------------------------
 
