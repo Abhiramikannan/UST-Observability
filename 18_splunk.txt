@@ -741,3 +741,13 @@ eg: Convert to MM/DD/YYYY format:
 
 -----------------------------------------------------------
 
+
+Q. WHAT IS @?
+      In Splunk time search, the symbol @ means "snap to the nearest time unit".
+
+       @d → Start of the current day (today 00:00).
+       @w → Start of the current week (Monday 00:00).
+       @h → Start of the current hour (like 10:00, 11:00, etc.).
+       @m → Start of the minute (like 10:15:00).
+      
+    
