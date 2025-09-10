@@ -77,3 +77,11 @@
                     5xx errors → Server-side issue
                     The problem is in the server while processing the request.
                     Example: Website is up, but the server crashes while handling your request → 500 Internal Server Error
+
+9. Compliance?
+                    set of rules that companies need to follow
+                    companies should install security patches.
+                    They must protect sensitive data..like  customer info.
+                    some companies need to follow regulations like HIPPA.
+                    if a system meets these all -> compliant
+                    otherwise -> no.
