@@ -1,0 +1,1298 @@
+{
+  "visualizations": {
+    "viz_xZhRtrNs": {
+      "type": "splunk.markdown",
+      "options": {
+        "markdown": "# App Services Panels - Enrollment, Policy Renewal and Customer Portal"
+      }
+    },
+    "viz_g78QhLA4": {
+      "type": "splunk.singlevalue",
+      "options": {
+        "majorColor": "> majorValue | rangeValue(convertedColorRange)"
+      },
+      "context": {
+        "convertedColorRange": [
+          {
+            "from": 100,
+            "value": "#dc4e41"
+          },
+          {
+            "from": 70,
+            "to": 100,
+            "value": "#f1813f"
+          },
+          {
+            "from": 30,
+            "to": 70,
+            "value": "#f8be34"
+          },
+          {
+            "from": 0,
+            "to": 30,
+            "value": "#0877a6"
+          },
+          {
+            "to": 0,
+            "value": "#53a051"
+          }
+        ]
+      },
+      "dataSources": {
+        "primary": "ds_nr52zP8J"
+      },
+      "title": "Total req"
+    },
+    "viz_9fyNqbjG": {
+      "type": "splunk.singlevalue",
+      "options": {
+        "unit": "%",
+        "majorColor": "> majorValue | rangeValue(convertedColorRange)"
+      },
+      "context": {
+        "convertedColorRange": [
+          {
+            "from": 100,
+            "value": "#dc4e41"
+          },
+          {
+            "from": 70,
+            "to": 100,
+            "value": "#f1813f"
+          },
+          {
+            "from": 30,
+            "to": 70,
+            "value": "#f8be34"
+          },
+          {
+            "from": 0,
+            "to": 30,
+            "value": "#0877a6"
+          },
+          {
+            "to": 0,
+            "value": "#53a051"
+          }
+        ]
+      },
+      "dataSources": {
+        "primary": "ds_6GCSwfF2"
+      },
+      "title": "2xx"
+    },
+    "viz_sT0z94zr": {
+      "type": "splunk.singlevalue",
+      "options": {
+        "unit": "%",
+        "majorColor": "> majorValue | rangeValue(convertedColorRange)"
+      },
+      "context": {
+        "convertedColorRange": [
+          {
+            "from": 100,
+            "value": "#dc4e41"
+          },
+          {
+            "from": 70,
+            "to": 100,
+            "value": "#f1813f"
+          },
+          {
+            "from": 30,
+            "to": 70,
+            "value": "#f8be34"
+          },
+          {
+            "from": 0,
+            "to": 30,
+            "value": "#0877a6"
+          },
+          {
+            "to": 0,
+            "value": "#53a051"
+          }
+        ]
+      },
+      "dataSources": {
+        "primary": "ds_qX2RgcJW"
+      },
+      "title": "4xx"
+    },
+    "viz_SDv4QPjB": {
+      "type": "splunk.singlevalue",
+      "options": {
+        "unit": "%",
+        "majorColor": "> majorValue | rangeValue(convertedColorRange)"
+      },
+      "context": {
+        "convertedColorRange": [
+          {
+            "from": 100,
+            "value": "#dc4e41"
+          },
+          {
+            "from": 70,
+            "to": 100,
+            "value": "#f1813f"
+          },
+          {
+            "from": 30,
+            "to": 70,
+            "value": "#f8be34"
+          },
+          {
+            "from": 0,
+            "to": 30,
+            "value": "#0877a6"
+          },
+          {
+            "to": 0,
+            "value": "#53a051"
+          }
+        ]
+      },
+      "dataSources": {
+        "primary": "ds_ft3qEPdY"
+      },
+      "title": "5xx"
+    },
+    "viz_lVW5eS6p": {
+      "type": "splunk.singlevalue",
+      "options": {
+        "numberPrecision": 0,
+        "unit": "s",
+        "backgroundColor": "> majorValue | rangeValue(convertedColorRange)"
+      },
+      "context": {
+        "convertedColorRange": [
+          {
+            "from": 100,
+            "value": "#dc4e41"
+          },
+          {
+            "from": 70,
+            "to": 100,
+            "value": "#f1813f"
+          },
+          {
+            "from": 30,
+            "to": 70,
+            "value": "#f8be34"
+          },
+          {
+            "from": 0,
+            "to": 30,
+            "value": "#0877a6"
+          },
+          {
+            "to": 0,
+            "value": "#53a051"
+          }
+        ]
+      },
+      "dataSources": {
+        "primary": "ds_Ok7gNBIV"
+      },
+      "title": "99th percentile"
+    },
+    "viz_UGw24Wmy": {
+      "type": "splunk.markdown",
+      "options": {
+        "markdown": "# Enrollments"
+      }
+    },
+    "viz_x2XSMmJc": {
+      "type": "splunk.singlevalue",
+      "options": {
+        "majorColor": "> majorValue | rangeValue(convertedColorRange)"
+      },
+      "context": {
+        "convertedColorRange": [
+          {
+            "from": 100,
+            "value": "#dc4e41"
+          },
+          {
+            "from": 70,
+            "to": 100,
+            "value": "#f1813f"
+          },
+          {
+            "from": 30,
+            "to": 70,
+            "value": "#f8be34"
+          },
+          {
+            "from": 0,
+            "to": 30,
+            "value": "#0877a6"
+          },
+          {
+            "to": 0,
+            "value": "#53a051"
+          }
+        ]
+      },
+      "dataSources": {
+        "primary": "ds_aI4znGWC"
+      },
+      "title": "Total req"
+    },
+    "viz_oKemdko4": {
+      "type": "splunk.singlevalue",
+      "options": {
+        "unit": "%",
+        "majorColor": "> majorValue | rangeValue(convertedColorRange)"
+      },
+      "context": {
+        "convertedColorRange": [
+          {
+            "from": 100,
+            "value": "#dc4e41"
+          },
+          {
+            "from": 70,
+            "to": 100,
+            "value": "#f1813f"
+          },
+          {
+            "from": 30,
+            "to": 70,
+            "value": "#f8be34"
+          },
+          {
+            "from": 0,
+            "to": 30,
+            "value": "#0877a6"
+          },
+          {
+            "to": 0,
+            "value": "#53a051"
+          }
+        ]
+      },
+      "dataSources": {
+        "primary": "ds_kAML9eQD"
+      },
+      "title": "2xx"
+    },
+    "viz_AfzJSIO3": {
+      "type": "splunk.singlevalue",
+      "options": {
+        "unit": "%",
+        "majorColor": "> majorValue | rangeValue(convertedColorRange)"
+      },
+      "context": {
+        "convertedColorRange": [
+          {
+            "from": 100,
+            "value": "#dc4e41"
+          },
+          {
+            "from": 70,
+            "to": 100,
+            "value": "#f1813f"
+          },
+          {
+            "from": 30,
+            "to": 70,
+            "value": "#f8be34"
+          },
+          {
+            "from": 0,
+            "to": 30,
+            "value": "#0877a6"
+          },
+          {
+            "to": 0,
+            "value": "#53a051"
+          }
+        ]
+      },
+      "dataSources": {
+        "primary": "ds_EIIhyTs3"
+      },
+      "title": "4xx"
+    },
+    "viz_O13acLa8": {
+      "type": "splunk.singlevalue",
+      "options": {
+        "unit": "%",
+        "majorColor": "> majorValue | rangeValue(convertedColorRange)"
+      },
+      "context": {
+        "convertedColorRange": [
+          {
+            "from": 100,
+            "value": "#dc4e41"
+          },
+          {
+            "from": 70,
+            "to": 100,
+            "value": "#f1813f"
+          },
+          {
+            "from": 30,
+            "to": 70,
+            "value": "#f8be34"
+          },
+          {
+            "from": 0,
+            "to": 30,
+            "value": "#0877a6"
+          },
+          {
+            "to": 0,
+            "value": "#53a051"
+          }
+        ]
+      },
+      "dataSources": {
+        "primary": "ds_4Ewiiu0S"
+      },
+      "title": "5xx"
+    },
+    "viz_Q2VLUkl5": {
+      "type": "splunk.singlevalue",
+      "options": {
+        "numberPrecision": 3,
+        "unit": "ms",
+        "backgroundColor": "> majorValue | rangeValue(convertedColorRange)"
+      },
+      "context": {
+        "convertedColorRange": [
+          {
+            "from": 100,
+            "value": "#dc4e41"
+          },
+          {
+            "from": 70,
+            "to": 100,
+            "value": "#f1813f"
+          },
+          {
+            "from": 30,
+            "to": 70,
+            "value": "#f8be34"
+          },
+          {
+            "from": 0,
+            "to": 30,
+            "value": "#0877a6"
+          },
+          {
+            "to": 0,
+            "value": "#53a051"
+          }
+        ]
+      },
+      "dataSources": {
+        "primary": "ds_PzOo5m5a"
+      },
+      "title": "99th percentile"
+    },
+    "viz_5YSjvcxm": {
+      "type": "splunk.markdown",
+      "options": {
+        "markdown": "# Policy Renewal"
+      }
+    },
+    "viz_roExx5uX": {
+      "type": "splunk.singlevalue",
+      "options": {
+        "majorColor": "> majorValue | rangeValue(convertedColorRange)"
+      },
+      "context": {
+        "convertedColorRange": [
+          {
+            "from": 100,
+            "value": "#dc4e41"
+          },
+          {
+            "from": 70,
+            "to": 100,
+            "value": "#f1813f"
+          },
+          {
+            "from": 30,
+            "to": 70,
+            "value": "#f8be34"
+          },
+          {
+            "from": 0,
+            "to": 30,
+            "value": "#0877a6"
+          },
+          {
+            "to": 0,
+            "value": "#53a051"
+          }
+        ]
+      },
+      "dataSources": {
+        "primary": "ds_JND14KwA"
+      },
+      "title": "Total req"
+    },
+    "viz_pbCycw3E": {
+      "type": "splunk.singlevalue",
+      "options": {
+        "unit": "%",
+        "majorColor": "> majorValue | rangeValue(convertedColorRange)"
+      },
+      "context": {
+        "convertedColorRange": [
+          {
+            "from": 100,
+            "value": "#dc4e41"
+          },
+          {
+            "from": 70,
+            "to": 100,
+            "value": "#f1813f"
+          },
+          {
+            "from": 30,
+            "to": 70,
+            "value": "#f8be34"
+          },
+          {
+            "from": 0,
+            "to": 30,
+            "value": "#0877a6"
+          },
+          {
+            "to": 0,
+            "value": "#53a051"
+          }
+        ]
+      },
+      "dataSources": {
+        "primary": "ds_LJtRYP6u"
+      },
+      "title": "2xx"
+    },
+    "viz_PlkrwbOl": {
+      "type": "splunk.singlevalue",
+      "options": {
+        "numberPrecision": 2,
+        "unit": "%",
+        "majorColor": "> majorValue | rangeValue(convertedColorRange)"
+      },
+      "context": {
+        "convertedColorRange": [
+          {
+            "from": 100,
+            "value": "#dc4e41"
+          },
+          {
+            "from": 70,
+            "to": 100,
+            "value": "#f1813f"
+          },
+          {
+            "from": 30,
+            "to": 70,
+            "value": "#f8be34"
+          },
+          {
+            "from": 0,
+            "to": 30,
+            "value": "#0877a6"
+          },
+          {
+            "to": 0,
+            "value": "#53a051"
+          }
+        ]
+      },
+      "dataSources": {
+        "primary": "ds_WTMcymD1"
+      },
+      "title": "4xx"
+    },
+    "viz_FVT6kewz": {
+      "type": "splunk.singlevalue",
+      "options": {
+        "numberPrecision": 0,
+        "unit": "%",
+        "majorColor": "> majorValue | rangeValue(convertedColorRange)"
+      },
+      "context": {
+        "convertedColorRange": [
+          {
+            "from": 100,
+            "value": "#dc4e41"
+          },
+          {
+            "from": 70,
+            "to": 100,
+            "value": "#f1813f"
+          },
+          {
+            "from": 30,
+            "to": 70,
+            "value": "#f8be34"
+          },
+          {
+            "from": 0,
+            "to": 30,
+            "value": "#0877a6"
+          },
+          {
+            "to": 0,
+            "value": "#53a051"
+          }
+        ]
+      },
+      "dataSources": {
+        "primary": "ds_bATXkAZP"
+      },
+      "title": "5xx"
+    },
+    "viz_eqdSx1Hg": {
+      "type": "splunk.singlevalue",
+      "options": {
+        "numberPrecision": 3,
+        "unit": "ms",
+        "backgroundColor": "> majorValue | rangeValue(convertedColorRange)"
+      },
+      "context": {
+        "convertedColorRange": [
+          {
+            "from": 100,
+            "value": "#dc4e41"
+          },
+          {
+            "from": 70,
+            "to": 100,
+            "value": "#f1813f"
+          },
+          {
+            "from": 30,
+            "to": 70,
+            "value": "#f8be34"
+          },
+          {
+            "from": 0,
+            "to": 30,
+            "value": "#0877a6"
+          },
+          {
+            "to": 0,
+            "value": "#53a051"
+          }
+        ]
+      },
+      "dataSources": {
+        "primary": "ds_r4a2cMIE"
+      },
+      "title": "99th percentile"
+    },
+    "viz_So8XV7CP": {
+      "type": "splunk.markdown",
+      "options": {
+        "markdown": "# Customer Portal"
+      }
+    },
+    "viz_XCsqioca": {
+      "type": "splunk.singlevalue",
+      "options": {
+        "majorColor": "> majorValue | rangeValue(convertedColorRange)"
+      },
+      "context": {
+        "convertedColorRange": [
+          {
+            "from": 100,
+            "value": "#dc4e41"
+          },
+          {
+            "from": 70,
+            "to": 100,
+            "value": "#f1813f"
+          },
+          {
+            "from": 30,
+            "to": 70,
+            "value": "#f8be34"
+          },
+          {
+            "from": 0,
+            "to": 30,
+            "value": "#0877a6"
+          },
+          {
+            "to": 0,
+            "value": "#53a051"
+          }
+        ]
+      },
+      "dataSources": {
+        "primary": "ds_898eEhOl"
+      },
+      "title": "total req"
+    },
+    "viz_8Ot3bwSL": {
+      "type": "splunk.singlevalue",
+      "options": {
+        "unit": "%",
+        "majorColor": "> majorValue | rangeValue(convertedColorRange)"
+      },
+      "context": {
+        "convertedColorRange": [
+          {
+            "from": 100,
+            "value": "#dc4e41"
+          },
+          {
+            "from": 70,
+            "to": 100,
+            "value": "#f1813f"
+          },
+          {
+            "from": 30,
+            "to": 70,
+            "value": "#f8be34"
+          },
+          {
+            "from": 0,
+            "to": 30,
+            "value": "#0877a6"
+          },
+          {
+            "to": 0,
+            "value": "#53a051"
+          }
+        ]
+      },
+      "dataSources": {
+        "primary": "ds_n7CWwNkV"
+      },
+      "title": "2xx"
+    },
+    "viz_E46Rul8s": {
+      "type": "splunk.singlevalue",
+      "options": {
+        "numberPrecision": 0,
+        "unit": "%",
+        "majorColor": "> majorValue | rangeValue(convertedColorRange)"
+      },
+      "context": {
+        "convertedColorRange": [
+          {
+            "from": 100,
+            "value": "#dc4e41"
+          },
+          {
+            "from": 70,
+            "to": 100,
+            "value": "#f1813f"
+          },
+          {
+            "from": 30,
+            "to": 70,
+            "value": "#f8be34"
+          },
+          {
+            "from": 0,
+            "to": 30,
+            "value": "#0877a6"
+          },
+          {
+            "to": 0,
+            "value": "#53a051"
+          }
+        ]
+      },
+      "dataSources": {
+        "primary": "ds_BTulHHQ7"
+      },
+      "title": "4xx"
+    },
+    "viz_MUMHOqAf": {
+      "type": "splunk.singlevalue",
+      "options": {
+        "unit": "%",
+        "majorColor": "> majorValue | rangeValue(convertedColorRange)"
+      },
+      "context": {
+        "convertedColorRange": [
+          {
+            "from": 100,
+            "value": "#dc4e41"
+          },
+          {
+            "from": 70,
+            "to": 100,
+            "value": "#f1813f"
+          },
+          {
+            "from": 30,
+            "to": 70,
+            "value": "#f8be34"
+          },
+          {
+            "from": 0,
+            "to": 30,
+            "value": "#0877a6"
+          },
+          {
+            "to": 0,
+            "value": "#53a051"
+          }
+        ]
+      },
+      "dataSources": {
+        "primary": "ds_likCGw23"
+      },
+      "title": "5xx"
+    },
+    "viz_vg0pANnU": {
+      "type": "splunk.singlevalue",
+      "options": {
+        "numberPrecision": 2,
+        "unit": "ms",
+        "backgroundColor": "> majorValue | rangeValue(convertedColorRange)"
+      },
+      "context": {
+        "convertedColorRange": [
+          {
+            "from": 100,
+            "value": "#dc4e41"
+          },
+          {
+            "from": 70,
+            "to": 100,
+            "value": "#f1813f"
+          },
+          {
+            "from": 30,
+            "to": 70,
+            "value": "#f8be34"
+          },
+          {
+            "from": 0,
+            "to": 30,
+            "value": "#0877a6"
+          },
+          {
+            "to": 0,
+            "value": "#53a051"
+          }
+        ]
+      },
+      "dataSources": {
+        "primary": "ds_HuGO0LWn"
+      },
+      "title": "99th percentile"
+    }
+  },
+  "dataSources": {
+    "ds_nr52zP8J": {
+      "type": "ds.search",
+      "options": {
+        "query": "index=main service=\"All\" | table total_requests",
+        "queryParameters": {
+          "earliest": "0",
+          "sampleRatio": 1
+        }
+      },
+      "name": "Total req 1 search"
+    },
+    "ds_6GCSwfF2": {
+      "type": "ds.search",
+      "options": {
+        "query": "index=main service=\"All\" | table success_pct",
+        "queryParameters": {
+          "earliest": "0",
+          "sampleRatio": 1
+        }
+      },
+      "name": "2xx 1 search"
+    },
+    "ds_qX2RgcJW": {
+      "type": "ds.search",
+      "options": {
+        "query": "index=main service=\"All\" | stats values(client_error_pct) as client_error_pct",
+        "queryParameters": {
+          "earliest": "0",
+          "sampleRatio": 1
+        }
+      },
+      "name": "4xx 1 search"
+    },
+    "ds_ft3qEPdY": {
+      "type": "ds.search",
+      "options": {
+        "query": "index=main service=\"All\" | stats values(server_error_pct) as server_error_pct",
+        "queryParameters": {
+          "earliest": "0",
+          "sampleRatio": 1
+        }
+      },
+      "name": "5xx 1 search"
+    },
+    "ds_Ok7gNBIV": {
+      "type": "ds.search",
+      "options": {
+        "query": "index=main service=\"All\" | table response_time_p99",
+        "queryParameters": {
+          "earliest": "0",
+          "sampleRatio": 1
+        }
+      },
+      "name": "99th percentile 1 search"
+    },
+    "ds_aI4znGWC": {
+      "type": "ds.search",
+      "options": {
+        "query": "index=main service=\"Enrollments\" | table total_requests",
+        "queryParameters": {
+          "earliest": "0",
+          "sampleRatio": 1
+        }
+      },
+      "name": "Total req 2 search"
+    },
+    "ds_kAML9eQD": {
+      "type": "ds.search",
+      "options": {
+        "query": "index=main service=\"Enrollments\" | table success_pct",
+        "queryParameters": {
+          "earliest": "0",
+          "sampleRatio": 1
+        }
+      },
+      "name": "2xx 2 search"
+    },
+    "ds_EIIhyTs3": {
+      "type": "ds.search",
+      "options": {
+        "query": "index=main service=\"Enrollments\" | table client_error_pct",
+        "queryParameters": {
+          "earliest": "0",
+          "sampleRatio": 1
+        }
+      },
+      "name": "4xx 2 search"
+    },
+    "ds_4Ewiiu0S": {
+      "type": "ds.search",
+      "options": {
+        "query": "index=main service=\"Enrollments\" | table server_error_pct",
+        "queryParameters": {
+          "earliest": "0",
+          "sampleRatio": 1
+        }
+      },
+      "name": "5xx 2 search"
+    },
+    "ds_PzOo5m5a": {
+      "type": "ds.search",
+      "options": {
+        "query": "index=main service=\"Enrollments\" | table response_time_p99",
+        "queryParameters": {
+          "earliest": "0",
+          "sampleRatio": 1
+        }
+      },
+      "name": "99th percentile 2 search"
+    },
+    "ds_JND14KwA": {
+      "type": "ds.search",
+      "options": {
+        "query": "index=main service=\"Policy Renewals\" | table total_requests",
+        "queryParameters": {
+          "earliest": "0",
+          "sampleRatio": 1
+        }
+      },
+      "name": "Total req 3 search"
+    },
+    "ds_LJtRYP6u": {
+      "type": "ds.search",
+      "options": {
+        "query": "index=main service=\"Policy Renewals\" | table success_pct",
+        "queryParameters": {
+          "earliest": "0",
+          "sampleRatio": 1
+        }
+      },
+      "name": "2xx 3 search"
+    },
+    "ds_WTMcymD1": {
+      "type": "ds.search",
+      "options": {
+        "query": "index=main service=\"Policy Renewals\" | table client_error_pct",
+        "queryParameters": {
+          "earliest": "0",
+          "sampleRatio": 1
+        }
+      },
+      "name": "4xx 3 search"
+    },
+    "ds_bATXkAZP": {
+      "type": "ds.search",
+      "options": {
+        "query": "index=main service=\"Policy Renewals\" | table server_error_pct",
+        "queryParameters": {
+          "earliest": "0",
+          "sampleRatio": 1
+        }
+      },
+      "name": "5xx 3 search"
+    },
+    "ds_r4a2cMIE": {
+      "type": "ds.search",
+      "options": {
+        "query": "index=main service=\"Policy Renewals\" | table response_time_p99",
+        "queryParameters": {
+          "earliest": "0",
+          "sampleRatio": 1
+        }
+      },
+      "name": "99th percentile 3 search"
+    },
+    "ds_898eEhOl": {
+      "type": "ds.search",
+      "options": {
+        "query": "index=main service=\"Customer Portal\" | stats values(total_requests) as total_requests",
+        "queryParameters": {
+          "earliest": "0",
+          "sampleRatio": 1
+        }
+      },
+      "name": "total req search"
+    },
+    "ds_n7CWwNkV": {
+      "type": "ds.search",
+      "options": {
+        "query": "index=main service=\"Customer Portal\" | stats values(success_pct) as success_pct",
+        "queryParameters": {
+          "earliest": "0",
+          "sampleRatio": 1
+        }
+      },
+      "name": "2xx 4 search"
+    },
+    "ds_BTulHHQ7": {
+      "type": "ds.search",
+      "options": {
+        "query": "index=main service=\"Customer Portal\" | stats values(client_error_pct) as client_error_pct",
+        "queryParameters": {
+          "earliest": "0",
+          "sampleRatio": 1
+        }
+      },
+      "name": "4xx 4 search"
+    },
+    "ds_likCGw23": {
+      "type": "ds.search",
+      "options": {
+        "query": "index=main service=\"Customer Portal\" | stats values(server_error_pct) as server_error_pct",
+        "queryParameters": {
+          "earliest": "0",
+          "sampleRatio": 1
+        }
+      },
+      "name": "5xx 4 search"
+    },
+    "ds_HuGO0LWn": {
+      "type": "ds.search",
+      "options": {
+        "query": "index=main service=\"Customer Portal\" | stats values(response_time_p99) as response_time_p99",
+        "queryParameters": {
+          "earliest": "0",
+          "sampleRatio": 1
+        }
+      },
+      "name": "99th percentile 4 search"
+    }
+  },
+  "defaults": {
+    "dataSources": {
+      "ds.search": {
+        "options": {
+          "queryParameters": {}
+        }
+      }
+    },
+    "visualizations": {
+      "global": {
+        "showProgressBar": true
+      }
+    }
+  },
+  "inputs": {},
+  "layout": {
+    "options": {},
+    "globalInputs": [],
+    "tabs": {
+      "items": [
+        {
+          "layoutId": "layout_1",
+          "label": "New tab"
+        }
+      ]
+    },
+    "layoutDefinitions": {
+      "layout_1": {
+        "type": "absolute",
+        "structure": [
+          {
+            "item": "viz_xZhRtrNs",
+            "type": "block",
+            "position": {
+              "x": 0,
+              "y": 0,
+              "w": 1440,
+              "h": 250
+            }
+          },
+          {
+            "item": "viz_g78QhLA4",
+            "type": "block",
+            "position": {
+              "x": 0,
+              "y": 250,
+              "w": 288,
+              "h": 210
+            }
+          },
+          {
+            "item": "viz_9fyNqbjG",
+            "type": "block",
+            "position": {
+              "x": 288,
+              "y": 250,
+              "w": 288,
+              "h": 210
+            }
+          },
+          {
+            "item": "viz_sT0z94zr",
+            "type": "block",
+            "position": {
+              "x": 576,
+              "y": 250,
+              "w": 288,
+              "h": 210
+            }
+          },
+          {
+            "item": "viz_SDv4QPjB",
+            "type": "block",
+            "position": {
+              "x": 864,
+              "y": 250,
+              "w": 288,
+              "h": 210
+            }
+          },
+          {
+            "item": "viz_lVW5eS6p",
+            "type": "block",
+            "position": {
+              "x": 1152,
+              "y": 250,
+              "w": 288,
+              "h": 210
+            }
+          },
+          {
+            "item": "viz_UGw24Wmy",
+            "type": "block",
+            "position": {
+              "x": 0,
+              "y": 460,
+              "w": 1440,
+              "h": 250
+            }
+          },
+          {
+            "item": "viz_x2XSMmJc",
+            "type": "block",
+            "position": {
+              "x": 0,
+              "y": 710,
+              "w": 288,
+              "h": 250
+            }
+          },
+          {
+            "item": "viz_oKemdko4",
+            "type": "block",
+            "position": {
+              "x": 288,
+              "y": 710,
+              "w": 288,
+              "h": 250
+            }
+          },
+          {
+            "item": "viz_AfzJSIO3",
+            "type": "block",
+            "position": {
+              "x": 576,
+              "y": 710,
+              "w": 288,
+              "h": 250
+            }
+          },
+          {
+            "item": "viz_O13acLa8",
+            "type": "block",
+            "position": {
+              "x": 864,
+              "y": 710,
+              "w": 288,
+              "h": 250
+            }
+          },
+          {
+            "item": "viz_Q2VLUkl5",
+            "type": "block",
+            "position": {
+              "x": 1152,
+              "y": 710,
+              "w": 288,
+              "h": 250
+            }
+          },
+          {
+            "item": "viz_5YSjvcxm",
+            "type": "block",
+            "position": {
+              "x": 0,
+              "y": 960,
+              "w": 1440,
+              "h": 250
+            }
+          },
+          {
+            "item": "viz_roExx5uX",
+            "type": "block",
+            "position": {
+              "x": 0,
+              "y": 1210,
+              "w": 288,
+              "h": 250
+            }
+          },
+          {
+            "item": "viz_pbCycw3E",
+            "type": "block",
+            "position": {
+              "x": 288,
+              "y": 1210,
+              "w": 288,
+              "h": 250
+            }
+          },
+          {
+            "item": "viz_PlkrwbOl",
+            "type": "block",
+            "position": {
+              "x": 576,
+              "y": 1210,
+              "w": 288,
+              "h": 250
+            }
+          },
+          {
+            "item": "viz_FVT6kewz",
+            "type": "block",
+            "position": {
+              "x": 864,
+              "y": 1210,
+              "w": 288,
+              "h": 250
+            }
+          },
+          {
+            "item": "viz_eqdSx1Hg",
+            "type": "block",
+            "position": {
+              "x": 1152,
+              "y": 1210,
+              "w": 288,
+              "h": 250
+            }
+          },
+          {
+            "item": "viz_So8XV7CP",
+            "type": "block",
+            "position": {
+              "x": 0,
+              "y": 1460,
+              "w": 1440,
+              "h": 250
+            }
+          },
+          {
+            "item": "viz_XCsqioca",
+            "type": "block",
+            "position": {
+              "x": 0,
+              "y": 1710,
+              "w": 288,
+              "h": 250
+            }
+          },
+          {
+            "item": "viz_8Ot3bwSL",
+            "type": "block",
+            "position": {
+              "x": 288,
+              "y": 1710,
+              "w": 288,
+              "h": 250
+            }
+          },
+          {
+            "item": "viz_E46Rul8s",
+            "type": "block",
+            "position": {
+              "x": 576,
+              "y": 1710,
+              "w": 288,
+              "h": 250
+            }
+          },
+          {
+            "item": "viz_MUMHOqAf",
+            "type": "block",
+            "position": {
+              "x": 864,
+              "y": 1710,
+              "w": 288,
+              "h": 250
+            }
+          },
+          {
+            "item": "viz_vg0pANnU",
+            "type": "block",
+            "position": {
+              "x": 1152,
+              "y": 1710,
+              "w": 288,
+              "h": 250
+            }
+          }
+        ],
+        "options": {
+          "width": 1440,
+          "height": 1960,
+          "display": "auto"
+        }
+      }
+    }
+  },
+  "description": "",
+  "title": "APM monitoring Dashboard Copy",
+  "applicationProperties": {
+    "hideEdit": false,
+    "hideExport": false
+  }
+}
