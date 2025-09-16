@@ -85,3 +85,6 @@
                     some companies need to follow regulations like HIPPA.
                     if a system meets these all -> compliant
                     otherwise -> no.
+
+10. INDEX in SPLUNK?
+          Instead
