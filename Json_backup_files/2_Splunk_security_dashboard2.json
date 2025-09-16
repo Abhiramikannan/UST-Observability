@@ -1,341 +1,425 @@
 {
-  "title": "Abhi Enterprise Security Incident Dashboard",
-  "description": "",
-  "inputs": {
-    "input_global_trp": {
-      "options": {
-        "defaultValue": "-24h@h,now",
-        "token": "global_time"
-      },
-      "title": "Global Time Range",
-      "type": "input.timerange"
-    }
-  },
-  "defaults": {
-    "dataSources": {
-      "ds.search": {
-        "options": {
-          "queryParameters": {
-            "earliest": "$global_time.earliest$",
-            "latest": "$global_time.latest$"
-          }
+    "title": "Abhi Enterprise Security Incident Dashboard",
+    "description": "",
+    "inputs": {
+        "input_bmkqsjco": {
+            "options": {
+                "defaultValue": "Default Text",
+                "token": "severity"
+            },
+            "title": "severity",
+            "type": "input.text"
+        },
+        "input_global_trp": {
+            "options": {
+                "defaultValue": "-24h@h,now",
+                "token": "global_time"
+            },
+            "title": "Global Time Range",
+            "type": "input.timerange"
         }
-      }
+    },
+    "defaults": {
+        "dataSources": {
+            "ds.search": {
+                "options": {
+                    "queryParameters": {
+                        "earliest": "$global_time.earliest$",
+                        "latest": "$global_time.latest$"
+                    }
+                }
+            }
+        },
+        "visualizations": {
+            "global": {
+                "showProgressBar": true
+            }
+        }
     },
     "visualizations": {
-      "global": {
-        "showProgressBar": true
-      }
-    }
-  },
-  "visualizations": {
-    "viz_aHRsrJey": {
-      "dataSources": {
-        "primary": "ds_AnU0vgfc"
-      },
-      "options": {
-        "dataValuesDisplay": "off",
-        "legendDisplay": "right",
-        "legendTruncation": "ellipsisMiddle",
-        "showIndependentYRanges": false,
-        "showOverlayY2Axis": false,
-        "showRoundedY2AxisLabels": false,
-        "showSplitSeries": false,
-        "showY2MajorGridLines": true,
-        "stackMode": "auto",
-        "xAxisLabelRotation": 0,
-        "xAxisTitleVisibility": "show",
-        "y2AxisAbbreviation": "auto",
-        "y2AxisScale": "inherit",
-        "y2AxisTitleVisibility": "show",
-        "yAxisAbbreviation": "auto",
-        "yAxisScale": "linear",
-        "yAxisTitleVisibility": "show"
-      },
-      "title": "Vulnerability Status Breakdown",
-      "type": "splunk.column"
-    },
-    "viz_eqWfrwUD": {
-      "dataSources": {
-        "primary": "ds_gFpbJJKp"
-      },
-      "options": {
-        "collapseThreshold": 0.01
-      },
-      "title": "Login Success Rate",
-      "type": "splunk.pie"
-    },
-    "viz_hFEe2YSh": {
-      "options": {
-        "backgroundColor": "#b6c75a",
-        "fontColor": "#000000",
-        "markdown": "# Enterprise security related Panels\n"
-      },
-      "type": "splunk.markdown"
-    },
-    "viz_ixb5tYrg": {
-      "dataSources": {
-        "primary": "ds_rZgWCySz"
-      },
-      "options": {
-        "count": 20,
-        "dataOverlayMode": "none",
-        "drilldown": "none",
-        "showInternalFields": false,
-        "showRowNumbers": false
-      },
-      "title": "Open Critical Incidents",
-      "type": "splunk.table"
-    },
-    "viz_rCamLKb8": {
-      "dataSources": {
-        "primary": "ds_UpjWKnBT"
-      },
-      "options": {
-        "dataValuesDisplay": "all",
-        "legendDisplay": "right",
-        "legendTruncation": "ellipsisMiddle",
-        "showIndependentYRanges": false,
-        "showOverlayY2Axis": false,
-        "showRoundedY2AxisLabels": false,
-        "showSplitSeries": false,
-        "showY2MajorGridLines": true,
-        "stackMode": "auto",
-        "xAxisLabelRotation": 0,
-        "xAxisTitleVisibility": "show",
-        "y2AxisAbbreviation": "auto",
-        "y2AxisScale": "inherit",
-        "y2AxisTitleVisibility": "show",
-        "yAxisAbbreviation": "auto",
-        "yAxisScale": "linear",
-        "yAxisTitleVisibility": "show"
-      },
-      "title": "Compliance Status Summary",
-      "type": "splunk.column"
-    },
-    "viz_sPbX54m5": {
-      "dataSources": {
-        "primary": "ds_1YtQ7gat"
-      },
-      "options": {
-        "dataValuesDisplay": "all",
-        "legendDisplay": "right",
-        "legendTruncation": "ellipsisMiddle",
-        "showIndependentYRanges": false,
-        "showOverlayY2Axis": false,
-        "showRoundedY2AxisLabels": false,
-        "showSplitSeries": false,
-        "showY2MajorGridLines": true,
-        "stackMode": "auto",
-        "xAxisLabelRotation": 0,
-        "xAxisTitleVisibility": "show",
-        "y2AxisAbbreviation": "auto",
-        "y2AxisScale": "inherit",
-        "y2AxisTitleVisibility": "show",
-        "yAxisAbbreviation": "auto",
-        "yAxisScale": "linear",
-        "yAxisTitleVisibility": "show"
-      },
-      "title": "Alerts by Severity",
-      "type": "splunk.column"
-    },
-    "viz_t3rpWF0M": {
-      "containerOptions": {},
-      "dataSources": {
-        "primary": "ds_YAiqTzDw"
-      },
-      "eventHandlers": [
-        {
-          "options": {
-            "newTab": true,
-            "type": "auto"
-          },
-          "type": "drilldown.linkToSearch"
+        "viz_9t8R8viG": {
+            "dataSources": {
+                "primary": "ds_v9RYhLLw"
+            },
+            "options": {
+                "count": 20,
+                "dataOverlayMode": "none",
+                "drilldown": "none",
+                "showInternalFields": false,
+                "showRowNumbers": false
+            },
+            "title": "Details of Severity",
+            "type": "splunk.table"
         },
-        {
-          "options": {
-            "tokens": [
-              {
-                "key": "row.<fieldname>.value",
-                "token": "severity_token"
-              }
-            ]
-          },
-          "type": "drilldown.setToken"
-        }
-      ],
-      "showLastUpdated": false,
-      "showProgressBar": true,
-      "title": "Incident Severity vs Status Overview",
-      "type": "splunk.bar"
-    }
-  },
-  "dataSources": {
-    "ds_1YtQ7gat": {
-      "name": "Alerts by Severity search",
-      "options": {
-        "query": "source=\"security dashboard.csv\" index=\"main\"\r\n| stats count by alert_severity",
-        "queryParameters": {
-          "earliest": "0",
-          "sampleRatio": 1
-        }
-      },
-      "type": "ds.search"
-    },
-    "ds_AnU0vgfc": {
-      "name": "Vulnerability Status Breakdown search",
-      "options": {
-        "query": "source=\"security dashboard.csv\" index=\"main\"\r\n| stats count by vuln_type, vuln_status",
-        "queryParameters": {
-          "earliest": "0",
-          "sampleRatio": 1
-        }
-      },
-      "type": "ds.search"
-    },
-    "ds_UpjWKnBT": {
-      "name": "Compliance Status Summary search",
-      "options": {
-        "query": "source=\"security dashboard.csv\" index=\"main\"\r\n| stats count by compliance_area, compliance_status",
-        "queryParameters": {
-          "earliest": "0",
-          "sampleRatio": 1
-        }
-      },
-      "type": "ds.search"
-    },
-    "ds_YAiqTzDw": {
-      "name": "Incident Overview - Table search",
-      "options": {
-        "query": "source=\"security dashboard.csv\" index=\"main\" \r\n| stats count by severity, status",
-        "queryParameters": {
-          "earliest": "0",
-          "sampleRatio": 1
-        }
-      },
-      "type": "ds.search"
-    },
-    "ds_gFpbJJKp": {
-      "name": "Login Success Rate search",
-      "options": {
-        "query": "source=\"security dashboard.csv\" index=\"main\"\r\n| stats count by login_success",
-        "queryParameters": {
-          "earliest": "0",
-          "sampleRatio": 1
-        }
-      },
-      "type": "ds.search"
-    },
-    "ds_rZgWCySz": {
-      "name": "Open Critical Incidents search",
-      "options": {
-        "query": "source=\"security dashboard.csv\" index=\"main\" (severity=\"Critical\" OR severity=\"High\") status=\"Open\"\r\n| table timestamp, incident_id, incident_type, severity, status, user_id",
-        "queryParameters": {
-          "earliest": "0",
-          "sampleRatio": 1
-        }
-      },
-      "type": "ds.search"
-    }
-  },
-  "layout": {
-    "globalInputs": [
-      "input_global_trp"
-    ],
-    "layoutDefinitions": {
-      "layout_1": {
-        "options": {
-          "backgroundColor": "transparent",
-          "height": 960,
-          "width": 1440
+        "viz_aHRsrJey": {
+            "dataSources": {
+                "primary": "ds_AnU0vgfc"
+            },
+            "eventHandlers": [
+                {
+                    "options": {
+                        "newTab": false,
+                        "type": "auto"
+                    },
+                    "type": "drilldown.linkToSearch"
+                }
+            ],
+            "options": {
+                "dataValuesDisplay": "off",
+                "legendDisplay": "right",
+                "legendTruncation": "ellipsisMiddle",
+                "showIndependentYRanges": false,
+                "showOverlayY2Axis": false,
+                "showRoundedY2AxisLabels": false,
+                "showSplitSeries": false,
+                "showY2MajorGridLines": true,
+                "stackMode": "auto",
+                "xAxisLabelRotation": 0,
+                "xAxisTitleVisibility": "show",
+                "y2AxisAbbreviation": "auto",
+                "y2AxisScale": "inherit",
+                "y2AxisTitleVisibility": "show",
+                "yAxisAbbreviation": "auto",
+                "yAxisScale": "linear",
+                "yAxisTitleVisibility": "show"
+            },
+            "title": "Vulnerability Status Breakdown",
+            "type": "splunk.column"
         },
-        "structure": [
-          {
-            "item": "viz_hFEe2YSh",
-            "position": {
-              "h": 64,
-              "w": 1440,
-              "x": 0,
-              "y": 0
+        "viz_eqWfrwUD": {
+            "dataSources": {
+                "primary": "ds_gFpbJJKp"
             },
-            "type": "block"
-          },
-          {
-            "item": "viz_t3rpWF0M",
-            "position": {
-              "h": 250,
-              "w": 720,
-              "x": 0,
-              "y": 64
+            "eventHandlers": [
+                {
+                    "options": {
+                        "newTab": false,
+                        "type": "auto"
+                    },
+                    "type": "drilldown.linkToSearch"
+                }
+            ],
+            "options": {
+                "collapseThreshold": 0.01
             },
-            "type": "block"
-          },
-          {
-            "item": "viz_rCamLKb8",
-            "position": {
-              "h": 300,
-              "w": 720,
-              "x": 0,
-              "y": 314
+            "title": "Login Success Rate",
+            "type": "splunk.pie"
+        },
+        "viz_hFEe2YSh": {
+            "options": {
+                "backgroundColor": "#b6c75a",
+                "fontColor": "#000000",
+                "markdown": "# Enterprise security related Panels\n"
             },
-            "type": "block"
-          },
-          {
-            "item": "viz_sPbX54m5",
-            "position": {
-              "h": 300,
-              "w": 720,
-              "x": 0,
-              "y": 614
+            "type": "splunk.markdown"
+        },
+        "viz_ixb5tYrg": {
+            "dataSources": {
+                "primary": "ds_rZgWCySz"
             },
-            "type": "block"
-          },
-          {
-            "item": "viz_aHRsrJey",
-            "position": {
-              "h": 250,
-              "w": 720,
-              "x": 720,
-              "y": 64
+            "eventHandlers": [
+                {
+                    "options": {
+                        "newTab": false,
+                        "type": "auto"
+                    },
+                    "type": "drilldown.linkToSearch"
+                }
+            ],
+            "options": {
+                "count": 20,
+                "dataOverlayMode": "none",
+                "drilldown": "none",
+                "showInternalFields": false,
+                "showRowNumbers": false
             },
-            "type": "block"
-          },
-          {
-            "item": "viz_eqWfrwUD",
-            "position": {
-              "h": 300,
-              "w": 720,
-              "x": 720,
-              "y": 314
+            "title": "Open Critical Incidents",
+            "type": "splunk.table"
+        },
+        "viz_rCamLKb8": {
+            "dataSources": {
+                "primary": "ds_UpjWKnBT"
             },
-            "type": "block"
-          },
-          {
-            "item": "viz_ixb5tYrg",
-            "position": {
-              "h": 300,
-              "w": 720,
-              "x": 720,
-              "y": 614
+            "eventHandlers": [
+                {
+                    "options": {
+                        "newTab": false,
+                        "type": "auto"
+                    },
+                    "type": "drilldown.linkToSearch"
+                }
+            ],
+            "options": {
+                "dataValuesDisplay": "all",
+                "legendDisplay": "right",
+                "legendTruncation": "ellipsisMiddle",
+                "showIndependentYRanges": false,
+                "showOverlayY2Axis": false,
+                "showRoundedY2AxisLabels": false,
+                "showSplitSeries": false,
+                "showY2MajorGridLines": true,
+                "stackMode": "auto",
+                "xAxisLabelRotation": 0,
+                "xAxisTitleVisibility": "show",
+                "y2AxisAbbreviation": "auto",
+                "y2AxisScale": "inherit",
+                "y2AxisTitleVisibility": "show",
+                "yAxisAbbreviation": "auto",
+                "yAxisScale": "linear",
+                "yAxisTitleVisibility": "show"
             },
-            "type": "block"
-          }
+            "title": "Compliance Status Summary",
+            "type": "splunk.column"
+        },
+        "viz_sPbX54m5": {
+            "dataSources": {
+                "primary": "ds_1YtQ7gat"
+            },
+            "eventHandlers": [
+                {
+                    "options": {
+                        "newTab": true,
+                        "type": "auto"
+                    },
+                    "type": "drilldown.linkToSearch"
+                }
+            ],
+            "options": {
+                "dataValuesDisplay": "all",
+                "legendDisplay": "right",
+                "legendTruncation": "ellipsisMiddle",
+                "showIndependentYRanges": false,
+                "showOverlayY2Axis": false,
+                "showRoundedY2AxisLabels": false,
+                "showSplitSeries": false,
+                "showY2MajorGridLines": true,
+                "stackMode": "auto",
+                "xAxisLabelRotation": 0,
+                "xAxisTitleVisibility": "show",
+                "y2AxisAbbreviation": "auto",
+                "y2AxisScale": "inherit",
+                "y2AxisTitleVisibility": "show",
+                "yAxisAbbreviation": "auto",
+                "yAxisScale": "linear",
+                "yAxisTitleVisibility": "show"
+            },
+            "title": "Alerts by Severity",
+            "type": "splunk.column"
+        },
+        "viz_t3rpWF0M": {
+            "containerOptions": {},
+            "context": {},
+            "dataSources": {
+                "primary": "ds_YAiqTzDw"
+            },
+            "eventHandlers": [
+                {
+                    "options": {
+                        "tokens": [
+                            {
+                                "key": "row.severity.value",
+                                "token": "severity"
+                            }
+                        ]
+                    },
+                    "type": "drilldown.setToken"
+                }
+            ],
+            "options": {},
+            "showLastUpdated": false,
+            "showProgressBar": true,
+            "title": "Incident Severity vs Status Overview",
+            "type": "splunk.bar"
+        }
+    },
+    "dataSources": {
+        "ds_1YtQ7gat": {
+            "name": "Alerts by Severity search",
+            "options": {
+                "query": "source=\"security dashboard.csv\" index=\"main\"\r\n| stats count by alert_severity",
+                "queryParameters": {
+                    "earliest": "0",
+                    "sampleRatio": 1
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_AnU0vgfc": {
+            "name": "Vulnerability Status Breakdown search",
+            "options": {
+                "query": "source=\"security dashboard.csv\" index=\"main\"\r\n| stats count by vuln_type, vuln_status",
+                "queryParameters": {
+                    "earliest": "0",
+                    "sampleRatio": 1
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_UpjWKnBT": {
+            "name": "Compliance Status Summary search",
+            "options": {
+                "query": "source=\"security dashboard.csv\" index=\"main\"\r\n| stats count by compliance_area, compliance_status",
+                "queryParameters": {
+                    "earliest": "0",
+                    "sampleRatio": 1
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_YAiqTzDw": {
+            "name": "Incident Overview - Table search",
+            "options": {
+                "query": "source=\"security dashboard.csv\" index=\"main\" \r\n| stats count by severity, status",
+                "queryParameters": {
+                    "earliest": "0",
+                    "sampleRatio": 1
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_gFpbJJKp": {
+            "name": "Login Success Rate search",
+            "options": {
+                "query": "source=\"security dashboard.csv\" index=\"main\"\r\n| stats count by login_success",
+                "queryParameters": {
+                    "earliest": "0",
+                    "sampleRatio": 1
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_rZgWCySz": {
+            "name": "Open Critical Incidents search",
+            "options": {
+                "query": "source=\"security dashboard.csv\" index=\"main\" (severity=\"Critical\" OR severity=\"High\") status=\"Open\"\r\n| table timestamp, incident_id, incident_type, severity, status, user_id",
+                "queryParameters": {
+                    "earliest": "0",
+                    "sampleRatio": 1
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_v9RYhLLw": {
+            "name": "Details of Severity search",
+            "options": {
+                "query": "source=\"security dashboard.csv\" index=\"main\" | search severity=\"$severity$\"  | table timestamp, incident_id, incident_type, severity, status",
+                "queryParameters": {
+                    "earliest": "0",
+                    "sampleRatio": 1
+                }
+            },
+            "type": "ds.search"
+        }
+    },
+    "layout": {
+        "globalInputs": [
+            "input_global_trp",
+            "input_bmkqsjco"
         ],
-        "type": "grid"
-      }
-    },
-    "options": {},
-    "tabs": {
-      "items": [
-        {
-          "label": "tab name",
-          "layoutId": "layout_1"
+        "layoutDefinitions": {
+            "layout_1": {
+                "options": {
+                    "backgroundColor": "transparent",
+                    "height": 960,
+                    "width": 1440
+                },
+                "structure": [
+                    {
+                        "item": "viz_hFEe2YSh",
+                        "position": {
+                            "h": 64,
+                            "w": 1440,
+                            "x": 0,
+                            "y": 0
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_t3rpWF0M",
+                        "position": {
+                            "h": 250,
+                            "w": 720,
+                            "x": 0,
+                            "y": 64
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_rCamLKb8",
+                        "position": {
+                            "h": 300,
+                            "w": 720,
+                            "x": 0,
+                            "y": 314
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_sPbX54m5",
+                        "position": {
+                            "h": 300,
+                            "w": 720,
+                            "x": 0,
+                            "y": 614
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_9t8R8viG",
+                        "position": {
+                            "h": 300,
+                            "w": 1440,
+                            "x": 0,
+                            "y": 914
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_aHRsrJey",
+                        "position": {
+                            "h": 250,
+                            "w": 720,
+                            "x": 720,
+                            "y": 64
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_eqWfrwUD",
+                        "position": {
+                            "h": 300,
+                            "w": 720,
+                            "x": 720,
+                            "y": 314
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_ixb5tYrg",
+                        "position": {
+                            "h": 300,
+                            "w": 720,
+                            "x": 720,
+                            "y": 614
+                        },
+                        "type": "block"
+                    }
+                ],
+                "type": "grid"
+            }
+        },
+        "options": {},
+        "tabs": {
+            "items": [
+                {
+                    "label": "tab name",
+                    "layoutId": "layout_1"
+                }
+            ]
         }
-      ]
+    },
+    "applicationProperties": {
+        "hideEdit": false,
+        "hideExport": false
     }
-  },
-  "applicationProperties": {
-    "hideEdit": false,
-    "hideExport": false
-  }
 }
