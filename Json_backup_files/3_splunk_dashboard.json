@@ -1,0 +1,363 @@
+{
+  "visualizations": {
+    "viz_5yL4j8Bj": {
+      "type": "splunk.markdown",
+      "options": {
+        "markdown": "# Apache Access Log Status Overview"
+      }
+    },
+    "viz_XxTETX13": {
+      "type": "splunk.singlevalue",
+      "options": {
+        "backgroundColor": "> majorValue | rangeValue(convertedColorRange)"
+      },
+      "context": {
+        "convertedColorRange": [
+          {
+            "from": 30,
+            "value": "#dc4e41"
+          },
+          {
+            "from": 0,
+            "to": 30,
+            "value": "#53a051"
+          },
+          {
+            "to": 0,
+            "value": "#cba700"
+          }
+        ]
+      },
+      "dataSources": {
+        "primary": "ds_AiZ5vEuI"
+      },
+      "eventHandlers": [
+        {
+          "type": "drilldown.setToken",
+          "options": {
+            "tokens": [
+              {
+                "token": "status",
+                "key": "row.status_token.value"
+              }
+            ]
+          }
+        }
+      ],
+      "title": "2xx"
+    },
+    "viz_N9vuxNhe": {
+      "type": "splunk.singlevalue",
+      "options": {
+        "backgroundColor": "> majorValue | rangeValue(convertedColorRange)"
+      },
+      "context": {
+        "convertedColorRange": [
+          {
+            "from": 100,
+            "value": "#dc4e41"
+          },
+          {
+            "from": 70,
+            "to": 100,
+            "value": "#f1813f"
+          },
+          {
+            "from": 30,
+            "to": 70,
+            "value": "#f8be34"
+          },
+          {
+            "from": 0,
+            "to": 30,
+            "value": "#53a051"
+          },
+          {
+            "to": 0,
+            "value": "#53a051"
+          }
+        ]
+      },
+      "dataSources": {
+        "primary": "ds_yzpqoLmS"
+      },
+      "eventHandlers": [
+        {
+          "type": "drilldown.setToken",
+          "options": {
+            "tokens": [
+              {
+                "token": "status",
+                "key": "row.status_token.value"
+              }
+            ]
+          }
+        }
+      ],
+      "title": "4xx"
+    },
+    "viz_jjYXiyMr": {
+      "type": "splunk.singlevalue",
+      "options": {
+        "backgroundColor": "> majorValue | rangeValue(convertedColorRange)"
+      },
+      "context": {
+        "convertedColorRange": [
+          {
+            "from": 30,
+            "value": "#dc4e41"
+          },
+          {
+            "from": 0,
+            "to": 30,
+            "value": "#118832"
+          },
+          {
+            "to": 0,
+            "value": "#53a051"
+          }
+        ]
+      },
+      "dataSources": {
+        "primary": "ds_0MHwF9WC"
+      },
+      "eventHandlers": [
+        {
+          "type": "drilldown.setToken",
+          "options": {
+            "tokens": [
+              {
+                "token": "status",
+                "key": "row.status_token.value"
+              }
+            ]
+          }
+        }
+      ],
+      "title": "5xx"
+    },
+    "viz_M8YFyUuM": {
+      "type": "splunk.markdown",
+      "options": {
+        "markdown": "# DETAILS OF STATUS CODES"
+      }
+    },
+    "viz_8cOjStaI": {
+      "type": "splunk.table",
+      "options": {
+        "count": 20,
+        "dataOverlayMode": "none",
+        "drilldown": "none",
+        "showRowNumbers": false,
+        "showInternalFields": false
+      },
+      "dataSources": {
+        "primary": "ds_8DPXkgsJ"
+      },
+      "title": "DETAILS"
+    },
+    "viz_Ztbh9DPx": {
+      "type": "splunk.markdown",
+      "options": {
+        "markdown": "# HTTP Status Summary"
+      }
+    },
+    "viz_t03BstP9": {
+      "type": "splunk.pie",
+      "options": {
+        "collapseThreshold": 0.01
+      },
+      "dataSources": {
+        "primary": "ds_rcxeyF3E"
+      },
+      "title": "PIE CHART"
+    }
+  },
+  "dataSources": {
+    "ds_AiZ5vEuI": {
+      "type": "ds.search",
+      "options": {
+        "query": "index=main sourcetype=\"access.log\" | rex \"^[^ ]+ [^ ]+ [^ ]+ \\[.+\\] \\\"[^\\\"]+\\\" (?<status>\\d{3})\" | search status>=200 status<300 | stats count",
+        "queryParameters": {
+          "earliest": "-7d@h",
+          "latest": "now",
+          "sampleRatio": 1
+        }
+      },
+      "name": "2xx - Single value search"
+    },
+    "ds_yzpqoLmS": {
+      "type": "ds.search",
+      "options": {
+        "query": "index=main sourcetype=\"access.log\" | rex \"^[^ ]+ [^ ]+ [^ ]+ \\[.+\\] \\\"[^\\\"]+\\\" (?<status>\\d{3})\" | search status>=400 status<500 | stats count",
+        "queryParameters": {
+          "earliest": "-7d@h",
+          "latest": "now",
+          "sampleRatio": 1
+        }
+      },
+      "name": "4xx - Single value search"
+    },
+    "ds_0MHwF9WC": {
+      "type": "ds.search",
+      "options": {
+        "query": "index=main sourcetype=\"access.log\" | rex \"^[^ ]+ [^ ]+ [^ ]+ \\[.+\\] \\\"[^\\\"]+\\\" (?<status>\\d{3})\" | search status>=500 status<600 | stats count",
+        "queryParameters": {
+          "earliest": "-7d@h",
+          "latest": "now",
+          "sampleRatio": 1
+        }
+      },
+      "name": "5xx - Single value search"
+    },
+    "ds_8DPXkgsJ": {
+      "type": "ds.search",
+      "options": {
+        "query": "index=main sourcetype=\"access.log\"\n| rex \"^(?<client_ip>[^ ]+) [^ ]+ [^ ]+ \\[(?<timestamp>[^\\]]+)\\] \\\"(?<method>[^\\\"]+)\\\" (?<status>\\d{3}) (?<bytes>\\d+)\"\n| eval status = tonumber(status)\n| where status = status\n| table client_ip, timestamp, method, status, bytes",
+        "queryParameters": {
+          "earliest": "-7d@h",
+          "latest": "now",
+          "sampleRatio": 1
+        }
+      },
+      "name": "DETAILS - Table search"
+    },
+    "ds_rcxeyF3E": {
+      "type": "ds.search",
+      "options": {
+        "query": "index=main sourcetype=\"access.log\"\n| rex \"^(?<client_ip>[^ ]+) [^ ]+ [^ ]+ \\[(?<timestamp>[^\\]]+)\\] \\\"(?<method>[^\\\"]+)\\\" (?<status>\\d{3}) (?<bytes>\\d+)\"\n| stats count by status",
+        "queryParameters": {
+          "earliest": "-7d@h",
+          "latest": "now",
+          "sampleRatio": 1
+        }
+      },
+      "name": "PIE CHART - Pie chart search"
+    }
+  },
+  "defaults": {
+    "dataSources": {
+      "ds.search": {
+        "options": {
+          "queryParameters": {}
+        }
+      }
+    },
+    "visualizations": {
+      "global": {
+        "showProgressBar": true
+      }
+    }
+  },
+  "inputs": {},
+  "layout": {
+    "options": {},
+    "globalInputs": [],
+    "tabs": {
+      "items": [
+        {
+          "layoutId": "layout_1",
+          "label": "New tab"
+        }
+      ]
+    },
+    "layoutDefinitions": {
+      "layout_1": {
+        "type": "absolute",
+        "structure": [
+          {
+            "item": "viz_5yL4j8Bj",
+            "type": "block",
+            "position": {
+              "x": 0,
+              "y": 0,
+              "w": 1440,
+              "h": 250
+            }
+          },
+          {
+            "item": "viz_XxTETX13",
+            "type": "block",
+            "position": {
+              "x": 0,
+              "y": 250,
+              "w": 480,
+              "h": 250
+            }
+          },
+          {
+            "item": "viz_N9vuxNhe",
+            "type": "block",
+            "position": {
+              "x": 480,
+              "y": 250,
+              "w": 480,
+              "h": 250
+            }
+          },
+          {
+            "item": "viz_jjYXiyMr",
+            "type": "block",
+            "position": {
+              "x": 960,
+              "y": 250,
+              "w": 480,
+              "h": 250
+            }
+          },
+          {
+            "item": "viz_M8YFyUuM",
+            "type": "block",
+            "position": {
+              "x": 0,
+              "y": 500,
+              "w": 1440,
+              "h": 250
+            }
+          },
+          {
+            "item": "viz_8cOjStaI",
+            "type": "block",
+            "position": {
+              "x": 0,
+              "y": 750,
+              "w": 1440,
+              "h": 250
+            }
+          },
+          {
+            "item": "viz_Ztbh9DPx",
+            "type": "block",
+            "position": {
+              "x": 0,
+              "y": 1000,
+              "w": 1440,
+              "h": 250
+            }
+          },
+          {
+            "item": "viz_t03BstP9",
+            "type": "block",
+            "position": {
+              "x": 0,
+              "y": 1250,
+              "w": 1440,
+              "h": 250
+            }
+          }
+        ],
+        "options": {
+          "width": 1440,
+          "height": 1500,
+          "display": "auto"
+        }
+      }
+    }
+  },
+  "description": "",
+  "title": "Abhi-Apache Dashboard Copy1",
+  "applicationProperties": {
+    "hideEdit": false,
+    "hideExport": false
+  }
+}
