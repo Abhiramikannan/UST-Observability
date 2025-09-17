@@ -87,4 +87,8 @@
                     otherwise -> no.
 
 10. INDEX in SPLUNK?
-          Instead
+          Instead of reading the entire raw file line by line every time, Splunk stores data in an optimized index structure.
+          Like a memory, Fetching the results faster
+          An index in Splunk organizes and stores data so it can be searched quickly.
+          It creates special metadata (like tags) for important fields.
+          This helps Splunk find the data you want super fast when you search.
