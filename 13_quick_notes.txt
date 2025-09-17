@@ -68,7 +68,7 @@
                                                   available when they needs
                                                   works well without any unexpected failure
 
-8. 4xx ANS 5XX ERRORS?
+8. 4xx AND 5XX ERRORS?
 
                     4xx errors → Client-side issue
                     The problem is in the request sent by the user/browser.
