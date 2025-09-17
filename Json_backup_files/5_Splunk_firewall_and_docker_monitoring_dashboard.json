@@ -1,0 +1,531 @@
+{
+    "title": "Abhi-firewall and docker dashboard studio",
+    "description": "",
+    "inputs": {
+        "input_7TyQkyvT": {
+            "options": {
+                "defaultValue": "DROP",
+                "token": "action"
+            },
+            "title": "action",
+            "type": "input.text"
+        },
+        "input_JIS9insj": {
+            "options": {
+                "token": "container"
+            },
+            "title": "container",
+            "type": "input.text"
+        }
+    },
+    "defaults": {
+        "dataSources": {
+            "ds.search": {
+                "options": {
+                    "queryParameters": {}
+                }
+            }
+        },
+        "visualizations": {
+            "global": {
+                "showProgressBar": true
+            }
+        }
+    },
+    "visualizations": {
+        "viz_2IkCswDN": {
+            "dataSources": {
+                "primary": "ds_s6SVKAyP"
+            },
+            "options": {
+                "dataValuesDisplay": "off",
+                "legendDisplay": "right",
+                "legendMode": "standard",
+                "legendTruncation": "ellipsisMiddle",
+                "lineWidth": 2,
+                "nullValueDisplay": "gaps",
+                "showIndependentYRanges": false,
+                "showOverlayY2Axis": false,
+                "showRoundedY2AxisLabels": false,
+                "showSplitSeries": false,
+                "showY2MajorGridLines": true,
+                "xAxisLabelRotation": 0,
+                "xAxisTitleVisibility": "show",
+                "y2AxisAbbreviation": "auto",
+                "y2AxisScale": "inherit",
+                "y2AxisTitleVisibility": "show",
+                "yAxisAbbreviation": "auto",
+                "yAxisScale": "linear",
+                "yAxisTitleVisibility": "show"
+            },
+            "title": "Logs Over Time",
+            "type": "splunk.line"
+        },
+        "viz_5U4YAA3l": {
+            "dataSources": {
+                "primary": "ds_7qOSF9zP"
+            },
+            "eventHandlers": [
+                {
+                    "options": {
+                        "newTab": false,
+                        "type": "auto"
+                    },
+                    "type": "drilldown.linkToSearch"
+                }
+            ],
+            "options": {
+                "dataValuesDisplay": "off",
+                "legendDisplay": "right",
+                "legendTruncation": "ellipsisMiddle",
+                "showIndependentYRanges": false,
+                "showOverlayY2Axis": false,
+                "showRoundedY2AxisLabels": false,
+                "showSplitSeries": false,
+                "showY2MajorGridLines": true,
+                "stackMode": "auto",
+                "xAxisLabelRotation": 0,
+                "xAxisTitleVisibility": "show",
+                "y2AxisAbbreviation": "auto",
+                "y2AxisScale": "inherit",
+                "y2AxisTitleVisibility": "show",
+                "yAxisAbbreviation": "auto",
+                "yAxisScale": "linear",
+                "yAxisTitleVisibility": "show"
+            },
+            "title": "Containers with Most ERROR Logs",
+            "type": "splunk.column"
+        },
+        "viz_5ybZM17V": {
+            "options": {
+                "markdown": "# Docker Container Monitoring Dashboard"
+            },
+            "type": "splunk.markdown"
+        },
+        "viz_FzYsFxj2": {
+            "dataSources": {
+                "primary": "ds_gB7fnZ8s"
+            },
+            "options": {
+                "dataValuesDisplay": "off",
+                "legendDisplay": "right",
+                "legendTruncation": "ellipsisMiddle",
+                "showIndependentYRanges": false,
+                "showRoundedY2AxisLabels": false,
+                "showSplitSeries": false,
+                "showY2MajorGridLines": true,
+                "stackMode": "auto",
+                "xAxisTitleVisibility": "show",
+                "y2AxisAbbreviation": "auto",
+                "y2AxisTitleVisibility": "show",
+                "yAxisAbbreviation": "auto",
+                "yAxisScale": "linear",
+                "yAxisTitleVisibility": "show"
+            },
+            "title": "Protocol-wise Action Count",
+            "type": "splunk.bar"
+        },
+        "viz_KdbZhy0g": {
+            "options": {
+                "markdown": "# DRILL DOWN FEATURE OF FIREWALL ACTIONS"
+            },
+            "type": "splunk.markdown"
+        },
+        "viz_TW4W6cT4": {
+            "dataSources": {
+                "primary": "ds_pK5TUeZM"
+            },
+            "options": {
+                "count": 20,
+                "dataOverlayMode": "none",
+                "drilldown": "none",
+                "showInternalFields": false,
+                "showRowNumbers": false
+            },
+            "title": "Detailed Firewall Logs",
+            "type": "splunk.table"
+        },
+        "viz_YoJ6qCoD": {
+            "options": {
+                "markdown": "# Network Security Firewall Dashboard"
+            },
+            "type": "splunk.markdown"
+        },
+        "viz_aNZGfip2": {
+            "dataSources": {
+                "primary": "ds_MWpNAOYi"
+            },
+            "eventHandlers": [
+                {
+                    "options": {
+                        "newTab": false,
+                        "type": "auto"
+                    },
+                    "type": "drilldown.linkToSearch"
+                }
+            ],
+            "options": {
+                "dataValuesDisplay": "off",
+                "legendDisplay": "right",
+                "legendTruncation": "ellipsisMiddle",
+                "showIndependentYRanges": false,
+                "showOverlayY2Axis": false,
+                "showRoundedY2AxisLabels": false,
+                "showSplitSeries": false,
+                "showY2MajorGridLines": true,
+                "stackMode": "auto",
+                "xAxisLabelRotation": 0,
+                "xAxisTitleVisibility": "show",
+                "y2AxisAbbreviation": "auto",
+                "y2AxisScale": "inherit",
+                "y2AxisTitleVisibility": "show",
+                "yAxisAbbreviation": "auto",
+                "yAxisScale": "linear",
+                "yAxisTitleVisibility": "show"
+            },
+            "title": "Firewall Actions Count",
+            "type": "splunk.column"
+        },
+        "viz_kFc35F3Q": {
+            "options": {
+                "markdown": "# DRILL DOWN FEATURE OF DOCKER CONTAINER MONITORING Dashboard"
+            },
+            "type": "splunk.markdown"
+        },
+        "viz_lIROHEug": {
+            "dataSources": {
+                "primary": "ds_UQFlQWXJ"
+            },
+            "options": {
+                "count": 20,
+                "dataOverlayMode": "none",
+                "drilldown": "none",
+                "showInternalFields": false,
+                "showRowNumbers": false
+            },
+            "showProgressBar": true,
+            "title": "DETAILED VIEW OF FIREWALL ACTIONS",
+            "type": "splunk.table"
+        },
+        "viz_qVrTR2v4": {
+            "dataSources": {
+                "primary": "ds_enVgHCRl"
+            },
+            "options": {
+                "count": 20,
+                "dataOverlayMode": "none",
+                "drilldown": "none",
+                "showInternalFields": false,
+                "showRowNumbers": false
+            },
+            "title": "Logs by level",
+            "type": "splunk.table"
+        },
+        "viz_tFuogK3S": {
+            "dataSources": {
+                "primary": "ds_jArVMONN"
+            },
+            "options": {
+                "dataValuesDisplay": "off",
+                "legendDisplay": "right",
+                "legendTruncation": "ellipsisMiddle",
+                "showIndependentYRanges": false,
+                "showOverlayY2Axis": false,
+                "showRoundedY2AxisLabels": false,
+                "showSplitSeries": false,
+                "showY2MajorGridLines": true,
+                "stackMode": "auto",
+                "xAxisLabelRotation": 0,
+                "xAxisTitleVisibility": "show",
+                "y2AxisAbbreviation": "auto",
+                "y2AxisScale": "inherit",
+                "y2AxisTitleVisibility": "show",
+                "yAxisAbbreviation": "auto",
+                "yAxisScale": "linear",
+                "yAxisTitleVisibility": "show"
+            },
+            "title": "Most Targeted Destination Ports",
+            "type": "splunk.column"
+        },
+        "viz_xQodLAkC": {
+            "dataSources": {
+                "primary": "ds_h5anD3iC"
+            },
+            "options": {
+                "count": 20,
+                "dataOverlayMode": "none",
+                "drilldown": "none",
+                "showInternalFields": false,
+                "showRowNumbers": false
+            },
+            "showProgressBar": true,
+            "title": "Detailed view of the Container",
+            "type": "splunk.table"
+        }
+    },
+    "dataSources": {
+        "ds_7qOSF9zP": {
+            "name": "Containers with Most ERROR Logs - Column chart search",
+            "options": {
+                "query": "source=\"Docker-container-logs.log\" host=\"si-i-0d6634ad86707eee5.prd-p-i0wcm.splunkcloud.com\" index=\"main\" sourcetype=\"docker container logs\"\n| rex field=_raw \"^(?<timestamp>\\S+)\\s+(?<container>\\S+)\\s+(?<level>INFO|WARN|ERROR)\"\n| where level=\"ERROR\"\n| stats count by container\n| sort - count",
+                "queryParameters": {
+                    "earliest": "0",
+                    "sampleRatio": 1
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_MWpNAOYi": {
+            "name": "Firewall Actions Count - Column chart search",
+            "options": {
+                "query": "source=\"firewall-logs.log\" host=\"si-i-0d6634ad86707eee5.prd-p-i0wcm.splunkcloud.com\" index=\"main\" sourcetype=\"firewall-logs\"\n| rex field=_raw \"^(?<timestamp>\\w+\\s+\\d+\\s+\\d+:\\d+:\\d+)\\s+(?<host>\\S+)\\s+(?<action>DROP|ACCEPT)\"\n| stats count by action",
+                "queryParameters": {
+                    "earliest": "0",
+                    "sampleRatio": 1
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_UQFlQWXJ": {
+            "name": "DETAILED VIEW OF FIREWALL ACTIONS - Table search",
+            "options": {
+                "query": "source=\"firewall-logs.log\" host=\"si-i-0d6634ad86707eee5.prd-p-i0wcm.splunkcloud.com\" index=\"main\" sourcetype=\"firewall-logs\"\n| rex field=_raw \"^(?<timestamp>\\w+\\s+\\d+\\s+\\d+:\\d+:\\d+)\\s+(?<host>\\S+)\\s+(?<action>DROP|ACCEPT)\\s+(?<protocol>\\S+)\\s+(?<src_ip>\\d+\\.\\d+\\.\\d+\\.\\d+):(?<src_port>\\d+)\\s+->\\s+(?<dest_ip>\\d+\\.\\d+\\.\\d+\\.\\d+):(?<dest_port>\\d+)\"\n| where action=\"$selected_action$\"\n| table timestamp, host, action, protocol, src_ip, src_port, dest_ip, dest_port\n| sort - timestamp",
+                "queryParameters": {
+                    "earliest": "0",
+                    "latest": "",
+                    "sampleRatio": 1
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_enVgHCRl": {
+            "name": "Logs by level - Table search",
+            "options": {
+                "query": "source=\"Docker-container-logs.log\" host=\"si-i-0d6634ad86707eee5.prd-p-i0wcm.splunkcloud.com\" index=\"main\" sourcetype=\"docker container logs\"\n| rex field=_raw \"^(?<timestamp>\\S+)\\s+(?<container>\\S+)\\s+(?<level>INFO|WARN|ERROR)\\s+(?<message>.+)\"\n| stats count by container, level",
+                "queryParameters": {
+                    "earliest": "0",
+                    "sampleRatio": 1
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_gB7fnZ8s": {
+            "name": "Protocol-wise Action Count - Bar chart search",
+            "options": {
+                "query": "source=\"firewall-logs.log\" host=\"si-i-0d6634ad86707eee5.prd-p-i0wcm.splunkcloud.com\" index=\"main\" sourcetype=\"firewall-logs\"\n| rex field=_raw \"^(?<timestamp>\\w+\\s+\\d+\\s+\\d+:\\d+:\\d+)\\s+\\S+\\s+(?<action>DROP|ACCEPT)\\s+(?<protocol>\\S+)\"\n| stats count by protocol, action",
+                "queryParameters": {
+                    "earliest": "0",
+                    "sampleRatio": 1
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_h5anD3iC": {
+            "name": "Detailed view of the Container - Table search",
+            "options": {
+                "query": "source=\"Docker-container-logs.log\" host=\"si-i-0d6634ad86707eee5.prd-p-i0wcm.splunkcloud.com\" index=\"main\" sourcetype=\"docker container logs\"\n| rex field=_raw \"^(?<timestamp>\\S+)\\s+(?<container>\\S+)\\s+(?<level>INFO|WARN|ERROR)\\s+(?<message>.+)\"\n| where level=\"ERROR\" AND container=\"$selected_container$\"\n| table timestamp, container, level, message\n| sort - timestamp",
+                "queryParameters": {
+                    "earliest": "0",
+                    "latest": "",
+                    "sampleRatio": 1
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_jArVMONN": {
+            "name": "Most Targeted Destination Ports - Column chart search",
+            "options": {
+                "query": "source=\"firewall-logs.log\" host=\"si-i-0d6634ad86707eee5.prd-p-i0wcm.splunkcloud.com\" index=\"main\" sourcetype=\"firewall-logs\"\n| rex field=_raw \"->\\s+(?:\\d+\\.\\d+\\.\\d+\\.\\d+):(?<dest_port>\\d+)\"\n| stats count by dest_port\n| sort - count\n| head 10",
+                "queryParameters": {
+                    "earliest": "0",
+                    "sampleRatio": 1
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_pK5TUeZM": {
+            "name": "Detailed Firewall Logs - Table search",
+            "options": {
+                "query": "source=\"firewall-logs.log\" host=\"si-i-0d6634ad86707eee5.prd-p-i0wcm.splunkcloud.com\" index=\"main\" sourcetype=\"firewall-logs\"\n| rex field=_raw \"^(?<timestamp>\\w+\\s+\\d+\\s+\\d+:\\d+:\\d+)\\s+(?<host>\\S+)\\s+(?<action>DROP|ACCEPT)\\s+(?<protocol>\\S+)\\s+(?<src_ip>\\d+\\.\\d+\\.\\d+\\.\\d+):(?<src_port>\\d+)\\s+->\\s+(?<dest_ip>\\d+\\.\\d+\\.\\d+\\.\\d+):(?<dest_port>\\d+)\"\n| table timestamp, host, action, protocol, src_ip, src_port, dest_ip, dest_port\n| sort - timestamp",
+                "queryParameters": {
+                    "earliest": "0",
+                    "sampleRatio": 1
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_s6SVKAyP": {
+            "name": "Logs Over Time - Line chart search",
+            "options": {
+                "query": "source=\"Docker-container-logs.log\" host=\"si-i-0d6634ad86707eee5.prd-p-i0wcm.splunkcloud.com\" index=\"main\" sourcetype=\"docker container logs\"\n| rex field=_raw \"^(?<timestamp>\\S+)\\s+(?<container>\\S+)\\s+(?<level>INFO|WARN|ERROR)\"\n| timechart count by level span=1h",
+                "queryParameters": {
+                    "earliest": "0",
+                    "sampleRatio": 1
+                }
+            },
+            "type": "ds.search"
+        }
+    },
+    "layout": {
+        "globalInputs": [
+            "input_7TyQkyvT",
+            "input_JIS9insj"
+        ],
+        "layoutDefinitions": {
+            "layout_1": {
+                "options": {
+                    "height": 2250,
+                    "width": 1440
+                },
+                "structure": [
+                    {
+                        "item": "viz_YoJ6qCoD",
+                        "position": {
+                            "h": 250,
+                            "w": 1440,
+                            "x": 0,
+                            "y": 0
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_FzYsFxj2",
+                        "position": {
+                            "h": 250,
+                            "w": 720,
+                            "x": 0,
+                            "y": 250
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_tFuogK3S",
+                        "position": {
+                            "h": 250,
+                            "w": 720,
+                            "x": 720,
+                            "y": 250
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_TW4W6cT4",
+                        "position": {
+                            "h": 250,
+                            "w": 720,
+                            "x": 0,
+                            "y": 500
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_aNZGfip2",
+                        "position": {
+                            "h": 250,
+                            "w": 720,
+                            "x": 720,
+                            "y": 500
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_KdbZhy0g",
+                        "position": {
+                            "h": 250,
+                            "w": 1440,
+                            "x": 0,
+                            "y": 750
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_lIROHEug",
+                        "position": {
+                            "h": 250,
+                            "w": 1440,
+                            "x": 0,
+                            "y": 1000
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_5ybZM17V",
+                        "position": {
+                            "h": 250,
+                            "w": 1440,
+                            "x": 0,
+                            "y": 1250
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_qVrTR2v4",
+                        "position": {
+                            "h": 250,
+                            "w": 480,
+                            "x": 0,
+                            "y": 1500
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_2IkCswDN",
+                        "position": {
+                            "h": 250,
+                            "w": 480,
+                            "x": 480,
+                            "y": 1500
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_5U4YAA3l",
+                        "position": {
+                            "h": 250,
+                            "w": 480,
+                            "x": 960,
+                            "y": 1500
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_kFc35F3Q",
+                        "position": {
+                            "h": 250,
+                            "w": 1440,
+                            "x": 0,
+                            "y": 1750
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_xQodLAkC",
+                        "position": {
+                            "h": 250,
+                            "w": 1440,
+                            "x": 0,
+                            "y": 2000
+                        },
+                        "type": "block"
+                    }
+                ],
+                "type": "grid"
+            }
+        },
+        "options": {
+            "submitButton": false
+        },
+        "tabs": {
+            "items": [
+                {
+                    "label": "New tab",
+                    "layoutId": "layout_1"
+                }
+            ]
+        }
+    },
+    "applicationProperties": {
+        "hideEdit": false,
+        "hideExport": false
+    }
+}
