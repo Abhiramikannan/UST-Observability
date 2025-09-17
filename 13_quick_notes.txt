@@ -86,7 +86,11 @@
                     if a system meets these all -> compliant
                     otherwise -> no.
 
-10. INDEX in SPLUNK?
+10. SPLUNK?
+          Splunk can ingest huge volumes of both structured and unstructured data from a wide variety of sources and makes that data quickly searchable,
+          analyzable, and visualizable in real time.
+
+11. INDEX in SPLUNK?
           Instead of reading the entire raw file line by line every time, Splunk stores data in an optimized index structure.
           Like a memory, Fetching the results faster
           An index in Splunk organizes and stores data so it can be searched quickly.
