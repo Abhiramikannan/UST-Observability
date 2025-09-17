@@ -1,0 +1,410 @@
+{
+    "title": "Abhi-NGINX Traffic Dashboard In dashboard studio",
+    "description": "",
+    "inputs": {
+        "input_EXw0DUfq": {
+            "options": {
+                "token": "method"
+            },
+            "title": "method",
+            "type": "input.text"
+        }
+    },
+    "defaults": {
+        "dataSources": {
+            "ds.search": {
+                "options": {
+                    "queryParameters": {}
+                }
+            }
+        },
+        "visualizations": {
+            "global": {
+                "showProgressBar": true
+            }
+        }
+    },
+    "visualizations": {
+        "viz_2k0U8qcD": {
+            "dataSources": {
+                "primary": "ds_4nrSsMCI"
+            },
+            "options": {
+                "dataValuesDisplay": "off",
+                "legendDisplay": "right",
+                "legendMode": "standard",
+                "legendTruncation": "ellipsisMiddle",
+                "lineWidth": 2,
+                "nullValueDisplay": "gaps",
+                "showIndependentYRanges": false,
+                "showOverlayY2Axis": false,
+                "showRoundedY2AxisLabels": false,
+                "showSplitSeries": false,
+                "showY2MajorGridLines": true,
+                "xAxisLabelRotation": 0,
+                "xAxisTitleVisibility": "show",
+                "y2AxisAbbreviation": "auto",
+                "y2AxisScale": "inherit",
+                "y2AxisTitleVisibility": "show",
+                "yAxisAbbreviation": "auto",
+                "yAxisScale": "linear",
+                "yAxisTitleVisibility": "show"
+            },
+            "title": "Total Requests Per Hour",
+            "type": "splunk.line"
+        },
+        "viz_59t4AYx8": {
+            "dataSources": {
+                "primary": "ds_e2n9qjJ6"
+            },
+            "options": {
+                "dataValuesDisplay": "off",
+                "legendDisplay": "right",
+                "legendTruncation": "ellipsisMiddle",
+                "showIndependentYRanges": false,
+                "showOverlayY2Axis": false,
+                "showRoundedY2AxisLabels": false,
+                "showSplitSeries": false,
+                "showY2MajorGridLines": true,
+                "stackMode": "auto",
+                "xAxisLabelRotation": 0,
+                "xAxisTitleVisibility": "show",
+                "y2AxisAbbreviation": "auto",
+                "y2AxisScale": "inherit",
+                "y2AxisTitleVisibility": "show",
+                "yAxisAbbreviation": "auto",
+                "yAxisScale": "linear",
+                "yAxisTitleVisibility": "show"
+            },
+            "title": "Requests by HTTP Status Code",
+            "type": "splunk.column"
+        },
+        "viz_AxkKIsb2": {
+            "dataSources": {
+                "primary": "ds_8AnLVpsO"
+            },
+            "options": {
+                "dataValuesDisplay": "off",
+                "legendDisplay": "right",
+                "legendTruncation": "ellipsisMiddle",
+                "showIndependentYRanges": false,
+                "showOverlayY2Axis": false,
+                "showRoundedY2AxisLabels": false,
+                "showSplitSeries": false,
+                "showY2MajorGridLines": true,
+                "stackMode": "auto",
+                "xAxisLabelRotation": 0,
+                "xAxisTitleVisibility": "show",
+                "y2AxisAbbreviation": "auto",
+                "y2AxisScale": "inherit",
+                "y2AxisTitleVisibility": "show",
+                "yAxisAbbreviation": "auto",
+                "yAxisScale": "linear",
+                "yAxisTitleVisibility": "show"
+            },
+            "title": "Top 10 Client IPs",
+            "type": "splunk.column"
+        },
+        "viz_HjaADaqB": {
+            "options": {
+                "markdown": "# Nginx Traffic And Performance Dashboard"
+            },
+            "type": "splunk.markdown"
+        },
+        "viz_Yr921trK": {
+            "options": {
+                "markdown": "# DRILL DOWN FEATURE FOR HTTP METHODS"
+            },
+            "type": "splunk.markdown"
+        },
+        "viz_b8k0w9Yc": {
+            "dataSources": {
+                "primary": "ds_AglDpyjV"
+            },
+            "eventHandlers": [
+                {
+                    "options": {
+                        "newTab": false,
+                        "type": "auto"
+                    },
+                    "type": "drilldown.linkToSearch"
+                }
+            ],
+            "options": {
+                "collapseThreshold": 0.01
+            },
+            "title": "Requests by HTTP Method",
+            "type": "splunk.pie"
+        },
+        "viz_h5peBn52": {
+            "dataSources": {
+                "primary": "ds_Gpghxb5x"
+            },
+            "options": {
+                "dataValuesDisplay": "off",
+                "legendDisplay": "right",
+                "legendTruncation": "ellipsisMiddle",
+                "showIndependentYRanges": false,
+                "showOverlayY2Axis": false,
+                "showRoundedY2AxisLabels": false,
+                "showSplitSeries": false,
+                "showY2MajorGridLines": true,
+                "stackMode": "auto",
+                "xAxisLabelRotation": 0,
+                "xAxisTitleVisibility": "show",
+                "y2AxisAbbreviation": "auto",
+                "y2AxisScale": "inherit",
+                "y2AxisTitleVisibility": "show",
+                "yAxisAbbreviation": "auto",
+                "yAxisScale": "linear",
+                "yAxisTitleVisibility": "show"
+            },
+            "title": "Top 10 Requested Endpoints",
+            "type": "splunk.column"
+        },
+        "viz_xJ1clQU4": {
+            "dataSources": {
+                "primary": "ds_E0sIz83y"
+            },
+            "options": {
+                "dataValuesDisplay": "off",
+                "legendDisplay": "right",
+                "legendMode": "standard",
+                "legendTruncation": "ellipsisMiddle",
+                "nullValueDisplay": "gaps",
+                "showIndependentYRanges": false,
+                "showOverlayY2Axis": false,
+                "showRoundedY2AxisLabels": false,
+                "showSplitSeries": false,
+                "showY2MajorGridLines": true,
+                "stackMode": "auto",
+                "xAxisLabelRotation": 0,
+                "xAxisTitleVisibility": "show",
+                "y2AxisAbbreviation": "auto",
+                "y2AxisScale": "inherit",
+                "y2AxisTitleVisibility": "show",
+                "yAxisAbbreviation": "auto",
+                "yAxisScale": "linear",
+                "yAxisTitleVisibility": "show"
+            },
+            "title": "Client & Server Errors Over Time",
+            "type": "splunk.area"
+        },
+        "viz_zl4FdcGM": {
+            "dataSources": {
+                "primary": "ds_boQUCmuZ"
+            },
+            "options": {
+                "count": 20,
+                "dataOverlayMode": "none",
+                "drilldown": "none",
+                "showInternalFields": false,
+                "showRowNumbers": false
+            },
+            "showProgressBar": true,
+            "title": "DETAILED DATA OF REQ",
+            "type": "splunk.table"
+        }
+    },
+    "dataSources": {
+        "ds_4nrSsMCI": {
+            "name": "Total Requests Per Hour - Line chart search",
+            "options": {
+                "query": "source=\"nginx-access-logs.log\" host=\"si-i-0d6634ad86707eee5.prd-p-i0wcm.splunkcloud.com\" index=\"main\" sourcetype=\"nginx-logs\"\n| timechart count span=1h",
+                "queryParameters": {
+                    "earliest": "0",
+                    "sampleRatio": 1
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_8AnLVpsO": {
+            "name": "Top 10 Client IPs - Column chart search",
+            "options": {
+                "query": "source=\"nginx-access-logs.log\" host=\"si-i-0d6634ad86707eee5.prd-p-i0wcm.splunkcloud.com\" index=\"main\" sourcetype=\"nginx-logs\"\n| rex field=_raw \"^(?<client_ip>\\d+\\.\\d+\\.\\d+\\.\\d+)\"\n| stats count by client_ip\n| sort -count\n| head 10",
+                "queryParameters": {
+                    "earliest": "0",
+                    "sampleRatio": 1
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_AglDpyjV": {
+            "name": "Requests by HTTP Method - Pie chart search",
+            "options": {
+                "query": "source=\"nginx-access-logs.log\" host=\"si-i-0d6634ad86707eee5.prd-p-i0wcm.splunkcloud.com\" index=\"main\" sourcetype=\"nginx-logs\"\n| rex field=_raw \"\\\"(?<method>\\w+)\\s\"\n| stats count by method",
+                "queryParameters": {
+                    "earliest": "0",
+                    "sampleRatio": 1
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_E0sIz83y": {
+            "name": "Client _ Server Errors Over Time - Area chart search",
+            "options": {
+                "query": "source=\"nginx-access-logs.log\" host=\"si-i-0d6634ad86707eee5.prd-p-i0wcm.splunkcloud.com\" index=\"main\" sourcetype=\"nginx-logs\"\n| rex field=_raw \"\\\"\\s(?<status_code>\\d{3})\\s\"\n| search status_code>=400\n| timechart count by status_code span=1h",
+                "queryParameters": {
+                    "earliest": "0",
+                    "sampleRatio": 1
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_Gpghxb5x": {
+            "name": "Top 10 Requested Endpoints - Column chart search",
+            "options": {
+                "query": "source=\"nginx-access-logs.log\" host=\"si-i-0d6634ad86707eee5.prd-p-i0wcm.splunkcloud.com\" index=\"main\" sourcetype=\"nginx-logs\"\n| rex field=_raw \"\\\"\\w+\\s(?<uri>/\\S*)\\sHTTP\"\n| stats count by uri\n| sort -count\n| head 10",
+                "queryParameters": {
+                    "earliest": "0",
+                    "sampleRatio": 1
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_boQUCmuZ": {
+            "name": "DETAILED DATA OF REQ - Table search",
+            "options": {
+                "query": "source=\"nginx-access-logs.log\" host=\"si-i-0d6634ad86707eee5.prd-p-i0wcm.splunkcloud.com\" index=\"main\" sourcetype=\"nginx-logs\"\n| rex field=_raw \"^(?<client_ip>\\d+\\.\\d+\\.\\d+\\.\\d+)\"\n| rex field=_raw \"\\[(?<timestamp>[^\\]]+)\\]\"\n| rex field=_raw \"\\\"(?<method>GET|POST)\\s(?<uri>/\\S*)\\sHTTP\"\n| rex field=_raw \"\\\"\\s(?<status_code>\\d{3})\\s(?<bytes>\\d+)\"\n| where method=\"$selected_method$\"\n| table timestamp, client_ip, method, uri, status_code, bytes\n| sort - timestamp",
+                "queryParameters": {
+                    "earliest": "0",
+                    "latest": "",
+                    "sampleRatio": 1
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_e2n9qjJ6": {
+            "name": "Requests by HTTP Status Code - Column chart search",
+            "options": {
+                "query": "source=\"nginx-access-logs.log\" host=\"si-i-0d6634ad86707eee5.prd-p-i0wcm.splunkcloud.com\" index=\"main\" sourcetype=\"nginx-logs\"\n| rex field=_raw \"\\\"\\s(?<status_code>\\d{3})\\s\"\n| stats count by status_code\n| sort -count",
+                "queryParameters": {
+                    "earliest": "0",
+                    "sampleRatio": 1
+                }
+            },
+            "type": "ds.search"
+        }
+    },
+    "layout": {
+        "globalInputs": [
+            "input_EXw0DUfq"
+        ],
+        "layoutDefinitions": {
+            "layout_1": {
+                "options": {
+                    "height": 1250,
+                    "width": 1440
+                },
+                "structure": [
+                    {
+                        "item": "viz_HjaADaqB",
+                        "position": {
+                            "h": 250,
+                            "w": 1440,
+                            "x": 0,
+                            "y": 0
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_2k0U8qcD",
+                        "position": {
+                            "h": 250,
+                            "w": 480,
+                            "x": 0,
+                            "y": 250
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_59t4AYx8",
+                        "position": {
+                            "h": 250,
+                            "w": 480,
+                            "x": 480,
+                            "y": 250
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_h5peBn52",
+                        "position": {
+                            "h": 250,
+                            "w": 480,
+                            "x": 960,
+                            "y": 250
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_AxkKIsb2",
+                        "position": {
+                            "h": 250,
+                            "w": 480,
+                            "x": 0,
+                            "y": 500
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_xJ1clQU4",
+                        "position": {
+                            "h": 250,
+                            "w": 480,
+                            "x": 480,
+                            "y": 500
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_b8k0w9Yc",
+                        "position": {
+                            "h": 250,
+                            "w": 480,
+                            "x": 960,
+                            "y": 500
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_Yr921trK",
+                        "position": {
+                            "h": 250,
+                            "w": 1440,
+                            "x": 0,
+                            "y": 750
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_zl4FdcGM",
+                        "position": {
+                            "h": 250,
+                            "w": 1440,
+                            "x": 0,
+                            "y": 1000
+                        },
+                        "type": "block"
+                    }
+                ],
+                "type": "grid"
+            }
+        },
+        "options": {
+            "submitButton": false
+        },
+        "tabs": {
+            "items": [
+                {
+                    "label": "New tab",
+                    "layoutId": "layout_1"
+                }
+            ]
+        }
+    },
+    "applicationProperties": {
+        "hideEdit": false,
+        "hideExport": false
+    }
+}
