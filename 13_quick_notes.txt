@@ -92,3 +92,7 @@
           An index in Splunk organizes and stores data so it can be searched quickly.
           It creates special metadata (like tags) for important fields.
           This helps Splunk find the data you want super fast when you search.
+
+          The index is created to organize data and make searching much faster and efficient.
+          Without indexing, searching through all raw data would take a lot of time.
+          So, indexing helps Splunk find the right data quickly.
