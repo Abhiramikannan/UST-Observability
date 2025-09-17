@@ -1,0 +1,29 @@
+| Symbol         | Meaning                                                               |
+| -------------- | --------------------------------------------------------------------- |
+| `.`            | Matches **any single character** except a newline                     |
+| `+`            | Matches **one or more occurrences** of the preceding pattern          |
+| `*`            | Matches **zero or more occurrences** of the preceding pattern         |
+| `?`            | Makes preceding element **optional** (zero or one occurrence)         |
+| `^`            | Matches **start of the line**                                         |
+| `$`            | Matches **end of the line**                                           |
+| `[abc]`        | Matches **any one character** in the set (a OR b OR c)                |
+| `[^abc]`       | Matches **any character except** those in the set                     |
+| `\d`           | Matches a **digit (0-9)**                                             |
+| `\w`           | Matches a **word character** (letter, digit, underscore)              |
+| `\s`           | Matches any **whitespace character** (space, tab)                     |
+| `\`            | Escapes special characters (e.g., `\.` means match a literal dot `.`) |
+| `( )`          | Captures a group of characters                                        |
+| `(?<name>...)` | Captures a group into a **named field** called `name`                 |
+
+
+
+eg: 
+index=main sourcetype="access.log" 
+| rex "^[^ ]+ [^ ]+ [^ ]+ \[.+\] \"[^\"]+\" (?<status>\d{3})" 
+| search status>=200 status<300 
+| stats count
+
+
+rg: ^[^ ]+ [^ ]+ [^ ]+ \[.+\] \"[^\"]+\" (?<status>\d{3})
+
+
