@@ -17,7 +17,14 @@
 
 
 
-eg: 
+data:APACHE
+3.89.253.197 - - [16/Sep/2025:08:52:31 +0000] "GET / HTTP/1.1" 200 10926 "-" "curl/8.5.0"
+65.49.1.24 - - [16/Sep/2025:09:22:23 +0000] "GET / HTTP/1.1" 200 3404 "-" "Mozilla/5.0 (X11; OpenBSD amd64; rv:109.0) Gecko/20100101 Firefox/115.0"
+65.49.1.37 - - [16/Sep/2025:09:25:49 +0000] "GET /favicon.ico HTTP/1.1" 404 435 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+65.49.1.24 - - [16/Sep/2025:09:26:26 +0000] "GET /geoserver/web/ HTTP/1.1" 404 435 "-" "Mozilla/5.0 (X11; OpenBSD amd64; rv:109.0) Gecko/20100101 Firefox/115.0"
+
+
+eg:  2xx
 index=main sourcetype="access.log" 
 | rex "^[^ ]+ [^ ]+ [^ ]+ \[.+\] \"[^\"]+\" (?<status>\d{3})" 
 | search status>=200 status<300 
@@ -27,3 +34,33 @@ index=main sourcetype="access.log"
 rg: ^[^ ]+ [^ ]+ [^ ]+ \[.+\] \"[^\"]+\" (?<status>\d{3})
 
 
+4xx panel:
+index=main sourcetype="access.log" | rex "^[^ ]+ [^ ]+ [^ ]+ \[.+\] \"[^\"]+\" (?<status>\d{3})" | search status>=400 status<500 | stats count
+
+5xx panel:
+index=main sourcetype="access.log" | rex "^[^ ]+ [^ ]+ [^ ]+ \[.+\] \"[^\"]+\" (?<status>\d{3})" | search status>=500 status<600 | stats count
+
+------------------------------------------------------------------------------------------------
+
+
+NGINX
+data:
+192.168.1.10 - - [17/Sep/2025:10:15:30 +0000] "GET /home HTTP/1.1" 200 512
+192.168.1.12 - - [17/Sep/2025:10:16:01 +0000] "POST /login HTTP/1.1" 401 256
+192.168.1.15 - - [17/Sep/2025:10:17:12 +0000] "GET /dashboard HTTP/1.1" 500 128
+192.168.1.18 - - [17/Sep/2025:10:18:30 +0000] "GET /contact HTTP/1.1" 200 1024
+192.168.1.20 - - [17/Sep/2025:10:19:45 +0000] "POST /submit HTTP/1.1" 403 512
+
+2nd panel:
+source="nginx-access-logs.log" host="si-i-0d6634ad86707eee5.prd-p-i0wcm.splunkcloud.com" index="main" sourcetype="nginx-logs"
+| rex field=_raw "\"\s(?<status_code>\d{3})\s"
+| stats count by status_code
+| sort -count
+
+
+3rd panel: 
+source="nginx-access-logs.log" host="si-i-0d6634ad86707eee5.prd-p-i0wcm.splunkcloud.com" index="main" sourcetype="nginx-logs"
+| rex field=_raw "\"\w+\s(?<uri>/\S*)\sHTTP"
+| stats count by uri
+| sort -count
+| head 10
