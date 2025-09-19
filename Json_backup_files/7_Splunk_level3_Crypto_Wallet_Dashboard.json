@@ -1,0 +1,445 @@
+{
+    "title": "Abhi-level3 crypto Wallet Dashboard stuio",
+    "description": "",
+    "inputs": {
+        "input_BmtgvQxo": {
+            "context": {
+                "formattedConfig": {
+                    "number": {
+                        "prefix": ""
+                    }
+                },
+                "formattedStatics": "> statics | formatByType(formattedConfig)",
+                "label": "> primary | seriesByName(\"wallet_id\") | renameSeries(\"label\") | formatByType(formattedConfig)",
+                "statics": [],
+                "value": "> primary | seriesByName(\"wallet_id\") | renameSeries(\"value\") | formatByType(formattedConfig)"
+            },
+            "dataSources": {
+                "primary": "ds_zmGLQwTV"
+            },
+            "options": {
+                "defaultValue": "9d7053f6-1c54-41e8-bbeb-02a64205a816",
+                "items": "> frame(label, value) | prepend(formattedStatics) | objects()",
+                "token": "wallet_id"
+            },
+            "title": "wallet_id",
+            "type": "input.dropdown"
+        },
+        "input_R8SPWk7D": {
+            "options": {
+                "token": "wallet_id"
+            },
+            "title": "wallet_id",
+            "type": "input.text"
+        },
+        "input_omfbPs5e": {
+            "options": {
+                "defaultValue": "-24h@h,now",
+                "token": "time"
+            },
+            "title": "time",
+            "type": "input.timerange"
+        }
+    },
+    "defaults": {
+        "dataSources": {
+            "ds.search": {
+                "options": {
+                    "queryParameters": {}
+                }
+            }
+        },
+        "visualizations": {
+            "global": {
+                "showProgressBar": true
+            }
+        }
+    },
+    "visualizations": {
+        "viz_4EyIuA6c": {
+            "dataSources": {
+                "primary": "ds_uLvNGgUA"
+            },
+            "eventHandlers": [
+                {
+                    "options": {
+                        "tokens": [
+                            {
+                                "token": "details",
+                                "value": "withdrawals"
+                            }
+                        ]
+                    },
+                    "type": "drilldown.setToken"
+                }
+            ],
+            "options": {},
+            "showProgressBar": true,
+            "title": "Total Withdrawel",
+            "type": "splunk.singlevalue"
+        },
+        "viz_CUvUojZY": {
+            "dataSources": {
+                "primary": "ds_C5N7Py4P"
+            },
+            "eventHandlers": [
+                {
+                    "options": {
+                        "tokens": [
+                            {
+                                "token": "details",
+                                "value": "transactions"
+                            }
+                        ]
+                    },
+                    "type": "drilldown.setToken"
+                }
+            ],
+            "options": {},
+            "showProgressBar": true,
+            "title": "Total Transactions",
+            "type": "splunk.singlevalue"
+        },
+        "viz_YRp3bmbl": {
+            "context": {
+                "convertedColorRange": [
+                    {
+                        "from": 100,
+                        "value": "#dc4e41"
+                    },
+                    {
+                        "from": 70,
+                        "to": 100,
+                        "value": "#f1813f"
+                    },
+                    {
+                        "from": 30,
+                        "to": 70,
+                        "value": "#f8be34"
+                    },
+                    {
+                        "from": 0,
+                        "to": 30,
+                        "value": "#0877a6"
+                    },
+                    {
+                        "to": 0,
+                        "value": "#53a051"
+                    }
+                ]
+            },
+            "dataSources": {
+                "primary": "ds_ijpQVRjZ"
+            },
+            "eventHandlers": [
+                {
+                    "options": {
+                        "tokens": [
+                            {
+                                "token": "details",
+                                "value": "transfers"
+                            }
+                        ]
+                    },
+                    "type": "drilldown.setToken"
+                }
+            ],
+            "options": {
+                "majorColor": "#171d21"
+            },
+            "showProgressBar": true,
+            "title": "Total transfers",
+            "type": "splunk.singlevalue"
+        },
+        "viz_gTm6H5SU": {
+            "dataSources": {
+                "primary": "ds_1FqVmGKh"
+            },
+            "eventHandlers": [
+                {
+                    "options": {
+                        "tokens": [
+                            {
+                                "token": "details",
+                                "value": "deposits"
+                            }
+                        ]
+                    },
+                    "type": "drilldown.setToken"
+                }
+            ],
+            "options": {},
+            "showProgressBar": true,
+            "title": "Total Deposits",
+            "type": "splunk.singlevalue"
+        },
+        "viz_o2ZuXVIu": {
+            "dataSources": {
+                "primary": "ds_2Dkx50od"
+            },
+            "options": {
+                "count": 20,
+                "dataOverlayMode": "none",
+                "drilldown": "none",
+                "showInternalFields": false,
+                "showRowNumbers": false
+            },
+            "showProgressBar": true,
+            "title": "Error Details",
+            "type": "splunk.table"
+        },
+        "viz_pSpqE3sI": {
+            "dataSources": {
+                "primary": "ds_XHAsrWvi"
+            },
+            "options": {
+                "count": 20,
+                "dataOverlayMode": "none",
+                "drilldown": "none",
+                "showInternalFields": false,
+                "showRowNumbers": false
+            },
+            "showProgressBar": true,
+            "title": "Transaction Details",
+            "type": "splunk.table"
+        },
+        "viz_u0LrwLWD": {
+            "options": {
+                "markdown": "# LEVEL3 CRYPTO WALLET DASHBOARD"
+            },
+            "type": "splunk.markdown"
+        },
+        "viz_wA7YwgGb": {
+            "dataSources": {
+                "primary": "ds_cH7zhepy"
+            },
+            "eventHandlers": [
+                {
+                    "options": {
+                        "tokens": [
+                            {
+                                "token": "error_token",
+                                "value": "errors"
+                            }
+                        ]
+                    },
+                    "type": "drilldown.setToken"
+                }
+            ],
+            "options": {},
+            "showProgressBar": true,
+            "title": "Total errors",
+            "type": "splunk.singlevalue"
+        }
+    },
+    "dataSources": {
+        "ds_1FqVmGKh": {
+            "name": "Total Deposits - Single value search",
+            "options": {
+                "query": "index=\"otel\" host=\"cryptowallet-84d755cfdb-qvb5x\" wallet\n| where like(_raw, \"Deposited%\")\n| rex \"wallet (?<wallet_id_extracted>[a-f0-9\\-]{36})\"\n| where wallet_id_extracted=\"$wallet_id$\" OR \"$wallet_id$\"=\"\"\n| stats count as total_deposits",
+                "queryParameters": {
+                    "earliest": "$time.earliest$",
+                    "latest": "$time.latest$",
+                    "sampleRatio": 1
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_2Dkx50od": {
+            "name": "Error Details - Table search",
+            "options": {
+                "query": "index=otel host=\"cryptowallet-84d755cfdb-qvb5x\"\n| eval category=case(\n    match(_raw,\"Wallet with ID.*not found\"),\"errors\"\n)\n| eval wallet_id_extracted=mvindex(split(replace(_raw,\"Wallet with ID \",\"\"),\" \"),0)\n| eval error_type=if(match(_raw,\"Wallet with ID.*not found\"),\"Wallet Not Found\",\"Other Error\")\n| where category=\"$error_token$\" AND (wallet_id_extracted=\"$wallet_id$\" OR \"$wallet_id$\"=\"\")\n| table _time wallet_id_extracted error_type _raw\n| sort -_time",
+                "queryParameters": {
+                    "earliest": "$time.earliest$",
+                    "latest": "$time.latest$",
+                    "sampleRatio": 1
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_C5N7Py4P": {
+            "name": "Total Transactions - Single value search",
+            "options": {
+                "query": "index=\"otel\" host=\"cryptowallet-84d755cfdb-qvb5x\" wallet\n| eval is_transaction=if(like(_raw,\"Deposited%\") OR like(_raw,\"Withdrew%\") OR like(_raw,\"Transferred%\"), 1, 0)\n| rex \"wallet (?<wallet_id_extracted>[a-f0-9\\-]{36})\"\n| where wallet_id_extracted=\"$wallet_id$\" OR \"$wallet_id$\"=\"\"\n| stats sum(is_transaction) as total_transactions",
+                "queryParameters": {
+                    "earliest": "$time.earliest$",
+                    "latest": "$time.latest$",
+                    "sampleRatio": 1
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_XHAsrWvi": {
+            "name": "Transaction Details - Table search",
+            "options": {
+                "query": "index=otel host=\"cryptowallet-84d755cfdb-qvb5x\"\n| rex \"wallet (?<wallet_id_extracted>[a-f0-9\\-]{36})\"\n| eval category=case(\n    match(_raw,\"Deposited\"),\"deposits\",\n    match(_raw,\"Withdrew\"),\"withdrawals\",\n    match(_raw,\"Transferred\"),\"transfers\"\n)\n| where (wallet_id_extracted=\"$wallet_id$\" OR \"$wallet_id$\"=\"\") \n  AND (\n        \"$details$\"=\"transactions\" \n        OR category=\"$details$\"\n      )\n| rex field=_raw \"(?i)(Deposited|Withdrew|Transferred) (?<amount>\\d+) (?<currency>\\w+)\"\n| rex field=_raw \"from wallet (?<from_wallet>[a-f0-9\\-]{36})\"\n| rex field=_raw \"to (?<to_currency_amount>\\d+ \\w+) in wallet (?<to_wallet>[a-f0-9\\-]{36})\"\n| rex field=_raw \"location (?<city>[\\w\\s]+), latitude (?<lat>[\\d\\.]+), longitude (?<lon>[\\d\\.]+)\"\n| table _time category wallet_id_extracted from_wallet to_wallet amount currency city lat lon",
+                "queryParameters": {
+                    "earliest": "$time.earliest$",
+                    "latest": "$time.latest$",
+                    "sampleRatio": 1
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_cH7zhepy": {
+            "name": "Total errors - Single value search",
+            "options": {
+                "query": "index=\"otel\" host=\"cryptowallet-84d755cfdb-qvb5x\" wallet\n| where like(_raw, \"%not found%\")\n| rex \"Wallet with ID (?<wallet_id_extracted>[a-f0-9\\-]{36})\"\n| where wallet_id_extracted=\"$wallet_id$\" OR \"$wallet_id$\"=\"\"\n| stats count as total_errors",
+                "queryParameters": {
+                    "earliest": "$time.earliest$",
+                    "latest": "$time.latest$",
+                    "sampleRatio": 1
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_ijpQVRjZ": {
+            "name": "Total transfers - Single value search",
+            "options": {
+                "query": "index=\"otel\" host=\"cryptowallet-84d755cfdb-qvb5x\" wallet\n| where like(_raw, \"Transferred%\")\n| rex \"wallet (?<wallet_id_extracted>[a-f0-9\\-]{36})\"\n| where wallet_id_extracted=\"$wallet_id$\" OR \"$wallet_id$\"=\"\"\n| stats count as total_transfers",
+                "queryParameters": {
+                    "earliest": "$time.earliest$",
+                    "latest": "$time.latest$",
+                    "sampleRatio": 1
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_uLvNGgUA": {
+            "name": "Total Withdrawel - Single value search",
+            "options": {
+                "query": "index=\"otel\" host=\"cryptowallet-84d755cfdb-qvb5x\" wallet\n| where like(_raw, \"Withdrew%\")\n| rex \"wallet (?<wallet_id_extracted>[a-f0-9\\-]{36})\"\n| where wallet_id_extracted=\"$wallet_id$\" OR \"$wallet_id$\"=\"\"\n| stats count as total_withdrawals",
+                "queryParameters": {
+                    "earliest": "$time.earliest$",
+                    "latest": "$time.latest$",
+                    "sampleRatio": 1
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_zmGLQwTV": {
+            "name": "wallet_id search",
+            "options": {
+                "query": "index=otel host=\"cryptowallet-84d755cfdb-qvb5x\" \"Created wallet\"\n| rex field=_raw \"wallet (?<wallet_id>[a-f0-9\\-]{36})\"\n| stats count by wallet_id\n| fields wallet_id",
+                "queryParameters": {
+                    "earliest": "-7d@h",
+                    "latest": "now"
+                }
+            },
+            "type": "ds.search"
+        }
+    },
+    "layout": {
+        "globalInputs": [
+            "input_R8SPWk7D",
+            "input_BmtgvQxo",
+            "input_omfbPs5e"
+        ],
+        "layoutDefinitions": {
+            "layout_1": {
+                "options": {
+                    "height": 1000,
+                    "width": 1440
+                },
+                "structure": [
+                    {
+                        "item": "viz_u0LrwLWD",
+                        "position": {
+                            "h": 250,
+                            "w": 1440,
+                            "x": 0,
+                            "y": 0
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_gTm6H5SU",
+                        "position": {
+                            "h": 250,
+                            "w": 288,
+                            "x": 0,
+                            "y": 250
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_4EyIuA6c",
+                        "position": {
+                            "h": 250,
+                            "w": 288,
+                            "x": 288,
+                            "y": 250
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_YRp3bmbl",
+                        "position": {
+                            "h": 250,
+                            "w": 288,
+                            "x": 576,
+                            "y": 250
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_CUvUojZY",
+                        "position": {
+                            "h": 250,
+                            "w": 288,
+                            "x": 864,
+                            "y": 250
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_wA7YwgGb",
+                        "position": {
+                            "h": 250,
+                            "w": 288,
+                            "x": 1152,
+                            "y": 250
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_pSpqE3sI",
+                        "position": {
+                            "h": 250,
+                            "w": 1440,
+                            "x": 0,
+                            "y": 500
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_o2ZuXVIu",
+                        "position": {
+                            "h": 250,
+                            "w": 1440,
+                            "x": 0,
+                            "y": 750
+                        },
+                        "type": "block"
+                    }
+                ],
+                "type": "grid"
+            }
+        },
+        "options": {
+            "submitButton": false
+        },
+        "tabs": {
+            "items": [
+                {
+                    "label": "New tab",
+                    "layoutId": "layout_1"
+                }
+            ]
+        }
+    },
+    "applicationProperties": {
+        "hideEdit": false,
+        "hideExport": false
+    }
+}
