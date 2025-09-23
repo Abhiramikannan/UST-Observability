@@ -1,0 +1,1106 @@
+{
+    "title": "Abhi- crypto wallet Dashboard level 1 Copy",
+    "description": "",
+    "inputs": {
+        "input_LoxLy2Ek": {
+            "options": {
+                "defaultValue": "-24h@h,now",
+                "token": "time"
+            },
+            "title": "time",
+            "type": "input.timerange"
+        }
+    },
+    "defaults": {
+        "dataSources": {
+            "ds.search": {
+                "options": {
+                    "queryParameters": {}
+                }
+            }
+        },
+        "visualizations": {
+            "global": {
+                "showProgressBar": true
+            }
+        }
+    },
+    "visualizations": {
+        "viz_301dwdYr": {
+            "dataSources": {
+                "primary": "ds_0fCJ9Ccx"
+            },
+            "options": {
+                "dataValuesDisplay": "off",
+                "legendDisplay": "right",
+                "legendTruncation": "ellipsisMiddle",
+                "showIndependentYRanges": false,
+                "showOverlayY2Axis": false,
+                "showRoundedY2AxisLabels": false,
+                "showSplitSeries": false,
+                "showY2MajorGridLines": true,
+                "stackMode": "auto",
+                "xAxisLabelRotation": 0,
+                "xAxisTitleVisibility": "show",
+                "y2AxisAbbreviation": "auto",
+                "y2AxisScale": "inherit",
+                "y2AxisTitleVisibility": "show",
+                "yAxisAbbreviation": "auto",
+                "yAxisScale": "linear",
+                "yAxisTitleVisibility": "show"
+            },
+            "showProgressBar": true,
+            "title": "Outgoing Transfers per Currency:",
+            "type": "splunk.column"
+        },
+        "viz_4nGrPRpN": {
+            "context": {
+                "convertedColorRange": [
+                    {
+                        "from": 100,
+                        "value": "#dc4e41"
+                    },
+                    {
+                        "from": 70,
+                        "to": 100,
+                        "value": "#f1813f"
+                    },
+                    {
+                        "from": 30,
+                        "to": 70,
+                        "value": "#f8be34"
+                    },
+                    {
+                        "from": 0,
+                        "to": 30,
+                        "value": "#0877a6"
+                    },
+                    {
+                        "to": 0,
+                        "value": "#53a051"
+                    }
+                ]
+            },
+            "dataSources": {
+                "primary": "ds_io13JnNi"
+            },
+            "eventHandlers": [
+                {
+                    "options": {
+                        "app": "search",
+                        "dashboard": "abhi-_crypto_wallet_dashboard_level2",
+                        "newTab": true,
+                        "tokens": [
+                            {
+                                "token": "form.wallet_id",
+                                "value": "deposits"
+                            }
+                        ]
+                    },
+                    "type": "drilldown.linkToDashboard"
+                }
+            ],
+            "options": {
+                "majorColor": "#171d21",
+                "numberPrecision": 0,
+                "shouldUseThousandSeparators": true,
+                "sparklineDisplay": "below",
+                "trendDisplay": "absolute",
+                "unitPosition": "after"
+            },
+            "showProgressBar": true,
+            "title": "Total Number of Deposits",
+            "type": "splunk.singlevalue"
+        },
+        "viz_4xIuOXCX": {
+            "dataSources": {
+                "primary": "ds_vk4elBnt"
+            },
+            "options": {
+                "dataValuesDisplay": "off",
+                "legendDisplay": "right",
+                "legendTruncation": "ellipsisMiddle",
+                "showIndependentYRanges": false,
+                "showOverlayY2Axis": false,
+                "showRoundedY2AxisLabels": false,
+                "showSplitSeries": false,
+                "showY2MajorGridLines": true,
+                "stackMode": "auto",
+                "xAxisLabelRotation": 0,
+                "xAxisTitleVisibility": "show",
+                "y2AxisAbbreviation": "auto",
+                "y2AxisScale": "inherit",
+                "y2AxisTitleVisibility": "show",
+                "yAxisAbbreviation": "auto",
+                "yAxisScale": "linear",
+                "yAxisTitleVisibility": "show"
+            },
+            "showProgressBar": true,
+            "title": "Number of Transactions per Currency",
+            "type": "splunk.column"
+        },
+        "viz_7TAwBXqv": {
+            "context": {
+                "convertedColorRange": [
+                    {
+                        "from": 100,
+                        "value": "#dc4e41"
+                    },
+                    {
+                        "from": 70,
+                        "to": 100,
+                        "value": "#f1813f"
+                    },
+                    {
+                        "from": 30,
+                        "to": 70,
+                        "value": "#f8be34"
+                    },
+                    {
+                        "from": 0,
+                        "to": 30,
+                        "value": "#0877a6"
+                    },
+                    {
+                        "to": 0,
+                        "value": "#53a051"
+                    }
+                ]
+            },
+            "dataSources": {
+                "primary": "ds_dCpEAGrQ"
+            },
+            "eventHandlers": [
+                {
+                    "options": {
+                        "app": "search",
+                        "dashboard": "abhi-_crypto_wallet_dashboard_level2",
+                        "newTab": true,
+                        "tokens": [
+                            {
+                                "token": "form.wallet_id",
+                                "value": "errors"
+                            }
+                        ]
+                    },
+                    "type": "drilldown.linkToDashboard"
+                }
+            ],
+            "options": {
+                "majorColor": "#171d21",
+                "numberPrecision": 0,
+                "shouldUseThousandSeparators": true,
+                "sparklineDisplay": "below",
+                "trendDisplay": "absolute",
+                "unitPosition": "after"
+            },
+            "showProgressBar": true,
+            "title": "Failed Operations",
+            "type": "splunk.singlevalue"
+        },
+        "viz_82NJeG16": {
+            "context": {
+                "convertedColorRange": [
+                    {
+                        "from": 100,
+                        "value": "#dc4e41"
+                    },
+                    {
+                        "from": 70,
+                        "to": 100,
+                        "value": "#f1813f"
+                    },
+                    {
+                        "from": 30,
+                        "to": 70,
+                        "value": "#f8be34"
+                    },
+                    {
+                        "from": 0,
+                        "to": 30,
+                        "value": "#0877a6"
+                    },
+                    {
+                        "to": 0,
+                        "value": "#53a051"
+                    }
+                ]
+            },
+            "dataSources": {
+                "primary": "ds_5nxg4RR1"
+            },
+            "options": {
+                "majorColor": "#171d21"
+            },
+            "showProgressBar": true,
+            "title": "Total events",
+            "type": "splunk.singlevalue"
+        },
+        "viz_Es1pu2wq": {
+            "context": {
+                "convertedColorRange": [
+                    {
+                        "from": 100,
+                        "value": "#dc4e41"
+                    },
+                    {
+                        "from": 70,
+                        "to": 100,
+                        "value": "#f1813f"
+                    },
+                    {
+                        "from": 30,
+                        "to": 70,
+                        "value": "#f8be34"
+                    },
+                    {
+                        "from": 0,
+                        "to": 30,
+                        "value": "#0877a6"
+                    },
+                    {
+                        "to": 0,
+                        "value": "#53a051"
+                    }
+                ]
+            },
+            "dataSources": {
+                "primary": "ds_IxMAnN5S"
+            },
+            "eventHandlers": [
+                {
+                    "options": {
+                        "app": "search",
+                        "dashboard": "abhi-_crypto_wallet_dashboard_level2",
+                        "newTab": true,
+                        "tokens": [
+                            {
+                                "token": "form.wallet_id",
+                                "value": "errors"
+                            }
+                        ]
+                    },
+                    "type": "drilldown.linkToDashboard"
+                }
+            ],
+            "options": {
+                "majorColor": "#171d21",
+                "numberPrecision": 0,
+                "shouldUseThousandSeparators": true,
+                "sparklineDisplay": "below",
+                "trendDisplay": "absolute",
+                "unit": "%",
+                "unitPosition": "after"
+            },
+            "showProgressBar": true,
+            "title": "Error %",
+            "type": "splunk.singlevalue"
+        },
+        "viz_RSTRkV3w": {
+            "context": {
+                "convertedColorRange": [
+                    {
+                        "from": 100,
+                        "value": "#dc4e41"
+                    },
+                    {
+                        "from": 70,
+                        "to": 100,
+                        "value": "#f1813f"
+                    },
+                    {
+                        "from": 30,
+                        "to": 70,
+                        "value": "#f8be34"
+                    },
+                    {
+                        "from": 0,
+                        "to": 30,
+                        "value": "#0877a6"
+                    },
+                    {
+                        "to": 0,
+                        "value": "#53a051"
+                    }
+                ]
+            },
+            "dataSources": {
+                "primary": "ds_9dRTvazw"
+            },
+            "eventHandlers": [
+                {
+                    "options": {
+                        "app": "search",
+                        "dashboard": "abhi-_crypto_wallet_dashboard_level2",
+                        "newTab": true,
+                        "tokens": [
+                            {
+                                "token": "form.wallet_id",
+                                "value": "withdrawals"
+                            }
+                        ]
+                    },
+                    "type": "drilldown.linkToDashboard"
+                }
+            ],
+            "options": {
+                "majorColor": "#171d21",
+                "numberPrecision": 0,
+                "shouldUseThousandSeparators": true,
+                "sparklineDisplay": "below",
+                "trendDisplay": "absolute",
+                "unitPosition": "after"
+            },
+            "showProgressBar": true,
+            "title": "Total Number of Withdrawals",
+            "type": "splunk.singlevalue"
+        },
+        "viz_W3x7j4UJ": {
+            "context": {
+                "convertedColorRange": [
+                    {
+                        "from": 100,
+                        "value": "#dc4e41"
+                    },
+                    {
+                        "from": 70,
+                        "to": 100,
+                        "value": "#f1813f"
+                    },
+                    {
+                        "from": 30,
+                        "to": 70,
+                        "value": "#f8be34"
+                    },
+                    {
+                        "from": 0,
+                        "to": 30,
+                        "value": "#0877a6"
+                    },
+                    {
+                        "to": 0,
+                        "value": "#53a051"
+                    }
+                ]
+            },
+            "dataSources": {
+                "primary": "ds_EpKy0VQH"
+            },
+            "eventHandlers": [
+                {
+                    "options": {
+                        "app": "search",
+                        "dashboard": "abhi-_crypto_wallet_dashboard_level2",
+                        "newTab": true,
+                        "tokens": [
+                            {
+                                "token": "form.wallet_id",
+                                "value": "errors"
+                            }
+                        ]
+                    },
+                    "type": "drilldown.linkToDashboard"
+                }
+            ],
+            "options": {
+                "majorColor": "#171d21",
+                "numberPrecision": 0,
+                "shouldUseThousandSeparators": true,
+                "sparklineDisplay": "below",
+                "trendDisplay": "absolute",
+                "unitPosition": "after"
+            },
+            "showProgressBar": true,
+            "title": "Total Errors(wallet not found)",
+            "type": "splunk.singlevalue"
+        },
+        "viz_W8avLJcY": {
+            "dataSources": {
+                "primary": "ds_EnIroU29"
+            },
+            "options": {
+                "legendTruncation": "ellipsisMiddle",
+                "showRoundedY2AxisLabels": false,
+                "showY2MajorGridLines": true,
+                "stackMode": "auto",
+                "y2AxisAbbreviation": "off",
+                "yAxisAbbreviation": "off"
+            },
+            "showProgressBar": true,
+            "title": "Deposits per Currency:",
+            "type": "splunk.column"
+        },
+        "viz_YUhwyATv": {
+            "dataSources": {
+                "primary": "ds_CXVt0niR"
+            },
+            "options": {
+                "dataValuesDisplay": "off",
+                "legendDisplay": "right",
+                "legendTruncation": "ellipsisMiddle",
+                "showIndependentYRanges": false,
+                "showOverlayY2Axis": false,
+                "showRoundedY2AxisLabels": false,
+                "showSplitSeries": false,
+                "showY2MajorGridLines": true,
+                "stackMode": "auto",
+                "xAxisLabelRotation": 0,
+                "xAxisTitleVisibility": "show",
+                "y2AxisAbbreviation": "auto",
+                "y2AxisScale": "inherit",
+                "y2AxisTitleVisibility": "show",
+                "yAxisAbbreviation": "auto",
+                "yAxisScale": "linear",
+                "yAxisTitleVisibility": "show"
+            },
+            "showProgressBar": true,
+            "title": "Withdrawals per Currency:",
+            "type": "splunk.column"
+        },
+        "viz_a1zmAEjV": {
+            "options": {
+                "markdown": "# CRYPTO WALLET DASHBOARD LEVEL 1"
+            },
+            "type": "splunk.markdown"
+        },
+        "viz_eh1WuDfB": {
+            "context": {
+                "convertedColorRange": [
+                    {
+                        "from": 100,
+                        "value": "#dc4e41"
+                    },
+                    {
+                        "from": 70,
+                        "to": 100,
+                        "value": "#f1813f"
+                    },
+                    {
+                        "from": 30,
+                        "to": 70,
+                        "value": "#f8be34"
+                    },
+                    {
+                        "from": 0,
+                        "to": 30,
+                        "value": "#53a051"
+                    },
+                    {
+                        "to": 0,
+                        "value": "#53a051"
+                    }
+                ]
+            },
+            "dataSources": {
+                "primary": "ds_klrNPvm8"
+            },
+            "eventHandlers": [
+                {
+                    "options": {
+                        "app": "search",
+                        "dashboard": "abhi-_crypto_wallet_dashboard_level2",
+                        "newTab": true,
+                        "tokens": [
+                            {
+                                "token": "form.wallet_id",
+                                "value": "transactions"
+                            }
+                        ]
+                    },
+                    "type": "drilldown.linkToDashboard"
+                }
+            ],
+            "options": {
+                "backgroundColor": "> majorValue | rangeValue(convertedColorRange)",
+                "numberPrecision": 0,
+                "shouldUseThousandSeparators": true,
+                "sparklineDisplay": "below",
+                "trendDisplay": "absolute",
+                "unitPosition": "after"
+            },
+            "showProgressBar": true,
+            "title": "Total number of Transactions",
+            "type": "splunk.singlevalue"
+        },
+        "viz_nbq625CY": {
+            "context": {
+                "convertedColorRange": [
+                    {
+                        "from": 100,
+                        "value": "#dc4e41"
+                    },
+                    {
+                        "from": 70,
+                        "to": 100,
+                        "value": "#f1813f"
+                    },
+                    {
+                        "from": 30,
+                        "to": 70,
+                        "value": "#f8be34"
+                    },
+                    {
+                        "from": 0,
+                        "to": 30,
+                        "value": "#0877a6"
+                    },
+                    {
+                        "to": 0,
+                        "value": "#53a051"
+                    }
+                ]
+            },
+            "dataSources": {
+                "primary": "ds_rernWqsW"
+            },
+            "eventHandlers": [
+                {
+                    "options": {
+                        "app": "search",
+                        "dashboard": "abhi-_crypto_wallet_dashboard_level2",
+                        "newTab": true,
+                        "tokens": [
+                            {
+                                "token": "form.wallet_id",
+                                "value": "transfers"
+                            }
+                        ]
+                    },
+                    "type": "drilldown.linkToDashboard"
+                }
+            ],
+            "options": {
+                "majorColor": "#171d21",
+                "numberPrecision": 0,
+                "shouldUseThousandSeparators": true,
+                "sparklineDisplay": "below",
+                "trendDisplay": "absolute",
+                "unitPosition": "after"
+            },
+            "showProgressBar": true,
+            "title": "Total Number of Transfers",
+            "type": "splunk.singlevalue"
+        },
+        "viz_nfjCifLj": {
+            "context": {
+                "convertedColorRange": [
+                    {
+                        "from": 100,
+                        "value": "#dc4e41"
+                    },
+                    {
+                        "from": 70,
+                        "to": 100,
+                        "value": "#f1813f"
+                    },
+                    {
+                        "from": 30,
+                        "to": 70,
+                        "value": "#f8be34"
+                    },
+                    {
+                        "from": 0,
+                        "to": 30,
+                        "value": "#0877a6"
+                    },
+                    {
+                        "to": 0,
+                        "value": "#53a051"
+                    }
+                ]
+            },
+            "dataSources": {
+                "primary": "ds_qLaTqKN7"
+            },
+            "eventHandlers": [
+                {
+                    "options": {
+                        "app": "search",
+                        "dashboard": "abhi-_crypto_wallet_dashboard_level2",
+                        "newTab": true,
+                        "tokens": [
+                            {
+                                "token": "form.wallet_id",
+                                "value": "wallets_created"
+                            }
+                        ]
+                    },
+                    "type": "drilldown.linkToDashboard"
+                }
+            ],
+            "options": {
+                "majorColor": "#171d21",
+                "numberPrecision": 0,
+                "shouldUseThousandSeparators": true,
+                "sparklineDisplay": "below",
+                "trendDisplay": "absolute",
+                "unitPosition": "after"
+            },
+            "showProgressBar": true,
+            "title": "Total wallet created",
+            "type": "splunk.singlevalue"
+        },
+        "viz_nxvS0MZJ": {
+            "context": {
+                "dataColorsGradientConfig": {
+                    "colors": [
+                        "#ffffff",
+                        "#af575a"
+                    ]
+                }
+            },
+            "dataSources": {
+                "primary": "ds_qZlFmZpA"
+            },
+            "options": {
+                "center": [
+                    0,
+                    0
+                ],
+                "layers": [
+                    {
+                        "choroplethOpacity": 0.75,
+                        "dataColors": "> areaValues | gradient(dataColorsGradientConfig)",
+                        "type": "choropleth"
+                    }
+                ],
+                "showBaseLayer": true,
+                "zoom": 2
+            },
+            "title": "Transactions by Location and Type",
+            "type": "splunk.map"
+        },
+        "viz_zzhRnLJZ": {
+            "context": {
+                "convertedColorRange": [
+                    {
+                        "from": 100,
+                        "value": "#dc4e41"
+                    },
+                    {
+                        "from": 70,
+                        "to": 100,
+                        "value": "#f1813f"
+                    },
+                    {
+                        "from": 30,
+                        "to": 70,
+                        "value": "#f8be34"
+                    },
+                    {
+                        "from": 0,
+                        "to": 30,
+                        "value": "#0877a6"
+                    },
+                    {
+                        "to": 0,
+                        "value": "#53a051"
+                    }
+                ]
+            },
+            "dataSources": {
+                "primary": "ds_V7UmaMNI"
+            },
+            "eventHandlers": [
+                {
+                    "options": {
+                        "app": "search",
+                        "dashboard": "abhi-_crypto_wallet_dashboard_level2",
+                        "newTab": true,
+                        "tokens": [
+                            {
+                                "token": "form.wallet_id",
+                                "value": "wallets_deleted"
+                            }
+                        ]
+                    },
+                    "type": "drilldown.linkToDashboard"
+                }
+            ],
+            "options": {
+                "majorColor": "#171d21",
+                "numberPrecision": 0,
+                "shouldUseThousandSeparators": true,
+                "sparklineDisplay": "below",
+                "trendDisplay": "absolute",
+                "unitPosition": "after"
+            },
+            "showProgressBar": true,
+            "title": "Total wallets deleted",
+            "type": "splunk.singlevalue"
+        }
+    },
+    "dataSources": {
+        "ds_0fCJ9Ccx": {
+            "name": "Outgoing Transfers per Currency_ - Column chart search",
+            "options": {
+                "query": "index=\"otel\" wallet \n| where like(_raw, \"Transferred%\")\n| eval currency=mvindex(split(_raw,\" \"),2)\n| stats count as outgoing_transfers by currency",
+                "queryParameters": {
+                    "earliest": "$time.earliest$",
+                    "latest": "$time.latest$",
+                    "sampleRatio": 1
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_5nxg4RR1": {
+            "name": "Total events - Single value search",
+            "options": {
+                "query": "index=otel\n| eval is_transaction=if(match(_raw,\"Deposited\") OR match(_raw,\"Withdrew\") OR match(_raw,\"Transferred\"), 1, 0)\n| where is_transaction=1\n| stats count AS \"Total Transactions\"",
+                "queryParameters": {
+                    "earliest": "$time.earliest$",
+                    "latest": "$time.latest$",
+                    "sampleRatio": 1
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_9dRTvazw": {
+            "name": "Total Number of Withdrawals - Single value search",
+            "options": {
+                "query": "index=\"otel\" wallet \n| where like(_raw, \"Withdrew%\")\n| stats count as total_withdrawals",
+                "queryParameters": {
+                    "earliest": "$time.earliest$",
+                    "latest": "$time.latest$",
+                    "sampleRatio": 1
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_CXVt0niR": {
+            "name": "Withdrawals per Currency_ - Column chart search",
+            "options": {
+                "query": "index=\"otel\" wallet\n| where like(_raw, \"Withdrew%\")\n| eval currency=mvindex(split(_raw,\" \"),2)\n| stats count as withdrawals by currency",
+                "queryParameters": {
+                    "earliest": "$time.earliest$",
+                    "latest": "$time.latest$",
+                    "sampleRatio": 1
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_EnIroU29": {
+            "name": "Deposits per Currency_ - Column chart search",
+            "options": {
+                "query": "index=\"otel\" wallet \n| where like(_raw, \"Deposited%\")\n| eval currency=mvindex(split(_raw,\" \"),2)\n| stats count as deposits by currency",
+                "queryParameters": {
+                    "earliest": "$time.earliest$",
+                    "latest": "$time.latest$",
+                    "sampleRatio": 1
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_EpKy0VQH": {
+            "name": "Total Errors_wallet not found_ - Single value search",
+            "options": {
+                "query": "index=otel host=cryptowallet-*  \"not found\"\n| stats count as \"Total Errors\"",
+                "queryParameters": {
+                    "earliest": "$time.earliest$",
+                    "latest": "$time.latest$",
+                    "sampleRatio": 1
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_IxMAnN5S": {
+            "name": "Error _ - Single value search",
+            "options": {
+                "query": "index=otel host=cryptowallet-* | eval is_error=if(like(_raw,\"%not found%\"),1,0) | stats count as total_events sum(is_error) as total_errors | eval error_percentage = round((total_errors/total_events)*100,2) | fields error_percentage",
+                "queryParameters": {
+                    "earliest": "$time.earliest$",
+                    "latest": "$time.latest$",
+                    "sampleRatio": 1
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_V7UmaMNI": {
+            "name": "Total wallets deleted - Single value search",
+            "options": {
+                "query": "index=otel  \"Deleted wallet\" | stats count as \"Total Wallets Deleted\"",
+                "queryParameters": {
+                    "earliest": "$time.earliest$",
+                    "latest": "$time.latest$",
+                    "sampleRatio": 1
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_dCpEAGrQ": {
+            "name": "Failed Operations - Single value search",
+            "options": {
+                "query": "index=otel host=cryptowallet-* \"not found\"\n| stats count AS \"Failed Operations\"",
+                "queryParameters": {
+                    "earliest": "$time.earliest$",
+                    "latest": "$time.latest$",
+                    "sampleRatio": 1
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_io13JnNi": {
+            "name": "Total Number of Deposits - Single value search",
+            "options": {
+                "query": "index=\"otel\" wallet\n| where like(_raw, \"Deposited%\")\n| stats count as total_deposits",
+                "queryParameters": {
+                    "earliest": "$time.earliest$",
+                    "latest": "$time.latest$",
+                    "sampleRatio": 1
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_klrNPvm8": {
+            "name": "Total number of Transactions - Single value search",
+            "options": {
+                "query": "index=\"otel\" wallet \n| eval is_transaction=if(like(_raw,\"Deposited%\") OR like(_raw,\"Withdrew%\") OR like(_raw,\"Transferred%\"), 1, 0)\n| stats sum(is_transaction) as total_transactions",
+                "queryParameters": {
+                    "earliest": "$time.earliest$",
+                    "latest": "$time.latest$",
+                    "sampleRatio": 1
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_qLaTqKN7": {
+            "name": "Total wallet created - Single value search",
+            "options": {
+                "query": "index=otel  \"Created wallet\"\n\n| stats count as \"Total Wallets Created\"",
+                "queryParameters": {
+                    "earliest": "$time.earliest$",
+                    "latest": "$time.latest$",
+                    "sampleRatio": 1
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_qZlFmZpA": {
+            "name": "Transactions by Location and Type - Choropleth map search",
+            "options": {
+                "query": "index=otel \"wallet\"\n| rex field=_raw \"Transferred\\s+(?<amount>\\d+)\\s+(?<currency>[A-Z]{3})\\s+from wallet\\s+(?<from_wallet>[0-9a-f-]+)\\s+at location\\s+(?<from_location>[^,]+),\\s+latitude\\s+(?<from_lat>[-\\d\\.]+),\\s+longitude\\s+(?<from_lon>[-\\d\\.]+)\\s+to\\s+(?<to_amount>\\d+)\\s+(?<to_currency>[A-Z]{3})\\s+in wallet\\s+(?<to_wallet>[0-9a-f-]+)\\s+at location\\s+(?<to_location>[^,]+),\\s+latitude\\s+(?<to_lat>[-\\d\\.]+),\\s+longitude\\s+(?<to_lon>[-\\d\\.]+)\"\n| eval amount=tonumber(amount), to_amount=tonumber(to_amount)\n| eval from_lat=tonumber(from_lat), from_lon=tonumber(from_lon), to_lat=tonumber(to_lat), to_lon=tonumber(to_lon)\n| geostats latfield=from_lat longfield=from_lon count by currency",
+                "queryParameters": {
+                    "earliest": "$time.earliest$",
+                    "latest": "$time.latest$",
+                    "sampleRatio": 1
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_rernWqsW": {
+            "name": "Total Number of Transfers - Single value search",
+            "options": {
+                "query": "index=\"otel\" wallet \n| where like(_raw, \"Transferred%\")\n| stats count as total_transfers",
+                "queryParameters": {
+                    "earliest": "$time.earliest$",
+                    "latest": "$time.latest$",
+                    "sampleRatio": 1
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_vk4elBnt": {
+            "name": "Number of Transactions per Currency - Column chart search",
+            "options": {
+                "query": "index=\"otel\" wallet \n| eval type=case(\n    match(_raw,\"Deposited\"),\"Deposit\",\n    match(_raw,\"Withdrew\"),\"Withdrawal\",\n    match(_raw,\"Transferred\"),\"Transfer\"\n)\n| rex field=_raw \"Deposited\\s+\\d+\\s+(?<deposit_currency>\\w+)\"\n| rex field=_raw \"Withdrew\\s+\\d+\\s+(?<withdraw_currency>\\w+)\"\n| rex field=_raw \"Transferred\\s+\\d+\\s+(?<transfer_currency_from>\\w+).*to\\s+\\d+\\s+(?<transfer_currency_to>\\w+)\"\n| eval currency=coalesce(deposit_currency, withdraw_currency, transfer_currency_from)\n| stats count as transactions by currency\n| sort -transactions",
+                "queryParameters": {
+                    "earliest": "$time.earliest$",
+                    "latest": "$time.latest$",
+                    "sampleRatio": 1
+                }
+            },
+            "type": "ds.search"
+        }
+    },
+    "layout": {
+        "globalInputs": [
+            "input_LoxLy2Ek"
+        ],
+        "layoutDefinitions": {
+            "layout_1": {
+                "options": {
+                    "height": 1293,
+                    "width": 1440
+                },
+                "structure": [
+                    {
+                        "item": "viz_a1zmAEjV",
+                        "position": {
+                            "h": 250,
+                            "w": 1440,
+                            "x": 0,
+                            "y": 0
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_82NJeG16",
+                        "position": {
+                            "h": 250,
+                            "w": 288,
+                            "x": 0,
+                            "y": 250
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_nfjCifLj",
+                        "position": {
+                            "h": 250,
+                            "w": 288,
+                            "x": 288,
+                            "y": 250
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_zzhRnLJZ",
+                        "position": {
+                            "h": 250,
+                            "w": 288,
+                            "x": 576,
+                            "y": 250
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_W3x7j4UJ",
+                        "position": {
+                            "h": 250,
+                            "w": 288,
+                            "x": 864,
+                            "y": 250
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_Es1pu2wq",
+                        "position": {
+                            "h": 250,
+                            "w": 288,
+                            "x": 1152,
+                            "y": 250
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_7TAwBXqv",
+                        "position": {
+                            "h": 250,
+                            "w": 288,
+                            "x": 0,
+                            "y": 500
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_4nGrPRpN",
+                        "position": {
+                            "h": 250,
+                            "w": 288,
+                            "x": 288,
+                            "y": 500
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_RSTRkV3w",
+                        "position": {
+                            "h": 250,
+                            "w": 288,
+                            "x": 576,
+                            "y": 500
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_nbq625CY",
+                        "position": {
+                            "h": 250,
+                            "w": 288,
+                            "x": 864,
+                            "y": 500
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_eh1WuDfB",
+                        "position": {
+                            "h": 250,
+                            "w": 288,
+                            "x": 1152,
+                            "y": 500
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_nxvS0MZJ",
+                        "position": {
+                            "h": 293,
+                            "w": 1440,
+                            "x": 0,
+                            "y": 750
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_4xIuOXCX",
+                        "position": {
+                            "h": 250,
+                            "w": 360,
+                            "x": 0,
+                            "y": 1043
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_W8avLJcY",
+                        "position": {
+                            "h": 250,
+                            "w": 360,
+                            "x": 360,
+                            "y": 1043
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_YUhwyATv",
+                        "position": {
+                            "h": 250,
+                            "w": 360,
+                            "x": 720,
+                            "y": 1043
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_301dwdYr",
+                        "position": {
+                            "h": 250,
+                            "w": 360,
+                            "x": 1080,
+                            "y": 1043
+                        },
+                        "type": "block"
+                    }
+                ],
+                "type": "grid"
+            }
+        },
+        "options": {
+            "submitButton": false
+        },
+        "tabs": {
+            "items": [
+                {
+                    "label": "New tab",
+                    "layoutId": "layout_1"
+                }
+            ]
+        }
+    },
+    "applicationProperties": {
+        "hideEdit": false,
+        "hideExport": false
+    }
+}
