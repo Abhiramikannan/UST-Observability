@@ -2,20 +2,20 @@
     "title": "Abhi- Crypto wallet Dashboard level 2 Copy",
     "description": "",
     "inputs": {
-        "input_1aDuGLHX": {
-            "options": {
-                "token": "wallet_id"
-            },
-            "title": "wallet_id",
-            "type": "input.text"
-        },
-        "input_EzaRNIgS": {
+        "input_0Ev1mqTT": {
             "options": {
                 "defaultValue": "-24h@h,now",
                 "token": "time"
             },
             "title": "time",
             "type": "input.timerange"
+        },
+        "input_UKlAXcQX": {
+            "options": {
+                "token": "wallet_id"
+            },
+            "title": "details",
+            "type": "input.text"
         }
     },
     "defaults": {
@@ -33,9 +33,9 @@
         }
     },
     "visualizations": {
-        "viz_79gOt0P8": {
+        "viz_4Z551Kjh": {
             "dataSources": {
-                "primary": "ds_o7rsXs19"
+                "primary": "ds_MV0Lw79n"
             },
             "eventHandlers": [
                 {
@@ -47,6 +47,53 @@
                             {
                                 "token": "form.wallet_id",
                                 "value": "click.value"
+                            },
+                            {
+                                "token": "form.time.earliest",
+                                "value": "time.earliest"
+                            },
+                            {
+                                "token": "form.time.latest",
+                                "value": "time.latest"
+                            }
+                        ]
+                    },
+                    "type": "drilldown.linkToDashboard"
+                }
+            ],
+            "options": {
+                "legendTruncation": "ellipsisMiddle",
+                "showRoundedY2AxisLabels": false,
+                "showY2MajorGridLines": true,
+                "y2AxisAbbreviation": "off",
+                "yAxisAbbreviation": "off"
+            },
+            "showProgressBar": true,
+            "title": "Number of transactions per wallet",
+            "type": "splunk.column"
+        },
+        "viz_5HxRX5OH": {
+            "dataSources": {
+                "primary": "ds_SYVSNT9X"
+            },
+            "eventHandlers": [
+                {
+                    "options": {
+                        "app": "search",
+                        "dashboard": "abhi-level3_crypto",
+                        "newTab": true,
+                        "tokens": [
+                            {
+                                "token": "form.wallet_id",
+                                "value": "click.value"
+                            },
+                            {
+                                "token": "form.time.earliest",
+                                "value": "time.earliest"
+                            },
+                            {
+                                "token": "form.time.earliest",
+                                "value": "time.latest"
                             }
                         ]
                     },
@@ -58,12 +105,15 @@
                 "legendDisplay": "right",
                 "legendTruncation": "ellipsisMiddle",
                 "showIndependentYRanges": false,
+                "showOverlayY2Axis": false,
                 "showRoundedY2AxisLabels": false,
                 "showSplitSeries": false,
                 "showY2MajorGridLines": true,
                 "stackMode": "auto",
+                "xAxisLabelRotation": 0,
                 "xAxisTitleVisibility": "show",
                 "y2AxisAbbreviation": "auto",
+                "y2AxisScale": "inherit",
                 "y2AxisTitleVisibility": "show",
                 "yAxisAbbreviation": "auto",
                 "yAxisScale": "linear",
@@ -71,11 +121,11 @@
             },
             "showProgressBar": true,
             "title": "Number of Transfers per Wallet",
-            "type": "splunk.bar"
+            "type": "splunk.column"
         },
-        "viz_EjiKLD0c": {
+        "viz_MxckNmu2": {
             "dataSources": {
-                "primary": "ds_0iZGzWpj"
+                "primary": "ds_SjBGAgSY"
             },
             "eventHandlers": [
                 {
@@ -87,6 +137,14 @@
                             {
                                 "token": "form.wallet_id",
                                 "value": "click.value"
+                            },
+                            {
+                                "token": "form.time.earliest",
+                                "value": "time.earliest"
+                            },
+                            {
+                                "token": "form.time.latest",
+                                "value": "time.latest"
                             }
                         ]
                     },
@@ -116,56 +174,15 @@
             "title": "Number of Withdrawals per Wallet",
             "type": "splunk.column"
         },
-        "viz_IG8OgRz6": {
-            "dataSources": {
-                "primary": "ds_bUOT21UQ"
-            },
-            "eventHandlers": [
-                {
-                    "options": {
-                        "app": "search",
-                        "dashboard": "abhi-level3_crypto",
-                        "newTab": true,
-                        "tokens": [
-                            {
-                                "token": "form.wallet_id",
-                                "value": "click.value"
-                            }
-                        ]
-                    },
-                    "type": "drilldown.linkToDashboard"
-                }
-            ],
+        "viz_iJSwloCJ": {
             "options": {
-                "legendTruncation": "ellipsisMiddle",
-                "showRoundedY2AxisLabels": false,
-                "showY2MajorGridLines": true,
-                "y2AxisAbbreviation": "off",
-                "yAxisAbbreviation": "off"
-            },
-            "title": "Number of transactions per wallet",
-            "type": "splunk.column"
-        },
-        "viz_OJc1xuaA": {
-            "options": {
-                "markdown": "# CRYPTO WALLET DASHBOARD LEVEL 2"
+                "markdown": "# Error Details\n\n# CRYPTO WALLET DASHBOARD LEVEL 2"
             },
             "type": "splunk.markdown"
         },
-        "viz_co5kgUdI": {
+        "viz_iumJVHSc": {
             "dataSources": {
-                "primary": "ds_EkUYHDGD"
-            },
-            "options": {
-                "drilldown": "none",
-                "showInternalFields": false
-            },
-            "showProgressBar": true,
-            "type": "splunk.table"
-        },
-        "viz_mJGDqGNZ": {
-            "dataSources": {
-                "primary": "ds_z47sNryI"
+                "primary": "ds_VOOPeE4S"
             },
             "eventHandlers": [
                 {
@@ -177,6 +194,14 @@
                             {
                                 "token": "form.wallet_id",
                                 "value": "click.value"
+                            },
+                            {
+                                "token": "form.time.earliest",
+                                "value": "time.earliest"
+                            },
+                            {
+                                "token": "form.time.latest",
+                                "value": "time.latest"
                             }
                         ]
                     },
@@ -188,12 +213,15 @@
                 "legendDisplay": "right",
                 "legendTruncation": "ellipsisMiddle",
                 "showIndependentYRanges": false,
+                "showOverlayY2Axis": false,
                 "showRoundedY2AxisLabels": false,
                 "showSplitSeries": false,
                 "showY2MajorGridLines": true,
                 "stackMode": "auto",
+                "xAxisLabelRotation": 0,
                 "xAxisTitleVisibility": "show",
                 "y2AxisAbbreviation": "auto",
+                "y2AxisScale": "inherit",
                 "y2AxisTitleVisibility": "show",
                 "yAxisAbbreviation": "auto",
                 "yAxisScale": "linear",
@@ -201,64 +229,76 @@
             },
             "showProgressBar": true,
             "title": "Number of Deposits per Wallet",
-            "type": "splunk.bar"
+            "type": "splunk.column"
+        },
+        "viz_x6ct41OJ": {
+            "dataSources": {
+                "primary": "ds_QQX8e3UC"
+            },
+            "options": {
+                "drilldown": "none",
+                "showInternalFields": false
+            },
+            "showProgressBar": true,
+            "title": "Error Details - Error Details",
+            "type": "splunk.table"
         }
     },
     "dataSources": {
-        "ds_0iZGzWpj": {
-            "name": "Number of Withdrawals per Wallet - Column chart search",
-            "options": {
-                "query": "index=\"otel\" host=cryptowallet-*\n| regex _raw=\"Withdrew\"\n| rex \"wallet\\s(?<wallet_id>[a-f0-9\\-]{36})\"\n| stats count as withdrawals by wallet_id\n| sort -withdrawals",
-                "queryParameters": {
-                    "earliest": "-7d@w0",
-                    "latest": "@w0",
-                    "sampleRatio": 1
-                }
-            },
-            "type": "ds.search"
-        },
-        "ds_EkUYHDGD": {
-            "name": "Table search",
-            "options": {
-                "query": "index=otel host=cryptowallet-*\n| eval category=case(\n    match(_raw,\"Created wallet\"),\"wallets_created\",\n    match(_raw,\"Deleted wallet\"),\"wallets_deleted\",\n    match(_raw,\"Deposited\"),\"deposits\",\n    match(_raw,\"Withdrew\"),\"withdrawals\",\n    match(_raw,\"Transferred\"),\"transfers\",\n    like(_raw,\"%not found%\"),\"errors\",\n    true(),\"events\")\n| eval selected=\"$wallet_id$\"\n| where isnull(selected) \n    OR selected=\"all\" \n    OR (selected=\"transactions\" AND category IN (\"deposits\",\"withdrawals\",\"transfers\")) \n    OR category=selected\n| rex field=_raw \"wallet\\s(?<wallet_id>[a-f0-9\\-]{36})\"\n| rex field=_raw \"username\\s(?<username>\\w+)\"\n| rex field=_raw \"location\\s(?<location>[^,]+),\\s+latitude\\s(?<latitude>[-\\d\\.]+),\\s+longitude\\s(?<longitude>[-\\d\\.]+)\"\n| table _time category wallet_id username location latitude longitude\n| sort -_time",
-                "queryParameters": {
-                    "earliest": "-7d@w0",
-                    "latest": "@w0"
-                }
-            },
-            "type": "ds.search"
-        },
-        "ds_bUOT21UQ": {
+        "ds_MV0Lw79n": {
             "name": "Number of transactions per wallet - Column chart search",
             "options": {
                 "query": "index=\"otel\" \"wallet\"\n| eval is_transaction=if(match(_raw,\"Deposited\") OR match(_raw,\"Withdrew\") OR match(_raw,\"Transferred\"), 1, 0)\n| where is_transaction=1\n| rex field=_raw max_match=2 \"wallet\\s(?<wallet_id>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})\"\n| mvexpand wallet_id\n| stats count as transactions by wallet_id\n| sort -transactions",
                 "queryParameters": {
-                    "earliest": "-7d@w0",
-                    "latest": "@w0",
+                    "earliest": "$time.earliest$",
+                    "latest": "$time.latest$",
                     "sampleRatio": 1
                 }
             },
             "type": "ds.search"
         },
-        "ds_o7rsXs19": {
-            "name": "Number of Transfers per Wallet - Bar chart search",
+        "ds_QQX8e3UC": {
+            "name": "Error Details - Error Details search",
+            "options": {
+                "query": "index=otel host=cryptowallet-*\n| eval category=case(\n    match(_raw,\"Created wallet\"),\"wallets_created\",\n    match(_raw,\"Deleted wallet\"),\"wallets_deleted\",\n    match(_raw,\"Deposited\"),\"deposits\",\n    match(_raw,\"Withdrew\"),\"withdrawals\",\n    match(_raw,\"Transferred\"),\"transfers\",\n    like(_raw,\"%not found%\"),\"errors\",\n    true(),\"events\")\n| eval selected=\"$wallet_id$\"\n| where isnull(selected) \n    OR selected=\"all\" \n    OR (selected=\"transactions\" AND category IN (\"deposits\",\"withdrawals\",\"transfers\")) \n    OR category=selected\n| rex field=_raw \"wallet\\s(?<wallet_id>[a-f0-9\\-]{36})\"\n| rex field=_raw \"username\\s(?<username>\\w+)\"\n| rex field=_raw \"location\\s(?<location>[^,]+),\\s+latitude\\s(?<latitude>[-\\d\\.]+),\\s+longitude\\s(?<longitude>[-\\d\\.]+)\"\n| table _time category wallet_id username location latitude longitude\n| sort -_time",
+                "queryParameters": {
+                    "earliest": "$time.earliest$",
+                    "latest": "$time.latest$"
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_SYVSNT9X": {
+            "name": "Number of Transfers per Wallet - Column chart search",
             "options": {
                 "query": "index=\"otel\" host=cryptowallet-*\n| where like(_raw, \"Transferred%\")\n| rex \"from wallet\\s(?<wallet_from>[a-f0-9\\-]{36})\"\n| rex \"to wallet\\s(?<wallet_to>[a-f0-9\\-]{36})\"\n| eval wallet_id=mvappend(wallet_from, wallet_to)\n| mvexpand wallet_id\n| stats count as transfers by wallet_id\n| sort -transfers",
                 "queryParameters": {
-                    "earliest": "-7d@w0",
-                    "latest": "@w0",
+                    "earliest": "$time.earliest$",
+                    "latest": "$time.latest$",
                     "sampleRatio": 1
                 }
             },
             "type": "ds.search"
         },
-        "ds_z47sNryI": {
-            "name": "Number of Deposits per Wallet - Bar chart search",
+        "ds_SjBGAgSY": {
+            "name": "Number of Withdrawals per Wallet - Column chart search",
+            "options": {
+                "query": "index=\"otel\" host=cryptowallet-*\n| regex _raw=\"Withdrew\"\n| rex \"wallet\\s(?<wallet_id>[a-f0-9\\-]{36})\"\n| stats count as withdrawals by wallet_id\n| sort -withdrawals",
+                "queryParameters": {
+                    "earliest": "$time.earliest$",
+                    "latest": "$time.latest$",
+                    "sampleRatio": 1
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_VOOPeE4S": {
+            "name": "Number of Deposits per Wallet - Column chart search",
             "options": {
                 "query": "index=\"otel\" host=cryptowallet-*\n| regex _raw=\"Deposited\"\n| rex \"wallet\\s(?<wallet_id>[a-f0-9\\-]{36})\"\n| stats count as deposits by wallet_id\n| sort -deposits",
                 "queryParameters": {
-                    "earliest": "-7d@w0",
-                    "latest": "@w0",
+                    "earliest": "$time.earliest$",
+                    "latest": "$time.latest$",
                     "sampleRatio": 1
                 }
             },
@@ -267,8 +307,8 @@
     },
     "layout": {
         "globalInputs": [
-            "input_1aDuGLHX",
-            "input_EzaRNIgS"
+            "input_UKlAXcQX",
+            "input_0Ev1mqTT"
         ],
         "layoutDefinitions": {
             "layout_1": {
@@ -278,7 +318,7 @@
                 },
                 "structure": [
                     {
-                        "item": "viz_OJc1xuaA",
+                        "item": "viz_iJSwloCJ",
                         "position": {
                             "h": 250,
                             "w": 1440,
@@ -288,7 +328,7 @@
                         "type": "block"
                     },
                     {
-                        "item": "viz_mJGDqGNZ",
+                        "item": "viz_iumJVHSc",
                         "position": {
                             "h": 250,
                             "w": 360,
@@ -298,7 +338,7 @@
                         "type": "block"
                     },
                     {
-                        "item": "viz_EjiKLD0c",
+                        "item": "viz_MxckNmu2",
                         "position": {
                             "h": 250,
                             "w": 360,
@@ -308,7 +348,7 @@
                         "type": "block"
                     },
                     {
-                        "item": "viz_79gOt0P8",
+                        "item": "viz_5HxRX5OH",
                         "position": {
                             "h": 250,
                             "w": 360,
@@ -318,7 +358,7 @@
                         "type": "block"
                     },
                     {
-                        "item": "viz_IG8OgRz6",
+                        "item": "viz_4Z551Kjh",
                         "position": {
                             "h": 250,
                             "w": 360,
@@ -328,7 +368,7 @@
                         "type": "block"
                     },
                     {
-                        "item": "viz_co5kgUdI",
+                        "item": "viz_x6ct41OJ",
                         "position": {
                             "h": 250,
                             "w": 1440,
