@@ -26,3 +26,27 @@ Workload & Resource Analysis
     Operations teams focus on resources (hardware and performance).
     To fully understand the system, combine both views.
     Use logs, metrics, and traces to capture and analyze system behavior.
+
+
+4. logs:
+    A record of events that happen in a system.
+    Log entry: Has a timestamp (when it happened) and a message (what happened).
+    No single standard format — logs differ between software (e.g., web server vs. kernel).
+
+5. Metrices:
+    Metrics give a high-level view of system performance and health.
+    Metrics help us track changes over time using graphs and dashboards.
+    Four common types of metrics:
+                Counters – Keep increasing (e.g., number of requests).
+                Gauges – Go up or down (e.g., CPU or memory usage).
+                Histograms – Measure distributions (e.g., request durations).
+                Summaries – Show calculated stats like averages or percentiles.
+
+6. Traces:
+        Distributed System Architecture 
+        
+        As systems became larger and more complex, traditional logs were not enough to debug problems.
+        In a distributed system, it’s hard to trace how one request moves through many services.
+        On a single machine, we can use stack traces to find errors, but this doesn’t work across multiple systems.
+        Debugging often required manual work (like matching timestamps) or deep system knowledge.
+        To solve this, Google created Dapper, introducing distributed tracing — a method to track a request’s path across all services in a system.
