@@ -13,3 +13,16 @@ WHY DO WE NEED OPENTELEMETRY
         These systems are widely used in applications like cloud computing, where different parts of an application run on different servers to share resources and balance the workload.
         Because of the complexity of distributed systems, it can be challenging to understand what's happening inside each component at any given time. 
         This is where observability becomes crucial.
+
+To understand a distributed system, we model it using three parts:
+
+    Workload: The tasks or transactions the system performs.
+    Software structure: Components like load balancers, services, pods, and containers.
+    Physical machines: Hardware resources such as CPU, memory, storage, and network.
+
+Workload & Resource Analysis
+
+    Developers focus on workloads (apps and requests).
+    Operations teams focus on resources (hardware and performance).
+    To fully understand the system, combine both views.
+    Use logs, metrics, and traces to capture and analyze system behavior.
