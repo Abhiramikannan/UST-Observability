@@ -1,0 +1,15 @@
+1. CNCF:
+    The Cloud Native Computing Foundation (CNCF) is part of the Linux Foundation and supports cloud native computing. 
+    It helps developers build and run applications using containers and microservices.
+    CNCF hosts popular open-source projects like Kubernetes, Prometheus, and Envoy, bringing together developers and companies to collaborate.
+
+WHY DO WE NEED OPENTELEMETRY
+-------------------------------------------
+2. Observability: 
+      Knowing internal parts of system using external outputs.
+
+3. example of observability become crucial:
+        diff computers working together to perform tasks as if they were a single system.
+        These systems are widely used in applications like cloud computing, where different parts of an application run on different servers to share resources and balance the workload.
+        Because of the complexity of distributed systems, it can be challenging to understand what's happening inside each component at any given time. 
+        This is where observability becomes crucial.
