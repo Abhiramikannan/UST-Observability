@@ -90,4 +90,52 @@ Issue:
             OpenTelemetry solves this by standardizing how telemetry is collected and by adding shared context (trace IDs, span IDs) so logs, metrics, and
             traces are connected.
             This gives a complete, end-to-end view of system behavior, making debugging faster and easier.
-        
+
+
+12. Telemtry data suffers from?
+         telemetry data often suffers from a lack of consistency.
+         OpenTelemetry fixes this by providing a common, standardized instrumentation framework for consistent, high-quality telemetry data.
+
+13. No Built-in Instrumentation in Open Source Software:
+            Most apps use open source libraries, but these don’t have built-in telemetry.
+            There’s no standard way to collect data from them, and adding vendor tools causes extra work and lock-in.
+            Some projects offer hooks so users can connect their own tools, but that’s hard to maintain and often messy.
+            OpenTelemetry fixes this by giving all software a common, easy way to add and share telemetry data.
+
+
+14. what is hook?
+        Hooks = built-in connection points in software that let you attach your own code or tools — like OpenTelemetry — without changing the main program itself.
+
+15. Combining Telemetry Generation with Results in Vendor Lock-In :
+
+            When apps use a specific vendor’s telemetry libraries, all the monitoring code becomes tied to that tool.
+            If you later want to switch to another observability system, you’d have to remove and rewrite all that code — a big and costly job.
+            This makes it hard to move away from one vendor, causing vendor lock-in.
+            OpenTelemetry prevents this by offering standard, vendor-neutral instrumentation that works with any observability platform.
+
+
+16. Struggling Observability Vendors / High Barrier for Entry:
+
+        Software changes fast and is very different everywhere.
+        Making instruments for every library and tool is expensive and hard.
+        Vendors focus on converting data instead of making better analysis tools.
+        This can lower data quality and make troubleshooting harder.
+        OpenTelemetry helps by providing a standard, vendor-neutral format, reducing the need for constant custom instrumentation and improving overall data quality.
+
+17. OpenTelemetry (OTel) – In a Nutshell:
+        OpenTelemetry is an open-source framework that helps developers collect and send telemetry data — including traces, metrics, and logs — from their applications.
+    key goals:
+        Unified telemetry – Combines logs, metrics, and traces so data can be correlated easily.
+    `   Vendor-neutral – Works with any observability tool or backend.
+        Cross-platform – Supports many languages (Java, Python, Go, etc.) and environments.
+
+18. what Opentele is not:
+        Not an All-in-One Monitoring or Observability Tool
+                dont replace observability platforms like Datadog, New Relic, or Prometheus.It only collects telemteric data.
+        Not a Data Storage or Dashboarding Solution
+                    export telemetric data to external systems that handle storage and presentation.
+        Not a Pre-configured Monitoring Tool
+        Not a Performance Optimizer
+                it doesn’t automatically optimize application performance
+
+19.
