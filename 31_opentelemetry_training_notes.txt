@@ -50,3 +50,44 @@ Workload & Resource Analysis
         On a single machine, we can use stack traces to find errors, but this doesn’t work across multiple systems.
         Debugging often required manual work (like matching timestamps) or deep system knowledge.
         To solve this, Google created Dapper, introducing distributed tracing — a method to track a request’s path across all services in a system.
+
+7. 3 pillars of observability?
+        metrices
+        logs
+        traces
+
+8. Telemetry:
+        collecting and transmitting data from remote or distributed systems to monitor, track performance of those systems.
+        When we collect telemetry data (logs, metrics, and traces), we don’t just collect it — we also need to analyze it to find useful insights
+        analyzation - depends on type of telemetry data
+
+9. Vertical Integration?
+        The telemetry data (logs,metrices, traces) can be handled differetly.
+        logs = search text(find errors contains "timeout")
+        metrics= analyse trends over time(e.g., average CPU use in the past 24 hours).
+        Traces → You want to visualize a request flow (e.g., see how long each part of a user request took).
+        So they need diff data storage, optimization methods, Querry tools.
+    one tool that does the full job for a specific kind of telemetry.This is called Vertical Integration.
+    Vendors (like Datadog, New Relic, or Grafana) often focus on one type of data at a time.
+
+10.What does “siloed telemetry” mean?
+        telemetry = collect data to understand how system behaves.
+        siloed = each type of data (logs, metrics, traces) is separate, stored in different tools, and not connected.
+    eg: metrices in prometheous, Logs in elasticsearch , traces in jaeger wont talk to eachother automatically.
+
+    This cause an problem:
+        when somethg is happening wrong
+            u see metric alert - high latency. You search for related metrices maybe cpu, memory. Also move to logging system to find logs.
+            logs don’t have trace IDs or context, so you can’t easily tell which logs are linked to the metric spike.
+            You can see th whole story of what happened.
+Issue:
+    lack of corelation.  Hard to link data across systems.
+    miss shared metadata (like trace_id or span_id) that would allow you to connect related events.
+    This creates fragmented views — you see bits and pieces, but not the full picture of what the system did.
+    OpenTelemetry was created to fix this fragmentation.
+
+11. How Opentele helps to fix this fragmentation of telemetric data as compared from traditional approach?
+            OpenTelemetry solves this by standardizing how telemetry is collected and by adding shared context (trace IDs, span IDs) so logs, metrics, and
+            traces are connected.
+            This gives a complete, end-to-end view of system behavior, making debugging faster and easier.
+        
