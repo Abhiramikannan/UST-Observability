@@ -138,4 +138,195 @@ Issue:
         Not a Performance Optimizer
                 it doesn’t automatically optimize application performance
 
-19.
+
+FRAMEWORK:
+
+19.OpenTelemetry Specification 
+
+    OpenTelemetry has three signals: traces, metrics, logs.
+    The specification makes telemetry consistent across languages and tools.
+    It includes:
+        Common terms – shared vocabulary.
+        API spec – how to generate, process, and export telemetry.
+        SDK spec – guides developers for each programming language.
+        Semantic conventions – standard names and meanings for telemetry data.
+        OTLP – protocol for sending telemetry between systems.
+        Bottom line: The spec ensures all telemetry is compatible, consistent, and easy to use anywhere.
+
+20. Vendor-Agnostic, Language-Specific Instrumentation:
+        OpenTelemetry uses language-specific APIs and SDKs to generate telemetry (traces, metrics, logs) in applications.
+        API → Simple, lightweight interface used in your code. Does nothing by default.
+        SDK → Does the real work: collects, processes, and sends telemetry.
+
+why API is used?
+        developers use to add telemetry (logs, metrics, traces) in their code.
+        It’s vendor-agnostic → your code doesn’t depend on any specific observability tool.
+        Can be a no-op if no SDK is registered, meaning it won’t slow down the app.
+        Developers call the API methods in their code, e.g., “record a metric” or “start a trace.”
+
+Why the SDK is used?
+        The SDK does the real work of OpenTelemetry: generating, processing, and exporting telemetry data.
+        Handles sending data to a backend or observability tool.
+        At startup, the app registers an SDK provider. Then, API calls automatically go through the SDK to produce real telemetry.
+
+How API and SDK work together in OpenTelemetry
+        You write code using the API to instrument your app.
+        You register an SDK provider that implements the API.
+        When the app runs, API calls go through the SDK, which collects and sends telemetry.
+
+21. Telemetry Processor (Standalone Component):
+        After generating telemetry (logs, metrics, traces), it needs to be collected, processed, and sent to backends like databases or monitoring tools.
+        OpenTelemetry Collector is a standalone component that does all of this in one place.
+
+22. Opentelemetry Wire protocol:
+        OTLP: OpenTelemetry Protocol, a standard, vendor-neutral way to send telemetry (logs, metrics, traces) between apps, agents, and backends.
+        Defines how data is encoded in memory.
+        Defines how data is sent over the network.
+        Ensures compatibility across tools and observability solutions.
+
+23. What are Semantic Conventions in OpenTelemetry?
+        A set of rules for organizing and labeling telemetry data consistently
+
+24.  jaeger tracing:
+    OpenTelemetry allows you to export the tracing information to various third-party applications. A popular open source option is a tool called Jaeger Tracing.
+
+25. Automatic (Zero-Code) Instrumentation
+        Auto-instrumentation automatically adds monitoring to your app without changing your code.
+                    You don’t write code — it just works when you install or enable a tool. eg: You add a plugin, and it automatically tracks all HTTP requests.
+                    No code changes needed: It automatically collects telemetry (traces, metrics, logs) without editing your app’s source code.
+                    How it works: Uses OpenTelemetry agents or plugins that attach to your app’s runtime.
+                    Best for: Quick and easy setup — great for getting started fast.
+                    Limitation: You get less control over what’s measured compared to manual instrumentation.
+                    Example: Java or Python OpenTelemetry agents that automatically track things like HTTP calls or database queries.
+
+26. Instrumentation libraries:
+                tools you add to your code to monitor and understand your app’s behavior.
+                eg: In Python (Django) or Java (Spring), you can use OpenTelemetry libraries to track how requests move through your app.
+                You add a library (a bit of code) to your app. It might do some things automatically, but you can also add small bits of code to get more detailed data.
+
+27. Manual Instrumentation:
+        Adding monitoring code directly inside your program, using tools like the OpenTelemetry API.
+        You can decide what needed to be measured and when.
+        Deciding when to start and stop collecting data (like starting a trace when a request begins and ending it when it finishes).
+        you have full control of whats monitored and when to measure.
+
+28. What is Instrumentation Libraries?
+        Add Opentelemetry feature to ur app where there is no build in feature like opentelemetry.
+            Some apps use frameworks like Django, Flask ..but these tools don’t always support OpenTelemetry by default.So, OpenTelemetry made special helper libraries to fix that — called instrumentation libraries. You can install these libraries to make your app automatically send tracing and metrics data to OpenTelemetry.
+
+
+29. How the Instrumentation Library works?
+        You have a Django app that handles a web request. Normally, Django just runs the code and sends a response. If you install the OpenTelemetry Django instrumentation library, it: 
+            Automatically adds “tracing” code around each web request.
+            Measures how long each request takes.
+            Sends that data to OpenTelemetry tools (like Jaeger or Grafana).
+            You don’t have to rewrite Django — the library does it for you!
+
+
+27. Challenges of Instrumentation Libraries:
+        1. Dependency Management: You are adding extra libraries . This can increase complexity and may require careful updates to keep everything compatible.
+        2. Limited Community Support: Some libraries are new or still being tested, so community help or documentation might be limited.
+
+28. Benefits of Instrumentation Libraries:
+            1. works with unsupported frameworks:
+                    Great for frameworks or libraries that don’t have built-in OpenTelemetry support.
+            2. Easy Observability:
+                        They let your app collect traces, metrics, and logs without you writing all the code yourself.
+            3. Can Work with Auto-Instrumentation:
+                    They can be combined with auto-instrumentation tools for even easier setup and broader coverage.
+
+29.  Benefits of Automatic Instrumentation:
+            1. No code changes needed
+            2. Covers many frameworks: tracks http req, database calls.
+            3. Consistent monitoring
+
+30. Challenges of Automatic Instrumentation:
+            Less control
+            Language limitations
+            Limited customization: If u want specific metrics or traces... customization cant do fully automatically.
+
+31. Hands on repo :
+        https://github.com/lftraining/LFS148-code
+
+32. Hands on: Exercise 1: Zero-code Instrumentation for Java and Python
+        1. Install Opentelemetry Agent: wget https:‌//github.com/open-telemetry/opentelemetry-java-instrumentation/releases/download/v2.8.0/opentelemetry-javaagent.jar
+
+        2. you can simply add it as javaagent parameter:
+                java -javaagent:./opentelemetry-javaagent.jar -jar target/todobackend-0.0.1-SNAPSHOT.jar
+
+        3. To setup Opentele agent : Configure the envt variables:
+                    telling the agent to only export trace information and to not try to reach out to a collector.
+                export OTEL_TRACES_EXPORTER=console
+                export OTEL_METRICS_EXPORTER=none
+                export OTEL_LOGS_EXPORTER=none
+
+       4.  Run the app using latest setting:
+                java -javaagent:./opentelemetry-javaagent.jar -jar target/todobackend-0.0.1-SNAPSHOT.jar
+
+        Congratulations. At this point you have successfully configured your Java app with OpenTelemetry!
+
+        Take another terminal:
+                Invoke Application and Observe OpenTelemetry Behavior:
+                   5.  curl localhost:8080/todos/
+                        output: []%
+                            there are no items stored in your application yet.
+
+                    If you execute another curl call in your other shell to add a new item:
+                       6.  curl -X POST localhost:8080/todos/NEW
+
+                    We can make our lives easier here and export the information to a visualization tool like Jaeger.
+                    7. Now deploy an all-in-one option of the Jaeger application, which comes with a bundled OpenTelemetry collector:
+                        docker run -d --name jaeger \
+                         -e COLLECTOR_OTLP_ENABLED=true \
+                         -p 16686:16686 \
+                         -p 14268:14268 \
+                         -p 4317:4317 \
+                         -p 4318:4318 \
+                         jaegertracing/all-in-one
+
+                8. docker ps
+                        Include the container called jaeger.
+
+               9.  To ensure the information will be sent to the right endpoint, reconfigure the environment variable from before:
+                        export OTEL_TRACES_EXPORTER=otlp
+
+              10. Additionally, configure the location of the Collector by specifying:
+                                export OTEL_COLLECTOR_HOST=localhost
+
+                11. Dont need to configure ports:
+                        4317 is being used for gRPC and 4318 for HTTP
+
+                12. Run the java app:
+                        java -javaagent:./opentelemetry-javaagent.jar -jar target/todobackend-0.0.1-SNAPSHOT.jar
+                13. next terminal:
+                        curl -X POST localhost:8080/todos/NEW
+                14. http:‌//localhost:16686/
+                15. curl -X POST localhost:8080/todos/slow
+
+                16. cd $EXERCISES
+                    cd automatic-instrumentation/initial/todoui-flask
+                    python app.py
+                    http:‌//localhost:5000   -> access frontend
+                    http:‌//localhost:16686    ->Also access the Jaeger UI
+                    pip install opentelemetry-distro opentelemetry-exporter-otlp
+                    opentelemetry-bootstrap --action=install
+                    pip uninstall opentelemetry-instrumentation-aws-lambda
+
+                    export OTEL_LOGS_EXPORTER="none"
+                    export OTEL_METRICS_EXPORTER="none"
+                    export OTEL_TRACES_EXPORTER="otlp"
+                    export OTEL_EXPORTER_OTLP_ENDPOINT="localhost:4317"
+                    export OTEL_SERVICE_NAME=todoui-flask
+                    export OTEL_EXPORTER_OTLP_INSECURE=true
+
+                    opentelemetry-instrument python app.py
+                    http:‌//localhost:16686/search URL, you can now see that three services have been captured with trace information
+
+        Recap:
+                Initial directory: automatic-instrumentation/initial
+                Solution directory: automatic-instrumentation/solution
+                Java Source code: automatic-instrumentation/initial/todobackend-springboot
+                Python Source code: automatic-instrumentation/initial/todoui-flask
+
+
+33.
