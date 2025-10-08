@@ -329,4 +329,11 @@ How API and SDK work together in OpenTelemetry
                 Python Source code: automatic-instrumentation/initial/todoui-flask
 
 
-33.
+
+
+
+33.Exercise 2: Code-Based Instrumentation for Java & Python
+cd $EXERCISES
+cd automatic-instrumentation/initial/todobackend-springboot
+mvn clean package
+
