@@ -1,0 +1,296 @@
+{
+  "name": "Otel Demo dashboard - level 0",
+  "description": null,
+  "permissions": "PUBLIC_READ_WRITE",
+  "pages": [
+    {
+      "guid": "NzI5MTE5M3xWSVp8REFTSEJPQVJEfDQ0ODE3NDU3",
+      "name": "Application SLO",
+      "description": null,
+      "widgets": [
+        {
+          "id": "498227649",
+          "title": "Error SLO  Complaince(%)",
+          "layout": {
+            "column": 1,
+            "row": 1,
+            "width": 3,
+            "height": 2
+          },
+          "linkedEntityGuids": [],
+          "visualization": {
+            "id": "viz.billboard"
+          },
+          "rawConfiguration": {
+            "facet": {
+              "showOtherSeries": false
+            },
+            "nrqlQueries": [
+              {
+                "accountIds": [
+                  7291193
+                ],
+                "query": "FROM Span\r\nSELECT 100 - percentage(count(*), WHERE error = true) AS 'Error SLO Target 99.95%'\r\n"
+              }
+            ],
+            "platformOptions": {
+              "ignoreTimeRange": false
+            }
+          }
+        },
+        {
+          "id": "498257910",
+          "title": "Application Error Rate",
+          "layout": {
+            "column": 4,
+            "row": 1,
+            "width": 3,
+            "height": 2
+          },
+          "linkedEntityGuids": [],
+          "visualization": {
+            "id": "viz.billboard"
+          },
+          "rawConfiguration": {
+            "facet": {
+              "showOtherSeries": false
+            },
+            "nrqlQueries": [
+              {
+                "accountIds": [
+                  7291193
+                ],
+                "query": "FROM Span\r\nSELECT percentage(count(*), WHERE error = true) AS 'Error Rate (%)'\r\n"
+              }
+            ],
+            "platformOptions": {
+              "ignoreTimeRange": false
+            }
+          }
+        },
+        {
+          "id": "498257951",
+          "title": " Latency slo compliance",
+          "layout": {
+            "column": 7,
+            "row": 1,
+            "width": 3,
+            "height": 2
+          },
+          "linkedEntityGuids": [],
+          "visualization": {
+            "id": "viz.billboard"
+          },
+          "rawConfiguration": {
+            "facet": {
+              "showOtherSeries": false
+            },
+            "nrqlQueries": [
+              {
+                "accountIds": [
+                  7291193
+                ],
+                "query": "FROM  Span\r\nSELECT 100 - percentage(count(*), WHERE duration.ms > 400) AS 'Latency SLO Target 95% (%)'\r\n"
+              }
+            ],
+            "platformOptions": {
+              "ignoreTimeRange": false
+            }
+          }
+        },
+        {
+          "id": "498259001",
+          "title": "95th percentile response time for app",
+          "layout": {
+            "column": 10,
+            "row": 1,
+            "width": 3,
+            "height": 2
+          },
+          "linkedEntityGuids": [],
+          "visualization": {
+            "id": "viz.billboard"
+          },
+          "rawConfiguration": {
+            "facet": {
+              "showOtherSeries": false
+            },
+            "nrqlQueries": [
+              {
+                "accountIds": [
+                  7291193
+                ],
+                "query": "FROM Span\r\nSELECT percentile(duration.ms, 95) AS '95th Percentile Response Time (ms)'\r\n"
+              }
+            ],
+            "platformOptions": {
+              "ignoreTimeRange": false
+            }
+          }
+        },
+        {
+          "id": "498261105",
+          "title": null,
+          "layout": {
+            "column": 1,
+            "row": 3,
+            "width": 6,
+            "height": 1
+          },
+          "linkedEntityGuids": null,
+          "visualization": {
+            "id": "viz.markdown"
+          },
+          "rawConfiguration": {
+            "text": "\t### SLOs set:\r\n- **Error rate:** critical < **99.9 %**, warning < **99.95 %**\r\n- **Latency:** critical < **90 %**, warning < **95 %**\r\n\r\n"
+          }
+        },
+        {
+          "id": "498261119",
+          "title": null,
+          "layout": {
+            "column": 7,
+            "row": 3,
+            "width": 6,
+            "height": 1
+          },
+          "linkedEntityGuids": null,
+          "visualization": {
+            "id": "viz.markdown"
+          },
+          "rawConfiguration": {
+            "text": "\t### Thresholds set:\r\n- **Error rate:** warning **0.05 %**, critical **0.1 %**\r\n- **Latency:** warning **400 ms**, critical **500 ms**\r\n"
+          }
+        },
+        {
+          "id": "498261124",
+          "title": "Overview of service",
+          "layout": {
+            "column": 1,
+            "row": 4,
+            "width": 12,
+            "height": 2
+          },
+          "linkedEntityGuids": [],
+          "visualization": {
+            "id": "viz.table"
+          },
+          "rawConfiguration": {
+            "facet": {
+              "showOtherSeries": false
+            },
+            "nrqlQueries": [
+              {
+                "accountIds": [
+                  7291193
+                ],
+                "query": "\tFROM Span\r\nSELECT\r\n  percentage(count(*), WHERE error = true) AS 'Error (%)',\r\n  rate(count(*), 1 second) AS 'Req/s',\r\n  percentile(duration.ms, 95) AS 'Resp Time (ms)'\r\nFACET service.name\r\nORDER BY 'Error (%)' DESC\r\nLIMIT 100\r\n"
+              }
+            ],
+            "platformOptions": {
+              "ignoreTimeRange": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "guid": "NzI5MTE5M3xWSVp8REFTSEJPQVJEfDQ0ODIxMzE0",
+      "name": "Service SLO",
+      "description": null,
+      "widgets": [
+        {
+          "id": "498266265",
+          "title": "SLO compliance (%)",
+          "layout": {
+            "column": 1,
+            "row": 1,
+            "width": 6,
+            "height": 3
+          },
+          "linkedEntityGuids": [],
+          "visualization": {
+            "id": "viz.table"
+          },
+          "rawConfiguration": {
+            "facet": {
+              "showOtherSeries": false
+            },
+            "nrqlQueries": [
+              {
+                "accountIds": [
+                  7291193
+                ],
+                "query": "FROM Span\r\nSELECT\r\n  (100 - percentage(count(*), WHERE duration.ms > 1000)) AS 'Latency SLO (%)',\r\n  (100 - percentage(count(*), WHERE http.status_code >= 400)) AS 'Error SLO (%)'\r\nFACET service.name\r\nORDER BY 'Latency SLO (%)' ASC\r\nLIMIT 100\r\n"
+              }
+            ],
+            "platformOptions": {
+              "ignoreTimeRange": false
+            }
+          }
+        },
+        {
+          "id": "498267677",
+          "title": "Services Overview",
+          "layout": {
+            "column": 7,
+            "row": 1,
+            "width": 6,
+            "height": 3
+          },
+          "linkedEntityGuids": [],
+          "visualization": {
+            "id": "viz.table"
+          },
+          "rawConfiguration": {
+            "facet": {
+              "showOtherSeries": false
+            },
+            "nrqlQueries": [
+              {
+                "accountIds": [
+                  7291193
+                ],
+                "query": "FROM Span\r\nSELECT\r\n  average(duration.ms) AS 'Avg Resp Time (ms)',\r\n  rate(count(*), 1 second) AS 'Req/s',\r\n  percentage(count(*), WHERE error = true) AS 'Error (%)'\r\nFACET service.name\r\nORDER BY 'Error (%)' DESC\r\n"
+              }
+            ],
+            "platformOptions": {
+              "ignoreTimeRange": false
+            }
+          }
+        },
+        {
+          "id": "498291703",
+          "title": "Overall SLO health",
+          "layout": {
+            "column": 1,
+            "row": 4,
+            "width": 12,
+            "height": 2
+          },
+          "linkedEntityGuids": [],
+          "visualization": {
+            "id": "viz.table"
+          },
+          "rawConfiguration": {
+            "facet": {
+              "showOtherSeries": false
+            },
+            "nrqlQueries": [
+              {
+                "accountIds": [
+                  7291193
+                ],
+                "query": "FROM Span\r\nSELECT\r\n  percentage(count(*), WHERE duration.ms < 500) AS 'Latency Compliance (%)',\r\n  100 - percentage(count(*), WHERE error = true) AS 'Error Compliance (%)'\r\n"
+              }
+            ],
+            "platformOptions": {
+              "ignoreTimeRange": false
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variables": []
+}
