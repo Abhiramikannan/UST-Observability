@@ -108,3 +108,12 @@ print(myfamily)
 #acces item from nested dictionary
 print(myfamily["child1"]) #use quotes
 
+#loop through key and values in  nested dictionaries
+for x,obj in myfamily.items():
+    print(x) #keys
+    for y in obj:
+        print(obj[y]) #values
+
+
+
+
