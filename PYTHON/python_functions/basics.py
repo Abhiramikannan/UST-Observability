@@ -99,5 +99,5 @@ def div(a,b):
 
 div=smart_div(div)
 print(div(2,4))
-
+#so normal a/b will give different result if the numerator is lessthan the denominator .so we need to swap the values .so we write a diff function to swap the value and connecting both functions.
 
