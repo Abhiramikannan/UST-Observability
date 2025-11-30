@@ -73,4 +73,31 @@ def fru(*fruittss):
 fru("apple","orange","banaana")
 
 #kwargs: if u dont know how many keyword arguments used -use **
+def greet(**kwargs):
+    print(kwargs)
+
+greet(name="Alice", age=30)
+
+#decorators: take another function as input and returns a new function.
+#Decorators let you add extra behavior to a function, without changing the function's code.
+#without touching the existing function you need to change logic of that code.. here decorators come.
+#returning a new function by adding extra information
+#changing a function without touching that function
+
+#normal division = (4,2)=4/2=2.. if that is 2/4 it should be swapped and print result
+
+def smart_div(func):
+   def inner_fun(a,b):
+      if(a<b):
+         a,b=b,a
+      return func(a,b)
+   return inner_fun
+
+def div(a,b):
+   return a/b
+
+
+div=smart_div(div)
+print(div(2,4))
+
 
