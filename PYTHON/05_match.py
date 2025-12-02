@@ -1,3 +1,6 @@
+#match:
+        #match checks a value against different patterns and runs the matching block.
+
 #pass
 age=78
 if age<18:
