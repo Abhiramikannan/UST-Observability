@@ -1,0 +1,82 @@
+Collections are built-in data structures in Python used to store and organize data.
+
+List : Ordered, changeable, allow duplicate members
+Tuple: ordered, unchangeable , allow duplicate ,members
+Dictionary: Ordered,changeable,No duplicate members
+Set: unordered,unchangeable, not indexed, not allow duplicate members
+
+USED FOR:
+List for ordered sequences.
+Set for uniqueness.
+Dict for key-value mapping.
+
+COLLECTION TYPES:
+List
+
+Ordered, mutable, allows duplicates.
+Example: numbers = [1, 2, 3]
+
+
+
+Tuple
+
+Ordered, immutable, allows duplicates.
+Example: coords = (10, 20)
+
+
+
+Set
+
+Unordered, mutable, no duplicates.
+Example: unique_items = {1, 2, 3}
+
+
+
+Dictionary
+
+Key-value pairs, insertion order preserved (Python 3.7+).
+Example: person = {"name": "Alice", "age": 25}
+
+
+ADVANCED COLLECTIONS:
+deque: Double-ended queue for fast append/pop from both ends.
+OrderedDict: Maintains insertion order (though normal dict does this now).
+ChainMap: Combines multiple dictionaries.
+
+
+Q. Difference between list and tuple?
+
+List: Mutable, can be changed after creation.
+Tuple: Immutable, cannot be changed after creation.
+Lists use more memory; tuples are faster and hashable (can be dictionary keys).
+
+Q. Why are sets faster for membership checks than lists?
+
+Sets use hash tables internally, so lookup is O(1) on average.
+Lists require linear search, so lookup is O(n).
+
+Q. How does Python implement dictionaries internally?
+
+Dictionaries use hash tables.
+Keys must be hashable (immutable types like str, int, tuple).
+Collisions are handled using open addressing.
+
+Q. What is hashability?
+
+An object is hashable if it has a hash value that does not change during its lifetime and can be compared to other objects.
+Immutable types (str, int, tuple) are hashable; mutable types (list, dict) are not.
+
+Q. What is the difference between OrderedDict and normal dict?
+
+Before Python 3.7, normal dicts were unordered.
+From Python 3.7+, normal dict preserves insertion order.
+OrderedDict was used earlier for maintaining order explicitly.
+
+Q. What is a defaultdict?
+
+A dictionary that provides a default value for missing keys.
+
+Q. When would you use deque instead of list?
+
+When you need fast append and pop from both ends.
+deque operations on both ends are O(1), while list operations at the start are O(n).
