@@ -45,3 +45,69 @@ print(s2.avg_marks())
 # Getters(Accessors) and setters(Mutators):
 #     Getters get the Value 
 #     Setters sets the Value
+
+
+
+#class methods : Works with class variables
+class Student:
+
+    
+    school="dominics"
+
+    
+    def __init__(self,m1,m2,m3): 
+        self.m1=m1
+        self.m2=m2
+        self.m3=m3
+    
+    
+    def avg_marks(self): 
+        return(self.m1+self.m2+self.m3)/3
+    
+    @classmethod
+    def info(cls): #working with class so use cls inside ()
+        return cls.school
+    
+s1=Student(34,44,32) 
+s2=Student(43,54,33)
+    
+
+#if u want to use info as class method use @classmethod
+#error:Student.info() missing 1 required positional argument: 'cls'... use above @classmethod thing
+print(Student.info())
+
+
+
+#static method: if you are not concerned about the instance and class variable you can use static method
+class Student:
+
+    
+    school="dominics"
+
+    
+    def __init__(self,m1,m2,m3): 
+        self.m1=m1
+        self.m2=m2
+        self.m3=m3
+    
+    
+    def avg_marks(self): 
+        return(self.m1+self.m2+self.m3)/3
+    
+    @classmethod
+    def getSchool(cls): #working with class so use cls inside ()
+        return cls.school
+    
+    @staticmethod
+    def info():
+        print("haii this is from static method")
+    
+s1=Student(34,44,32) 
+s2=Student(43,54,33)
+    
+
+#if u want to use info as class method use @classmethod
+#error:Student.info() missing 1 required positional argument: 'cls'... use above @classmethod thing
+print(Student.info())
+
+
