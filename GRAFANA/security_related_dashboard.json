@@ -1,0 +1,773 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 32,
+  "links": [],
+  "panels": [
+    {
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 6,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "<div style=\"color: black; background-color: white; padding: 10px; text-align: center; border-bottom: 2px solid #E0E0E0;\">\n  <h1>Security Related Metrics Dashboard</h1>\n</div>\n",
+        "mode": "markdown"
+      },
+      "pluginVersion": "12.4.0-19938312174",
+      "title": "Security Related Information",
+      "type": "text"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "eexiogor5rncwf"
+      },
+      "description": "This panel shows the trend of security incidents over time, grouped by severity level (Critical, High, Medium, Low).",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "showValues": false,
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "timestamp"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "h"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 0,
+        "y": 3
+      },
+      "id": 1,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.4.0-19938312174",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "timestamp",
+              "text": "",
+              "type": "timestamp"
+            },
+            {
+              "selector": "incident_id",
+              "text": "",
+              "type": "string"
+            }
+          ],
+          "data": "timestamp,incident_id,incident_type,severity,status,vulnerability_id,vuln_type,vuln_severity,vuln_status,compliance_area,compliance_status,user_id,login_success,login_time,alert_id,alert_type,alert_severity\n2025-09-10T10:00:00Z,INC001,Malware,High,Open,VULN001,SQL Injection,Critical,Open,PCI-DSS,Non-Compliant,user001,True,2025-09-10T09:55:00Z,ALERT001,Unauthorized Access,High\n2025-09-10T11:00:00Z,INC002,Phishing,Medium,Resolved,VULN002,Cross-site Scripting,Medium,Resolved,ISO27001,Compliant,user002,False,2025-09-10T10:58:00Z,ALERT002,Brute Force Attempt,Critical\n2025-09-10T12:00:00Z,INC003,Data Leak,High,Open,VULN003,Unpatched Software,Critical,Open,GDPR,Non-Compliant,user003,True,2025-09-10T11:59:00Z,ALERT003,Privilege Escalation,Medium\n2025-09-10T13:00:00Z,INC004,Malware,Low,Open,VULN004,Weak Password Policy,Low,Open,NIST,Compliant,user004,True,2025-09-10T12:59:00Z,ALERT004,Malware Behavior,High\n2025-09-10T14:00:00Z,INC005,Phishing,Critical,Resolved,VULN005,Open Ports,Critical,Resolved,PCI-DSS,Compliant,user005,False,2025-09-10T13:55:00Z,ALERT005,Data Exfiltration,Critical\n",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "eexiogor5rncwf"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Security Incidents Overview",
+      "transformations": [
+        {
+          "id": "groupBy",
+          "options": {
+            "fields": {
+              "incident_id": {
+                "aggregations": [
+                  "count"
+                ],
+                "operation": "aggregate"
+              },
+              "timestamp": {
+                "aggregations": [],
+                "operation": "groupby"
+              }
+            }
+          }
+        }
+      ],
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "eexiogor5rncwf"
+      },
+      "description": "This panel shows the current status of vulnerabilities in the systemHow many are still Open.How many have been Resolved.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "fillOpacity": 80,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineWidth": 1,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 8,
+        "y": 3
+      },
+      "id": 2,
+      "options": {
+        "barRadius": 0,
+        "barWidth": 0.97,
+        "fullHighlight": false,
+        "groupWidth": 0.7,
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "orientation": "auto",
+        "showValue": "auto",
+        "stacking": "none",
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        },
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0
+      },
+      "pluginVersion": "12.4.0-19938312174",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "vulnerability_id",
+              "text": "",
+              "type": "string"
+            },
+            {
+              "selector": "vuln_status",
+              "text": "",
+              "type": "string"
+            }
+          ],
+          "data": "timestamp,incident_id,incident_type,severity,status,vulnerability_id,vuln_type,vuln_severity,vuln_status,compliance_area,compliance_status,user_id,login_success,login_time,alert_id,alert_type,alert_severity\n2025-09-10T10:00:00Z,INC001,Malware,High,Open,VULN001,SQL Injection,Critical,Open,PCI-DSS,Non-Compliant,user001,True,2025-09-10T09:55:00Z,ALERT001,Unauthorized Access,High\n2025-09-10T11:00:00Z,INC002,Phishing,Medium,Resolved,VULN002,Cross-site Scripting,Medium,Resolved,ISO27001,Compliant,user002,False,2025-09-10T10:58:00Z,ALERT002,Brute Force Attempt,Critical\n2025-09-10T12:00:00Z,INC003,Data Leak,High,Open,VULN003,Unpatched Software,Critical,Open,GDPR,Non-Compliant,user003,True,2025-09-10T11:59:00Z,ALERT003,Privilege Escalation,Medium\n2025-09-10T13:00:00Z,INC004,Malware,Low,Open,VULN004,Weak Password Policy,Low,Open,NIST,Compliant,user004,True,2025-09-10T12:59:00Z,ALERT004,Malware Behavior,High\n2025-09-10T14:00:00Z,INC005,Phishing,Critical,Resolved,VULN005,Open Ports,Critical,Resolved,PCI-DSS,Compliant,user005,False,2025-09-10T13:55:00Z,ALERT005,Data Exfiltration,Critical\n",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "eexiogor5rncwf"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Vulnerability Status Overview",
+      "transformations": [
+        {
+          "id": "groupBy",
+          "options": {
+            "fields": {
+              "vuln_status": {
+                "aggregations": [],
+                "operation": "groupby"
+              },
+              "vulnerability_id": {
+                "aggregations": [
+                  "count"
+                ],
+                "operation": "aggregate"
+              }
+            }
+          }
+        }
+      ],
+      "type": "barchart"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "eexiogor5rncwf"
+      },
+      "description": "This panel shows the current compliance status of different compliance areas like:\n\nPCI-DSS\nISO27001\nGDPR\nNIST",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "fillOpacity": 80,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineWidth": 1,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 16,
+        "y": 3
+      },
+      "id": 3,
+      "options": {
+        "barRadius": 0,
+        "barWidth": 0.97,
+        "fullHighlight": false,
+        "groupWidth": 0.7,
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "orientation": "auto",
+        "showValue": "auto",
+        "stacking": "none",
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        },
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0
+      },
+      "pluginVersion": "12.4.0-19938312174",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "compliance_area",
+              "text": "",
+              "type": "string"
+            },
+            {
+              "selector": "compliance_status",
+              "text": "",
+              "type": "string"
+            },
+            {
+              "selector": "timestamp",
+              "text": "",
+              "type": "timestamp"
+            }
+          ],
+          "data": "timestamp,incident_id,incident_type,severity,status,vulnerability_id,vuln_type,vuln_severity,vuln_status,compliance_area,compliance_status,user_id,login_success,login_time,alert_id,alert_type,alert_severity\n2025-09-10T10:00:00Z,INC001,Malware,High,Open,VULN001,SQL Injection,Critical,Open,PCI-DSS,Non-Compliant,user001,True,2025-09-10T09:55:00Z,ALERT001,Unauthorized Access,High\n2025-09-10T11:00:00Z,INC002,Phishing,Medium,Resolved,VULN002,Cross-site Scripting,Medium,Resolved,ISO27001,Compliant,user002,False,2025-09-10T10:58:00Z,ALERT002,Brute Force Attempt,Critical\n2025-09-10T12:00:00Z,INC003,Data Leak,High,Open,VULN003,Unpatched Software,Critical,Open,GDPR,Non-Compliant,user003,True,2025-09-10T11:59:00Z,ALERT003,Privilege Escalation,Medium\n2025-09-10T13:00:00Z,INC004,Malware,Low,Open,VULN004,Weak Password Policy,Low,Open,NIST,Compliant,user004,True,2025-09-10T12:59:00Z,ALERT004,Malware Behavior,High\n2025-09-10T14:00:00Z,INC005,Phishing,Critical,Resolved,VULN005,Open Ports,Critical,Resolved,PCI-DSS,Compliant,user005,False,2025-09-10T13:55:00Z,ALERT005,Data Exfiltration,Critical\n",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "eexiogor5rncwf"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Compliance Status Overview",
+      "transformations": [
+        {
+          "id": "groupBy",
+          "options": {
+            "fields": {
+              "compliance_area": {
+                "aggregations": [
+                  "count"
+                ],
+                "operation": "aggregate"
+              },
+              "compliance_status": {
+                "aggregations": [],
+                "operation": "groupby"
+              },
+              "timestamp": {
+                "aggregations": []
+              }
+            }
+          }
+        }
+      ],
+      "type": "barchart"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "eexiogor5rncwf"
+      },
+      "description": "This panel helps you monitor the success and failure of user login attempts:\nHow many logins succeeded vs failed in a given time window.\nProvides insight into potential suspicious activity (e.g., many failed login attempts)",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "fillOpacity": 80,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineWidth": 1,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 11
+      },
+      "id": 4,
+      "options": {
+        "barRadius": 0,
+        "barWidth": 0.97,
+        "fullHighlight": false,
+        "groupWidth": 0.7,
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "orientation": "auto",
+        "showValue": "auto",
+        "stacking": "none",
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        },
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0
+      },
+      "pluginVersion": "12.4.0-19938312174",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "user_id",
+              "text": "",
+              "type": "string"
+            },
+            {
+              "selector": "login_success",
+              "text": "",
+              "type": "string"
+            },
+            {
+              "selector": "login_time",
+              "text": "",
+              "type": "timestamp"
+            }
+          ],
+          "data": "timestamp,incident_id,incident_type,severity,status,vulnerability_id,vuln_type,vuln_severity,vuln_status,compliance_area,compliance_status,user_id,login_success,login_time,alert_id,alert_type,alert_severity\n2025-09-10T10:00:00Z,INC001,Malware,High,Open,VULN001,SQL Injection,Critical,Open,PCI-DSS,Non-Compliant,user001,True,2025-09-10T09:55:00Z,ALERT001,Unauthorized Access,High\n2025-09-10T11:00:00Z,INC002,Phishing,Medium,Resolved,VULN002,Cross-site Scripting,Medium,Resolved,ISO27001,Compliant,user002,False,2025-09-10T10:58:00Z,ALERT002,Brute Force Attempt,Critical\n2025-09-10T12:00:00Z,INC003,Data Leak,High,Open,VULN003,Unpatched Software,Critical,Open,GDPR,Non-Compliant,user003,True,2025-09-10T11:59:00Z,ALERT003,Privilege Escalation,Medium\n2025-09-10T13:00:00Z,INC004,Malware,Low,Open,VULN004,Weak Password Policy,Low,Open,NIST,Compliant,user004,True,2025-09-10T12:59:00Z,ALERT004,Malware Behavior,High\n2025-09-10T14:00:00Z,INC005,Phishing,Critical,Resolved,VULN005,Open Ports,Critical,Resolved,PCI-DSS,Compliant,user005,False,2025-09-10T13:55:00Z,ALERT005,Data Exfiltration,Critical\n",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "eexiogor5rncwf"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": " Access & Authentication Overview",
+      "transformations": [
+        {
+          "id": "groupBy",
+          "options": {
+            "fields": {
+              "login_success": {
+                "aggregations": [],
+                "operation": "groupby"
+              },
+              "login_time": {
+                "aggregations": [
+                  "count"
+                ]
+              },
+              "user_id": {
+                "aggregations": [
+                  "count"
+                ],
+                "operation": "aggregate"
+              }
+            }
+          }
+        }
+      ],
+      "type": "barchart"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "eexiogor5rncwf"
+      },
+      "description": "This panel shows a breakdown of security alerts by their type and severity:\nHow many alerts are there per alert type.\nHow many are High / Medium / Low severity.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "footer": {
+              "reducers": []
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "alert_id (count)"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Alert Count"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 11
+      },
+      "id": 5,
+      "options": {
+        "cellHeight": "sm",
+        "showHeader": true,
+        "sortBy": [
+          {
+            "desc": false,
+            "displayName": "alert_id"
+          }
+        ]
+      },
+      "pluginVersion": "12.4.0-19938312174",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "alert_id",
+              "text": "",
+              "type": "string"
+            },
+            {
+              "selector": "alert_type",
+              "text": "",
+              "type": "string"
+            },
+            {
+              "selector": "alert_severity",
+              "text": "",
+              "type": "string"
+            }
+          ],
+          "data": "timestamp,incident_id,incident_type,severity,status,vulnerability_id,vuln_type,vuln_severity,vuln_status,compliance_area,compliance_status,user_id,login_success,login_time,alert_id,alert_type,alert_severity\n2025-09-10T10:00:00Z,INC001,Malware,High,Open,VULN001,SQL Injection,Critical,Open,PCI-DSS,Non-Compliant,user001,True,2025-09-10T09:55:00Z,ALERT001,Unauthorized Access,High\n2025-09-10T11:00:00Z,INC002,Phishing,Medium,Resolved,VULN002,Cross-site Scripting,Medium,Resolved,ISO27001,Compliant,user002,False,2025-09-10T10:58:00Z,ALERT002,Brute Force Attempt,Critical\n2025-09-10T12:00:00Z,INC003,Data Leak,High,Open,VULN003,Unpatched Software,Critical,Open,GDPR,Non-Compliant,user003,True,2025-09-10T11:59:00Z,ALERT003,Privilege Escalation,Medium\n2025-09-10T13:00:00Z,INC004,Malware,Low,Open,VULN004,Weak Password Policy,Low,Open,NIST,Compliant,user004,True,2025-09-10T12:59:00Z,ALERT004,Malware Behavior,High\n2025-09-10T14:00:00Z,INC005,Phishing,Critical,Resolved,VULN005,Open Ports,Critical,Resolved,PCI-DSS,Compliant,user005,False,2025-09-10T13:55:00Z,ALERT005,Data Exfiltration,Critical\n",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "eexiogor5rncwf"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "SIEM (Security Alerts) Dashboard",
+      "transformations": [
+        {
+          "id": "groupBy",
+          "options": {
+            "fields": {
+              "alert_id": {
+                "aggregations": [
+                  "count"
+                ],
+                "operation": "aggregate"
+              },
+              "alert_severity": {
+                "aggregations": []
+              },
+              "alert_type": {
+                "aggregations": [],
+                "operation": "groupby"
+              }
+            }
+          }
+        }
+      ],
+      "type": "table"
+    }
+  ],
+  "preload": false,
+  "schemaVersion": 42,
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "2025-09-10T10:00:00.000Z",
+    "to": "2025-09-10T14:00:00.000Z"
+  },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "abhi- Security related dashboard",
+  "uid": "obcx2qt",
+  "version": 18
+}
