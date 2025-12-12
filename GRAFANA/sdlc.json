@@ -1,0 +1,1945 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 33,
+  "links": [],
+  "panels": [
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "center",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "footer": {
+              "reducers": []
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 10
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Availability"
+            },
+            "properties": [
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "type": "color-background"
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "red",
+                      "value": 0
+                    },
+                    {
+                      "color": "#EAB839",
+                      "value": 95
+                    },
+                    {
+                      "color": "green",
+                      "value": 98
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "unit",
+                "value": "percent"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Error Rate"
+            },
+            "properties": [
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "type": "color-background"
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": 0
+                    },
+                    {
+                      "color": "#EAB839",
+                      "value": 3
+                    },
+                    {
+                      "color": "red",
+                      "value": 5
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Latency"
+            },
+            "properties": [
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "type": "color-background"
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": 0
+                    },
+                    {
+                      "color": "orange",
+                      "value": 300
+                    },
+                    {
+                      "color": "red",
+                      "value": 500
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "unit",
+                "value": "ms"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Saturation"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "percent"
+              },
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "mode": "basic",
+                  "type": "color-background"
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "red",
+                      "value": 0
+                    },
+                    {
+                      "color": "orange",
+                      "value": 30
+                    },
+                    {
+                      "color": "green",
+                      "value": 50
+                    },
+                    {
+                      "color": "red",
+                      "value": 90
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 4,
+      "options": {
+        "cellHeight": "sm",
+        "showHeader": true
+      },
+      "pluginVersion": "12.4.0-19938312174",
+      "targets": [
+        {
+          "columns": [],
+          "data": "[\n  {\"Application Name\": \"Product Configurator\", \"Availability\": 94, \"Latency\": 500, \"Error Rate\": 5, \"Saturation\": 80},\n{\"Application Name\": \"Order Management\", \"Availability\": 99, \"Latency\": 300, \"Error Rate\": 2, \"Saturation\": 45},\n{\"Application Name\": \"Account Management\", \"Availability\": 100, \"Latency\": 100, \"Error Rate\": 1, \"Saturation\": 91}\n]",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "json",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Application Health - APM",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "includeByName": {},
+            "indexByName": {
+              "Application Name": 0,
+              "Availability": 1,
+              "Error Rate": 3,
+              "Latency": 2,
+              "Saturation": 4
+            },
+            "renameByName": {}
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "center",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "footer": {
+              "reducers": []
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 10
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Availability"
+            },
+            "properties": [
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "type": "color-background"
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "red",
+                      "value": 0
+                    },
+                    {
+                      "color": "orange",
+                      "value": 95
+                    },
+                    {
+                      "color": "green",
+                      "value": 98
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "unit",
+                "value": "percent"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Error Rate"
+            },
+            "properties": [
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "type": "color-background"
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": 0
+                    },
+                    {
+                      "color": "orange",
+                      "value": 3
+                    },
+                    {
+                      "color": "red",
+                      "value": 5
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Latency"
+            },
+            "properties": [
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "type": "color-background"
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": 0
+                    },
+                    {
+                      "color": "orange",
+                      "value": 300
+                    },
+                    {
+                      "color": "red",
+                      "value": 500
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "unit",
+                "value": "ms"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Saturation"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "percent"
+              },
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "type": "color-background"
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "red",
+                      "value": 0
+                    },
+                    {
+                      "color": "orange",
+                      "value": 30
+                    },
+                    {
+                      "color": "green",
+                      "value": 50
+                    },
+                    {
+                      "color": "red",
+                      "value": 90
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 6
+      },
+      "id": 5,
+      "options": {
+        "cellHeight": "sm",
+        "showHeader": true
+      },
+      "pluginVersion": "12.4.0-19938312174",
+      "targets": [
+        {
+          "columns": [],
+          "data": "[\n  {\"Infrastructure Component\": \"Redis Cache\", \"Availability\": 94, \"Latency\": 500, \"Error Rate\": 5, \"Saturation\": 80},\n{\"Infrastructure Component\": \"Service Bus\", \"Availability\": 99, \"Latency\": 200, \"Error Rate\": 2, \"Saturation\": 75},\n{\"Infrastructure Component\": \"Cosmos DB\", \"Availability\": 100, \"Latency\": 100, \"Error Rate\": 1, \"Saturation\": 91},\n{\"Infrastructure Component\": \"App Services\", \"Availability\": 100, \"Latency\": 300, \"Error Rate\": 1, \"Saturation\": 44}\n]",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "json",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Infrastructure Health",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "includeByName": {},
+            "indexByName": {
+              "Availability": 1,
+              "Error Rate": 3,
+              "Infrastructure Component": 0,
+              "Latency": 2,
+              "Saturation": 4
+            },
+            "renameByName": {}
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "center",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "footer": {
+              "reducers": []
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 10
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Product Segment"
+            },
+            "properties": []
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Failed Orders"
+            },
+            "properties": [
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "percentage",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": 0
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Failed Orders"
+            },
+            "properties": [
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "mode": "basic",
+                  "type": "color-background"
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": 0
+                    },
+                    {
+                      "color": "orange",
+                      "value": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 13
+      },
+      "id": 6,
+      "options": {
+        "cellHeight": "sm",
+        "showHeader": true
+      },
+      "pluginVersion": "12.4.0-19938312174",
+      "targets": [
+        {
+          "columns": [],
+          "data": "[\n{\"Product Segment\": \"BSS\", \"Total Orders\": 106, \"Completed Orders\": 73, \"In-Progress Orders\": 0, \"Failed Orders\": 0, \"Cancelled Orders\": 19},\n{\"Product Segment\": \"Dialpad\", \"Total Orders\": 145, \"Completed Orders\": 105, \"In-Progress Orders\": 0, \"Failed Orders\": 0, \"Cancelled Orders\": 15},\n{\"Product Segment\": \"IOT Connectivity\", \"Total Orders\": 154, \"Completed Orders\": 118, \"In-Progress Orders\": 14, \"Failed Orders\": 11, \"Cancelled Orders\": 4},\n{\"Product Segment\": \"IOT Packaged Product\", \"Total Orders\": 120, \"Completed Orders\": 81, \"In-Progress Orders\": 13, \"Failed Orders\": 0, \"Cancelled Orders\": 16},\n{\"Product Segment\": \"Total Orders \", \"Total Orders\": 525, \"Completed Orders\": 377, \"In-Progress Orders\": 27, \"Failed Orders\": 11, \"Cancelled Orders\": 54}\n]",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "json",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Business Overview - Order Management",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "includeByName": {},
+            "indexByName": {
+              "Cancelled Orders": 4,
+              "Completed Orders": 1,
+              "Failed Orders": 3,
+              "In-Progress Orders": 2,
+              "Product Segment": 0,
+              "Total Orders": 5
+            },
+            "renameByName": {}
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "center",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "footer": {
+              "reducers": []
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 10
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Business Overview"
+            },
+            "properties": [
+              {
+                "id": "custom.align",
+                "value": "right"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Failed Orders"
+            },
+            "properties": [
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "percentage",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": 0
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "ITSM Overview"
+            },
+            "properties": [
+              {
+                "id": "custom.align",
+                "value": "right"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Total P1s"
+            },
+            "properties": [
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "mode": "basic",
+                  "type": "color-background"
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": 0
+                    },
+                    {
+                      "color": "light-orange",
+                      "value": 1
+                    },
+                    {
+                      "color": "red",
+                      "value": 3
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Total P2s"
+            },
+            "properties": [
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "mode": "basic",
+                  "type": "color-background"
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": 0
+                    },
+                    {
+                      "color": "#EAB839",
+                      "value": 5
+                    },
+                    {
+                      "color": "red",
+                      "value": 10
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Response Time SLA"
+            },
+            "properties": [
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "mode": "basic",
+                  "type": "color-background"
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "red",
+                      "value": 0
+                    },
+                    {
+                      "color": "orange",
+                      "value": 80
+                    },
+                    {
+                      "color": "green",
+                      "value": 90
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "unit",
+                "value": "percent"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Resolution Time SLA"
+            },
+            "properties": [
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "mode": "basic",
+                  "type": "color-background"
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "red",
+                      "value": 0
+                    },
+                    {
+                      "color": "orange",
+                      "value": 80
+                    },
+                    {
+                      "color": "green",
+                      "value": 90
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "unit",
+                "value": "percent"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 24,
+        "x": 0,
+        "y": 21
+      },
+      "id": 7,
+      "options": {
+        "cellHeight": "sm",
+        "showHeader": true
+      },
+      "pluginVersion": "12.4.0-19938312174",
+      "targets": [
+        {
+          "columns": [],
+          "data": "[\n{\"Ticket Type\": \"Incidents \", \"Total Tickets\": 47, \"Total P1s\": 0, \"Total P2s\": 0, \"Total P3s\": 3, \"Total P4s\": 44, \"Response Time SLA\": 85.11, \"Resolution Time SLA\" : 90.10},\n{\"Ticket Type\": \"Service Requests \", \"Total Tickets\": 42, \"Total P1s\": 0, \"Total P2s\": 0, \"Total P3s\": 0, \"Total P4s\": 42, \"Response Time SLA\": 86, \"Resolution Time SLA\" : 92.10},\n{\"Ticket Type\": \"Total Tickets \", \"Total Tickets\": 89, \"Total P1s\": 0, \"Total P2s\": 0, \"Total P3s\": 0, \"Total P4s\": 0, \"Response Time SLA\": 85.5, \"Resolution Time SLA\" : 91.1}\n]\n\n",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "json",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "ITSM Overview",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "includeByName": {},
+            "indexByName": {
+              "Resolution Time SLA": 7,
+              "Response Time SLA": 6,
+              "Ticket Type": 0,
+              "Total P1s": 1,
+              "Total P2s": 2,
+              "Total P3s": 3,
+              "Total P4s": 4,
+              "Total Tickets": 5
+            },
+            "renameByName": {}
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "eexiogor5rncwf"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "footer": {
+              "reducers": []
+            },
+            "inspect": false,
+            "tooltip": {
+              "placement": "auto"
+            },
+            "wrapHeaderText": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Defect Leakage (%)"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "percent"
+              },
+              {
+                "id": "decimals",
+                "value": 0
+              },
+              {
+                "id": "color",
+                "value": {
+                  "mode": "thresholds"
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": 0
+                    },
+                    {
+                      "color": "yellow",
+                      "value": 5
+                    },
+                    {
+                      "color": "orange",
+                      "value": 10
+                    },
+                    {
+                      "color": "red",
+                      "value": 20
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Customer Incidents"
+            },
+            "properties": [
+              {
+                "id": "decimals",
+                "value": 0
+              },
+              {
+                "id": "color",
+                "value": {
+                  "mode": "thresholds"
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": 0
+                    },
+                    {
+                      "color": "yellow",
+                      "value": 1
+                    },
+                    {
+                      "color": "orange",
+                      "value": 3
+                    },
+                    {
+                      "color": "red",
+                      "value": 5
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Open Bugs - P1"
+            },
+            "properties": [
+              {
+                "id": "decimals",
+                "value": 0
+              },
+              {
+                "id": "color",
+                "value": {
+                  "mode": "thresholds"
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": 0
+                    },
+                    {
+                      "color": "yellow",
+                      "value": 1
+                    },
+                    {
+                      "color": "orange",
+                      "value": 3
+                    },
+                    {
+                      "color": "red",
+                      "value": 5
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Open Bugs - P2"
+            },
+            "properties": [
+              {
+                "id": "decimals",
+                "value": 0
+              },
+              {
+                "id": "color",
+                "value": {
+                  "mode": "thresholds"
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": 0
+                    },
+                    {
+                      "color": "yellow",
+                      "value": 5
+                    },
+                    {
+                      "color": "orange",
+                      "value": 10
+                    },
+                    {
+                      "color": "red",
+                      "value": 20
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Code Churn (%)"
+            },
+            "properties": [
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": 0
+                    },
+                    {
+                      "color": "green",
+                      "value": 0
+                    },
+                    {
+                      "color": "orange",
+                      "value": 10
+                    },
+                    {
+                      "color": "red",
+                      "value": 20
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "type": "color-background"
+                }
+              },
+              {
+                "id": "unit",
+                "value": "percent"
+              },
+              {
+                "id": "custom.width",
+                "value": 124
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Team Satisfaction (1-5)"
+            },
+            "properties": [
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": 0
+                    },
+                    {
+                      "color": "red",
+                      "value": 0
+                    },
+                    {
+                      "color": "orange",
+                      "value": 3
+                    },
+                    {
+                      "color": "green",
+                      "value": 4
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "type": "color-background"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Releases"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 77
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Product"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 93
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Owner"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 69
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Requirements Coverage (%)"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 215
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Requirements Stability (%)"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 200
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Period"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 138
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Test Coverage (%)"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 140
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Velocity (Story Points)"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 99
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 12,
+        "x": 0,
+        "y": 27
+      },
+      "id": 8,
+      "options": {
+        "cellHeight": "sm",
+        "showHeader": true,
+        "sortBy": [
+          {
+            "desc": false,
+            "displayName": "Product"
+          }
+        ]
+      },
+      "pluginVersion": "12.4.0-19938312174",
+      "targets": [
+        {
+          "columns": [],
+          "data": "{\n  \"failures\": [\n    {\n      \"Product\": \"Atlas\",\n      \"Period\": \"2025-09 Sprint 3\",\n      \"Owner\": \"Team A\",\n      \"Change Failure Rate (%)\": 8,\n      \"MTTR (Hours)\": 1.2,\n      \"MTTD (Hours)\": 18,\n      \"Defect Density (/KLOC)\": 0.6,\n      \"Defect Leakage (%)\": 5,\n      \"Customer Incidents\": 2,\n      \"Uptime (%)\": 99.95,\n      \"Open Bugs - P1\": 3,\n      \"Open Bugs - P2\": 7,\n      \"Notes / Actions\": \"CFR within target; consider raising coverage to 75%+\"\n    },\n    {\n      \"Product\": \"Borealis\",\n      \"Period\": \"2025-09 Sprint 3\",\n      \"Owner\": \"Team B\",\n      \"Change Failure Rate (%)\": 15,\n      \"MTTR (Hours)\": 3.4,\n      \"MTTD (Hours)\": 26,\n      \"Defect Density (/KLOC)\": 0.9,\n      \"Defect Leakage (%)\": 12,\n      \"Customer Incidents\": 5,\n      \"Uptime (%)\": 99.73,\n      \"Open Bugs - P1\": 6,\n      \"Open Bugs - P2\": 12,\n      \"Notes / Actions\": \"Focus: lower CFR &amp; raise automation; triage P1 backlog\"\n    },\n    {\n      \"Product\": \"Cygnus\",\n      \"Period\": \"2025-09 Sprint 3\",\n      \"Owner\": \"Team C\",\n      \"Change Failure Rate (%)\": 6,\n      \"MTTR (Hours)\": 0.9,\n      \"MTTD (Hours)\": 14,\n      \"Defect Density (/KLOC)\": 0.4,\n      \"Defect Leakage (%)\": 3,\n      \"Customer Incidents\": 1,\n      \"Uptime (%)\": 99.98,\n      \"Open Bugs - P1\": 2,\n      \"Open Bugs - P2\": 5,\n      \"Notes / Actions\": \"Great flow; maintain deploy hygiene and release cadence\"\n    }\n  ],\n  \"velocity\": [\n    {\n      \"Product\": \"Atlas\",\n      \"Period\": \"2025-09 Sprint 3\",\n      \"Owner\": \"Team A\",\n      \"Releases\": 1,\n      \"Velocity (Story Points)\": 42,\n      \"Velocity Change (SP)\": 5,\n      \"Cycle Time (Days)\": 2.3,\n      \"Lead Time (Days)\": 3.8,\n      \"Deployments per Week\": 3,\n      \"Test Coverage (%)\": 72,\n      \"Code Churn (%)\": 9,\n      \"Requirements Stability (%)\": 92,\n      \"Requirements Coverage (%)\": 96,\n      \"Team Satisfaction (1-5)\": 4.3\n    },\n    {\n      \"Product\": \"Borealis\",\n      \"Period\": \"2025-09 Sprint 3\",\n      \"Owner\": \"Team B\",\n      \"Releases\": 2,\n      \"Velocity (Story Points)\": 36,\n      \"Velocity Change (SP)\": -4,\n      \"Cycle Time (Days)\": 3.1,\n      \"Lead Time (Days)\": 5.2,\n      \"Deployments per Week\": 1,\n      \"Test Coverage (%)\": 61,\n      \"Code Churn (%)\": 14,\n      \"Requirements Stability (%)\": 87,\n      \"Requirements Coverage (%)\": 90,\n      \"Team Satisfaction (1-5)\": 3.8\n    },\n    {\n      \"Product\": \"Cygnus\",\n      \"Period\": \"2025-09 Sprint 3\",\n      \"Owner\": \"Team C\",\n      \"Releases\": 1,\n      \"Velocity (Story Points)\": 55,\n      \"Velocity Change (SP)\": 2,\n      \"Cycle Time (Days)\": 2.0,\n      \"Lead Time (Days)\": 3.1,\n      \"Deployments per Week\": 5,\n      \"Test Coverage (%)\": 81,\n      \"Code Churn (%)\": 7,\n      \"Requirements Stability (%)\": 95,\n      \"Requirements Coverage (%)\": 98,\n      \"Team Satisfaction (1-5)\": 4.6\n    }\n  ]\n}",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "eexiogor5rncwf"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "$.velocity[*]",
+          "source": "inline",
+          "type": "json",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Development Reliability",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "Cycle Time (Days)": true,
+              "Deployments per Week": true,
+              "Lead Time (Days)": true,
+              "Requirements Coverage (%)": true,
+              "Requirements Stability (%)": true,
+              "Team Satisfaction (1-5)": true
+            },
+            "includeByName": {},
+            "indexByName": {
+              "Code Churn (%)": 4,
+              "Cycle Time (Days)": 5,
+              "Deployments per Week": 6,
+              "Lead Time (Days)": 7,
+              "Owner": 3,
+              "Period": 2,
+              "Product": 0,
+              "Releases": 1,
+              "Requirements Coverage (%)": 8,
+              "Requirements Stability (%)": 9,
+              "Team Satisfaction (1-5)": 10,
+              "Test Coverage (%)": 11,
+              "Velocity (Story Points)": 12,
+              "Velocity Change (SP)": 13
+            },
+            "orderByMode": "manual",
+            "renameByName": {}
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "eexiogor5rncwf"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "color-background"
+            },
+            "footer": {
+              "reducers": []
+            },
+            "inspect": false,
+            "tooltip": {
+              "placement": "auto"
+            },
+            "wrapHeaderText": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Change Failure Rate (%)"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "percent"
+              },
+              {
+                "id": "decimals",
+                "value": 0
+              },
+              {
+                "id": "color",
+                "value": {
+                  "mode": "thresholds"
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": 0
+                    },
+                    {
+                      "color": "orange",
+                      "value": 10
+                    },
+                    {
+                      "color": "red",
+                      "value": 15
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "MTTR (Hours)"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "h"
+              },
+              {
+                "id": "decimals",
+                "value": 1
+              },
+              {
+                "id": "color",
+                "value": {
+                  "mode": "thresholds"
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": 0
+                    },
+                    {
+                      "color": "orange",
+                      "value": 2
+                    },
+                    {
+                      "color": "red",
+                      "value": 4
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "MTTD (Hours)"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "h"
+              },
+              {
+                "id": "decimals",
+                "value": 0
+              },
+              {
+                "id": "color",
+                "value": {
+                  "mode": "thresholds"
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": 0
+                    },
+                    {
+                      "color": "orange",
+                      "value": 24
+                    },
+                    {
+                      "color": "red",
+                      "value": 48
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Defect Density (/KLOC)"
+            },
+            "properties": [
+              {
+                "id": "decimals",
+                "value": 2
+              },
+              {
+                "id": "color",
+                "value": {
+                  "mode": "thresholds"
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": 0
+                    },
+                    {
+                      "color": "orange",
+                      "value": 1
+                    },
+                    {
+                      "color": "red",
+                      "value": 2
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Defect Leakage (%)"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "percent"
+              },
+              {
+                "id": "decimals",
+                "value": 0
+              },
+              {
+                "id": "color",
+                "value": {
+                  "mode": "thresholds"
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": 0
+                    },
+                    {
+                      "color": "orange",
+                      "value": 10
+                    },
+                    {
+                      "color": "red",
+                      "value": 20
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Customer Incidents"
+            },
+            "properties": [
+              {
+                "id": "decimals",
+                "value": 0
+              },
+              {
+                "id": "color",
+                "value": {
+                  "mode": "thresholds"
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": 0
+                    },
+                    {
+                      "color": "orange",
+                      "value": 3
+                    },
+                    {
+                      "color": "red",
+                      "value": 5
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Open Bugs - P1"
+            },
+            "properties": [
+              {
+                "id": "decimals",
+                "value": 0
+              },
+              {
+                "id": "color",
+                "value": {
+                  "mode": "thresholds"
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": 0
+                    },
+                    {
+                      "color": "orange",
+                      "value": 3
+                    },
+                    {
+                      "color": "red",
+                      "value": 5
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Open Bugs - P2"
+            },
+            "properties": [
+              {
+                "id": "decimals",
+                "value": 0
+              },
+              {
+                "id": "color",
+                "value": {
+                  "mode": "thresholds"
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": 0
+                    },
+                    {
+                      "color": "orange",
+                      "value": 10
+                    },
+                    {
+                      "color": "red",
+                      "value": 20
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Uptime (%)"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "percent"
+              },
+              {
+                "id": "decimals",
+                "value": 2
+              },
+              {
+                "id": "color",
+                "value": {
+                  "mode": "thresholds"
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "red",
+                      "value": 0
+                    },
+                    {
+                      "color": "orange",
+                      "value": 99.5
+                    },
+                    {
+                      "color": "green",
+                      "value": 99.95
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Owner"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 75
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Product"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 72
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Period"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 134
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 12,
+        "x": 12,
+        "y": 27
+      },
+      "id": 9,
+      "options": {
+        "cellHeight": "sm",
+        "showHeader": true
+      },
+      "pluginVersion": "12.4.0-19938312174",
+      "targets": [
+        {
+          "columns": [],
+          "data": "{\n  \"failures\": [\n    {\n      \"Product\": \"Atlas\",\n      \"Period\": \"2025-09 Sprint 3\",\n      \"Owner\": \"Team A\",\n      \"Change Failure Rate (%)\": 8,\n      \"MTTR (Hours)\": 1.2,\n      \"MTTD (Hours)\": 18,\n      \"Defect Density (/KLOC)\": 0.6,\n      \"Defect Leakage (%)\": 5,\n      \"Customer Incidents\": 2,\n      \"Uptime (%)\": 99.95,\n      \"Open Bugs - P1\": 3,\n      \"Open Bugs - P2\": 7,\n      \"Notes / Actions\": \"CFR within target; consider raising coverage to 75%+\"\n    },\n    {\n      \"Product\": \"Borealis\",\n      \"Period\": \"2025-09 Sprint 3\",\n      \"Owner\": \"Team B\",\n      \"Change Failure Rate (%)\": 15,\n      \"MTTR (Hours)\": 3.4,\n      \"MTTD (Hours)\": 26,\n      \"Defect Density (/KLOC)\": 0.9,\n      \"Defect Leakage (%)\": 12,\n      \"Customer Incidents\": 5,\n      \"Uptime (%)\": 99.73,\n      \"Open Bugs - P1\": 6,\n      \"Open Bugs - P2\": 12,\n      \"Notes / Actions\": \"Focus: lower CFR &amp; raise automation; triage P1 backlog\"\n    },\n    {\n      \"Product\": \"Cygnus\",\n      \"Period\": \"2025-09 Sprint 3\",\n      \"Owner\": \"Team C\",\n      \"Change Failure Rate (%)\": 6,\n      \"MTTR (Hours)\": 0.9,\n      \"MTTD (Hours)\": 14,\n      \"Defect Density (/KLOC)\": 0.4,\n      \"Defect Leakage (%)\": 3,\n      \"Customer Incidents\": 1,\n      \"Uptime (%)\": 99.98,\n      \"Open Bugs - P1\": 2,\n      \"Open Bugs - P2\": 5,\n      \"Notes / Actions\": \"Great flow; maintain deploy hygiene and release cadence\"\n    }\n  ],\n  \"velocity\": [\n    {\n      \"Product\": \"Atlas\",\n      \"Period\": \"2025-09 Sprint 3\",\n      \"Owner\": \"Team A\",\n      \"Releases\": 1,\n      \"Velocity (Story Points)\": 42,\n      \"Velocity Change (SP)\": 5,\n      \"Cycle Time (Days)\": 2.3,\n      \"Lead Time (Days)\": 3.8,\n      \"Deployments per Week\": 3,\n      \"Test Coverage (%)\": 72,\n      \"Code Churn (%)\": 9,\n      \"Requirements Stability (%)\": 92,\n      \"Requirements Coverage (%)\": 96,\n      \"Team Satisfaction (1-5)\": 4.3\n    },\n    {\n      \"Product\": \"Borealis\",\n      \"Period\": \"2025-09 Sprint 3\",\n      \"Owner\": \"Team B\",\n      \"Releases\": 2,\n      \"Velocity (Story Points)\": 36,\n      \"Velocity Change (SP)\": -4,\n      \"Cycle Time (Days)\": 3.1,\n      \"Lead Time (Days)\": 5.2,\n      \"Deployments per Week\": 1,\n      \"Test Coverage (%)\": 61,\n      \"Code Churn (%)\": 14,\n      \"Requirements Stability (%)\": 87,\n      \"Requirements Coverage (%)\": 90,\n      \"Team Satisfaction (1-5)\": 3.8\n    },\n    {\n      \"Product\": \"Cygnus\",\n      \"Period\": \"2025-09 Sprint 3\",\n      \"Owner\": \"Team C\",\n      \"Releases\": 1,\n      \"Velocity (Story Points)\": 55,\n      \"Velocity Change (SP)\": 2,\n      \"Cycle Time (Days)\": 2.0,\n      \"Lead Time (Days)\": 3.1,\n      \"Deployments per Week\": 5,\n      \"Test Coverage (%)\": 81,\n      \"Code Churn (%)\": 7,\n      \"Requirements Stability (%)\": 95,\n      \"Requirements Coverage (%)\": 98,\n      \"Team Satisfaction (1-5)\": 4.6\n    }\n  ]\n}",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "eexiogor5rncwf"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "$.failures[*]",
+          "source": "inline",
+          "type": "json",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Development Failures",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "Customer Incidents": true,
+              "MTTD (Hours)": true,
+              "MTTR (Hours)": true,
+              "Notes / Actions": true
+            },
+            "includeByName": {},
+            "indexByName": {
+              "Change Failure Rate (%)": 3,
+              "Customer Incidents": 4,
+              "Defect Density (/KLOC)": 5,
+              "Defect Leakage (%)": 6,
+              "MTTD (Hours)": 7,
+              "MTTR (Hours)": 8,
+              "Notes / Actions": 9,
+              "Open Bugs - P1": 10,
+              "Open Bugs - P2": 11,
+              "Owner": 2,
+              "Period": 1,
+              "Product": 0,
+              "Uptime (%)": 12
+            },
+            "renameByName": {}
+          }
+        }
+      ],
+      "type": "table"
+    }
+  ],
+  "preload": false,
+  "schemaVersion": 42,
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-1h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "Mock Dashboard -SDLC",
+  "uid": "shrsm2p",
+  "version": 25
+}
