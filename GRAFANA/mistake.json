@@ -1,0 +1,1888 @@
+
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 0,
+  "links": [],
+  "panels": [
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 4,
+        "x": 0,
+        "y": 0
+      },
+      "id": 1,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^A$/",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.4.0-19938312174",
+      "targets": [
+        {
+          "columns": [],
+          "data": "Metric,Value\nTotal File Transfer,50\nFile Transfer Completed,32\nTransfer in Progress,3\nFile Transfer latency,300ms\nPipeline Saturation,70%\nFile Transfer Cancelled,2\nFiles in Pipeline(>10 mins),3\nFiles Rejected,1\nFile Checksum Mismatch,1\nFile Transfer TimedOut,2\nFailed File Transfers,6\n",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Total Files Transfers",
+      "transformations": [
+        {
+          "id": "filterByValue",
+          "options": {
+            "filters": [
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": "Total File Transfer"
+                  }
+                },
+                "fieldName": "Metric"
+              }
+            ],
+            "match": "all",
+            "type": "include"
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 12,
+        "x": 4,
+        "y": 0
+      },
+      "id": 17,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "<div style=\"color: white; background-color: #0080c7; padding: 10px; text-align: left;\">\n  <h1>Normal File Transfer Status</h1>\n</div>",
+        "mode": "html"
+      },
+      "pluginVersion": "12.4.0-19938312174",
+      "title": "",
+      "type": "text"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 8,
+        "x": 16,
+        "y": 0
+      },
+      "id": 18,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "<div style=\"color: white; background-color: #0080c7; padding: 10px; text-align: left;\">\n  <h1>Abnormal File Transfer Status</h1>\n</div>",
+        "mode": "html"
+      },
+      "pluginVersion": "12.4.0-19938312174",
+      "title": "",
+      "type": "text"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "links": [
+            {
+              "title": "Completed",
+              "url": "https://sflabs.grafana.net/d/abhhn48/edar-base-dashboard-2?orgId=1&var-table_name=Completed"
+            }
+          ],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 4,
+        "y": 2
+      },
+      "id": 2,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^A$/",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.4.0-19938312174",
+      "targets": [
+        {
+          "columns": [],
+          "data": "Metric,Value\nTotal File Transfer,50\nFile Transfer Completed,32\nTransfer in Progress,3\nFile Transfer latency,300ms\nPipeline Saturation,70%\nFile Transfer Cancelled,2\nFiles in Pipeline(>10 mins),3\nFiles Rejected,1\nFile Checksum Mismatch,1\nFile Transfer TimedOut,2\nFailed File Transfers,6\n",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Files Transfer Completed",
+      "transformations": [
+        {
+          "id": "filterByValue",
+          "options": {
+            "filters": [
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": "File Transfer Completed"
+                  }
+                },
+                "fieldName": "Metric"
+              }
+            ],
+            "match": "all",
+            "type": "include"
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "links": [
+            {
+              "title": "In-Progress",
+              "url": "https://sflabs.grafana.net/d/abhhn48/edar-base-dashboard-2?orgId=1&var-table_name=In-progress"
+            }
+          ],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 8,
+        "y": 2
+      },
+      "id": 3,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^A$/",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.4.0-19938312174",
+      "targets": [
+        {
+          "columns": [],
+          "data": "Metric,Value\nTotal File Transfer,50\nFile Transfer Completed,32\nTransfer in Progress,3\nFile Transfer latency,300ms\nPipeline Saturation,70%\nFile Transfer Cancelled,2\nFiles in Pipeline(>10 mins),3\nFiles Rejected,1\nFile Checksum Mismatch,1\nFile Transfer TimedOut,2\nFailed File Transfers,6\n",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Transfer In-progress",
+      "transformations": [
+        {
+          "id": "filterByValue",
+          "options": {
+            "filters": [
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": "Transfer in Progress"
+                  }
+                },
+                "fieldName": "Metric"
+              }
+            ],
+            "match": "all",
+            "type": "include"
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 12,
+        "y": 2
+      },
+      "id": 6,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^A$/",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.4.0-19938312174",
+      "targets": [
+        {
+          "columns": [],
+          "data": "Metric,Value\nTotal File Transfer,50\nFile Transfer Completed,32\nTransfer in Progress,3\nFile Transfer latency,300ms\nPipeline Saturation,70%\nFile Transfer Cancelled,2\nFiles in Pipeline(>10 mins),3\nFiles Rejected,1\nFile Checksum Mismatch,1\nFile Transfer TimedOut,2\nFailed File Transfers,6\n",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "File Transfer Latency",
+      "transformations": [
+        {
+          "id": "filterByValue",
+          "options": {
+            "filters": [
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": "File Transfer latency"
+                  }
+                },
+                "fieldName": "Metric"
+              }
+            ],
+            "match": "all",
+            "type": "include"
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "links": [
+            {
+              "title": "Rejected",
+              "url": "https://sflabs.grafana.net/d/abhhn48/edar-base-dashboard-2?orgId=1&var-table_name=Rejected"
+            }
+          ],
+          "mappings": [],
+          "thresholds": {
+            "mode": "percentage",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 0
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 16,
+        "y": 2
+      },
+      "id": 8,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^A$/",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.4.0-19938312174",
+      "targets": [
+        {
+          "columns": [],
+          "data": "Metric,Value\nTotal File Transfer,50\nFile Transfer Completed,32\nTransfer in Progress,3\nFile Transfer latency,300ms\nPipeline Saturation,70%\nFile Transfer Cancelled,2\nFiles in Pipeline(>10 mins),3\nFiles Rejected,1\nFile Checksum Mismatch,1\nFile Transfer TimedOut,2\nFailed File Transfers,6\n",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Files Rejected",
+      "transformations": [
+        {
+          "id": "filterByValue",
+          "options": {
+            "filters": [
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": "Files Rejected"
+                  }
+                },
+                "fieldName": "Metric"
+              }
+            ],
+            "match": "all",
+            "type": "include"
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "links": [
+            {
+              "title": "Checksum Mismatch",
+              "url": "https://sflabs.grafana.net/d/abhhn48/edar-base-dashboard-2?orgId=1&var-table_name=Checksum_Mismatch"
+            }
+          ],
+          "mappings": [],
+          "thresholds": {
+            "mode": "percentage",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 0
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 20,
+        "y": 2
+      },
+      "id": 11,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^A$/",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.4.0-19938312174",
+      "targets": [
+        {
+          "columns": [],
+          "data": "Metric,Value\nTotal File Transfer,50\nFile Transfer Completed,32\nTransfer in Progress,3\nFile Transfer latency,300ms\nPipeline Saturation,70%\nFile Transfer Cancelled,2\nFiles in Pipeline(>10 mins),3\nFiles Rejected,1\nFile Checksum Mismatch,1\nFile Transfer TimedOut,2\nFailed File Transfers,6\n",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "File Checksum Mismatch",
+      "transformations": [
+        {
+          "id": "filterByValue",
+          "options": {
+            "filters": [
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": "File Checksum Mismatch"
+                  }
+                },
+                "fieldName": "Metric"
+              }
+            ],
+            "match": "all",
+            "type": "include"
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 4,
+        "y": 6
+      },
+      "id": 4,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^A$/",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.4.0-19938312174",
+      "targets": [
+        {
+          "columns": [],
+          "data": "Metric,Value\nTotal File Transfer,50\nFile Transfer Completed,32\nTransfer in Progress,3\nFile Transfer latency,300ms\nPipeline Saturation,70%\nFile Transfer Cancelled,2\nFiles in Pipeline(>10 mins),3\nFiles Rejected,1\nFile Checksum Mismatch,1\nFile Transfer TimedOut,2\nFailed File Transfers,6\n",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Pipeline Saturation",
+      "transformations": [
+        {
+          "id": "filterByValue",
+          "options": {
+            "filters": [
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": "Pipeline Saturation"
+                  }
+                },
+                "fieldName": "Metric"
+              }
+            ],
+            "match": "all",
+            "type": "include"
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "links": [
+            {
+              "title": "Cancelled",
+              "url": "https://sflabs.grafana.net/d/abhhn48/edar-base-dashboard-2?orgId=1&var-table_name=Cancelled"
+            }
+          ],
+          "mappings": [],
+          "thresholds": {
+            "mode": "percentage",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 8,
+        "y": 6
+      },
+      "id": 5,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^A$/",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.4.0-19938312174",
+      "targets": [
+        {
+          "columns": [],
+          "data": "Metric,Value\nTotal File Transfer,50\nFile Transfer Completed,32\nTransfer in Progress,3\nFile Transfer latency,300ms\nPipeline Saturation,70%\nFile Transfer Cancelled,2\nFiles in Pipeline(>10 mins),3\nFiles Rejected,1\nFile Checksum Mismatch,1\nFile Transfer TimedOut,2\nFailed File Transfers,6\n",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "File Transfer Cancelled",
+      "transformations": [
+        {
+          "id": "filterByValue",
+          "options": {
+            "filters": [
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": "File Transfer Cancelled"
+                  }
+                },
+                "fieldName": "Metric"
+              }
+            ],
+            "match": "all",
+            "type": "include"
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 12,
+        "y": 6
+      },
+      "id": 7,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^A$/",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.4.0-19938312174",
+      "targets": [
+        {
+          "columns": [],
+          "data": "Metric,Value\nTotal Order,205\nOrder Completed,129\nOrder Created,18\nOrder Checkout,0\nOrder Received,0\nOrder Cancelled,14\nOrder Submitted,2\nIoT Order Failed,0\nOrder (NULL Status),0\nOrder Expired,0\nOrder Failed,6\nPost Order Processing Error,1\nPre Order Processing Error,0\nOrder Submitted (Delinquency),3\nDelinquency Order (Post Order Error),0\nDelinquency Order (Pre Order Error),0\n",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Files in pipeline (>10 mins)",
+      "transformations": [
+        {
+          "id": "filterByValue",
+          "options": {
+            "filters": [
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": "Order Submitted"
+                  }
+                },
+                "fieldName": "Metric"
+              }
+            ],
+            "match": "all",
+            "type": "include"
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "links": [
+            {
+              "title": "TimedOut",
+              "url": "https://sflabs.grafana.net/d/abhhn48/edar-base-dashboard-2?orgId=1&var-table_name=TimedOut"
+            }
+          ],
+          "mappings": [],
+          "thresholds": {
+            "mode": "percentage",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 0
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 16,
+        "y": 6
+      },
+      "id": 9,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^A$/",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.4.0-19938312174",
+      "targets": [
+        {
+          "columns": [],
+          "data": "Metric,Value\nTotal File Transfer,50\nFile Transfer Completed,32\nTransfer in Progress,3\nFile Transfer latency,300ms\nPipeline Saturation,70%\nFile Transfer Cancelled,2\nFiles in Pipeline(>10 mins),3\nFiles Rejected,1\nFile Checksum Mismatch,1\nFile Transfer TimedOut,2\nFailed File Transfers,6\n",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Files Transfer Timed Out",
+      "transformations": [
+        {
+          "id": "filterByValue",
+          "options": {
+            "filters": [
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": "File Transfer TimedOut"
+                  }
+                },
+                "fieldName": "Metric"
+              }
+            ],
+            "match": "all",
+            "type": "include"
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "links": [
+            {
+              "title": "OrderFail",
+              "url": "https://sflabs.grafana.net/d/abhhn48/edar-base-dashboard-2?orgId=1&var-table_name=Failed"
+            }
+          ],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": 0
+              },
+              {
+                "color": "green",
+                "value": 0
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 20,
+        "y": 6
+      },
+      "id": 10,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^A$/",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.4.0-19938312174",
+      "targets": [
+        {
+          "columns": [],
+          "data": "Metric,Value\nTotal File Transfer,50\nFile Transfer Completed,32\nTransfer in Progress,3\nFile Transfer latency,300ms\nPipeline Saturation,70%\nFile Transfer Cancelled,2\nFiles in Pipeline(>10 mins),3\nFiles Rejected,1\nFile Checksum Mismatch,1\nFile Transfer TimedOut,2\nFailed File Transfers,6\n",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Failed File Transfers",
+      "transformations": [
+        {
+          "id": "filterByValue",
+          "options": {
+            "filters": [
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": "Failed File Transfers"
+                  }
+                },
+                "fieldName": "Metric"
+              }
+            ],
+            "match": "all",
+            "type": "include"
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 24,
+        "x": 0,
+        "y": 10
+      },
+      "id": 19,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "<div style=\"color: white; background-color: #0080c7; padding: 10px; text-align: left;\">\n  <h1>Failed Order Details</h1>\n</div>",
+        "mode": "html"
+      },
+      "pluginVersion": "12.4.0-19938312174",
+      "title": "",
+      "type": "text"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "links": [
+            {
+              "targetBlank": false,
+              "title": "PostOrder",
+              "url": "https://sflabs.grafana.net/d/obr9xd7/et-order-insights-base-dashboard?orgId=1&var-table_name=PostOrderProcessingError"
+            }
+          ],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 6,
+        "x": 0,
+        "y": 12
+      },
+      "id": 13,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^A$/",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.4.0-19938312174",
+      "targets": [
+        {
+          "columns": [],
+          "data": "Metric,Value\nTotal Order,205\nOrder Completed,129\nOrder Created,18\nOrder Checkout,0\nOrder Received,0\nOrder Cancelled,14\nOrder Submitted,35\nIoT Order Failed,0\nOrder (NULL Status),0\nOrder Expired,0\nOrder Failed,6\nPost Order Processing Error,1\nPre Order Processing Error,0\nOrder Submitted (Delinquency),3\nDelinquency Order (Post Order Error),0\nDelinquency Order (Pre Order Error),0\n",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Source to Destination Mismatch",
+      "transformations": [
+        {
+          "id": "filterByValue",
+          "options": {
+            "filters": [
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": "Post Order Processing Error"
+                  }
+                },
+                "fieldName": "Metric"
+              }
+            ],
+            "match": "all",
+            "type": "include"
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "links": [
+            {
+              "targetBlank": false,
+              "title": "PreOrder",
+              "url": "https://sflabs.grafana.net/d/obr9xd7/et-order-insights-base-dashboard?orgId=1&var-table_name=PreOrderProcessingError"
+            }
+          ],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 6,
+        "x": 6,
+        "y": 12
+      },
+      "id": 12,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^A$/",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.4.0-19938312174",
+      "targets": [
+        {
+          "columns": [],
+          "data": "Metric,Value\nTotal Order,205\nOrder Completed,129\nOrder Created,18\nOrder Checkout,0\nOrder Received,0\nOrder Cancelled,14\nOrder Submitted,35\nIoT Order Failed,0\nOrder (NULL Status),0\nOrder Expired,0\nOrder Failed,6\nPost Order Processing Error,1\nPre Order Processing Error,0\nOrder Submitted (Delinquency),3\nDelinquency Order (Post Order Error),0\nDelinquency Order (Pre Order Error),0\n",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "File Processing Error",
+      "transformations": [
+        {
+          "id": "filterByValue",
+          "options": {
+            "filters": [
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": "Pre Order Processing Error"
+                  }
+                },
+                "fieldName": "Metric"
+              }
+            ],
+            "match": "all",
+            "type": "include"
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "footer": {
+              "reducers": []
+            },
+            "hideFrom": {
+              "viz": false
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#f700a1",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Order ID"
+            },
+            "properties": [
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "type": "color-text"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Activity ID"
+            },
+            "properties": [
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "type": "color-text"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Result Description"
+            },
+            "properties": [
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "type": "color-text"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 12,
+        "w": 12,
+        "x": 12,
+        "y": 12
+      },
+      "id": 22,
+      "options": {
+        "cellHeight": "sm",
+        "showHeader": true
+      },
+      "pluginVersion": "12.4.0-19938312174",
+      "targets": [
+        {
+          "columns": [],
+          "data": "\nTransferId,Status,ResultDescription\n68c1c5441a9b7b20ef683abc,Failed,\"{\"\"FileTransferredDate\"\":\"\"2025-09-10T20:00:00\"\",\"\"TransferId\"\":\"\"68c1c5441a9b7b20ef683abc\"\",\"\"Status\"\":\"\"Failed\"\",\"\"Duration\"\":8234,\"\"Checksum_Ok\"\":false,\"\"ErrorCode\"\":\"\"E_SFTP_CONN\"\",\"\"ErrorReason\"\":\"\"SFTP connection error\"\"}\"\n68c444aaa9b7b20ef6831001,Completed,\"{\"\"FileTransferredDate\"\":\"\"2025-09-11T09:00:00\"\",\"\"TransferId\"\":\"\"68c444aaa9b7b20ef6831001\"\",\"\"Status\"\":\"\"Completed\"\",\"\"Duration\"\":15237,\"\"Checksum_Ok\"\":true,\"\"ErrorCode\"\":null,\"\"ErrorReason\"\":null}\"\n68c444aaa9b7b20ef6831002,In-progress,\"{\"\"FileTransferredDate\"\":\"\"2025-09-11T09:05:00\"\",\"\"TransferId\"\":\"\"68c444aaa9b7b20ef6831002\"\",\"\"Status\"\":\"\"In-progress\"\",\"\"Duration\"\":9876,\"\"Checksum_Ok\"\":true,\"\"ErrorCode\"\":null,\"\"ErrorReason\"\":null}\"\n68c444aaa9b7b20ef6831003,Rejected,\"{\"\"FileTransferredDate\"\":\"\"2025-09-11T09:10:00\"\",\"\"TransferId\"\":\"\"68c444aaa9b7b20ef6831003\"\",\"\"Status\"\":\"\"Rejected\"\",\"\"Duration\"\":10456,\"\"Checksum_Ok\"\":false,\"\"ErrorCode\"\":\"\"E_FILE_PERM\"\",\"\"ErrorReason\"\":\"\"File permission denied\"\"}\"\n68c444aaa9b7b20ef6831005,Cancelled,\"{\"\"FileTransferredDate\"\":\"\"2025-09-11T09:20:00\"\",\"\"TransferId\"\":\"\"68c444aaa9b7b20ef6831005\"\",\"\"Status\"\":\"\"Cancelled\"\",\"\"Duration\"\":11890,\"\"Checksum_Ok\"\":false,\"\"ErrorCode\"\":\"\"E_USER_CANCEL\"\",\"\"ErrorReason\"\":\"\"Transfer cancelled by user\"\"}\"\n68c444aaa9b7b20ef6831007,TimedOut,\"{\"\"FileTransferredDate\"\":\"\"2025-09-11T09:30:00\"\",\"\"TransferId\"\":\n",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Detailed Log",
+      "transformations": [
+        {
+          "id": "filterByValue",
+          "options": {
+            "filters": [
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": "${transfer_id}"
+                  }
+                },
+                "fieldName": "TransferId"
+              }
+            ],
+            "match": "all",
+            "type": "include"
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "includeByName": {},
+            "indexByName": {
+              "ResultDescription": 2,
+              "Status": 1,
+              "TransferId": 0
+            },
+            "renameByName": {}
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "footer": {
+              "reducers": []
+            },
+            "hideFrom": {
+              "viz": false
+            },
+            "inspect": false
+          },
+          "links": [
+            {
+              "title": "Detailed Logs",
+              "url": "https://sflabs.grafana.net/d/abhhn48/edar-base-dashboard-2?orgId=1&var-table_name=${table_name}&transfer_id=${__data.fields.TransferId}\n\n"
+            }
+          ],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#f700a1",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "OrderId"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 223
+              },
+              {
+                "id": "links",
+                "value": [
+                  {
+                    "title": "orderid",
+                    "url": "https://sflabs.grafana.net/d/obr9xd7/et-order-insights-base-dashboard?orgId=1&var-order_id=${__value.text}"
+                  }
+                ]
+              },
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "type": "color-text"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Financial Account Number"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 256
+              },
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "type": "color-text"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "SubStatusCode"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 269
+              },
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "type": "color-text"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Ageing(Days)"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 118
+              },
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "type": "color-text"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "StatusCode"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 195
+              },
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "type": "color-text"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "OrderStatusDate"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 176
+              },
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "type": "color-text"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "ActivityId"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 359
+              },
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "type": "color-text"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 15
+      },
+      "id": 20,
+      "options": {
+        "cellHeight": "sm",
+        "showHeader": true,
+        "sortBy": [
+          {
+            "desc": false,
+            "displayName": "ErrorCode"
+          }
+        ]
+      },
+      "pluginVersion": "12.4.0-19938312174",
+      "targets": [
+        {
+          "columns": [],
+          "data": "FileTransferredDate,TransferId,Status,Duration,ErrorCode,ErrorReason\n2025-09-11T09:00:00,b8af6ab311044e2194b068c7,Completed,283,null,null\n2025-09-11T09:05:00,97204b7bf53d4ba59138aa03,Completed,148,null,null\n2025-09-11T09:10:00,6f532249f6bd4021bd23cda5,Completed,126,null,null\n2025-09-11T09:15:00,719c1936a83c44b8b29801c1,Completed,309,null,null\n2025-09-11T09:20:00,d65f4e6e54574f58bf9e4398,Completed,190,null,null\n2025-09-11T09:25:00,377e158f8e0f4265bf094c06,Completed,182,null,null\n2025-09-11T09:30:00,79f505feee7b4edcabbf774b,Completed,177,null,null\n2025-09-11T09:35:00,ca069f571b6248a29f48bbe7,Completed,155,null,null\n2025-09-11T09:40:00,e2ebc3bef50d45c5b9372370,Completed,308,null,null\n2025-09-11T09:45:00,322381fdb756483c84c30514,Completed,146,null,null\n2025-09-11T09:50:00,dc4534af46554971a326e27a,Completed,293,null,null\n2025-09-11T09:55:00,32c57619f2ce47dda6ce5c60,Completed,309,null,null\n2025-09-11T10:00:00,a22be75800024dbb99245411,Completed,348,null,null\n2025-09-11T10:05:00,63b554d9eb894ff8924e275e,Completed,259,null,null\n2025-09-11T10:10:00,ee0fbcc1b95e4ea1bc361ace,Completed,142,null,null\n2025-09-11T10:15:00,b1bc19914b7f4c3b907d0e5f,Completed,271,null,null\n2025-09-11T10:20:00,6120cbc8856243fd804ac4a5,Completed,228,null,null\n2025-09-11T10:25:00,adce4c9544b94ca48517d33b,Completed,128,null,null\n2025-09-11T10:30:00,57fb2e9b8fe8481ab8748ff6,Completed,127,null,null\n2025-09-11T10:35:00,aa46899896b04c8ab290419c,Completed,143,null,null\n2025-09-11T10:40:00,a0c1c4875c1e4a63bcbf4e10,Completed,175,null,null\n2025-09-11T10:45:00,b793356188d143e6ab650ddc,Completed,179,null,null\n2025-09-11T10:50:00,120f29a7ce38484c9457a9db,Completed,249,null,null\n2025-09-11T10:55:00,8b7fc3dfb36b412e84a83550,Completed,274,null,null\n2025-09-11T11:00:00,214dad630cb84de3afa9156d,Completed,126,null,null\n2025-09-11T11:05:00,a1315cd96daa40b490da7b32,Completed,263,null,null\n2025-09-11T11:10:00,c7945cf08b0540a1bd610882,Completed,170,null,null\n2025-09-11T11:15:00,3a35b02728854ddcbe4e9a7f,Completed,303,null,null\n2025-09-11T11:20:00,e710fea858404d1c9aec523d,Completed,286,null,null\n2025-09-11T11:25:00,7469d1c85ae64fa4a260273c,Completed,299,null,null\n2025-09-11T11:30:00,8d537ed3120e4ccc98e567c0,Completed,259,null,null\n2025-09-11T11:35:00,53820cc7e3c24b759de130e6,Completed,227,null,null\n2025-09-11T11:40:00,30221c6b79194fd9b2f31a67,In-progress,156,null,null\n2025-09-11T11:45:00,a841aa0c3e9340b8957adaea,In-progress,214,null,null\n2025-09-11T11:50:00,ce904dc1d69347849b01f7ed,In-progress,250,null,null\n2025-09-11T11:55:00,fa812c74ab3e4e74962e503d,Cancelled,221,E_USER_CANCEL,Transfer cancelled by user\n2025-09-11T12:00:00,36e23abca8834e238bd14c3a,Cancelled,151,E_USER_CANCEL,Transfer cancelled by user\n2025-09-11T12:05:00,dbc5ced19bcd491d8ca8ad7e,Rejected,187,E_FILE_PERM,File permission denied\n2025-09-11T12:10:00,0fd8ee13916d4b0d898236b3,Checksum_Mismatch,326,E_CHECKSUM_FAIL,Checksum validation failed – file integrity compromised\n2025-09-11T12:15:00,710a290deeaf4d60aaf9366e,TimedOut,200,E_TIMEOUT,Transfer timed out\n2025-09-11T12:20:00,68decee8892e4bf797f36011,TimedOut,338,E_TIMEOUT,Transfer timed out\n2025-09-11T12:25:00,a27a249d95404cb497c0404f,Failed,258,E_SFTP_CONN,SFTP connection error\n2025-09-11T12:30:00,a1335f29f01a42cbb68f330a,Failed,237,E_SFTP_CONN,SFTP connection error\n2025-09-11T12:35:00,8e5967915b3747ff8c648d35,Failed,221,E_SFTP_CONN,SFTP connection error\n2025-09-11T12:40:00,5da05cd6cd6b429a87d4e894,Failed,189,E_SFTP_CONN,SFTP connection error\n2025-09-11T12:45:00,dceb98474d6044f5b51229a0,Failed,205,E_SFTP_CONN,SFTP connection error\n2025-09-11T12:50:00,6e607e7629bd490c81d5cc62,Failed,236,E_SFTP_CONN,SFTP connection error\n",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "${table_name}",
+      "transformations": [
+        {
+          "id": "filterByValue",
+          "options": {
+            "filters": [
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": "${table_name}"
+                  }
+                },
+                "fieldName": "Status"
+              }
+            ],
+            "match": "all",
+            "type": "include"
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "includeByName": {},
+            "indexByName": {
+              "Checksum_Ok": 4,
+              "Duration": 3,
+              "ErrorCode": 5,
+              "ErrorReason": 6,
+              "FileTransferredDate": 0,
+              "Status": 2,
+              "TransferId": 1
+            },
+            "renameByName": {
+              "Duration": "Duration (ms)",
+              "Financial": "Financial Account Number"
+            }
+          }
+        }
+      ],
+      "type": "table"
+    }
+  ],
+  "preload": false,
+  "schemaVersion": 42,
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "allValue": ".*",
+        "current": {
+          "text": "Completed",
+          "value": "Completed"
+        },
+        "description": "",
+        "includeAll": false,
+        "name": "table_name",
+        "options": [],
+        "query": "Failed,Completed,In-progress,Rejected,Cancelled,TimedOut",
+        "type": "custom"
+      },
+      {
+        "current": {
+          "text": "68c1c5441a9b7b20ef683abc",
+          "value": "68c1c5441a9b7b20ef683abc"
+        },
+        "includeAll": false,
+        "name": "transfer_id",
+        "options": [],
+        "query": "68c1c5441a9b7b20ef683abc,68c444aaa9b7b20ef6831001,68c444aaa9b7b20ef6831002,68c444aaa9b7b20ef6831003,68c444aaa9b7b20ef6831004,68c444aaa9b7b20ef6831005,68c444aaa9b7b20ef6831006,68c444aaa9b7b20ef6831007,68c444aaa9b7b20ef6831008,68c444aaa9b7b20ef6831009,68c444aaa9b7b20ef6831035,68c555aaa9b7b20ef6831005,68c555aaa9b7b20ef6831006,68c555aaa9b7b20ef6831007,68c555aaa9b7b20ef6831008,68c555aaa9b7b20ef6831009,68c555aaa9b7b20ef6831010, 68c1f60a1a9b7b20ef683ad5, 68c2552bb591293eb83949c, 68c262f6ed10915b84439f7\n",
+        "type": "custom"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-5m",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "EDAR Base Dashboard -2",
+  "uid": "abhhn48",
+  "version": 52
+}
+
+when i clcik on completed panel it should redirect the detailed log
