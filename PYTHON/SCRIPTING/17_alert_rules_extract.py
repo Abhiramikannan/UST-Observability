@@ -6,8 +6,8 @@ import json
 import requests
 
 # ================= CONFIGURATION =================
-GRAFANA_URL = "https://observabilityust.grafana.net"
-API_TOKEN = "YOUR_API_TOKEN_HERE"
+GRAFANA_URL = os.getenv("GRAFANA_URL")
+API_TOKEN = os.getenv("GRAFANA_TOKEN")
 
 OUTPUT_DIR = "grafana_alert_rules"
 # =================================================
