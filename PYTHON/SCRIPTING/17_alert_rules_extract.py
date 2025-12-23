@@ -23,7 +23,7 @@ def sanitize_name(name: str) -> str:
 
 def get_alert_rule_groups():
     url = f"{GRAFANA_URL}/api/ruler/grafana/api/v1/rules"
-    response = requests.get(url, headers=HEADERS)
+    response = requests.get(url, headers=HEADERS,verify=False)
     response.raise_for_status()
     return response.json()
 
