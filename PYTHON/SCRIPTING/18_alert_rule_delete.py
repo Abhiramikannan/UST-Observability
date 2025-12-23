@@ -17,7 +17,7 @@ import os
 import requests
 import json
 import urllib3
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning) #for ssl warnings
 
 # ================= CONFIGURATION =================
 GRAFANA_URL = os.getenv("GRAFANA_URL")
@@ -61,7 +61,7 @@ def delete_all_alert_rules():
             for rule in group.get("rules", []):#ensures that if the "rules" key doesn’t exist, it will return an empty list instead of causing an error.
                 grafana_alert = rule.get("grafana_alert", {})
                 rule_uid = grafana_alert.get("uid")
-                rule_name = rule_name = grafana_alert.get("title", "<no-name>")  # it search for name .. if there is no name it will return <no-name>
+                rule_name = grafana_alert.get("title", "<no-name>")  # it search for name .. if there is no name it will return <no-name>
 
                 if rule_uid:
                     delete_alert_rule(rule_uid, rule_name)
@@ -70,5 +70,5 @@ def delete_all_alert_rules():
 
 if __name__ == "__main__":
     delete_all_alert_rules()
-    # rule_data = get_all_alert_rules()   
-    # print(json.dumps(rule_data, indent=4))  #To check the json .how it is 
+    # rule_data = get_all_alert_rules()
+    # print(json.dumps(rule_data, indent=4))
