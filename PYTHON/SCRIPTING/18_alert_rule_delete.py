@@ -35,7 +35,7 @@ def get_all_alert_rules(): #returns all alert rules in a nested dictionary forma
     """
     url = f"{GRAFANA_URL}/api/ruler/grafana/api/v1/rules"
     response = requests.get(url, headers=HEADERS, verify=False)
-    response.raise_for_status()  # Raise error if request fails
+    response.raise_for_status()  # Raise error if request fails ..if status code is 200 =return nothg.. else error
     return response.json()
 
 def delete_alert_rule(rule_uid, rule_name):
