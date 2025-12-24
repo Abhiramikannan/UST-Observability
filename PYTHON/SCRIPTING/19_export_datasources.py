@@ -21,7 +21,7 @@ HEADERS = {
 
 def sanitize_name(name: str) -> str:
     """Make filesystem-safe filenames"""
-    return re.sub(r'[^a-zA-Z0-9_.-]', '_', name)
+    return re.sub(r'[^a-zA-Z0-9_.-]', '_', name) #Any character that is NOT one of those in a-zA-Z0-9_.- will be replaced by _
 
 def get_datasources():
     """Fetch all Grafana data sources"""
@@ -33,10 +33,10 @@ def get_datasources():
 def export_datasources():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-    datasources = get_datasources()
+    datasources = get_datasources() 
 
-    for ds in datasources:
-        ds_name = sanitize_name(ds.get("name", "unnamed_datasource"))
+    for ds in datasources: #Loop through each datasource
+        ds_name = sanitize_name(ds.get("name", "unnamed_datasource")) #If "name" doesn’t exist, uses "unnamed_datasource",sanitize_name() replaces unsafe characters so it can be used as a filename
         file_path = os.path.join(OUTPUT_DIR, f"{ds_name}.json")
 
         with open(file_path, "w", encoding="utf-8") as f:
@@ -46,4 +46,4 @@ def export_datasources():
 
 if __name__ == "__main__":
     export_datasources()
-    print("\n✅ Grafana data sources export completed.")
+    print("\n Grafana data sources export completed.")
