@@ -3,17 +3,17 @@
 import requests
 import json
 import os
-from datetime import datetime, timezone
+from datetime import datetime, timezone #records when the export happened
 
 import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 # ==========================
 # CONFIGURATION
 # ==========================
-GRAFANA_URL = os.getenv("GRAFANA_URL")
+GRAFANA_URL = os.getenv("GRAFANA_URL")   
 API_TOKEN = os.getenv("GRAFANA_TOKEN")
 
-OUTPUT_DIR = "grafana_metadata"
+OUTPUT_DIR = "grafana_metadata" #all json files will be saved inside this folder.
 
 HEADERS = {
     "Authorization": f"Bearer {API_TOKEN}",
@@ -24,15 +24,15 @@ HEADERS = {
 # UTILITY FUNCTIONS
 # ==========================
 def make_request(endpoint):
-    url = f"{GRAFANA_URL}{endpoint}"
-    response = requests.get(url, headers=HEADERS, verify=False)
+    url = f"{GRAFANA_URL}{endpoint}"#Builds the full API URL
+    response = requests.get(url, headers=HEADERS, verify=False)#sent the req to grafana
     if response.status_code != 200:
         print("ERROR URL:", url)
         print("STATUS:", response.status_code)
         print("RESPONSE:", response.text)
 
     response.raise_for_status()
-    return response.json()
+    return response.json()#This function always returns Python objects (lists/dictionaries)
 
 def save_json(filename, data):
     os.makedirs(OUTPUT_DIR, exist_ok=True)
