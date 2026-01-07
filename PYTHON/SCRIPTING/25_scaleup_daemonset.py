@@ -1,5 +1,4 @@
 #13. Create Python Script to scale up Kubernetes DaemonSets that were previously scaled down by removing the artificial nodeSelector key that prevented them from scheduling pods using the backup
-#“DaemonSets don’t need a backup because the fake nodeSelector is reversible — removing it restores the original scheduling automatically.”
 
 #!/usr/bin/env python3
 
@@ -86,20 +85,83 @@ def main():
     load_kube_config()
     apps_api = client.AppsV1Api()
 
-    restored = 0
+    restored = 0 #This is just a counter., How many daemon sets were succesfully restored.
 
     if args.namespace:
-        daemonsets = apps_api.list_namespaced_daemon_set(args.namespace).items
-        namespaces = [(args.namespace, daemonsets)]
+        daemonsets = apps_api.list_namespaced_daemon_set(args.namespace).items #“Give me all DaemonSets in kube-system” namespace .
+        #daemonsets = [kube-proxy, coredns, metrics-server]
+
+        namespaces = [(args.namespace, daemonsets)] #namespaces = [("kube-system", daemonsets)]
+#         #namespace will become:
+# [
+#    ("kube-system", [ds1, ds2, ds3])
+# ]
+#This is done so the next loop can treat both single-namespace and all-namespaces in the same way.
+
+
+#if user didnt give namespace , args.namespace = None
+
     else:
         namespaces = [
             (ns.metadata.name,
              apps_api.list_namespaced_daemon_set(ns.metadata.name).items)
             for ns in client.CoreV1Api().list_namespace().items
         ]
+#explanation of else condition:
+#client.CoreV1Api().list_namespace().items
+        #ask kubernetes to “Give me all namespaces in the cluster”
 
-    for namespace, daemonsets in namespaces:
-        for ds in daemonsets:
+    #output:
+            # [
+            #   Namespace(default),
+            #   Namespace(kube-system),
+            #   Namespace(monitoring)
+            # ]
+#what is ns.metadata.name?
+# | Namespace object       | ns.metadata.name |
+# | ---------------------- | ---------------- |
+# | Namespace(default)     | "default"        |
+# | Namespace(kube-system) | "kube-system"    |
+# | Namespace(monitoring)  | "monitoring"     |
+
+
+#apps_api.list_namespaced_daemon_set(ns.metadata.name).items
+        #give all daemonsets in the namespace.
+    #output:
+        # | Namespace   | Result                |
+        # | ----------- | --------------------- |
+        # | default     | [ds1, ds2]            |
+        # | kube-system | [kube-proxy, coredns] |
+        # | monitoring  | [node-exporter]       |
+
+
+#why tuple is created?
+        # (ns.metadata.name,
+        #  apps_api.list_namespaced_daemon_set(ns.metadata.name).items)
+        #Builds a pair like this:
+            # ("default", [ds1, ds2])
+            # ("kube-system", [kube-proxy, coredns])
+            # ("monitoring", [node-exporter])
+
+
+#Final result of list comprehension:
+        # namespaces = [
+        #    ("default", [ds1, ds2]),
+        #    ("kube-system", [kube-proxy, coredns]),
+        #    ("monitoring", [node-exporter])
+        # ]
+
+#(namespace_name, list_of_daemonsets)
+
+    for namespace, daemonsets in namespaces:#This means: namespace → "default",daemonsets → [ds1, ds2],Then next iteration:namespace → "kube-system", daemonsets → [ds3, ds4].So we are processing one namespace at a time.
+        for ds in daemonsets: #Now we go DaemonSet by DaemonSet inside that namespace.
+#execution order becomes:
+# default/ds1
+# default/ds2
+# kube-system/ds3
+# kube-system/ds4
+# monitoring/ds5
+
             try:
                 if process_daemonset(
                     ds,
@@ -119,3 +181,24 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+
+#RUN
+# sudo apt update
+# sudo apt install -y python3-pip
+# python3 -m pip --version
+# python3 -m pip install kubernetes
+
+#python3 27_scaleup_daemonset.py.py --node-selector-key fake-key --namespace kube-system
+
+
+#Explanation:
+# What process_daemonset() does:
+# Checks if the DaemonSet has the fake nodeSelector key
+# If not present → returns False
+# If present:
+# Removes the key
+# Patches the DaemonSet
+# Returns True
