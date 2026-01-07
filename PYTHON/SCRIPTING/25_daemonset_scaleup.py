@@ -1,4 +1,5 @@
 #13. Create Python Script to scale up Kubernetes DaemonSets that were previously scaled down by removing the artificial nodeSelector key that prevented them from scheduling pods using the backup
+#“DaemonSets don’t need a backup because the fake nodeSelector is reversible — removing it restores the original scheduling automatically.”
 
 #!/usr/bin/env python3
 
