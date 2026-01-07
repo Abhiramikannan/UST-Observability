@@ -1,4 +1,4 @@
-#25_backup_deployment_replica.py = backup and scaledown code 
+#23_backup_deployment_replica.py = backup and scaledown code 
 #run this first and run this
 
 
