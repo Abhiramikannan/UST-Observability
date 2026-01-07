@@ -114,3 +114,20 @@ if __name__ == "__main__":
 # Patches each DaemonSet
 # Adds a fake nodeSelector
 # Kubernetes removes all DaemonSet Pods automatically
+
+
+
+#doubts:
+# for ds in daemonsets:    
+#y not  for ds in daemonsets.items:
+        #because of this line.
+        #daemonsets = apps_v1.list_namespaced_daemon_set(namespace).items
+
+        #list_namespaced_daemon_set() returns an object of type:
+        #V1DaemonSetList
+
+    #inside there is:
+        #daemonset_list.items   →  [DaemonSet1, DaemonSet2, DaemonSet3...]
+        #daemonset_list = apps_v1.list_namespaced_daemon_set(namespace)
+        #daemonsets = daemonset_list.items
+        #daemonsets already have [ ds1, ds2, ds3, ... ]
