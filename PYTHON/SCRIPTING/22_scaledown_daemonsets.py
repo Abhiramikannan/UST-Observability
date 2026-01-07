@@ -32,7 +32,8 @@ def scale_down_daemonsets(namespace):
             daemonsets = apps_v1.list_daemon_set_for_all_namespaces().items #gets every DaemonSet in the cluster
         else:
             daemonsets = apps_v1.list_namespaced_daemon_set(namespace).items #gets DaemonSets only in one namespace
-            #.items gives you a Python list of DaemonSet objects.
+            #.items gives you a Python list of DaemonSet objects..so no need of daemonsets.items in for loop = explanation last
+
 
         for ds in daemonsets: #ds contain name, namespace,spec, label, status we extract name and namespaces which are needed to patch
             name = ds.metadata.name
