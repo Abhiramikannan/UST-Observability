@@ -311,6 +311,22 @@ FUNCTIONS AND MODULAR CODE:
     This makes your script easier to maintain and read.
     Later, you could even move the functions to a separate Python file (module) and import them in another script:
 
+1. What is AWS SDK for Python (boto3)?
+        boto3 is the official Python library to talk to AWS services using code.
+
+Using boto3, you can:
+    Create EC2 instances
+    Upload files to S3
+    Read DynamoDB tables
+    Manage IAM users
+    Automate AWS tasks (no console clicking)
+
+2. How boto3 authenticate with AWS?
+        boto3 needs AWS credentials.
+
+3. Where the credentials are stored?
+        ~/.aws/credentials
+
 
 
 
