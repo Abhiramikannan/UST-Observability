@@ -18,7 +18,7 @@ Screenshots of Healthy Drilldown:
 table panel:
 <img width="1525" height="227" alt="image" src="https://github.com/user-attachments/assets/d051befa-751b-4b6d-8bb4-efd4f5d2a36a" />
 
-stat panel: Give the status as the value from table panel(U want only that , thats y)
+stat panel: Give the status=HEALTHY(LOOK CSV DATA)(U want healthy details only here , thats y)
 <img width="1601" height="477" alt="image" src="https://github.com/user-attachments/assets/e2090713-48f6-4ac7-93b9-2eeef3442721" />
 
 So this works
