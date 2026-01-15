@@ -1,4 +1,3 @@
-
 {
   "annotations": {
     "list": [
@@ -19,7 +18,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 0,
+  "id": 859512984989696,
   "links": [],
   "panels": [
     {
@@ -73,7 +72,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.4.0-19938312174",
+      "pluginVersion": "12.4.0-20781422371.patch2",
       "targets": [
         {
           "columns": [],
@@ -141,7 +140,7 @@
         "content": "<div style=\"color: white; background-color: #0080c7; padding: 10px; text-align: left;\">\n  <h1>Normal File Transfer Status</h1>\n</div>",
         "mode": "html"
       },
-      "pluginVersion": "12.4.0-19938312174",
+      "pluginVersion": "12.4.0-20781422371.patch2",
       "title": "",
       "type": "text"
     },
@@ -166,7 +165,7 @@
         "content": "<div style=\"color: white; background-color: #0080c7; padding: 10px; text-align: left;\">\n  <h1>Abnormal File Transfer Status</h1>\n</div>",
         "mode": "html"
       },
-      "pluginVersion": "12.4.0-19938312174",
+      "pluginVersion": "12.4.0-20781422371.patch2",
       "title": "",
       "type": "text"
     },
@@ -227,7 +226,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.4.0-19938312174",
+      "pluginVersion": "12.4.0-20781422371.patch2",
       "targets": [
         {
           "columns": [],
@@ -331,7 +330,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.4.0-19938312174",
+      "pluginVersion": "12.4.0-20781422371.patch2",
       "targets": [
         {
           "columns": [],
@@ -429,7 +428,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.4.0-19938312174",
+      "pluginVersion": "12.4.0-20781422371.patch2",
       "targets": [
         {
           "columns": [],
@@ -533,7 +532,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.4.0-19938312174",
+      "pluginVersion": "12.4.0-20781422371.patch2",
       "targets": [
         {
           "columns": [],
@@ -637,7 +636,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.4.0-19938312174",
+      "pluginVersion": "12.4.0-20781422371.patch2",
       "targets": [
         {
           "columns": [],
@@ -735,7 +734,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.4.0-19938312174",
+      "pluginVersion": "12.4.0-20781422371.patch2",
       "targets": [
         {
           "columns": [],
@@ -835,7 +834,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.4.0-19938312174",
+      "pluginVersion": "12.4.0-20781422371.patch2",
       "targets": [
         {
           "columns": [],
@@ -931,7 +930,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.4.0-19938312174",
+      "pluginVersion": "12.4.0-20781422371.patch2",
       "targets": [
         {
           "columns": [],
@@ -1035,7 +1034,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.4.0-19938312174",
+      "pluginVersion": "12.4.0-20781422371.patch2",
       "targets": [
         {
           "columns": [],
@@ -1139,7 +1138,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.4.0-19938312174",
+      "pluginVersion": "12.4.0-20781422371.patch2",
       "targets": [
         {
           "columns": [],
@@ -1207,7 +1206,7 @@
         "content": "<div style=\"color: white; background-color: #0080c7; padding: 10px; text-align: left;\">\n  <h1>Failed Order Details</h1>\n</div>",
         "mode": "html"
       },
-      "pluginVersion": "12.4.0-19938312174",
+      "pluginVersion": "12.4.0-20781422371.patch2",
       "title": "",
       "type": "text"
     },
@@ -1270,7 +1269,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.4.0-19938312174",
+      "pluginVersion": "12.4.0-20781422371.patch2",
       "targets": [
         {
           "columns": [],
@@ -1375,7 +1374,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.4.0-19938312174",
+      "pluginVersion": "12.4.0-20781422371.patch2",
       "targets": [
         {
           "columns": [],
@@ -1516,11 +1515,11 @@
         "cellHeight": "sm",
         "showHeader": true
       },
-      "pluginVersion": "12.4.0-19938312174",
+      "pluginVersion": "12.4.0-20781422371.patch2",
       "targets": [
         {
           "columns": [],
-          "data": "\nTransferId,Status,ResultDescription\n68c1c5441a9b7b20ef683abc,Failed,\"{\"\"FileTransferredDate\"\":\"\"2025-09-10T20:00:00\"\",\"\"TransferId\"\":\"\"68c1c5441a9b7b20ef683abc\"\",\"\"Status\"\":\"\"Failed\"\",\"\"Duration\"\":8234,\"\"Checksum_Ok\"\":false,\"\"ErrorCode\"\":\"\"E_SFTP_CONN\"\",\"\"ErrorReason\"\":\"\"SFTP connection error\"\"}\"\n68c444aaa9b7b20ef6831001,Completed,\"{\"\"FileTransferredDate\"\":\"\"2025-09-11T09:00:00\"\",\"\"TransferId\"\":\"\"68c444aaa9b7b20ef6831001\"\",\"\"Status\"\":\"\"Completed\"\",\"\"Duration\"\":15237,\"\"Checksum_Ok\"\":true,\"\"ErrorCode\"\":null,\"\"ErrorReason\"\":null}\"\n68c444aaa9b7b20ef6831002,In-progress,\"{\"\"FileTransferredDate\"\":\"\"2025-09-11T09:05:00\"\",\"\"TransferId\"\":\"\"68c444aaa9b7b20ef6831002\"\",\"\"Status\"\":\"\"In-progress\"\",\"\"Duration\"\":9876,\"\"Checksum_Ok\"\":true,\"\"ErrorCode\"\":null,\"\"ErrorReason\"\":null}\"\n68c444aaa9b7b20ef6831003,Rejected,\"{\"\"FileTransferredDate\"\":\"\"2025-09-11T09:10:00\"\",\"\"TransferId\"\":\"\"68c444aaa9b7b20ef6831003\"\",\"\"Status\"\":\"\"Rejected\"\",\"\"Duration\"\":10456,\"\"Checksum_Ok\"\":false,\"\"ErrorCode\"\":\"\"E_FILE_PERM\"\",\"\"ErrorReason\"\":\"\"File permission denied\"\"}\"\n68c444aaa9b7b20ef6831005,Cancelled,\"{\"\"FileTransferredDate\"\":\"\"2025-09-11T09:20:00\"\",\"\"TransferId\"\":\"\"68c444aaa9b7b20ef6831005\"\",\"\"Status\"\":\"\"Cancelled\"\",\"\"Duration\"\":11890,\"\"Checksum_Ok\"\":false,\"\"ErrorCode\"\":\"\"E_USER_CANCEL\"\",\"\"ErrorReason\"\":\"\"Transfer cancelled by user\"\"}\"\n68c444aaa9b7b20ef6831007,TimedOut,\"{\"\"FileTransferredDate\"\":\"\"2025-09-11T09:30:00\"\",\"\"TransferId\"\":\n",
+          "data": "TransferId,Status,ResultDescription\nb8af6ab311044e2194b068c7,Completed,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T09:00:00\"\", \"\"TransferId\"\": \"\"b8af6ab311044e2194b068c7\"\", \"\"Status\"\": \"\"Completed\"\", \"\"Duration\"\": 283, \"\"ErrorCode\"\": \"\"null\"\", \"\"ErrorReason\"\": \"\"null\"\"}\"\n97204b7bf53d4ba59138aa03,Completed,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T09:05:00\"\", \"\"TransferId\"\": \"\"97204b7bf53d4ba59138aa03\"\", \"\"Status\"\": \"\"Completed\"\", \"\"Duration\"\": 148, \"\"ErrorCode\"\": \"\"null\"\", \"\"ErrorReason\"\": \"\"null\"\"}\"\n6f532249f6bd4021bd23cda5,Completed,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T09:10:00\"\", \"\"TransferId\"\": \"\"6f532249f6bd4021bd23cda5\"\", \"\"Status\"\": \"\"Completed\"\", \"\"Duration\"\": 126, \"\"ErrorCode\"\": \"\"null\"\", \"\"ErrorReason\"\": \"\"null\"\"}\"\n719c1936a83c44b8b29801c1,Completed,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T09:15:00\"\", \"\"TransferId\"\": \"\"719c1936a83c44b8b29801c1\"\", \"\"Status\"\": \"\"Completed\"\", \"\"Duration\"\": 309, \"\"ErrorCode\"\": \"\"null\"\", \"\"ErrorReason\"\": \"\"null\"\"}\"\nd65f4e6e54574f58bf9e4398,Completed,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T09:20:00\"\", \"\"TransferId\"\": \"\"d65f4e6e54574f58bf9e4398\"\", \"\"Status\"\": \"\"Completed\"\", \"\"Duration\"\": 190, \"\"ErrorCode\"\": \"\"null\"\", \"\"ErrorReason\"\": \"\"null\"\"}\"\n377e158f8e0f4265bf094c06,Completed,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T09:25:00\"\", \"\"TransferId\"\": \"\"377e158f8e0f4265bf094c06\"\", \"\"Status\"\": \"\"Completed\"\", \"\"Duration\"\": 182, \"\"ErrorCode\"\": \"\"null\"\", \"\"ErrorReason\"\": \"\"null\"\"}\"\n79f505feee7b4edcabbf774b,Completed,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T09:30:00\"\", \"\"TransferId\"\": \"\"79f505feee7b4edcabbf774b\"\", \"\"Status\"\": \"\"Completed\"\", \"\"Duration\"\": 177, \"\"ErrorCode\"\": \"\"null\"\", \"\"ErrorReason\"\": \"\"null\"\"}\"\nca069f571b6248a29f48bbe7,Completed,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T09:35:00\"\", \"\"TransferId\"\": \"\"ca069f571b6248a29f48bbe7\"\", \"\"Status\"\": \"\"Completed\"\", \"\"Duration\"\": 155, \"\"ErrorCode\"\": \"\"null\"\", \"\"ErrorReason\"\": \"\"null\"\"}\"\ne2ebc3bef50d45c5b9372370,Completed,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T09:40:00\"\", \"\"TransferId\"\": \"\"e2ebc3bef50d45c5b9372370\"\", \"\"Status\"\": \"\"Completed\"\", \"\"Duration\"\": 308, \"\"ErrorCode\"\": \"\"null\"\", \"\"ErrorReason\"\": \"\"null\"\"}\"\n322381fdb756483c84c30514,Completed,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T09:45:00\"\", \"\"TransferId\"\": \"\"322381fdb756483c84c30514\"\", \"\"Status\"\": \"\"Completed\"\", \"\"Duration\"\": 146, \"\"ErrorCode\"\": \"\"null\"\", \"\"ErrorReason\"\": \"\"null\"\"}\"\ndc4534af46554971a326e27a,Completed,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T09:50:00\"\", \"\"TransferId\"\": \"\"dc4534af46554971a326e27a\"\", \"\"Status\"\": \"\"Completed\"\", \"\"Duration\"\": 293, \"\"ErrorCode\"\": \"\"null\"\", \"\"ErrorReason\"\": \"\"null\"\"}\"\n32c57619f2ce47dda6ce5c60,Completed,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T09:55:00\"\", \"\"TransferId\"\": \"\"32c57619f2ce47dda6ce5c60\"\", \"\"Status\"\": \"\"Completed\"\", \"\"Duration\"\": 309, \"\"ErrorCode\"\": \"\"null\"\", \"\"ErrorReason\"\": \"\"null\"\"}\"\na22be75800024dbb99245411,Completed,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T10:00:00\"\", \"\"TransferId\"\": \"\"a22be75800024dbb99245411\"\", \"\"Status\"\": \"\"Completed\"\", \"\"Duration\"\": 348, \"\"ErrorCode\"\": \"\"null\"\", \"\"ErrorReason\"\": \"\"null\"\"}\"\n63b554d9eb894ff8924e275e,Completed,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T10:05:00\"\", \"\"TransferId\"\": \"\"63b554d9eb894ff8924e275e\"\", \"\"Status\"\": \"\"Completed\"\", \"\"Duration\"\": 259, \"\"ErrorCode\"\": \"\"null\"\", \"\"ErrorReason\"\": \"\"null\"\"}\"\nee0fbcc1b95e4ea1bc361ace,Completed,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T10:10:00\"\", \"\"TransferId\"\": \"\"ee0fbcc1b95e4ea1bc361ace\"\", \"\"Status\"\": \"\"Completed\"\", \"\"Duration\"\": 142, \"\"ErrorCode\"\": \"\"null\"\", \"\"ErrorReason\"\": \"\"null\"\"}\"\nb1bc19914b7f4c3b907d0e5f,Completed,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T10:15:00\"\", \"\"TransferId\"\": \"\"b1bc19914b7f4c3b907d0e5f\"\", \"\"Status\"\": \"\"Completed\"\", \"\"Duration\"\": 271, \"\"ErrorCode\"\": \"\"null\"\", \"\"ErrorReason\"\": \"\"null\"\"}\"\n6120cbc8856243fd804ac4a5,Completed,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T10:20:00\"\", \"\"TransferId\"\": \"\"6120cbc8856243fd804ac4a5\"\", \"\"Status\"\": \"\"Completed\"\", \"\"Duration\"\": 228, \"\"ErrorCode\"\": \"\"null\"\", \"\"ErrorReason\"\": \"\"null\"\"}\"\nadce4c9544b94ca48517d33b,Completed,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T10:25:00\"\", \"\"TransferId\"\": \"\"adce4c9544b94ca48517d33b\"\", \"\"Status\"\": \"\"Completed\"\", \"\"Duration\"\": 128, \"\"ErrorCode\"\": \"\"null\"\", \"\"ErrorReason\"\": \"\"null\"\"}\"\n57fb2e9b8fe8481ab8748ff6,Completed,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T10:30:00\"\", \"\"TransferId\"\": \"\"57fb2e9b8fe8481ab8748ff6\"\", \"\"Status\"\": \"\"Completed\"\", \"\"Duration\"\": 127, \"\"ErrorCode\"\": \"\"null\"\", \"\"ErrorReason\"\": \"\"null\"\"}\"\naa46899896b04c8ab290419c,Completed,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T10:35:00\"\", \"\"TransferId\"\": \"\"aa46899896b04c8ab290419c\"\", \"\"Status\"\": \"\"Completed\"\", \"\"Duration\"\": 143, \"\"ErrorCode\"\": \"\"null\"\", \"\"ErrorReason\"\": \"\"null\"\"}\"\na0c1c4875c1e4a63bcbf4e10,Completed,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T10:40:00\"\", \"\"TransferId\"\": \"\"a0c1c4875c1e4a63bcbf4e10\"\", \"\"Status\"\": \"\"Completed\"\", \"\"Duration\"\": 175, \"\"ErrorCode\"\": \"\"null\"\", \"\"ErrorReason\"\": \"\"null\"\"}\"\nb793356188d143e6ab650ddc,Completed,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T10:45:00\"\", \"\"TransferId\"\": \"\"b793356188d143e6ab650ddc\"\", \"\"Status\"\": \"\"Completed\"\", \"\"Duration\"\": 179, \"\"ErrorCode\"\": \"\"null\"\", \"\"ErrorReason\"\": \"\"null\"\"}\"\n120f29a7ce38484c9457a9db,Completed,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T10:50:00\"\", \"\"TransferId\"\": \"\"120f29a7ce38484c9457a9db\"\", \"\"Status\"\": \"\"Completed\"\", \"\"Duration\"\": 249, \"\"ErrorCode\"\": \"\"null\"\", \"\"ErrorReason\"\": \"\"null\"\"}\"\n8b7fc3dfb36b412e84a83550,Completed,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T10:55:00\"\", \"\"TransferId\"\": \"\"8b7fc3dfb36b412e84a83550\"\", \"\"Status\"\": \"\"Completed\"\", \"\"Duration\"\": 274, \"\"ErrorCode\"\": \"\"null\"\", \"\"ErrorReason\"\": \"\"null\"\"}\"\n214dad630cb84de3afa9156d,Completed,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T11:00:00\"\", \"\"TransferId\"\": \"\"214dad630cb84de3afa9156d\"\", \"\"Status\"\": \"\"Completed\"\", \"\"Duration\"\": 126, \"\"ErrorCode\"\": \"\"null\"\", \"\"ErrorReason\"\": \"\"null\"\"}\"\na1315cd96daa40b490da7b32,Completed,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T11:05:00\"\", \"\"TransferId\"\": \"\"a1315cd96daa40b490da7b32\"\", \"\"Status\"\": \"\"Completed\"\", \"\"Duration\"\": 263, \"\"ErrorCode\"\": \"\"null\"\", \"\"ErrorReason\"\": \"\"null\"\"}\"\nc7945cf08b0540a1bd610882,Completed,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T11:10:00\"\", \"\"TransferId\"\": \"\"c7945cf08b0540a1bd610882\"\", \"\"Status\"\": \"\"Completed\"\", \"\"Duration\"\": 170, \"\"ErrorCode\"\": \"\"null\"\", \"\"ErrorReason\"\": \"\"null\"\"}\"\n3a35b02728854ddcbe4e9a7f,Completed,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T11:15:00\"\", \"\"TransferId\"\": \"\"3a35b02728854ddcbe4e9a7f\"\", \"\"Status\"\": \"\"Completed\"\", \"\"Duration\"\": 303, \"\"ErrorCode\"\": \"\"null\"\", \"\"ErrorReason\"\": \"\"null\"\"}\"\ne710fea858404d1c9aec523d,Completed,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T11:20:00\"\", \"\"TransferId\"\": \"\"e710fea858404d1c9aec523d\"\", \"\"Status\"\": \"\"Completed\"\", \"\"Duration\"\": 286, \"\"ErrorCode\"\": \"\"null\"\", \"\"ErrorReason\"\": \"\"null\"\"}\"\n7469d1c85ae64fa4a260273c,Completed,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T11:25:00\"\", \"\"TransferId\"\": \"\"7469d1c85ae64fa4a260273c\"\", \"\"Status\"\": \"\"Completed\"\", \"\"Duration\"\": 299, \"\"ErrorCode\"\": \"\"null\"\", \"\"ErrorReason\"\": \"\"null\"\"}\"\n8d537ed3120e4ccc98e567c0,Completed,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T11:30:00\"\", \"\"TransferId\"\": \"\"8d537ed3120e4ccc98e567c0\"\", \"\"Status\"\": \"\"Completed\"\", \"\"Duration\"\": 259, \"\"ErrorCode\"\": \"\"null\"\", \"\"ErrorReason\"\": \"\"null\"\"}\"\n53820cc7e3c24b759de130e6,Completed,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T11:35:00\"\", \"\"TransferId\"\": \"\"53820cc7e3c24b759de130e6\"\", \"\"Status\"\": \"\"Completed\"\", \"\"Duration\"\": 227, \"\"ErrorCode\"\": \"\"null\"\", \"\"ErrorReason\"\": \"\"null\"\"}\"\n30221c6b79194fd9b2f31a67,In-progress,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T11:40:00\"\", \"\"TransferId\"\": \"\"30221c6b79194fd9b2f31a67\"\", \"\"Status\"\": \"\"In-progress\"\", \"\"Duration\"\": 156, \"\"ErrorCode\"\": \"\"null\"\", \"\"ErrorReason\"\": \"\"null\"\"}\"\na841aa0c3e9340b8957adaea,In-progress,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T11:45:00\"\", \"\"TransferId\"\": \"\"a841aa0c3e9340b8957adaea\"\", \"\"Status\"\": \"\"In-progress\"\", \"\"Duration\"\": 214, \"\"ErrorCode\"\": \"\"null\"\", \"\"ErrorReason\"\": \"\"null\"\"}\"\nce904dc1d69347849b01f7ed,In-progress,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T11:50:00\"\", \"\"TransferId\"\": \"\"ce904dc1d69347849b01f7ed\"\", \"\"Status\"\": \"\"In-progress\"\", \"\"Duration\"\": 250, \"\"ErrorCode\"\": \"\"null\"\", \"\"ErrorReason\"\": \"\"null\"\"}\"\nfa812c74ab3e4e74962e503d,Cancelled,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T11:55:00\"\", \"\"TransferId\"\": \"\"fa812c74ab3e4e74962e503d\"\", \"\"Status\"\": \"\"Cancelled\"\", \"\"Duration\"\": 221, \"\"ErrorCode\"\": \"\"E_USER_CANCEL\"\", \"\"ErrorReason\"\": \"\"Transfer cancelled by user\"\"}\"\n36e23abca8834e238bd14c3a,Cancelled,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T12:00:00\"\", \"\"TransferId\"\": \"\"36e23abca8834e238bd14c3a\"\", \"\"Status\"\": \"\"Cancelled\"\", \"\"Duration\"\": 151, \"\"ErrorCode\"\": \"\"E_USER_CANCEL\"\", \"\"ErrorReason\"\": \"\"Transfer cancelled by user\"\"}\"\ndbc5ced19bcd491d8ca8ad7e,Rejected,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T12:05:00\"\", \"\"TransferId\"\": \"\"dbc5ced19bcd491d8ca8ad7e\"\", \"\"Status\"\": \"\"Rejected\"\", \"\"Duration\"\": 187, \"\"ErrorCode\"\": \"\"E_FILE_PERM\"\", \"\"ErrorReason\"\": \"\"File permission denied\"\"}\"\n0fd8ee13916d4b0d898236b3,Checksum_Mismatch,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T12:10:00\"\", \"\"TransferId\"\": \"\"0fd8ee13916d4b0d898236b3\"\", \"\"Status\"\": \"\"Checksum_Mismatch\"\", \"\"Duration\"\": 326, \"\"ErrorCode\"\": \"\"E_CHECKSUM_FAIL\"\", \"\"ErrorReason\"\": \"\"Checksum validation failed \\u2013 file integrity compromised\"\"}\"\n710a290deeaf4d60aaf9366e,TimedOut,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T12:15:00\"\", \"\"TransferId\"\": \"\"710a290deeaf4d60aaf9366e\"\", \"\"Status\"\": \"\"TimedOut\"\", \"\"Duration\"\": 200, \"\"ErrorCode\"\": \"\"E_TIMEOUT\"\", \"\"ErrorReason\"\": \"\"Transfer timed out\"\"}\"\n68decee8892e4bf797f36011,TimedOut,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T12:20:00\"\", \"\"TransferId\"\": \"\"68decee8892e4bf797f36011\"\", \"\"Status\"\": \"\"TimedOut\"\", \"\"Duration\"\": 338, \"\"ErrorCode\"\": \"\"E_TIMEOUT\"\", \"\"ErrorReason\"\": \"\"Transfer timed out\"\"}\"\na27a249d95404cb497c0404f,Failed,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T12:25:00\"\", \"\"TransferId\"\": \"\"a27a249d95404cb497c0404f\"\", \"\"Status\"\": \"\"Failed\"\", \"\"Duration\"\": 258, \"\"ErrorCode\"\": \"\"E_SFTP_CONN\"\", \"\"ErrorReason\"\": \"\"SFTP connection error\"\"}\"\na1335f29f01a42cbb68f330a,Failed,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T12:30:00\"\", \"\"TransferId\"\": \"\"a1335f29f01a42cbb68f330a\"\", \"\"Status\"\": \"\"Failed\"\", \"\"Duration\"\": 237, \"\"ErrorCode\"\": \"\"E_SFTP_CONN\"\", \"\"ErrorReason\"\": \"\"SFTP connection error\"\"}\"\n8e5967915b3747ff8c648d35,Failed,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T12:35:00\"\", \"\"TransferId\"\": \"\"8e5967915b3747ff8c648d35\"\", \"\"Status\"\": \"\"Failed\"\", \"\"Duration\"\": 221, \"\"ErrorCode\"\": \"\"E_SFTP_CONN\"\", \"\"ErrorReason\"\": \"\"SFTP connection error\"\"}\"\n5da05cd6cd6b429a87d4e894,Failed,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T12:40:00\"\", \"\"TransferId\"\": \"\"5da05cd6cd6b429a87d4e894\"\", \"\"Status\"\": \"\"Failed\"\", \"\"Duration\"\": 189, \"\"ErrorCode\"\": \"\"E_SFTP_CONN\"\", \"\"ErrorReason\"\": \"\"SFTP connection error\"\"}\"\ndceb98474d6044f5b51229a0,Failed,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T12:45:00\"\", \"\"TransferId\"\": \"\"dceb98474d6044f5b51229a0\"\", \"\"Status\"\": \"\"Failed\"\", \"\"Duration\"\": 205, \"\"ErrorCode\"\": \"\"E_SFTP_CONN\"\", \"\"ErrorReason\"\": \"\"SFTP connection error\"\"}\"\n6e607e7629bd490c81d5cc62,Failed,\"{\"\"FileTransferredDate\"\": \"\"2025-09-11T12:50:00\"\", \"\"TransferId\"\": \"\"6e607e7629bd490c81d5cc62\"\", \"\"Status\"\": \"\"Failed\"\", \"\"Duration\"\": 236, \"\"ErrorCode\"\": \"\"E_SFTP_CONN\"\", \"\"ErrorReason\"\": \"\"SFTP connection error\"\"}\"\n",
           "datasource": {
             "type": "yesoreyeram-infinity-datasource",
             "uid": "grafanacloud-infinity"
@@ -1601,8 +1600,8 @@
           },
           "links": [
             {
-              "title": "Detailed Logs",
-              "url": "https://sflabs.grafana.net/d/abhhn48/edar-base-dashboard-2?orgId=1&var-table_name=${table_name}&transfer_id=${__data.fields.TransferId}\n\n"
+              "title": "detailed view",
+              "url": "https://sflabs.grafana.net/d/abhhn48/edar-base-dashboard-2?orgId=1&var-transfer_id=${__data.fields.TransferId}"
             }
           ],
           "mappings": [],
@@ -1775,7 +1774,7 @@
           }
         ]
       },
-      "pluginVersion": "12.4.0-19938312174",
+      "pluginVersion": "12.4.0-20781422371.patch2",
       "targets": [
         {
           "columns": [],
@@ -1841,6 +1840,643 @@
         }
       ],
       "type": "table"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 24,
+        "x": 0,
+        "y": 24
+      },
+      "id": 23,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "<div style=\"color: white; background-color: #0080c7; padding: 10px; text-align: left;\">\n  <h1>Service Now Ticket Details</h1>\n</div>",
+        "mode": "html"
+      },
+      "pluginVersion": "12.4.0-20781422371.patch2",
+      "title": "",
+      "type": "text"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "filterable": true,
+            "footer": {
+              "reducers": []
+            },
+            "hideFrom": {
+              "viz": false
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#f700a1",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 24,
+        "x": 0,
+        "y": 26
+      },
+      "id": 29,
+      "options": {
+        "cellHeight": "sm",
+        "showHeader": true,
+        "sortBy": [
+          {
+            "desc": false,
+            "displayName": "Title"
+          }
+        ]
+      },
+      "pluginVersion": "12.4.0-20781422371.patch2",
+      "targets": [
+        {
+          "columns": [],
+          "data": "Ticket ID,Title,Category,Priority,Status,Created Date,Updated Date,transfer_status\nINC0012348,Issue related to Rejected,File Transformation,Medium,In-Progress,2025-12-15T11:30:00,2025-12-15T11:35:00,Rejected\nINC0012349,Issue related to Checksum_Mismatch,File Transformation,High,Open,2025-12-15T11:30:00,2025-12-15T11:35:00,Checksum_Mismatch\nINC0012350,Issue related to TimedOut,File Transformation,Medium,In-Progress,2025-12-15T11:30:00,2025-12-15T11:35:00,TimedOut\nINC0012351,Issue related to TimedOut,File Transformation,Medium,In-Progress,2025-12-15T11:40:00,2025-12-15T11:45:00,TimedOut\nINC0012352,Issue related to Failed,File Transformation,High,In-Progress,2025-12-15T11:30:00,2025-12-15T11:35:00,Failed\nINC0012353,Issue related to Failed,File Transformation,High,In-Progress,2025-12-15T11:40:00,2025-12-15T11:45:00,Failed\nINC0012354,Issue related to Failed,File Transformation,Low,In-Progress,2025-12-15T11:50:00,2025-12-15T11:55:00,Failed\nINC0012355,Issue related to Failed,File Transformation,Low,Open,2025-12-15T12:00:00,2025-12-15T12:05:00,Failed\nINC0012356,Issue related to Failed,File Transformation,High,Open,2025-12-15T12:10:00,2025-12-15T12:15:00,Failed\nINC0012357,Issue related to Failed,File Transformation,High,Open,2025-12-15T12:20:00,2025-12-15T12:25:00,Failed\n",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Service Now Ticket ",
+      "transformations": [
+        {
+          "id": "filterByValue",
+          "options": {
+            "filters": [
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": "${table_name}"
+                  }
+                },
+                "fieldName": "transfer_status"
+              }
+            ],
+            "match": "all",
+            "type": "include"
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "includeByName": {},
+            "indexByName": {
+              "Category": 4,
+              "Created Date": 2,
+              "Priority": 5,
+              "Status": 3,
+              "Ticket ID": 0,
+              "Title": 1,
+              "Updated Date": 6
+            },
+            "renameByName": {}
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 5,
+        "x": 0,
+        "y": 31
+      },
+      "id": 24,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^A$/",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.4.0-19938312174",
+      "targets": [
+        {
+          "columns": [],
+          "data": "Metric,Value\nCreated Incidents,10\nNew Incidents,3\nClosed Incidents,8\nIncidents by Priority,2\nAverage Resolution Time,1d",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Created Incidents",
+      "transformations": [
+        {
+          "id": "filterByValue",
+          "options": {
+            "filters": [
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": "Created Incidents"
+                  }
+                },
+                "fieldName": "Metric"
+              }
+            ],
+            "match": "all",
+            "type": "include"
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 5,
+        "x": 5,
+        "y": 31
+      },
+      "id": 25,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^A$/",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.4.0-19938312174",
+      "targets": [
+        {
+          "columns": [],
+          "data": "Metric,Value\nCreated Incidents,10\nNew Incidents,3\nClosed Incidents,8\nIncidents by Priority,2\nAverage Resolution Time,1d",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "New incidents",
+      "transformations": [
+        {
+          "id": "filterByValue",
+          "options": {
+            "filters": [
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": "New Incidents"
+                  }
+                },
+                "fieldName": "Metric"
+              }
+            ],
+            "match": "all",
+            "type": "include"
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 5,
+        "x": 10,
+        "y": 31
+      },
+      "id": 26,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^A$/",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.4.0-19938312174",
+      "targets": [
+        {
+          "columns": [],
+          "data": "Metric,Value\nCreated Incidents,10\nNew Incidents,3\nClosed Incidents,8\nIncidents by Priority,2\nAverage Resolution Time,1d",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Closed Incidents",
+      "transformations": [
+        {
+          "id": "filterByValue",
+          "options": {
+            "filters": [
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": "Closed Incidents"
+                  }
+                },
+                "fieldName": "Metric"
+              }
+            ],
+            "match": "all",
+            "type": "include"
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 5,
+        "x": 15,
+        "y": 31
+      },
+      "id": 27,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^A$/",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.4.0-19938312174",
+      "targets": [
+        {
+          "columns": [],
+          "data": "Metric,Value\nCreated Incidents,10\nNew Incidents,3\nClosed Incidents,8\nIncidents by Priority,2\nAverage Resolution Time,1d",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Incidents by Priority",
+      "transformations": [
+        {
+          "id": "filterByValue",
+          "options": {
+            "filters": [
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": "Incidents by Priority"
+                  }
+                },
+                "fieldName": "Metric"
+              }
+            ],
+            "match": "all",
+            "type": "include"
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 4,
+        "x": 20,
+        "y": 31
+      },
+      "id": 28,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^A$/",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.4.0-19938312174",
+      "targets": [
+        {
+          "columns": [],
+          "data": "Metric,Value\nCreated Incidents,10\nNew Incidents,3\nClosed Incidents,8\nIncidents by Priority,2\nAverage Resolution Time,1d",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Average Resolution Time",
+      "transformations": [
+        {
+          "id": "filterByValue",
+          "options": {
+            "filters": [
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": "Average Resolution Time"
+                  }
+                },
+                "fieldName": "Metric"
+              }
+            ],
+            "match": "all",
+            "type": "include"
+          }
+        }
+      ],
+      "type": "stat"
     }
   ],
   "preload": false,
@@ -1851,15 +2487,16 @@
       {
         "allValue": ".*",
         "current": {
-          "text": "Completed",
-          "value": "Completed"
+          "text": "Failed",
+          "value": "Failed"
         },
         "description": "",
         "includeAll": false,
         "name": "table_name",
         "options": [],
         "query": "Failed,Completed,In-progress,Rejected,Cancelled,TimedOut",
-        "type": "custom"
+        "type": "custom",
+        "valuesFormat": "csv"
       },
       {
         "current": {
@@ -1870,7 +2507,8 @@
         "name": "transfer_id",
         "options": [],
         "query": "68c1c5441a9b7b20ef683abc,68c444aaa9b7b20ef6831001,68c444aaa9b7b20ef6831002,68c444aaa9b7b20ef6831003,68c444aaa9b7b20ef6831004,68c444aaa9b7b20ef6831005,68c444aaa9b7b20ef6831006,68c444aaa9b7b20ef6831007,68c444aaa9b7b20ef6831008,68c444aaa9b7b20ef6831009,68c444aaa9b7b20ef6831035,68c555aaa9b7b20ef6831005,68c555aaa9b7b20ef6831006,68c555aaa9b7b20ef6831007,68c555aaa9b7b20ef6831008,68c555aaa9b7b20ef6831009,68c555aaa9b7b20ef6831010, 68c1f60a1a9b7b20ef683ad5, 68c2552bb591293eb83949c, 68c262f6ed10915b84439f7\n",
-        "type": "custom"
+        "type": "custom",
+        "valuesFormat": "csv"
       }
     ]
   },
@@ -1882,7 +2520,6 @@
   "timezone": "browser",
   "title": "EDAR Base Dashboard -2",
   "uid": "abhhn48",
-  "version": 52
+  "version": 85,
+  "weekStart": ""
 }
-
-when i clcik on completed panel it should redirect the detailed log
