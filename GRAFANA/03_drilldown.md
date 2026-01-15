@@ -8,7 +8,8 @@ Drilldown from Stat panel to Table
 
 Variable creation:
 -----------------------------
-1. My csv data of table contains 2 status: HEALTHY, UNHEALTHY
+1. Always give variable as same as ur fieldname
+2. My csv data of table contains 2 status: HEALTHY, UNHEALTHY
    <img width="1120" height="574" alt="image" src="https://github.com/user-attachments/assets/555b71ca-e8b8-4d45-8ec3-6a29c18e3fd1" />
 
 
