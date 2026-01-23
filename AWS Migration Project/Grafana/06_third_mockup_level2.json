@@ -1,0 +1,877 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 765792576737280,
+  "links": [],
+  "panels": [
+    {
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 10,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "<div style=\"color: white; background-color: #0080c7; padding: 10px; text-align: left;\">\n  <h1>Level 2 – Host Details</h1>\n</div>",
+        "mode": "markdown"
+      },
+      "pluginVersion": "12.4.0-21024277089.patch2",
+      "title": "",
+      "type": "text"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "footer": {
+              "reducers": []
+            },
+            "inspect": true
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "health_status"
+            },
+            "properties": [
+              {
+                "id": "mappings",
+                "value": [
+                  {
+                    "options": {
+                      "HEALTHY": {
+                        "color": "green",
+                        "index": 0
+                      },
+                      "UNHEALTHY": {
+                        "color": "red",
+                        "index": 1
+                      }
+                    },
+                    "type": "value"
+                  }
+                ]
+              },
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "type": "color-background"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "az"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 184
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 24,
+        "x": 0,
+        "y": 2
+      },
+      "id": 43,
+      "options": {
+        "cellHeight": "sm",
+        "showHeader": true,
+        "sortBy": [
+          {
+            "desc": true,
+            "displayName": "host_id"
+          }
+        ]
+      },
+      "pluginVersion": "12.4.0-21024277089.patch2",
+      "targets": [
+        {
+          "columns": [],
+          "data": "host_id,az,region,allocation_status,health_status,sockets,cores\n${host_id},${az},us-east-1,ALLOCATED,UNHEALTHY,2,12",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "uql": "parse-csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Summary of the host",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "includeByName": {},
+            "indexByName": {
+              "allocation_status": 5,
+              "az": 2,
+              "blast_radius": 8,
+              "health_status": 6,
+              "host_id": 1,
+              "instance_count": 4,
+              "region": 3,
+              "spread_score": 7,
+              "timestamp": 0
+            },
+            "renameByName": {}
+          }
+        },
+        {
+          "id": "filterByValue",
+          "options": {
+            "filters": [
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": "${host_id}"
+                  }
+                },
+                "fieldName": "host_id"
+              }
+            ],
+            "match": "any",
+            "type": "include"
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "percentage",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "orange",
+                "value": 80
+              },
+              {
+                "color": "red",
+                "value": 90
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 0,
+        "y": 7
+      },
+      "id": 44,
+      "options": {
+        "minVizHeight": 75,
+        "minVizWidth": 75,
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^used$/",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true,
+        "sizing": "auto"
+      },
+      "pluginVersion": "12.4.0-21024277089.patch2",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "used",
+              "text": "",
+              "type": "number"
+            },
+            {
+              "selector": "free",
+              "text": "",
+              "type": "number"
+            },
+            {
+              "selector": "host_id",
+              "text": "",
+              "type": "string"
+            }
+          ],
+          "data": "host_id,total,free,used\n${host_id},32,20,12\n",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "vCPU Capacity Breakdown Used",
+      "transformations": [
+        {
+          "id": "filterByValue",
+          "options": {
+            "filters": [
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": "${host_id}"
+                  }
+                },
+                "fieldName": "host_id"
+              }
+            ],
+            "match": "any",
+            "type": "include"
+          }
+        }
+      ],
+      "type": "gauge"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 12,
+        "y": 7
+      },
+      "id": 47,
+      "options": {
+        "minVizHeight": 75,
+        "minVizWidth": 75,
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^free$/",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true,
+        "sizing": "auto"
+      },
+      "pluginVersion": "12.4.0-21024277089.patch2",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "used",
+              "text": "",
+              "type": "number"
+            },
+            {
+              "selector": "free",
+              "text": "",
+              "type": "number"
+            },
+            {
+              "selector": "host_id",
+              "text": "",
+              "type": "string"
+            }
+          ],
+          "data": "host_id,total,free,used\n${host_id},32,20,12\n",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "vCPU Capacity Breakdown Free",
+      "transformations": [
+        {
+          "id": "filterByValue",
+          "options": {
+            "filters": [
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": "${host_id}"
+                  }
+                },
+                "fieldName": "host_id"
+              }
+            ],
+            "match": "any",
+            "type": "include"
+          }
+        }
+      ],
+      "type": "gauge"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "footer": {
+              "reducers": []
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 24,
+        "x": 0,
+        "y": 14
+      },
+      "id": 45,
+      "options": {
+        "cellHeight": "sm",
+        "showHeader": true,
+        "sortBy": [
+          {
+            "desc": false,
+            "displayName": "endTime"
+          }
+        ]
+      },
+      "pluginVersion": "12.4.0-21024277089.patch2",
+      "targets": [
+        {
+          "columns": [],
+          "data": "event_id,startTime,endTime,region,az,host_id,eventTypeCategory,eventTypeCode,service,statusCode,description\nevt-101,2026-01-14 02:00:00,2026-01-14 03:00:00,us-east-1,${az},${host_id},issue,AWS_EC2_INSTANCE_FAILURE,EC2,open,\"Unexpected EC2 instance failure on ${host_id}\"\nevt-201,2026-01-14 03:15:00,2026-01-14 04:15:00,us-east-1,${az},host-201,issue,AWS_EC2_NETWORK_ISSUE,EC2,open,\"Network connectivity issue detected on host-201\"\nevt-301,2026-01-14 04:45:00,2026-01-14 05:45:00,us-east-1,${az},host-301,issue,AWS_EC2_HOST_SATURATION,EC2,open,\"CPU saturation event on host-301\"\nevt-104,2026-01-14 06:00:00,2026-01-14 07:00:00,us-east-1,${az},host-104,issue,AWS_RDS_STORAGE_FAILURE,RDS,open,\"Storage failure detected on RDS instance host-104\"\nevt-203,2026-01-14 08:00:00,2026-01-14 09:00:00,us-east-1,${az},host-203,scheduledChange,AWS_EC2_INSTANCE_RETIREMENT,EC2,upcoming,\"Instance retirement scheduled for host-203\"\nevt-203b,2026-01-14 09:30:00,2026-01-14 10:30:00,us-east-1,${az},host-203,issue,AWS_EC2_INSTANCE_FAILURE,EC2,open,\"Failure detected before retirement on host-203\"\nevt-303,2026-01-14 09:15:00,2026-01-14 10:15:00,us-east-1,${az},host-303,accountNotification,AWS_SUPPORT_PLAN_CHANGE,Support,open,\"Support plan change notification affecting host-303\"\nevt-105,2026-01-14 10:30:00,2026-01-14 11:30:00,us-east-1,${az},host-105,scheduledChange,AWS_RDS_MAINTENANCE,RDS,open,\"Scheduled RDS maintenance for host-105\"\nevt-204,2026-01-14 11:45:00,2026-01-14 12:45:00,us-east-1,${az},host-204,accountNotification,AWS_GENERAL_ACCOUNT_NOTICE,Account,open,\"General account-wide notification impacting host-204\"\nevt-304,2026-01-14 13:00:00,2026-01-14 14:00:00,us-east-1,${az},host-304,scheduledChange,AWS_EC2_HOST_MAINTENANCE,EC2,open,\"Scheduled EC2 host maintenance for host-304\"",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Host maintainance Events with timeline",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "az": true
+            },
+            "includeByName": {},
+            "indexByName": {
+              "az": 2,
+              "description": 10,
+              "endTime": 4,
+              "eventTypeCategory": 5,
+              "eventTypeCode": 6,
+              "event_id": 0,
+              "host_id": 1,
+              "region": 7,
+              "service": 8,
+              "startTime": 3,
+              "statusCode": 9
+            },
+            "renameByName": {}
+          }
+        },
+        {
+          "id": "filterByValue",
+          "options": {
+            "filters": [
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": "${host_id}"
+                  }
+                },
+                "fieldName": "host_id"
+              }
+            ],
+            "match": "any",
+            "type": "include"
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "footer": {
+              "reducers": []
+            },
+            "hideFrom": {
+              "viz": false
+            },
+            "inspect": false
+          },
+          "links": [
+            {
+              "title": "Instance details",
+              "url": "https://sflabs.grafana.net/d/abkvqsj/mockup-level-3?orgId=1&var-instance_id=${__data.fields.instance_id}&var-host_id=${__data.fields.host_id}"
+            }
+          ],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 14,
+        "x": 0,
+        "y": 19
+      },
+      "id": 46,
+      "options": {
+        "cellHeight": "sm",
+        "showHeader": true
+      },
+      "pluginVersion": "12.4.0-21024277089.patch2",
+      "targets": [
+        {
+          "columns": [],
+          "data": "host_id,instance_id,instance_type\n${host_id},i-0a1b2c3d4e5f6g7h,m5.large\nhost-101,i-1a2b3c4d5e6f7g8h,t3.medium\nhost-201,i-2a3b4c5d6e7f8g9h,c5.xlarge\nhost-301,i-5a6b7c8d9e0f1g2h,t3.micro\nhost-104,i-7a8b9c0d1e2f3g4h,m5.large\nhost-203,i-9a0b1c2d3e4f5g6h,t3.small\nhost-303,i-1b2c3d4e5f6g7h8i,c5.2xlarge\nhost-105,i-2b3c4d5e6f7g8h9i,t3.medium\nhost-204,i-4b5c6d7e8f9g0h1i,r5.large\nhost-304,i-7b8c9d0e1f2g3h4i,t3.micro\n",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Instances Running on that Host",
+      "transformations": [
+        {
+          "id": "filterByValue",
+          "options": {
+            "filters": [
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": "${host_id}"
+                  }
+                },
+                "fieldName": "host_id"
+              }
+            ],
+            "match": "any",
+            "type": "include"
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "fillOpacity": 80,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineWidth": 1,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 10,
+        "x": 14,
+        "y": 19
+      },
+      "id": 48,
+      "options": {
+        "barRadius": 0,
+        "barWidth": 0.97,
+        "fullHighlight": false,
+        "groupWidth": 0.7,
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "orientation": "auto",
+        "showValue": "auto",
+        "stacking": "none",
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        },
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0
+      },
+      "pluginVersion": "12.4.0-21024277089.patch2",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "ec2_running",
+              "text": "",
+              "type": "number"
+            },
+            {
+              "selector": "ec2_stopped",
+              "text": "",
+              "type": "number"
+            },
+            {
+              "selector": "ec2_terminated",
+              "text": "",
+              "type": "number"
+            },
+            {
+              "selector": "timestamp",
+              "text": "",
+              "type": "timestamp"
+            },
+            {
+              "selector": "host_id",
+              "text": "",
+              "type": "string"
+            }
+          ],
+          "data": "timestamp,region,az,host_id,ec2_running,ec2_stopped,ec2_terminated\n2026-01-14 05:00:00,us-east-1,us-east-1a,${host_id},15,7,0\n",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "No: of Ec2 by state",
+      "transformations": [
+        {
+          "id": "filterByValue",
+          "options": {
+            "filters": [
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": "${host_id}"
+                  }
+                },
+                "fieldName": "host_id"
+              }
+            ],
+            "match": "any",
+            "type": "include"
+          }
+        }
+      ],
+      "type": "barchart"
+    }
+  ],
+  "preload": false,
+  "schemaVersion": 42,
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "current": {
+          "text": "HEALTHY",
+          "value": "HEALTHY"
+        },
+        "description": "",
+        "hide": 2,
+        "name": "health_status",
+        "options": [],
+        "query": "HEALTHY,UNHEALTHY",
+        "type": "custom",
+        "valuesFormat": "csv"
+      },
+      {
+        "current": {
+          "text": "us-east-1c",
+          "value": "us-east-1c"
+        },
+        "hide": 2,
+        "label": "Availability Zone",
+        "name": "az",
+        "options": [],
+        "query": "us-east-1a,us-east-1b,us-east-1c\n",
+        "type": "custom",
+        "valuesFormat": "csv"
+      },
+      {
+        "current": {
+          "text": "host-101",
+          "value": "host-101"
+        },
+        "hide": 2,
+        "name": "host_id",
+        "options": [],
+        "query": "host-101,host-201,host-301,host-104,host-203,host-303,host-105,host-204,host-304\n",
+        "type": "custom",
+        "valuesFormat": "csv"
+      }
+    ]
+  },
+  "time": {
+    "from": "2026-01-14T05:00:00.000Z",
+    "to": "2026-01-14T05:15:00.000Z"
+  },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "MOCKUP LEVEL 2",
+  "uid": "absrgb8",
+  "version": 48,
+  "weekStart": ""
+}
