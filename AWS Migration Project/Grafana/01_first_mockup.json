@@ -1,0 +1,2016 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 2711102374264832,
+  "links": [],
+  "panels": [
+    {
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 9,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "<div style=\"color: white; background-color: #0080c7; padding: 10px; text-align: left;\">\n  <h1>Overall health of all the Dedicated Hosts(Golden Signals - Level 1)</h1>\n</div>",
+        "mode": "markdown"
+      },
+      "pluginVersion": "12.4.0-21024277089.patch2",
+      "title": "",
+      "type": "text"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "fieldMinMax": false,
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 8,
+        "x": 0,
+        "y": 2
+      },
+      "id": 1,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^total_hosts$/",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.4.0-21024277089.patch2",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "",
+              "text": "",
+              "type": "number"
+            }
+          ],
+          "computed_columns": [
+            {
+              "selector": "",
+              "text": "",
+              "type": "string"
+            }
+          ],
+          "data": "timestamp,region,total_hosts,healthy_hosts,unhealthy_hosts,avg_latency_ms,avg_saturation_percent,avg_error_rate_percent,spread_score_percent,blast_radius_percent,risk_level\n2026-01-14 05:00,us-east-1,220,205,15,165,78,2.1,82,38,GOOD\n2026-01-14 05:05,us-east-1,220,204,16,178,81,2.4,78,41,GOOD\n2026-01-14 05:10,us-east-1,220,202,18,195,84,2.9,72,46,WARNING\n2026-01-14 05:15,us-east-1,220,200,20,215,87,3.4,65,52,CRITICAL\n2026-01-14 05:20,us-east-1,16,198,22,240,90,4.1,58,60,CRITICAL",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "uql",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "uql": "parse-csv\r\n",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Total Dedicated Hosts",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "includeTimeField": false,
+            "labelsToFields": false,
+            "mode": "reduceFields",
+            "reducers": [
+              "last"
+            ]
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "links": [
+            {
+              "title": "HEALTHY",
+              "url": "https://sflabs.grafana.net/d/abhzc97/mock-up-dashboard?orgId=1&var-status=HEALTHY"
+            }
+          ],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 8,
+        "x": 8,
+        "y": 2
+      },
+      "id": 2,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^healthy_hosts$/",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.4.0-21024277089.patch2",
+      "targets": [
+        {
+          "columns": [],
+          "data": "timestamp,region,total_hosts,healthy_hosts,unhealthy_hosts,avg_latency_ms,avg_saturation_percent,avg_error_rate_percent,spread_score_percent,blast_radius_percent,risk_level\n2026-01-14 05:00,us-east-1,220,205,15,165,78,2.1,82,38,GOOD\n2026-01-14 05:05,us-east-1,220,204,16,178,81,2.4,78,41,GOOD\n2026-01-14 05:10,us-east-1,220,202,18,195,84,2.9,72,46,WARNING\n2026-01-14 05:15,us-east-1,220,200,20,215,87,3.4,65,52,CRITICAL\n2026-01-14 05:20,us-east-1,220,8,22,240,90,4.1,58,60,CRITICAL",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Healthy Hosts",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "includeTimeField": false,
+            "mode": "reduceFields",
+            "reducers": [
+              "last"
+            ]
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "links": [
+            {
+              "title": "UNHEALTHY",
+              "url": "https://sflabs.grafana.net/d/abhzc97/mock-up-dashboard?orgId=1&var-status=UNHEALTHY"
+            }
+          ],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "#EAB839",
+                "value": 1
+              },
+              {
+                "color": "red",
+                "value": 2
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "unhealthy_hosts"
+            },
+            "properties": [
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": 0
+                    },
+                    {
+                      "color": "#EAB839",
+                      "value": 1
+                    },
+                    {
+                      "color": "red",
+                      "value": 2
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "unit",
+                "value": "none"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 8,
+        "x": 16,
+        "y": 2
+      },
+      "id": 3,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^unhealthy_hosts$/",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.4.0-21024277089.patch2",
+      "targets": [
+        {
+          "columns": [],
+          "data": "timestamp,region,total_hosts,healthy_hosts,unhealthy_hosts,avg_latency_ms,avg_saturation_percent,avg_error_rate_percent,spread_score_percent,blast_radius_percent,risk_level\n2026-01-14 05:00,us-east-1,220,205,15,165,78,2.1,82,38,GOOD\n2026-01-14 05:05,us-east-1,220,204,16,178,81,2.4,78,41,GOOD\n2026-01-14 05:10,us-east-1,220,202,18,195,84,2.9,72,46,WARNING\n2026-01-14 05:15,us-east-1,220,200,20,215,87,3.4,65,52,CRITICAL\n2026-01-14 05:20,us-east-1,220,198,8,240,90,4.1,58,60,CRITICAL",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "uql": "parse-csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Unhealthy hosts",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "includeTimeField": false,
+            "mode": "reduceFields",
+            "reducers": [
+              "last"
+            ]
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 0,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 250
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "avg_latency_ms"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "ms"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 8,
+        "x": 0,
+        "y": 7
+      },
+      "id": 4,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^avg_latency_ms$/",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.4.0-21024277089.patch2",
+      "targets": [
+        {
+          "columns": [],
+          "data": "timestamp,region,total_hosts,healthy_hosts,unhealthy_hosts,avg_latency_ms,avg_saturation_percent,avg_error_rate_percent,spread_score_percent,blast_radius_percent,risk_level\n2026-01-14 05:00,us-east-1,220,205,15,165,78,2.1,82,38,GOOD\n2026-01-14 05:05,us-east-1,220,204,16,178,81,2.4,78,41,GOOD\n2026-01-14 05:10,us-east-1,220,202,18,195,84,2.9,72,46,WARNING\n2026-01-14 05:15,us-east-1,220,200,20,215,87,3.4,65,52,CRITICAL\n2026-01-14 05:20,us-east-1,220,198,22,240,90,4.1,58,60,CRITICAL",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Avg Latency",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "includeTimeField": false,
+            "mode": "reduceFields",
+            "reducers": [
+              "last"
+            ]
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 8,
+        "x": 8,
+        "y": 7
+      },
+      "id": 5,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^avg_saturation_percent$/",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.4.0-21024277089.patch2",
+      "targets": [
+        {
+          "columns": [],
+          "data": "timestamp,region,total_hosts,healthy_hosts,unhealthy_hosts,avg_latency_ms,avg_saturation_percent,avg_error_rate_percent,spread_score_percent,blast_radius_percent,risk_level\n2026-01-14 05:00,us-east-1,220,205,15,165,78,2.1,82,38,GOOD\n2026-01-14 05:05,us-east-1,220,204,16,178,81,2.4,78,41,GOOD\n2026-01-14 05:10,us-east-1,220,202,18,195,84,2.9,72,46,WARNING\n2026-01-14 05:15,us-east-1,220,200,20,215,87,3.4,65,52,CRITICAL\n2026-01-14 05:20,us-east-1,220,198,22,240,90,4.1,58,60,CRITICAL",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Avg Saturation",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "includeTimeField": false,
+            "mode": "reduceFields",
+            "reducers": [
+              "last"
+            ]
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 8,
+        "x": 16,
+        "y": 7
+      },
+      "id": 6,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^avg_error_rate_percent$/",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.4.0-21024277089.patch2",
+      "targets": [
+        {
+          "columns": [],
+          "data": "timestamp,region,total_hosts,healthy_hosts,unhealthy_hosts,avg_latency_ms,avg_saturation_percent,avg_error_rate_percent,spread_score_percent,blast_radius_percent,risk_level\n2026-01-14 05:00,us-east-1,220,205,15,165,78,2.1,82,38,GOOD\n2026-01-14 05:05,us-east-1,220,204,16,178,81,2.4,78,41,GOOD\n2026-01-14 05:10,us-east-1,220,202,18,195,84,2.9,72,46,WARNING\n2026-01-14 05:15,us-east-1,220,200,20,215,87,3.4,65,52,CRITICAL\n2026-01-14 05:20,us-east-1,220,198,22,240,90,4.1,58,60,CRITICAL",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Average Error Rate",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "includeTimeField": false,
+            "mode": "reduceFields",
+            "reducers": [
+              "last"
+            ]
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 24,
+        "x": 0,
+        "y": 12
+      },
+      "id": 10,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "<div style=\"color: white; background-color: #0080c7; padding: 10px; text-align: left;\">\n  <h1>Level 2.- selected Hosts type information in a table (Healthy hosts or unhealthy hosts)</h1>\n</div>",
+        "mode": "markdown"
+      },
+      "pluginVersion": "12.4.0-21024277089.patch2",
+      "title": "",
+      "type": "text"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "footer": {
+              "reducers": []
+            },
+            "inspect": false
+          },
+          "links": [
+            {
+              "title": "Details",
+              "url": "https://sflabs.grafana.net/d/abhzc97/mock-up-dashboard?orgId=1&var-host_name=${__data.fields.host_name}"
+            }
+          ],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 14
+      },
+      "id": 27,
+      "options": {
+        "cellHeight": "sm",
+        "showHeader": true
+      },
+      "pluginVersion": "12.4.0-21024277089.patch2",
+      "targets": [
+        {
+          "columns": [],
+          "data": "timestamp,region,host_name,host_id,host_size,status,instances_running,instances_impacted,pods_running,pods_impacted,traffic_mb,avg_latency_ms,avg_error_rate_percent,saturation_percent,disk_space_gb,avg_io_ops,cpu_utilization_percent,memory_usage_percent,blast_radius_percent,spread_scope_percent,security_check_failures,patch_compliance_percent\n2026-01-14 10:00,us-east-1,Infra-HostA,h-102,Large,UNHEALTHY,0,3,0,5,182,220,1.71,78,601,864,64,68,50,31,3,96\n2026-01-14 10:00,us-west-2,Payments-HostA,h-100,Large,UNHEALTHY,0,3,0,12,612,94,0.96,60,904,1763,74,40,34,25,3,80\n2026-01-14 10:05,us-east-1,Orders-HostB,h-111,Small,UNHEALTHY,0,1,0,5,417,203,3.64,57,1976,1690,64,56,34,30,2,79\n2026-01-14 10:05,us-east-1,Infra-HostB,h-112,XL,UNHEALTHY,0,1,0,10,359,120,3.44,86,486,1128,89,57,38,26,2,93\n2026-01-14 10:05,us-west-2,Payments-HostB,h-110,XL,UNHEALTHY,0,3,0,15,625,189,2.55,76,1222,2277,57,61,36,37,3,75\n2026-01-14 10:05,us-west-2,Infra-HostB,h-112,Large,UNHEALTHY,0,2,0,12,119,173,2.25,50,664,1010,45,90,41,39,1,83\n2026-01-14 10:10,us-east-1,Payments-HostC,h-120,Medium,HEALTHY,3,0,18,0,709,285,4.62,62,1005,1020,45,50,0,0,0,94\n2026-01-14 10:10,us-east-1,Orders-HostC,h-121,Small,HEALTHY,1,0,15,0,746,203,2.32,77,1345,1990,86,40,0,0,0,76\n2026-01-14 10:10,us-east-1,Infra-HostC,h-122,Small,HEALTHY,4,0,19,0,637,168,2.13,45,1673,2292,40,69,0,0,0,80\n2026-01-14 10:10,us-west-2,Payments-HostC,h-120,Medium,HEALTHY,4,0,23,0,315,249,0.46,76,1612,2447,90,55,0,0,0,71\n2026-01-14 10:10,us-west-2,Orders-HostC,h-121,Small,HEALTHY,4,0,11,0,141,187,4.89,64,1760,1495,31,54,0,0,0,99\n2026-01-14 10:10,us-west-2,Infra-HostC,h-122,Medium,HEALTHY,3,0,15,0,653,255,2.14,72,884,1990,78,94,0,0,0,83\n2026-01-14 10:15,us-east-1,Infra-HostD,h-132,Small,UNHEALTHY,0,3,0,11,531,84,4.44,55,1010,852,51,60,41,35,1,84\n2026-01-14 10:15,us-west-2,Payments-HostD,h-130,Medium,UNHEALTHY,0,1,0,13,423,251,1.16,90,1487,1743,71,50,33,33,1,96\n2026-01-14 10:15,us-west-2,Orders-HostD,h-131,Large,HEALTHY,1,0,24,0,598,85,0.59,53,1823,1603,56,63,0,0,0,92\n2026-01-14 10:15,us-west-2,Infra-HostD,h-132,Medium,HEALTHY,3,0,10,0,146,184,0.99,83,1334,1786,70,80,0,0,0,85\n",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Details of host selected",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "includeByName": {},
+            "indexByName": {
+              "avg_error_rate_percent": 16,
+              "avg_io_ops": 17,
+              "avg_latency_ms": 12,
+              "blast_radius_percent": 11,
+              "cpu_utilization_percent": 18,
+              "disk_space_gb": 13,
+              "host_id": 1,
+              "host_name": 2,
+              "host_size": 3,
+              "instances_impacted": 7,
+              "instances_running": 5,
+              "memory_usage_percent": 19,
+              "patch_compliance_percent": 20,
+              "pods_impacted": 8,
+              "pods_running": 6,
+              "region": 9,
+              "saturation_percent": 15,
+              "security_check_failures": 21,
+              "spread_scope_percent": 10,
+              "status": 4,
+              "timestamp": 0,
+              "traffic_mb": 14
+            },
+            "renameByName": {}
+          }
+        },
+        {
+          "id": "filterByValue",
+          "options": {
+            "filters": [
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": "${status}"
+                  }
+                },
+                "fieldName": "status"
+              }
+            ],
+            "match": "any",
+            "type": "include"
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 24,
+        "x": 0,
+        "y": 22
+      },
+      "id": 15,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "<div style=\"color: white; background-color: #0080c7; padding: 10px; text-align: left;\">\n  <h1>Level 3 - Selected Host Details</h1>\n</div>",
+        "mode": "markdown"
+      },
+      "pluginVersion": "12.4.0-21024277089.patch2",
+      "title": "",
+      "type": "text"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "footer": {
+              "reducers": []
+            },
+            "inspect": false
+          },
+          "links": [
+            {
+              "title": "details",
+              "url": "https://sflabs.grafana.net/d/abhzc97/mock-up-dashboard?orgId=1&var-error_type=${__data.fields.error_type}"
+            }
+          ],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 24,
+        "x": 0,
+        "y": 24
+      },
+      "id": 19,
+      "options": {
+        "cellHeight": "sm",
+        "showHeader": true
+      },
+      "pluginVersion": "12.4.0-20781422371.patch3",
+      "targets": [
+        {
+          "columns": [],
+          "data": "timestamp,host_name,host_id,error_type,error_count\n2026-01-14 10:00,Infra-HostA,h-102,DiskFailure,2\n2026-01-14 10:00,Infra-HostA,h-102,NetworkTimeout,1\n2026-01-14 10:00,Payments-HostA,h-100,AuthError,2\n2026-01-14 10:00,Payments-HostA,h-100,DBConnectionFailure,1\n2026-01-14 10:05,Orders-HostB,h-111,TimeoutError,1\n2026-01-14 10:05,Orders-HostB,h-111,DiskFailure,1\n2026-01-14 10:05,Infra-HostB,h-112,CPUOverload,2\n2026-01-14 10:05,Infra-HostB,h-112,MemoryLeak,1\n2026-01-14 10:05,Payments-HostB,h-110,DBConnectionFailure,2\n2026-01-14 10:05,Payments-HostB,h-110,TimeoutError,1\n2026-01-14 10:10,Infra-HostC,h-122,DiskFailure,1\n2026-01-14 10:10,Infra-HostC,h-122,NetworkTimeout,2\n2026-01-14 10:15,Infra-HostD,h-132,DiskFailure,2\n2026-01-14 10:15,Infra-HostD,h-132,TimeoutError,1\n2026-01-14 10:15,Payments-HostD,h-130,AuthError,1\n2026-01-14 10:15,Payments-HostD,h-130,MemoryLeak,1\n\n2026-01-14 10:10,Payments-HostC,h-120,None,0\n2026-01-14 10:10,Orders-HostC,h-121,None,0\n2026-01-14 10:10,Infra-HostC,h-122,None,0\n2026-01-14 10:10,Payments-HostC,h-120,None,0\n2026-01-14 10:10,Orders-HostC,h-121,None,0\n2026-01-14 10:10,Infra-HostC,h-122,None,0\n2026-01-14 10:15,Orders-HostD,h-131,None,0\n2026-01-14 10:15,Infra-HostD,h-132,None,0\n",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Details about the host that you selected",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "includeByName": {},
+            "indexByName": {
+              "error_count": 3,
+              "error_type": 4,
+              "host_id": 2,
+              "host_name": 1,
+              "timestamp": 0
+            },
+            "renameByName": {}
+          }
+        },
+        {
+          "id": "filterByValue",
+          "options": {
+            "filters": [
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": "${host_name}"
+                  }
+                },
+                "fieldName": "host_name"
+              }
+            ],
+            "match": "any",
+            "type": "include"
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "showValues": false,
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 30
+      },
+      "id": 11,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true,
+          "sortBy": "Name",
+          "sortDesc": false
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.4.0-20781422371.patch3",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "timestamp",
+              "text": "",
+              "type": "timestamp"
+            },
+            {
+              "selector": "avg_latency_ms",
+              "text": "",
+              "type": "number"
+            }
+          ],
+          "computed_columns": [],
+          "data": "timestamp,host_name,host_id,saturation_percent,traffic_mb,disk_space_gb,avg_latency_ms,avg_error_rate_percent\n2026-01-14 10:00,Infra-HostA,h-102,78,182,601,220,1.71\n2026-01-14 10:05,Infra-HostA,h-102,82,210,598,240,2.10\n2026-01-14 10:10,Infra-HostA,h-102,85,195,595,260,2.45\n2026-01-14 10:15,Infra-HostA,h-102,88,205,590,280,3.00\n\n2026-01-14 10:00,Payments-HostA,h-100,60,612,904,94,0.96\n2026-01-14 10:05,Payments-HostA,h-100,65,640,900,110,1.20\n2026-01-14 10:10,Payments-HostA,h-100,70,615,895,130,1.50\n2026-01-14 10:15,Payments-HostA,h-100,72,630,890,150,1.80\n\n2026-01-14 10:05,Orders-HostB,h-111,57,417,1976,203,3.64\n2026-01-14 10:10,Orders-HostB,h-111,60,430,1970,220,4.00\n2026-01-14 10:15,Orders-HostB,h-111,63,440,1965,240,4.50\n\n2026-01-14 10:05,Infra-HostB,h-112,86,359,486,120,3.44\n2026-01-14 10:10,Infra-HostB,h-112,88,370,482,135,3.80\n2026-01-14 10:15,Infra-HostB,h-112,90,380,478,150,4.20\n\n2026-01-14 10:10,Payments-HostC,h-120,62,709,1005,285,4.62\n2026-01-14 10:15,Payments-HostC,h-120,64,720,1000,300,5.00\n\n2026-01-14 10:10,Orders-HostC,h-121,77,746,1345,203,2.32\n2026-01-14 10:15,Orders-HostC,h-121,79,760,1340,220,2.60\n\n2026-01-14 10:10,Infra-HostC,h-122,45,637,1673,168,2.13\n2026-01-14 10:15,Infra-HostC,h-122,48,650,1670,180,2.40\n\n2026-01-14 10:15,Infra-HostD,h-132,55,531,1010,84,4.44\n2026-01-14 10:20,Infra-HostD,h-132,58,540,1005,95,4.80\n\n2026-01-14 10:15,Payments-HostD,h-130,90,423,1487,251,1.16\n2026-01-14 10:20,Payments-HostD,h-130,92,430,1480,270,1.40\n\n2026-01-14 10:15,Orders-HostD,h-131,53,598,1823,85,0.59\n2026-01-14 10:20,Orders-HostD,h-131,55,610,1820,95,0.70\n",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "uql": "parse-csv\r\n| project timestamp, instance_id\r\n",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Latency Trend",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "showValues": false,
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 30
+      },
+      "id": 12,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.4.0-20781422371.patch3",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "timestamp",
+              "text": "",
+              "type": "timestamp"
+            },
+            {
+              "selector": "traffic_mb",
+              "text": "",
+              "type": "number"
+            }
+          ],
+          "data": "timestamp,host_name,host_id,saturation_percent,traffic_mb,disk_space_gb,avg_latency_ms,avg_error_rate_percent\n2026-01-14 10:00,Infra-HostA,h-102,78,182,601,220,1.71\n2026-01-14 10:05,Infra-HostA,h-102,82,210,598,240,2.10\n2026-01-14 10:10,Infra-HostA,h-102,85,195,595,260,2.45\n2026-01-14 10:15,Infra-HostA,h-102,88,205,590,280,3.00\n\n2026-01-14 10:00,Payments-HostA,h-100,60,612,904,94,0.96\n2026-01-14 10:05,Payments-HostA,h-100,65,640,900,110,1.20\n2026-01-14 10:10,Payments-HostA,h-100,70,615,895,130,1.50\n2026-01-14 10:15,Payments-HostA,h-100,72,630,890,150,1.80\n\n2026-01-14 10:05,Orders-HostB,h-111,57,417,1976,203,3.64\n2026-01-14 10:10,Orders-HostB,h-111,60,430,1970,220,4.00\n2026-01-14 10:15,Orders-HostB,h-111,63,440,1965,240,4.50\n\n2026-01-14 10:05,Infra-HostB,h-112,86,359,486,120,3.44\n2026-01-14 10:10,Infra-HostB,h-112,88,370,482,135,3.80\n2026-01-14 10:15,Infra-HostB,h-112,90,380,478,150,4.20\n\n2026-01-14 10:10,Payments-HostC,h-120,62,709,1005,285,4.62\n2026-01-14 10:15,Payments-HostC,h-120,64,720,1000,300,5.00\n\n2026-01-14 10:10,Orders-HostC,h-121,77,746,1345,203,2.32\n2026-01-14 10:15,Orders-HostC,h-121,79,760,1340,220,2.60\n\n2026-01-14 10:10,Infra-HostC,h-122,45,637,1673,168,2.13\n2026-01-14 10:15,Infra-HostC,h-122,48,650,1670,180,2.40\n\n2026-01-14 10:15,Infra-HostD,h-132,55,531,1010,84,4.44\n2026-01-14 10:20,Infra-HostD,h-132,58,540,1005,95,4.80\n\n2026-01-14 10:15,Payments-HostD,h-130,90,423,1487,251,1.16\n2026-01-14 10:20,Payments-HostD,h-130,92,430,1480,270,1.40\n\n2026-01-14 10:15,Orders-HostD,h-131,53,598,1823,85,0.59\n2026-01-14 10:20,Orders-HostD,h-131,55,610,1820,95,0.70\n",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Traffic Trend",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "showValues": false,
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 38
+      },
+      "id": 14,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.4.0-20781422371.patch3",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "timestamp",
+              "text": "",
+              "type": "timestamp"
+            },
+            {
+              "selector": "avg_error_rate_percent",
+              "text": "",
+              "type": "number"
+            }
+          ],
+          "data": "timestamp,host_name,host_id,saturation_percent,traffic_mb,disk_space_gb,avg_latency_ms,avg_error_rate_percent\n2026-01-14 10:00,Infra-HostA,h-102,78,182,601,220,1.71\n2026-01-14 10:05,Infra-HostA,h-102,82,210,598,240,2.10\n2026-01-14 10:10,Infra-HostA,h-102,85,195,595,260,2.45\n2026-01-14 10:15,Infra-HostA,h-102,88,205,590,280,3.00\n\n2026-01-14 10:00,Payments-HostA,h-100,60,612,904,94,0.96\n2026-01-14 10:05,Payments-HostA,h-100,65,640,900,110,1.20\n2026-01-14 10:10,Payments-HostA,h-100,70,615,895,130,1.50\n2026-01-14 10:15,Payments-HostA,h-100,72,630,890,150,1.80\n\n2026-01-14 10:05,Orders-HostB,h-111,57,417,1976,203,3.64\n2026-01-14 10:10,Orders-HostB,h-111,60,430,1970,220,4.00\n2026-01-14 10:15,Orders-HostB,h-111,63,440,1965,240,4.50\n\n2026-01-14 10:05,Infra-HostB,h-112,86,359,486,120,3.44\n2026-01-14 10:10,Infra-HostB,h-112,88,370,482,135,3.80\n2026-01-14 10:15,Infra-HostB,h-112,90,380,478,150,4.20\n\n2026-01-14 10:10,Payments-HostC,h-120,62,709,1005,285,4.62\n2026-01-14 10:15,Payments-HostC,h-120,64,720,1000,300,5.00\n\n2026-01-14 10:10,Orders-HostC,h-121,77,746,1345,203,2.32\n2026-01-14 10:15,Orders-HostC,h-121,79,760,1340,220,2.60\n\n2026-01-14 10:10,Infra-HostC,h-122,45,637,1673,168,2.13\n2026-01-14 10:15,Infra-HostC,h-122,48,650,1670,180,2.40\n\n2026-01-14 10:15,Infra-HostD,h-132,55,531,1010,84,4.44\n2026-01-14 10:20,Infra-HostD,h-132,58,540,1005,95,4.80\n\n2026-01-14 10:15,Payments-HostD,h-130,90,423,1487,251,1.16\n2026-01-14 10:20,Payments-HostD,h-130,92,430,1480,270,1.40\n\n2026-01-14 10:15,Orders-HostD,h-131,53,598,1823,85,0.59\n2026-01-14 10:20,Orders-HostD,h-131,55,610,1820,95,0.70\n",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Error Trend",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "showValues": false,
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 38
+      },
+      "id": 13,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.4.0-20781422371.patch3",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "timestamp",
+              "text": "",
+              "type": "timestamp"
+            },
+            {
+              "selector": "saturation_percent",
+              "text": "",
+              "type": "number"
+            }
+          ],
+          "data": "timestamp,host_name,host_id,saturation_percent,traffic_mb,disk_space_gb,avg_latency_ms,avg_error_rate_percent\n2026-01-14 10:00,Infra-HostA,h-102,78,182,601,220,1.71\n2026-01-14 10:05,Infra-HostA,h-102,82,210,598,240,2.10\n2026-01-14 10:10,Infra-HostA,h-102,85,195,595,260,2.45\n2026-01-14 10:15,Infra-HostA,h-102,88,205,590,280,3.00\n\n2026-01-14 10:00,Payments-HostA,h-100,60,612,904,94,0.96\n2026-01-14 10:05,Payments-HostA,h-100,65,640,900,110,1.20\n2026-01-14 10:10,Payments-HostA,h-100,70,615,895,130,1.50\n2026-01-14 10:15,Payments-HostA,h-100,72,630,890,150,1.80\n\n2026-01-14 10:05,Orders-HostB,h-111,57,417,1976,203,3.64\n2026-01-14 10:10,Orders-HostB,h-111,60,430,1970,220,4.00\n2026-01-14 10:15,Orders-HostB,h-111,63,440,1965,240,4.50\n\n2026-01-14 10:05,Infra-HostB,h-112,86,359,486,120,3.44\n2026-01-14 10:10,Infra-HostB,h-112,88,370,482,135,3.80\n2026-01-14 10:15,Infra-HostB,h-112,90,380,478,150,4.20\n\n2026-01-14 10:10,Payments-HostC,h-120,62,709,1005,285,4.62\n2026-01-14 10:15,Payments-HostC,h-120,64,720,1000,300,5.00\n\n2026-01-14 10:10,Orders-HostC,h-121,77,746,1345,203,2.32\n2026-01-14 10:15,Orders-HostC,h-121,79,760,1340,220,2.60\n\n2026-01-14 10:10,Infra-HostC,h-122,45,637,1673,168,2.13\n2026-01-14 10:15,Infra-HostC,h-122,48,650,1670,180,2.40\n\n2026-01-14 10:15,Infra-HostD,h-132,55,531,1010,84,4.44\n2026-01-14 10:20,Infra-HostD,h-132,58,540,1005,95,4.80\n\n2026-01-14 10:15,Payments-HostD,h-130,90,423,1487,251,1.16\n2026-01-14 10:20,Payments-HostD,h-130,92,430,1480,270,1.40\n\n2026-01-14 10:15,Orders-HostD,h-131,53,598,1823,85,0.59\n2026-01-14 10:20,Orders-HostD,h-131,55,610,1820,95,0.70\n",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Saturation Trend",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "showValues": false,
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 46
+      },
+      "id": 29,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.4.0-20781422371.patch3",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "timestamp",
+              "text": "",
+              "type": "timestamp"
+            },
+            {
+              "selector": "memory_utilization_percent",
+              "text": "",
+              "type": "number"
+            }
+          ],
+          "data": "timestamp,host_name,host_id,saturation_percent,traffic_mb,disk_space_gb,avg_latency_ms,avg_error_rate_percent,cpu_utilization_percent,memory_utilization_percent\n2026-01-14 10:00,Infra-HostA,h-102,78,182,601,220,1.71,72,68\n2026-01-14 10:05,Infra-HostA,h-102,82,210,598,240,2.10,75,70\n2026-01-14 10:10,Infra-HostA,h-102,85,195,595,260,2.45,78,73\n2026-01-14 10:15,Infra-HostA,h-102,88,205,590,280,3.00,82,76\n2026-01-14 10:00,Payments-HostA,h-100,60,612,904,94,0.96,55,60\n2026-01-14 10:05,Payments-HostA,h-100,65,640,900,110,1.20,58,63\n2026-01-14 10:10,Payments-HostA,h-100,70,615,895,130,1.50,62,66\n2026-01-14 10:15,Payments-HostA,h-100,72,630,890,150,1.80,65,68\n2026-01-14 10:05,Orders-HostB,h-111,57,417,1976,203,3.64,54,58\n2026-01-14 10:10,Orders-HostB,h-111,60,430,1970,220,4.00,57,60\n2026-01-14 10:15,Orders-HostB,h-111,63,440,1965,240,4.50,60,62\n2026-01-14 10:05,Infra-HostB,h-112,86,359,486,120,3.44,80,78\n2026-01-14 10:10,Infra-HostB,h-112,88,370,482,135,3.80,83,81\n2026-01-14 10:15,Infra-HostB,h-112,90,380,478,150,4.20,86,84\n2026-01-14 10:10,Payments-HostC,h-120,62,709,1005,285,4.62,68,72\n2026-01-14 10:15,Payments-HostC,h-120,64,720,1000,300,5.00,71,75\n2026-01-14 10:10,Orders-HostC,h-121,77,746,1345,203,2.32,70,73\n2026-01-14 10:15,Orders-HostC,h-121,79,760,1340,220,2.60,73,76\n2026-01-14 10:10,Infra-HostC,h-122,45,637,1673,168,2.13,40,45\n2026-01-14 10:15,Infra-HostC,h-122,48,650,1670,180,2.40,43,48\n2026-01-14 10:15,Infra-HostD,h-132,55,531,1010,84,4.44,50,52\n2026-01-14 10:20,Infra-HostD,h-132,58,540,1005,95,4.80,53,55\n2026-01-14 10:15,Payments-HostD,h-130,90,423,1487,251,1.16,88,85\n2026-01-14 10:20,Payments-HostD,h-130,92,430,1480,270,1.40,90,88\n2026-01-14 10:15,Orders-HostD,h-131,53,598,1823,85,0.59,48,50\n2026-01-14 10:20,Orders-HostD,h-131,55,610,1820,95,0.70,50,52\n",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Memory utilization Trend",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "showValues": false,
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 46
+      },
+      "id": 30,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.4.0-20781422371.patch3",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "timestamp",
+              "text": "",
+              "type": "timestamp"
+            },
+            {
+              "selector": "cpu_utilization_percent",
+              "text": "",
+              "type": "number"
+            }
+          ],
+          "data": "timestamp,host_name,host_id,saturation_percent,traffic_mb,disk_space_gb,avg_latency_ms,avg_error_rate_percent,cpu_utilization_percent,memory_utilization_percent\n2026-01-14 10:00,Infra-HostA,h-102,78,182,601,220,1.71,72,68\n2026-01-14 10:05,Infra-HostA,h-102,82,210,598,240,2.10,75,70\n2026-01-14 10:10,Infra-HostA,h-102,85,195,595,260,2.45,78,73\n2026-01-14 10:15,Infra-HostA,h-102,88,205,590,280,3.00,82,76\n2026-01-14 10:00,Payments-HostA,h-100,60,612,904,94,0.96,55,60\n2026-01-14 10:05,Payments-HostA,h-100,65,640,900,110,1.20,58,63\n2026-01-14 10:10,Payments-HostA,h-100,70,615,895,130,1.50,62,66\n2026-01-14 10:15,Payments-HostA,h-100,72,630,890,150,1.80,65,68\n2026-01-14 10:05,Orders-HostB,h-111,57,417,1976,203,3.64,54,58\n2026-01-14 10:10,Orders-HostB,h-111,60,430,1970,220,4.00,57,60\n2026-01-14 10:15,Orders-HostB,h-111,63,440,1965,240,4.50,60,62\n2026-01-14 10:05,Infra-HostB,h-112,86,359,486,120,3.44,80,78\n2026-01-14 10:10,Infra-HostB,h-112,88,370,482,135,3.80,83,81\n2026-01-14 10:15,Infra-HostB,h-112,90,380,478,150,4.20,86,84\n2026-01-14 10:10,Payments-HostC,h-120,62,709,1005,285,4.62,68,72\n2026-01-14 10:15,Payments-HostC,h-120,64,720,1000,300,5.00,71,75\n2026-01-14 10:10,Orders-HostC,h-121,77,746,1345,203,2.32,70,73\n2026-01-14 10:15,Orders-HostC,h-121,79,760,1340,220,2.60,73,76\n2026-01-14 10:10,Infra-HostC,h-122,45,637,1673,168,2.13,40,45\n2026-01-14 10:15,Infra-HostC,h-122,48,650,1670,180,2.40,43,48\n2026-01-14 10:15,Infra-HostD,h-132,55,531,1010,84,4.44,50,52\n2026-01-14 10:20,Infra-HostD,h-132,58,540,1005,95,4.80,53,55\n2026-01-14 10:15,Payments-HostD,h-130,90,423,1487,251,1.16,88,85\n2026-01-14 10:20,Payments-HostD,h-130,92,430,1480,270,1.40,90,88\n2026-01-14 10:15,Orders-HostD,h-131,53,598,1823,85,0.59,48,50\n2026-01-14 10:20,Orders-HostD,h-131,55,610,1820,95,0.70,50,52\n",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Cpu utilization Trend",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "showValues": false,
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 24,
+        "x": 0,
+        "y": 54
+      },
+      "id": 20,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.4.0-20781422371.patch3",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "timestamp",
+              "text": "",
+              "type": "timestamp"
+            },
+            {
+              "selector": "disk_space_gb",
+              "text": "",
+              "type": "number"
+            }
+          ],
+          "data": "timestamp,host_name,host_id,saturation_percent,traffic_mb,disk_space_gb,avg_latency_ms,avg_error_rate_percent\n2026-01-14 10:00,Infra-HostA,h-102,78,182,601,220,1.71\n2026-01-14 10:05,Infra-HostA,h-102,82,210,598,240,2.10\n2026-01-14 10:10,Infra-HostA,h-102,85,195,595,260,2.45\n2026-01-14 10:15,Infra-HostA,h-102,88,205,590,280,3.00\n\n2026-01-14 10:00,Payments-HostA,h-100,60,612,904,94,0.96\n2026-01-14 10:05,Payments-HostA,h-100,65,640,900,110,1.20\n2026-01-14 10:10,Payments-HostA,h-100,70,615,895,130,1.50\n2026-01-14 10:15,Payments-HostA,h-100,72,630,890,150,1.80\n\n2026-01-14 10:05,Orders-HostB,h-111,57,417,1976,203,3.64\n2026-01-14 10:10,Orders-HostB,h-111,60,430,1970,220,4.00\n2026-01-14 10:15,Orders-HostB,h-111,63,440,1965,240,4.50\n\n2026-01-14 10:05,Infra-HostB,h-112,86,359,486,120,3.44\n2026-01-14 10:10,Infra-HostB,h-112,88,370,482,135,3.80\n2026-01-14 10:15,Infra-HostB,h-112,90,380,478,150,4.20\n\n2026-01-14 10:10,Payments-HostC,h-120,62,709,1005,285,4.62\n2026-01-14 10:15,Payments-HostC,h-120,64,720,1000,300,5.00\n\n2026-01-14 10:10,Orders-HostC,h-121,77,746,1345,203,2.32\n2026-01-14 10:15,Orders-HostC,h-121,79,760,1340,220,2.60\n\n2026-01-14 10:10,Infra-HostC,h-122,45,637,1673,168,2.13\n2026-01-14 10:15,Infra-HostC,h-122,48,650,1670,180,2.40\n\n2026-01-14 10:15,Infra-HostD,h-132,55,531,1010,84,4.44\n2026-01-14 10:20,Infra-HostD,h-132,58,540,1005,95,4.80\n\n2026-01-14 10:15,Payments-HostD,h-130,90,423,1487,251,1.16\n2026-01-14 10:20,Payments-HostD,h-130,92,430,1480,270,1.40\n\n2026-01-14 10:15,Orders-HostD,h-131,53,598,1823,85,0.59\n2026-01-14 10:20,Orders-HostD,h-131,55,610,1820,95,0.70\n",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Storage",
+      "type": "timeseries"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 24,
+        "x": 0,
+        "y": 64
+      },
+      "id": 21,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "<div style=\"color: white; background-color: #0080c7; padding: 10px; text-align: left;\">\n  <h1>Level 4 - Selected error count details</h1>\n</div>",
+        "mode": "markdown"
+      },
+      "pluginVersion": "12.4.0-20781422371.patch3",
+      "title": "",
+      "type": "text"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "footer": {
+              "reducers": []
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 24,
+        "x": 0,
+        "y": 66
+      },
+      "id": 22,
+      "options": {
+        "cellHeight": "sm",
+        "showHeader": true,
+        "sortBy": [
+          {
+            "desc": false,
+            "displayName": "error_type"
+          }
+        ]
+      },
+      "pluginVersion": "12.4.0-20781422371.patch3",
+      "targets": [
+        {
+          "columns": [],
+          "data": "timestamp,host_name,host_id,error_type,error_message,severity\n2026-01-14 10:00,Infra-HostA,h-102,DiskFailure,\"Disk /dev/sda I/O error\",CRITICAL\n2026-01-14 10:00,Infra-HostA,h-102,DiskFailure,\"Disk /dev/sda read timeout\",CRITICAL\n2026-01-14 10:00,Infra-HostA,h-102,NetworkTimeout,\"TCP connection to service timed out\",MAJOR\n\n2026-01-14 10:00,Payments-HostA,h-100,AuthError,\"Invalid token received from client\",MAJOR\n2026-01-14 10:00,Payments-HostA,h-100,AuthError,\"User authentication failed\",MAJOR\n2026-01-14 10:00,Payments-HostA,h-100,DBConnectionFailure,\"Database connection refused\",CRITICAL\n\n2026-01-14 10:05,Orders-HostB,h-111,TimeoutError,\"Order API response exceeded 5s\",MAJOR\n2026-01-14 10:05,Orders-HostB,h-111,DiskFailure,\"Disk /dev/sdb write error\",CRITICAL\n\n2026-01-14 10:05,Infra-HostB,h-112,CPUOverload,\"CPU usage exceeded 95%\",CRITICAL\n2026-01-14 10:05,Infra-HostB,h-112,CPUOverload,\"Process java.exe consuming 90% CPU\",MAJOR\n2026-01-14 10:05,Infra-HostB,h-112,MemoryLeak,\"Application memory allocation not released\",MAJOR\n\n2026-01-14 10:05,Payments-HostB,h-110,DBConnectionFailure,\"DB pool exhausted connections\",CRITICAL\n2026-01-14 10:05,Payments-HostB,h-110,DBConnectionFailure,\"DB query timeout\",MAJOR\n2026-01-14 10:05,Payments-HostB,h-110,TimeoutError,\"Payment API call exceeded SLA\",MAJOR\n\n2026-01-14 10:10,Infra-HostC,h-122,DiskFailure,\"Disk /dev/sdc bad sector detected\",CRITICAL\n2026-01-14 10:10,Infra-HostC,h-122,NetworkTimeout,\"Lost heartbeat to monitoring agent\",MAJOR\n2026-01-14 10:10,Infra-HostC,h-122,NetworkTimeout,\"Connection reset by peer\",MAJOR\n\n2026-01-14 10:15,Infra-HostD,h-132,DiskFailure,\"Disk /dev/sda corrupted block\",CRITICAL\n2026-01-14 10:15,Infra-HostD,h-132,DiskFailure,\"Disk /dev/sda write failure\",CRITICAL\n2026-01-14 10:15,Infra-HostD,h-132,TimeoutError,\"Infra service response exceeded SLA\",MAJOR\n\n2026-01-14 10:15,Payments-HostD,h-130,AuthError,\"Invalid credentials provided\",MAJOR\n2026-01-14 10:15,Payments-HostD,h-130,MemoryLeak,\"Heap memory usage exceeded 90%\",CRITICAL\n\n2026-01-14 10:10,Payments-HostC,h-120,None,\"System healthy — no errors logged\",INFO\n2026-01-14 10:10,Orders-HostC,h-121,None,\"System healthy — no errors logged\",INFO\n2026-01-14 10:10,Infra-HostC,h-122,None,\"System healthy — no errors logged\",INFO\n2026-01-14 10:10,Payments-HostC,h-120,None,\"System healthy — no errors logged\",INFO\n2026-01-14 10:10,Orders-HostC,h-121,None,\"System healthy — no errors logged\",INFO\n2026-01-14 10:10,Infra-HostC,h-122,None,\"System healthy — no errors logged\",INFO\n2026-01-14 10:15,Orders-HostD,h-131,None,\"System healthy — no errors logged\",INFO\n2026-01-14 10:15,Infra-HostD,h-132,None,\"System healthy — no errors logged\",INFO\n",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Detailed Error Details",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "includeByName": {},
+            "indexByName": {
+              "error_message": 5,
+              "error_type": 4,
+              "host_id": 2,
+              "host_name": 1,
+              "severity": 3,
+              "timestamp": 0
+            },
+            "renameByName": {}
+          }
+        },
+        {
+          "id": "filterByValue",
+          "options": {
+            "filters": [
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": "${error_type}"
+                  }
+                },
+                "fieldName": "error_type"
+              },
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": "${host_name}"
+                  }
+                },
+                "fieldName": "host_name"
+              }
+            ],
+            "match": "all",
+            "type": "include"
+          }
+        }
+      ],
+      "type": "table"
+    }
+  ],
+  "preload": false,
+  "schemaVersion": 42,
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "allowCustomValue": true,
+        "current": {
+          "text": "HEALTHY",
+          "value": "HEALTHY"
+        },
+        "name": "status",
+        "options": [],
+        "query": "HEALTHY,UNHEALTHY",
+        "type": "custom",
+        "valuesFormat": "csv"
+      },
+      {
+        "current": {
+          "text": "Infra-HostC",
+          "value": "Infra-HostC"
+        },
+        "name": "host_name",
+        "options": [],
+        "query": "Infra-HostA,Payments-HostA,Orders-HostB,Infra-HostB,Payments-HostB,Infra-HostC,Payments-HostC,Orders-HostC,Infra-HostD,Payments-HostD,Orders-HostD\n",
+        "type": "custom",
+        "valuesFormat": "csv"
+      },
+      {
+        "current": {
+          "text": "DiskFailure",
+          "value": "DiskFailure"
+        },
+        "description": "",
+        "name": "error_type",
+        "options": [],
+        "query": "DiskFailure,NetworkTimeout,AuthError,DBConnectionFailure,TimeoutError,CPUOverload,MemoryLeak,None\n",
+        "type": "custom",
+        "valuesFormat": "csv"
+      },
+      {
+        "current": {
+          "text": "FND-001",
+          "value": "FND-001"
+        },
+        "name": "finding_id",
+        "options": [],
+        "query": "FND-001,FND-002,FND-003,FND-004,FND-005\n",
+        "type": "custom",
+        "valuesFormat": "csv"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "Mock Up Dashboard",
+  "uid": "abhzc97",
+  "version": 172,
+  "weekStart": ""
+}
