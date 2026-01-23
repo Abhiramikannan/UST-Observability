@@ -1,0 +1,662 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 794736709472256,
+  "links": [],
+  "panels": [
+    {
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 15,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "<div style=\"color: white; background-color: #0080c7; padding: 10px; text-align: left;\">\n  <h1>Level 3 - Instance Level Details</h1>\n</div>",
+        "mode": "markdown"
+      },
+      "pluginVersion": "12.4.0-21024277089.patch2",
+      "title": "",
+      "type": "text"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "footer": {
+              "reducers": []
+            },
+            "inspect": false
+          },
+          "links": [
+            {
+              "title": "details",
+              "url": "https://sflabs.grafana.net/d/abld29b/level-2-mockup?orgId=1&var-instance_id=${__data.fields.instance_id}"
+            }
+          ],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "instance_id"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 404
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "instance_state"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 411
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "host_id"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 498
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 24,
+        "x": 0,
+        "y": 2
+      },
+      "id": 19,
+      "options": {
+        "cellHeight": "sm",
+        "showHeader": true
+      },
+      "pluginVersion": "12.4.0-21024277089.patch2",
+      "targets": [
+        {
+          "columns": [],
+          "data": "host_id,instance_id,instance_state\n${host_id},${instance_id},Stopped",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Instance Table",
+      "transformations": [
+        {
+          "id": "filterByValue",
+          "options": {
+            "filters": [
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": "${host_id}"
+                  }
+                },
+                "fieldName": "host_id"
+              },
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": "${instance_id}"
+                  }
+                },
+                "fieldName": "instance_id"
+              }
+            ],
+            "match": "all",
+            "type": "include"
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "includeByName": {},
+            "indexByName": {
+              "avg_error_rate": 3,
+              "host_id": 0,
+              "instance_id": 1,
+              "instance_state": 2
+            },
+            "renameByName": {}
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 0,
+        "y": 6
+      },
+      "id": 20,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^avg_error_rate$/",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.4.0-21024277089.patch2",
+      "targets": [
+        {
+          "columns": [],
+          "data": "host_id,instance_id,avg_error_rate\n${host_id},${instance_id},0.04\nhost-101,i-0a1b2c3d4e5f6g7h,0.02\nhost-201,i-1a2b3c4d5e6f7g8h,0.00\nhost-301,i-2a3b4c5d6e7f8g9h,0.00\nhost-104,i-5a6b7c8d9e0f1g2h,0.05\nhost-203,i-7a8b9c0d1e2f3g4h,0.01\nhost-303,i-9a0b1c2d3e4f5g6h,0.03\nhost-105,i-1b2c3d4e5f6g7h8i,0.00\nhost-204,i-2b3c4d5e6f7g8h9i,0.04\nhost-303,i-4b5c6d7e8f9g0h1i,0.01\nhost-304,i-7b8c9d0e1f2g3h4i,0.06\n",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Average Error Rate",
+      "transformations": [
+        {
+          "id": "filterByValue",
+          "options": {
+            "filters": [
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": "${instance_id}"
+                  }
+                },
+                "fieldName": "instance_id"
+              },
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": "${host_id}"
+                  }
+                },
+                "fieldName": "host_id"
+              }
+            ],
+            "match": "any",
+            "type": "include"
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "footer": {
+              "reducers": []
+            },
+            "hideFrom": {
+              "viz": false
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "host_id"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 123
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "instance_id"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 183
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "errorCode"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 190
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 20,
+        "x": 4,
+        "y": 6
+      },
+      "id": 21,
+      "options": {
+        "cellHeight": "sm",
+        "showHeader": true
+      },
+      "pluginVersion": "12.4.0-21024277089.patch2",
+      "targets": [
+        {
+          "columns": [],
+          "data": "\nhost_id,instance_id,errorCode,errorMessage,userIdentity\n${host_id},${instance_id},UnauthorizedOperation,\"You are not authorized to perform this operation\",arn:aws:iam::123456789012:user/Admin\nhost-101,i-0a1b2c3d4e5f6g7h,UnauthorizedOperation,\"You are not authorized to perform this operation\",arn:aws:iam::123456789012:user/Admin\nhost-201,i-1a2b3c4d5e6f7g8h,InvalidInstanceID.NotFound,\"The instance ID 'i-1a2b3c4d5e6f7g8h' does not exist\",arn:aws:iam::123456789012:user/DevOps\nhost-301,i-2a3b4c5d6e7f8g9h,UnauthorizedOperation,\"You are not authorized to terminate this instance\",arn:aws:iam::123456789012:user/Support\nhost-104,i-5a6b7c8d9e0f1g2h,InvalidParameterValue,\"Invalid parameter for reboot request\",arn:aws:iam::123456789012:user/Automation\nhost-203,i-7a8b9c0d1e2f3g4h,UnauthorizedOperation,\"You are not authorized to perform this operation\",arn:aws:iam::123456789012:user/Admin\nhost-303,i-9a0b1c2d3e4f5g6h,InvalidInstanceID.NotFound,\"The instance ID 'i-9a0b1c2d3e4f5g6h' does not exist\",arn:aws:iam::123456789012:user/DevOps\nhost-105,i-1b2c3d4e5f6g7h8i,UnauthorizedOperation,\"You are not authorized to terminate this instance\",arn:aws:iam::123456789012:user/Support\nhost-204,i-2b3c4d5e6f7g8h9i,InvalidParameterValue,\"Invalid parameter for reboot request\",arn:aws:iam::123456789012:user/Automation\nhost-304,i-4b5c6d7e8f9g0h1i,UnauthorizedOperation,\"You are not authorized to perform this operation\",arn:aws:iam::123456789012:user/Admin\nhost-304,i-7b8c9d0e1f2g3h4i,InvalidInstanceID.NotFound,\"The instance ID 'i-7b8c9d0e1f2g3h4i' does not exist\",arn:aws:iam::123456789012:user/DevOps\n\n",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Error Details from CloudTrail Logs",
+      "transformations": [
+        {
+          "id": "filterByValue",
+          "options": {
+            "filters": [
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": "${instance_id}"
+                  }
+                },
+                "fieldName": "instance_id"
+              },
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": "${host_id}"
+                  }
+                },
+                "fieldName": "host_id"
+              }
+            ],
+            "match": "all",
+            "type": "include"
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "includeByName": {},
+            "indexByName": {
+              "errorCode": 2,
+              "errorMessage": 3,
+              "host_id": 0,
+              "instance_id": 1,
+              "userIdentity": 4
+            },
+            "renameByName": {}
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "footer": {
+              "reducers": []
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 24,
+        "x": 0,
+        "y": 10
+      },
+      "id": 22,
+      "options": {
+        "cellHeight": "sm",
+        "showHeader": true
+      },
+      "pluginVersion": "12.4.0-21024277089.patch2",
+      "targets": [
+        {
+          "columns": [],
+          "data": "timestamp,instance_id,cpu_percent,memory_percent,error_rate,saturation_percent\n2026-01-14 05:00:00,${instance_id},45,62,0.5,70\n2026-01-14 05:00:00,i-1a2b3c4d5e6f7g8h,65,78,1.2,85\n2026-01-14 05:00:00,i-2a3b4c5d6e7f8g9h,0,0,0,0\n2026-01-14 05:15:00,i-5a6b7c8d9e0f1g2h,70,85,2.0,92\n2026-01-14 05:15:00,i-7a8b9c0d1e2f3g4h,85,95,4.2,98\n2026-01-14 05:30:00,i-9a0b1c2d3e4f5g6h,65,80,1.5,88\n2026-01-14 05:30:00,i-1b2c3d4e5f6g7h8i,0,0,0,0\n2026-01-14 05:30:00,i-2b3c4d5e6f7g8h9i,0,0,0,0\n2026-01-14 05:30:00,i-4b5c6d7e8f9g0h1i,55,60,0.8,65\n2026-01-14 05:30:00,i-7b8c9d0e1f2g3h4i,0,0,0,0\n",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Instance Resource Utilization",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "error_rate": true
+            },
+            "includeByName": {},
+            "indexByName": {
+              "cpu_percent": 2,
+              "error_rate": 3,
+              "instance_id": 1,
+              "memory_percent": 4,
+              "saturation_percent": 5,
+              "timestamp": 0
+            },
+            "renameByName": {}
+          }
+        },
+        {
+          "id": "filterByValue",
+          "options": {
+            "filters": [
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": "${instance_id}"
+                  }
+                },
+                "fieldName": "instance_id"
+              }
+            ],
+            "match": "any",
+            "type": "include"
+          }
+        }
+      ],
+      "type": "table"
+    }
+  ],
+  "preload": false,
+  "schemaVersion": 42,
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "current": {
+          "text": [
+            "HEALTHY"
+          ],
+          "value": [
+            "HEALTHY"
+          ]
+        },
+        "description": "",
+        "hide": 2,
+        "multi": true,
+        "name": "health_status",
+        "options": [],
+        "query": "HEALTHY,UNHEALTHY",
+        "type": "custom",
+        "valuesFormat": "csv"
+      },
+      {
+        "current": {
+          "text": "us-east-1a",
+          "value": "us-east-1a"
+        },
+        "hide": 2,
+        "label": "Availability Zone",
+        "name": "az",
+        "options": [],
+        "query": "us-east-1a,us-east-1b,us-east-1c\n",
+        "type": "custom",
+        "valuesFormat": "csv"
+      },
+      {
+        "current": {
+          "text": "host-101",
+          "value": "host-101"
+        },
+        "hide": 2,
+        "name": "host_id",
+        "options": [],
+        "query": "host-101,host-201,host-301,host-104,host-203,host-303,host-105,host-204,host-304\n",
+        "type": "custom",
+        "valuesFormat": "csv"
+      },
+      {
+        "current": {
+          "text": "i-0a1b2c3d4e5f6g7h",
+          "value": "i-0a1b2c3d4e5f6g7h"
+        },
+        "hide": 2,
+        "name": "instance_id",
+        "options": [],
+        "query": "i-0a1b2c3d4e5f6g7h,i-1a2b3c4d5e6f7g8h,i-2a3b4c5d6e7f8g9h,i-5a6b7c8d9e0f1g2h,i-7a8b9c0d1e2f3g4h,i-9a0b1c2d3e4f5g6h,i-1b2c3d4e5f6g7h8i,i-2b3c4d5e6f7g8h9i,i-4b5c6d7e8f9g0h1i,i-7b8c9d0e1f2g3h4i\n",
+        "type": "custom",
+        "valuesFormat": "csv"
+      }
+    ]
+  },
+  "time": {
+    "from": "2026-01-14T10:00:00.000Z",
+    "to": "2026-01-14T10:20:00.000Z"
+  },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "MOCKUP LEVEL 3",
+  "uid": "abkvqsj",
+  "version": 41,
+  "weekStart": ""
+}
