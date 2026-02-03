@@ -12,3 +12,9 @@ To get count of a field
 --------------------------------
 <img width="1919" height="865" alt="image" src="https://github.com/user-attachments/assets/48676161-f090-420b-949c-e0e978b505c1" />
 
+-----------------------------
+To get the count of field along with one more condition: eg count of healthy hosts
+---------------------------
+<img width="1912" height="881" alt="image" src="https://github.com/user-attachments/assets/b261a8e8-0ef8-4953-93d0-9a8e9f832413" />
+
+
