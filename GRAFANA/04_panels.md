@@ -15,7 +15,8 @@ To get count of a field
 -----------------------------
 To get the count of field along with one more condition: eg count of healthy hosts
 ---------------------------
-<img width="1912" height="881" alt="image" src="https://github.com/user-attachments/assets/b261a8e8-0ef8-4953-93d0-9a8e9f832413" />
+<img width="1919" height="901" alt="image" src="https://github.com/user-attachments/assets/67652d76-d89d-4490-85b8-b57b676ede32" />
+
 
 -----------------------------------
 To get the mean or total.. according to markdown we select = if stat panel doesnt show value(treating like string) = make it to know its a number.
