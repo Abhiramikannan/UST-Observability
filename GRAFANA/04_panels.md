@@ -7,3 +7,8 @@
 <img width="1215" height="437" alt="image" src="https://github.com/user-attachments/assets/456e3d8b-567d-4ff1-979c-72c0c7089f80" />
 
 
+-----------------------------
+To get count of a field
+--------------------------------
+<img width="1919" height="865" alt="image" src="https://github.com/user-attachments/assets/48676161-f090-420b-949c-e0e978b505c1" />
+
