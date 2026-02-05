@@ -1,0 +1,57 @@
+cold start of lambda and how to reduce the cold start of lambda
+
+
+AWS Lambda runs only when an event occurs.
+If Lambda is not triggered for a long time:
+AWS may remove its execution environment
+When the next event occurs, Lambda takes slightly longer to start
+This delay is called Cold Start
+
+⭐ How We Prevent Cold Start
+We keep Lambda active by triggering it periodically using AWS EventBridge.(warmstart)
+
+⭐ How It Works
+We create an EventBridge scheduled rule
+This rule triggers the Lambda function every 5 minutes
+When Lambda receives this scheduled trigger, it performs a small check and exits immediately
+This keeps the Lambda environment active and reduces cold start delays
+When a real infrastructure event occurs, Lambda runs normally and performs mapping logic
+
+Permissions Required:
+EventBridge → Lambda
+EventBridge requires permission to invoke Lambda.
+lambda:InvokeFunction
+EventBridge → Lambda invoke permission  aws automatically add
+
+
+
+lambda only does this:
+Starts Lambda execution environment
+This includes:
+	Starting container
+	Loading runtime (Python, Node, etc.)
+	Loading your code
+	Initializing libraries
+	Preparing memory
+	
+rule written inside eventbridge:
+1. Schedule Rule
+rule name: lambda-warmup-rule
+event pattern type: Schedule
+Schedule Expression: rate(5 minutes)
+Target: Your Lambda Function
+
+
+This is a message sent to Lambda when EventBridge scheduled rule triggers it:
+{
+  "source": "aws.events"
+}
+
+called event payload
+making lambda know by this json:
+	Warm-up trigger OR Real AWS event?
+
+
+
+lambda checks the event is scheduled one(warm event ) or real infra event. Then triggers.
+if warm event= exit immediately after preparing memory and all.
