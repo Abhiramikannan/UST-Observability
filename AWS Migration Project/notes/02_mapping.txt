@@ -19,4 +19,9 @@ lambda triggers when Instance launch,Terminate, Host failure, Tag update.
 
 If host went Down, Can we fetch the details:
 ------------------------------------------
-Yes, Aws have metadata in the control plane.
+Yes, Aws have metadata in the control plane.(wont get full details if the instance terminated).
+Lambda can get details if the host goes down — but only if you capture them at event time.
+That’s why the best practice is: extract and persist the mapping immediately when the event triggers (into DynamoDB).
+You’ll get the details if you query at the time of the event. If you wait until after termination, you risk losing them.
+
+
