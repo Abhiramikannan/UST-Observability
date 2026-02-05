@@ -1,0 +1,17 @@
+Mapping of app account (where the instance belongs to) and application:
+--------------------------------------------------------------------------
+1. The architecture is event-driven.
+2. If some event occurs, Aws sents the information to eventbridge.
+3. EventBridge triggers lambda to capture host details and instance details.
+4. DescribeHosts - will give u instance Id and host Id
+5. currently u have instanceId so lambda can assume role in app accounts using cross account access role and fetch information.
+6. lambda uses DescribeInstances API to fetch instance details which includes:
+		accountId(which aws account that instance owns) = app account
+		Tags ( Which application is running)=application name
+lambda triggers when Instance launch,Terminate, Host failure, Tag update.
+7. So you have the host,app account, application.
+8. Lambda maps it.
+9. Write a code inside lambda to fetch the required fields from DescribeInstances and create a mapping table.
+10. Also lambda stores this mapping table to a database.
+11. Most best choice DB is DYNAMO DB
+12. Dynamo db is serverless and not complex.
