@@ -15,3 +15,8 @@ lambda triggers when Instance launch,Terminate, Host failure, Tag update.
 10. Also lambda stores this mapping table to a database.
 11. Most best choice DB is DYNAMO DB
 12. Dynamo db is serverless and not complex.
+
+
+If host went Down, Can we fetch the details:
+------------------------------------------
+Yes, Aws have metadata in the control plane.
