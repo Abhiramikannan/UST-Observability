@@ -55,7 +55,7 @@
         "content": "<div style=\"color: white; background-color: #0080c7; padding: 10px; text-align: left;\">\n  <h1>Overall health of all the Dedicated Hosts</h1>\n</div>",
         "mode": "markdown"
       },
-      "pluginVersion": "12.4.0-21024277089.patch2",
+      "pluginVersion": "12.4.0-21490573584",
       "title": "",
       "type": "text"
     },
@@ -80,7 +80,7 @@
         "content": "<div style=\"color: white; background-color: #0080c7; padding: 10px; text-align: left;\">\n  <h1>Instance Lifecycle (within Dedicated Hosts)</h1>\n</div>",
         "mode": "markdown"
       },
-      "pluginVersion": "12.4.0-21024277089.patch2",
+      "pluginVersion": "12.4.0-21490573584",
       "title": "",
       "type": "text"
     },
@@ -133,7 +133,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.4.0-21024277089.patch2",
+      "pluginVersion": "12.4.0-21490573584",
       "targets": [
         {
           "columns": [
@@ -239,7 +239,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.4.0-21024277089.patch2",
+      "pluginVersion": "12.4.0-21490573584",
       "targets": [
         {
           "columns": [],
@@ -372,7 +372,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.4.0-21024277089.patch2",
+      "pluginVersion": "12.4.0-21490573584",
       "targets": [
         {
           "columns": [],
@@ -463,7 +463,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.4.0-21024277089.patch2",
+      "pluginVersion": "12.4.0-21490573584",
       "targets": [
         {
           "columns": [],
@@ -556,7 +556,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.4.0-21024277089.patch2",
+      "pluginVersion": "12.4.0-21490573584",
       "targets": [
         {
           "columns": [],
@@ -654,7 +654,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.4.0-21024277089.patch2",
+      "pluginVersion": "12.4.0-21490573584",
       "targets": [
         {
           "columns": [],
@@ -744,7 +744,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.4.0-21024277089.patch2",
+      "pluginVersion": "12.4.0-21490573584",
       "targets": [
         {
           "columns": [],
@@ -834,7 +834,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.4.0-21024277089.patch2",
+      "pluginVersion": "12.4.0-21490573584",
       "targets": [
         {
           "columns": [],
@@ -931,7 +931,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.4.0-21024277089.patch2",
+      "pluginVersion": "12.4.0-21490573584",
       "targets": [
         {
           "columns": [],
@@ -1018,7 +1018,7 @@
         "textMode": "value",
         "wideLayout": true
       },
-      "pluginVersion": "12.4.0-21024277089.patch2",
+      "pluginVersion": "12.4.0-21490573584",
       "targets": [
         {
           "columns": [],
@@ -1155,6 +1155,18 @@
                 }
               }
             ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "az_id"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 247
+              }
+            ]
           }
         ]
       },
@@ -1169,11 +1181,11 @@
         "cellHeight": "sm",
         "showHeader": true
       },
-      "pluginVersion": "12.4.0-21024277089.patch2",
+      "pluginVersion": "12.4.0-21490573584",
       "targets": [
         {
           "columns": [],
-          "data": "timestamp,region,az,host_id,ec2_total,health_status\n2026-01-14 05:00:00,us-east-1,us-east-1a,h-0a1b2c3d4e5f6a01,85,HEALTHY\n2026-01-14 05:00:00,us-east-1,us-east-1b,h-1b2c3d4e5f6a0201,90,HEALTHY\n2026-01-14 05:00:00,us-east-1,us-east-1c,h-2c3d4e5f6a0301,75,HEALTHY\n2026-01-14 05:15:00,us-east-1,us-east-1a,h-3d4e5f6a7b8c0104,80,UNHEALTHY\n2026-01-14 05:15:00,us-east-1,us-east-1b,h-4e5f6a7b8c9d0203,88,UNHEALTHY\n2026-01-14 05:15:00,us-east-1,us-east-1c,h-5f6a7b8c9d0e0303,70,UNHEALTHY\n2026-01-14 05:30:00,us-east-1,us-east-1a,h-6a7b8c9d0e1f0105,78,UNHEALTHY\n2026-01-14 05:30:00,us-east-1,us-east-1b,h-7b8c9d0e1f2a0204,85,UNHEALTHY\n2026-01-14 05:30:00,us-east-1,us-east-1c,h-8c9d0e1f2a3b0304,68,UNHEALTHY",
+          "data": "timestamp,region,az_id,host_id,ec2_total,health_status\n2026-01-14 05:00:00,us-east-1,use1-az1,h-0a1b2c3d4e5f6a01,85,HEALTHY\n2026-01-14 05:00:00,us-east-1,use1-az2,h-1b2c3d4e5f6a0201,90,HEALTHY\n2026-01-14 05:00:00,us-east-1,use1-az3,h-2c3d4e5f6a0301,75,HEALTHY\n2026-01-14 05:15:00,us-east-1,use1-az1,h-3d4e5f6a7b8c0104,80,UNHEALTHY\n2026-01-14 05:15:00,us-east-1,use1-az2,h-4e5f6a7b8c9d0203,88,UNHEALTHY\n2026-01-14 05:15:00,us-east-1,use1-az3,h-5f6a7b8c9d0e0303,70,UNHEALTHY\n2026-01-14 05:30:00,us-east-1,use1-az1,h-6a7b8c9d0e1f0105,78,UNHEALTHY\n2026-01-14 05:30:00,us-east-1,use1-az2,h-7b8c9d0e1f2a0204,85,UNHEALTHY\n2026-01-14 05:30:00,us-east-1,use1-az3,h-8c9d0e1f2a3b0304,68,UNHEALTHY\n",
           "datasource": {
             "type": "yesoreyeram-infinity-datasource",
             "uid": "grafanacloud-infinity"
@@ -1193,7 +1205,7 @@
           }
         }
       ],
-      "title": "New panel",
+      "title": "Details of Hosts",
       "transformations": [
         {
           "id": "filterByValue",
@@ -1223,7 +1235,7 @@
             },
             "includeByName": {},
             "indexByName": {
-              "az": 1,
+              "az_id": 1,
               "ec2_total": 2,
               "health_status": 3,
               "host_id": 0,
@@ -1261,7 +1273,7 @@
         "content": "<div style=\"color: white; background-color: #0080c7; padding: 10px; text-align: left;\">\n  <h1>Hosts & Instances Summary by AZ</h1>\n</div>",
         "mode": "markdown"
       },
-      "pluginVersion": "12.4.0-21024277089.patch2",
+      "pluginVersion": "12.4.0-21490573584",
       "title": "",
       "type": "text"
     },
@@ -1351,11 +1363,11 @@
         "showHeader": true,
         "sortBy": []
       },
-      "pluginVersion": "12.4.0-21024277089.patch1",
+      "pluginVersion": "12.4.0-21024277089.patch2",
       "targets": [
         {
           "columns": [],
-          "data": "az,total_hosts,available_hosts,unavailable_hosts\nus-east-1a,3,1,2\nus-east-1b,3,1,2\nus-east-1c,3,1,2",
+          "data": "az_id,total_hosts,available_hosts,unavailable_hosts\nuse1-az1,3,1,2\nuse1-az2,3,1,2\nuse1-az3,3,1,2\n",
           "datasource": {
             "type": "yesoreyeram-infinity-datasource",
             "uid": "grafanacloud-infinity"
@@ -1384,7 +1396,7 @@
             "includeByName": {},
             "indexByName": {
               "available_hosts": 2,
-              "az": 0,
+              "az_id": 0,
               "total_hosts": 1,
               "unavailable_hosts": 3
             },
@@ -1463,11 +1475,11 @@
         "cellHeight": "sm",
         "showHeader": true
       },
-      "pluginVersion": "12.4.0-21024277089.patch1",
+      "pluginVersion": "12.4.0-21024277089.patch2",
       "targets": [
         {
           "columns": [],
-          "data": "az,instances_running,instances_stopped,instances_terminated\nus-east-1a,48,18,9\nus-east-1b,46,17,10\nus-east-1c,46,17,9",
+          "data": "az_id,instances_running,instances_stopped,instances_terminated\nuse1-az1,48,18,9\nuse1-az2,46,17,10\nuse1-az3,46,17,9\n",
           "datasource": {
             "type": "yesoreyeram-infinity-datasource",
             "uid": "grafanacloud-infinity"
@@ -1508,7 +1520,7 @@
       "type": "table"
     },
     {
-      "collapsed": true,
+      "collapsed": false,
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -1516,357 +1528,356 @@
         "y": 29
       },
       "id": 46,
-      "panels": [
-        {
-          "datasource": {
-            "type": "yesoreyeram-infinity-datasource",
-            "uid": "grafanacloud-infinity"
+      "panels": [],
+      "title": "Details",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
           },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "thresholds"
-              },
-              "custom": {
-                "align": "auto",
-                "cellOptions": {
-                  "type": "auto"
-                },
-                "footer": {
-                  "reducers": []
-                },
-                "hideFrom": {
-                  "viz": false
-                },
-                "inspect": false
-              },
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green",
-                    "value": 0
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              }
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
             },
-            "overrides": []
+            "footer": {
+              "reducers": []
+            },
+            "hideFrom": {
+              "viz": false
+            },
+            "inspect": false
           },
-          "gridPos": {
-            "h": 8,
-            "w": 12,
-            "x": 0,
-            "y": 30
-          },
-          "id": 40,
-          "options": {
-            "cellHeight": "sm",
-            "showHeader": true,
-            "sortBy": []
-          },
-          "pluginVersion": "12.4.0-21024277089.patch1",
-          "targets": [
-            {
-              "columns": [],
-              "data": "host_id,az,vcpu_total,vcpu_used,saturation_percent,host_state\nh-0a1b2c3d4e5f6g7,us-east-1a,96,88,91.7,available\nh-1b2c3d4e5f6g7h8,us-east-1b,96,84,87.5,available\nh-2c3d4e5f6g7h8i9,us-east-1c,96,82,85.4,available\nh-3d4e5f6g7h8i9j0,us-east-1a,96,79,82.3,available\nh-4e5f6g7h8i9j0k1,us-east-1b,96,76,79.2,available\nh-5f6g7h8i9j0k1l2,us-east-1c,96,74,77.1,available\nh-6g7h8i9j0k1l2m3,us-east-1a,96,72,75.0,under-assessment\nh-7h8i9j0k1l2m3n4,us-east-1b,96,70,72.9,available\nh-8i9j0k1l2m3n4o5,us-east-1c,96,68,70.8,available\nh-9j0k1l2m3n4o5p6,us-east-1a,96,66,68.8,permanent-failure",
-              "datasource": {
-                "type": "yesoreyeram-infinity-datasource",
-                "uid": "grafanacloud-infinity"
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
               },
-              "filters": [],
-              "format": "table",
-              "global_query_id": "",
-              "parser": "backend",
-              "refId": "A",
-              "root_selector": "",
-              "source": "inline",
-              "type": "csv",
-              "url": "",
-              "url_options": {
-                "data": "",
-                "method": "GET"
+              {
+                "color": "red",
+                "value": 80
               }
-            }
-          ],
-          "title": "Saturation by Host Id",
-          "transformations": [
-            {
-              "id": "organize",
-              "options": {
-                "excludeByName": {},
-                "includeByName": {},
-                "indexByName": {
-                  "az": 1,
-                  "host_id": 0,
-                  "host_state": 2,
-                  "saturation_percent": 3,
-                  "vcpu_total": 4,
-                  "vcpu_used": 5
-                },
-                "renameByName": {
-                  "az": "Availability Zone",
-                  "host_id": "Host Id",
-                  "host_state": "Host State",
-                  "saturation_percent": "Saturation",
-                  "vcpu_total": "Total vCPU",
-                  "vcpu_used": "vCPU Used"
-                }
-              }
-            }
-          ],
-          "type": "table"
+            ]
+          }
         },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 30
+      },
+      "id": 40,
+      "options": {
+        "cellHeight": "sm",
+        "showHeader": true,
+        "sortBy": []
+      },
+      "pluginVersion": "12.4.0-21024277089.patch2",
+      "targets": [
         {
+          "columns": [],
+          "data": "host_id,az_id,vcpu_total,vcpu_used,saturation_percent,host_state\nh-0a1b2c3d4e5f6g7,use1-az1,96,88,91.7,available\nh-1b2c3d4e5f6g7h8,use1-az2,96,84,87.5,available\nh-2c3d4e5f6g7h8i9,use1-az3,96,82,85.4,available\nh-3d4e5f6g7h8i9j0,use1-az1,96,79,82.3,available\nh-4e5f6g7h8i9j0k1,use1-az2,96,76,79.2,available\nh-5f6g7h8i9j0k1l2,use1-az3,96,74,77.1,available\nh-6g7h8i9j0k1l2m3,use1-az1,96,72,75.0,under-assessment\nh-7h8i9j0k1l2m3n4,use1-az2,96,70,72.9,available\nh-8i9j0k1l2m3n4o5,use1-az3,96,68,70.8,available\nh-9j0k1l2m3n4o5p6,use1-az1,96,66,68.8,permanent-failure\n",
           "datasource": {
             "type": "yesoreyeram-infinity-datasource",
             "uid": "grafanacloud-infinity"
           },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "thresholds"
-              },
-              "custom": {
-                "align": "auto",
-                "cellOptions": {
-                  "type": "auto"
-                },
-                "footer": {
-                  "reducers": []
-                },
-                "hideFrom": {
-                  "viz": false
-                },
-                "inspect": false
-              },
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green",
-                    "value": 0
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              }
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 8,
-            "w": 12,
-            "x": 12,
-            "y": 30
-          },
-          "id": 42,
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Saturation by Host Id",
+      "transformations": [
+        {
+          "id": "organize",
           "options": {
-            "cellHeight": "sm",
-            "showHeader": true
+            "excludeByName": {},
+            "includeByName": {},
+            "indexByName": {
+              "az_id": 0,
+              "host_id": 1,
+              "host_state": 2,
+              "saturation_percent": 3,
+              "vcpu_total": 4,
+              "vcpu_used": 5
+            },
+            "renameByName": {
+              "az": "Availability Zone",
+              "host_id": "Host Id",
+              "host_state": "Host State",
+              "saturation_percent": "Saturation",
+              "vcpu_total": "Total vCPU",
+              "vcpu_used": "vCPU Used"
+            }
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
           },
-          "pluginVersion": "12.4.0-21024277089.patch1",
-          "targets": [
-            {
-              "columns": [],
-              "data": "host_id,max_instances\nh-0a7f3c91b2d4e5a01,96\nh-0b2d8e41f9c7a3d02,96\nh-0c9e1a54b7d2f6e03,96\nh-0d4f8a92e1c6b7a04,96\nh-0e6a1d8b3f942c905,72\nh-0f2b9c4e6a8d1f006,72\nh-012a9e4c6f8d2b007,64\nh-018b3f2a9e6d4c008,64\nh-01a9d8e7c6b5f4009,64\nh-01c4f8b6a7e9d2010,64",
-              "datasource": {
-                "type": "yesoreyeram-infinity-datasource",
-                "uid": "grafanacloud-infinity"
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "footer": {
+              "reducers": []
+            },
+            "hideFrom": {
+              "viz": false
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
               },
-              "filters": [],
-              "format": "table",
-              "global_query_id": "",
-              "parser": "backend",
-              "refId": "A",
-              "root_selector": "",
-              "source": "inline",
-              "type": "csv",
-              "url": "",
-              "url_options": {
-                "data": "",
-                "method": "GET"
+              {
+                "color": "red",
+                "value": 80
               }
-            }
-          ],
-          "title": "Count Of Max Instances By Host ID",
-          "transformations": [
-            {
-              "id": "organize",
-              "options": {
-                "excludeByName": {},
-                "includeByName": {},
-                "indexByName": {},
-                "renameByName": {
-                  "host_id": "Host Id",
-                  "max_instances": "Max Instances"
-                }
-              }
-            }
-          ],
-          "type": "table"
+            ]
+          }
         },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 30
+      },
+      "id": 42,
+      "options": {
+        "cellHeight": "sm",
+        "showHeader": true
+      },
+      "pluginVersion": "12.4.0-21024277089.patch2",
+      "targets": [
         {
+          "columns": [],
+          "data": "host_id,max_instances\nh-0a7f3c91b2d4e5a01,96\nh-0b2d8e41f9c7a3d02,96\nh-0c9e1a54b7d2f6e03,96\nh-0d4f8a92e1c6b7a04,96\nh-0e6a1d8b3f942c905,72\nh-0f2b9c4e6a8d1f006,72\nh-012a9e4c6f8d2b007,64\nh-018b3f2a9e6d4c008,64\nh-01a9d8e7c6b5f4009,64\nh-01c4f8b6a7e9d2010,64",
           "datasource": {
             "type": "yesoreyeram-infinity-datasource",
             "uid": "grafanacloud-infinity"
           },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "thresholds"
-              },
-              "custom": {
-                "align": "auto",
-                "cellOptions": {
-                  "type": "auto"
-                },
-                "footer": {
-                  "reducers": []
-                },
-                "inspect": false
-              },
-              "links": [],
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green",
-                    "value": 0
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              }
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Count Of Max Instances By Host ID",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "includeByName": {},
+            "indexByName": {},
+            "renameByName": {
+              "host_id": "Host Id",
+              "max_instances": "Max Instances"
+            }
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "grafanacloud-infinity"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
             },
-            "overrides": [
+            "footer": {
+              "reducers": []
+            },
+            "inspect": false
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
               {
-                "matcher": {
-                  "id": "byName",
-                  "options": "host_id"
-                },
-                "properties": [
-                  {
-                    "id": "custom.width",
-                    "value": 95
-                  }
-                ]
+                "color": "green",
+                "value": 0
               },
               {
-                "matcher": {
-                  "id": "byName",
-                  "options": "error_message"
-                },
-                "properties": [
-                  {
-                    "id": "custom.width",
-                    "value": 220
-                  }
-                ]
-              },
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "host_id"
+            },
+            "properties": [
               {
-                "matcher": {
-                  "id": "byName",
-                  "options": "Availability Zone"
-                },
-                "properties": [
-                  {
-                    "id": "custom.width",
-                    "value": 120
-                  }
-                ]
+                "id": "custom.width",
+                "value": 95
               }
             ]
           },
-          "gridPos": {
-            "h": 8,
-            "w": 24,
-            "x": 0,
-            "y": 38
-          },
-          "id": 36,
-          "options": {
-            "cellHeight": "sm",
-            "showHeader": true
-          },
-          "pluginVersion": "12.4.0-21024277089.patch1",
-          "targets": [
-            {
-              "columns": [],
-              "data": "timestamp,az,region,event_name,error_code,error_message,host_id,host_state,instance_type,requested_vcpu,action,source\n2026-01-14 15:31:12,us-east-1a,us-east-1,RunInstances,InsufficientHostCapacity,Not enough capacity on the dedicated host,h-0a1b2c3d4e5f6g7,available,m5.4xlarge,16,LAUNCH_FAILED,CloudTrail\n2026-01-14 15:34:47,us-east-1b,us-east-1,RunInstances,InsufficientCapacity,Insufficient capacity in the requested Availability Zone,h-1b2c3d4e5f6g7h8,available,m5.2xlarge,8,LAUNCH_FAILED,CloudTrail\n2026-01-14 15:36:58,us-east-1c,us-east-1,RunInstances,InsufficientHostCapacity,Dedicated host is under assessment and unavailable for placement,h-2c3d4e5f6g7h8i9,under-assessment,c5.4xlarge,16,LAUNCH_FAILED,CloudTrail\n2026-01-14 15:38:05,us-east-1a,us-east-1,StartInstances,HostUnavailable,Dedicated host is temporarily unavailable,h-0a1b2c3d4e5f6g7,under-assessment,c5.4xlarge,16,START_FAILED,CloudTrail\n2026-01-14 15:42:18,us-east-1b,us-east-1,RunInstances,HostUnavailable,Dedicated host is in permanent failure state,h-1b2c3d4e5f6g7h8,permanent-failure,r5.8xlarge,32,LAUNCH_FAILED,CloudTrail\n2026-01-14 15:46:33,us-east-1c,us-east-1,StartInstances,HostUnavailable,Host unavailable due to hardware failure,h-2c3d4e5f6g7h8i9,permanent-failure,m5.4xlarge,16,START_FAILED,CloudTrail\n2026-01-14 15:49:51,us-east-1a,us-east-1,RunInstances,InsufficientCapacity,AZ-level capacity constraint while host is unavailable,h-0a1b2c3d4e5f6g7,under-assessment,m5.2xlarge,8,LAUNCH_FAILED,CloudTrail",
-              "datasource": {
-                "type": "yesoreyeram-infinity-datasource",
-                "uid": "grafanacloud-infinity"
-              },
-              "filters": [],
-              "format": "table",
-              "global_query_id": "",
-              "parser": "backend",
-              "refId": "A",
-              "root_selector": "",
-              "source": "inline",
-              "type": "csv",
-              "url": "",
-              "url_options": {
-                "data": "",
-                "method": "GET"
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "error_message"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 220
               }
-            }
-          ],
-          "title": "Error Logs for Instance Launch failure",
-          "transformations": [
-            {
-              "id": "organize",
-              "options": {
-                "excludeByName": {
-                  "instance_type": true,
-                  "region": true,
-                  "requested_vcpu": true
-                },
-                "includeByName": {},
-                "indexByName": {
-                  "action": 4,
-                  "az": 2,
-                  "error_code": 5,
-                  "error_message": 6,
-                  "event_name": 3,
-                  "host_id": 1,
-                  "host_state": 7,
-                  "instance_type": 8,
-                  "region": 9,
-                  "requested_vcpu": 10,
-                  "source": 11,
-                  "timestamp": 0
-                },
-                "renameByName": {
-                  "action": "Action",
-                  "az": "Availability Zone",
-                  "error_code": "Error Code",
-                  "error_message": "Error Message",
-                  "event_name": "Event Name",
-                  "host_id": "Host ID",
-                  "host_state": "Host State",
-                  "region": "",
-                  "source": "Source"
-                }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Availability Zone"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 120
               }
-            }
-          ],
-          "type": "table"
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 38
+      },
+      "id": 36,
+      "options": {
+        "cellHeight": "sm",
+        "showHeader": true
+      },
+      "pluginVersion": "12.4.0-21024277089.patch2",
+      "targets": [
+        {
+          "columns": [],
+          "data": "timestamp,az_id,region,event_name,error_code,error_message,host_id,host_state,instance_type,requested_vcpu,action,source\n2026-01-14 15:31:12,use1-az1,us-east-1,RunInstances,InsufficientHostCapacity,Not enough capacity on the dedicated host,h-0a1b2c3d4e5f6g7,available,m5.4xlarge,16,LAUNCH_FAILED,CloudTrail\n2026-01-14 15:34:47,use1-az2,us-east-1,RunInstances,InsufficientCapacity,Insufficient capacity in the requested Availability Zone,h-1b2c3d4e5f6g7h8,available,m5.2xlarge,8,LAUNCH_FAILED,CloudTrail\n2026-01-14 15:36:58,use1-az3,us-east-1,RunInstances,InsufficientHostCapacity,Dedicated host is under assessment and unavailable for placement,h-2c3d4e5f6g7h8i9,under-assessment,c5.4xlarge,16,LAUNCH_FAILED,CloudTrail\n2026-01-14 15:38:05,use1-az1,us-east-1,StartInstances,HostUnavailable,Dedicated host is temporarily unavailable,h-0a1b2c3d4e5f6g7,under-assessment,c5.4xlarge,16,START_FAILED,CloudTrail\n2026-01-14 15:42:18,use1-az2,us-east-1,RunInstances,HostUnavailable,Dedicated host is in permanent failure state,h-1b2c3d4e5f6g7h8,permanent-failure,r5.8xlarge,32,LAUNCH_FAILED,CloudTrail\n2026-01-14 15:46:33,use1-az3,us-east-1,StartInstances,HostUnavailable,Host unavailable due to hardware failure,h-2c3d4e5f6g7h8i9,permanent-failure,m5.4xlarge,16,START_FAILED,CloudTrail\n2026-01-14 15:49:51,use1-az1,us-east-1,RunInstances,InsufficientCapacity,AZ-level capacity constraint while host is unavailable,h-0a1b2c3d4e5f6g7,under-assessment,m5.2xlarge,8,LAUNCH_FAILED,CloudTrail\n",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "grafanacloud-infinity"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "inline",
+          "type": "csv",
+          "url": "",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
         }
       ],
-      "title": "Details",
-      "type": "row"
+      "title": "Error Logs for Instance Launch failure",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "instance_type": true,
+              "region": true,
+              "requested_vcpu": true
+            },
+            "includeByName": {},
+            "indexByName": {
+              "action": 4,
+              "az_id": 1,
+              "error_code": 5,
+              "error_message": 6,
+              "event_name": 3,
+              "host_id": 2,
+              "host_state": 7,
+              "instance_type": 8,
+              "region": 9,
+              "requested_vcpu": 10,
+              "source": 11,
+              "timestamp": 0
+            },
+            "renameByName": {
+              "action": "Action",
+              "az": "Availability Zone",
+              "error_code": "Error Code",
+              "error_message": "Error Message",
+              "event_name": "Event Name",
+              "host_id": "Host ID",
+              "host_state": "Host State",
+              "region": "",
+              "source": "Source"
+            }
+          }
+        }
+      ],
+      "type": "table"
     }
   ],
   "preload": false,
@@ -1923,6 +1934,6 @@
   "timezone": "browser",
   "title": "MOCKUP LEVEL 1",
   "uid": "abpd5xs",
-  "version": 102,
+  "version": 108,
   "weekStart": ""
 }
