@@ -1,7 +1,7 @@
 Mapping of app account (where the instance belongs to) and application:
 --------------------------------------------------------------------------
 1. The architecture is event-driven.
-2. If some event occurs, Aws sents the information to eventbridge.
+2. If some event occurs, Aws sents the information to eventbridge(First place where aws send service events=Default Event Bridge)
 3. EventBridge triggers lambda to capture host details and instance details.
 4. DescribeHosts - will give u instance Id and host Id
 5. currently u have instanceId so lambda can assume role in app accounts using cross account access role and fetch information.
