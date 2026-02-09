@@ -19,3 +19,10 @@ It records events on that aws Organization.
 Q. solution:
 -------------------------------
 First, enable Organizational CloudTrail in every AWS organization so that all API activity (like EC2 instance launch, termination, host allocation, etc.) is captured for all accounts within that organization. Then, create EventBridge rules in each organization to forward those CloudTrail events to a central Event Bus in the CCOE account. The Lambda function attached to this central Event Bus will be triggered whenever events arrive. To allow the Lambda to fetch instance and host details from application accounts across different organizations, each application account must create an IAM role that trusts the CCOE Lambda execution role and grants read permissions (such as DescribeInstances and DescribeHosts). The CCOE Lambda role must also have permission to assume those roles, allowing it to securely collect required information across organizations.
+
+
+
+Q. Solution varun Proposed:
+---------------------------------
+In the Dedicated Host–based concept, instead of monitoring EC2 instances from every application account, we monitor everything from the Dedicated Host account because all instances that use those hosts are visible there. The Dedicated Host account runs a Lambda that checks which instances are running on each host using the DescribeHosts API. When it finds an instance, the Lambda identifies which application account owns that instance, temporarily assumes a role in that account, and collects details like application tags and instance information. So basically, we don’t monitor each application separately — we monitor the host, and from the host we discover all the instances and applications using it.
+No Organisational cloud trail concept needed here.
