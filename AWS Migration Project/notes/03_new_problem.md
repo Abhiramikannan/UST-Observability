@@ -1,1 +1,5 @@
 <img width="1797" height="692" alt="image" src="https://github.com/user-attachments/assets/56746dae-3c00-491e-b208-33adbff37308" />
+
+1. According to our understanding there was only 1 aws organization  which has  ccoe account and app accounts. we planned to have enabling Organizational cloud trail to Fetach info about ec2 instances using API calls. So the organization cloudtrail enabling will be scoped to this aws Organaization.
+2. Problem: They have shows 2 Organisations.. Maybe more.. So the left side will contains CCOE account( which has Dedicated hosts) and application accounts. Right side will contain App accounts. If we enable the cloud trail @organizational level in the left -it will be scoped to left side aws organization only.
+If ec2 is running on  right side its organizational cloud trail also should be enabled.. and how we connect these all instances at different organisations with DH in CCOE of different Organization. How we will get event Driven triggers to lambda? Lambda will be in CCOE account.
