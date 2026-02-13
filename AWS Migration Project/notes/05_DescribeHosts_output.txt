@@ -1,0 +1,123 @@
+aws ec2 describe-hosts --host-ids h-021b646abc77ea988 --region us-west-2
+
+{
+    "Hosts": [
+        {
+            "AutoPlacement": "on",
+            "AvailabilityZone": "us-west-2c",
+            "AvailableCapacity": {
+                "AvailableInstanceCapacity": [
+                    {
+                        "AvailableCapacity": 0,
+                        "InstanceType": "m7i.24xlarge",
+                        "TotalCapacity": 2
+                    },
+                    {
+                        "AvailableCapacity": 0,
+                        "InstanceType": "m7i.48xlarge",
+                        "TotalCapacity": 1
+                    },
+                    {
+                        "AvailableCapacity": 0,
+                        "InstanceType": "m7i.16xlarge",
+                        "TotalCapacity": 2
+                    },
+                    {
+                        "AvailableCapacity": 0,
+                        "InstanceType": "m7i.metal-24xl",
+                        "TotalCapacity": 2
+                    },
+                    {
+                        "AvailableCapacity": 2,
+                        "InstanceType": "m7i.12xlarge",
+                        "TotalCapacity": 4
+                    },
+                    {
+                        "AvailableCapacity": 2,
+                        "InstanceType": "m7i.8xlarge",
+                        "TotalCapacity": 6
+                    },
+                    {
+                        "AvailableCapacity": 6,
+                        "InstanceType": "m7i.4xlarge",
+                        "TotalCapacity": 12
+                    },
+                    {
+                        "AvailableCapacity": 12,
+                        "InstanceType": "m7i.2xlarge",
+                        "TotalCapacity": 24
+                    },
+                    {
+                        "AvailableCapacity": 27,
+                        "InstanceType": "m7i.xlarge",
+                        "TotalCapacity": 48
+                    },
+                    {
+                        "AvailableCapacity": 48,
+                        "InstanceType": "m7i.large",
+                        "TotalCapacity": 96
+                    }
+                ],
+                "AvailableVCpus": 108
+            },
+            "HostId": "h-021b646abc77ea988",
+            "HostProperties": {
+                "Cores": 96,
+                "InstanceFamily": "m7i",
+                "Sockets": 2,
+                "TotalVCpus": 192
+            },
+            "Instances": [
+                {
+                    "InstanceId": "i-0b67ebf14c95de097",
+                    "InstanceType": "m7i.xlarge",
+                    "OwnerId": "877183912073"
+                },
+                {
+                    "InstanceId": "i-0277d8ec7d163933a",
+                    "InstanceType": "m7i.2xlarge",
+                    "OwnerId": "877183912073"
+                },
+                {
+                    "InstanceId": "i-076bac44cac747cbb",
+                    "InstanceType": "m7i.2xlarge",
+                    "OwnerId": "877183912073"
+                },
+                {
+                    "InstanceId": "i-0cea841b9198faa50",
+                    "InstanceType": "m7i.2xlarge",
+                    "OwnerId": "877183912073"
+                },
+                {
+                    "InstanceId": "i-03454eca728a376c7",
+                    "InstanceType": "m7i.2xlarge",
+                    "OwnerId": "877183912073"
+                },
+                {
+                    "InstanceId": "i-0790c37c37ad79afc",
+                    "InstanceType": "m7i.8xlarge",
+                    "OwnerId": "600627319807"
+                },
+                {
+                    "InstanceId": "i-02056df723c9c4568",
+                    "InstanceType": "m7i.4xlarge",
+                    "OwnerId": "600627319807"
+                }
+            ],
+            "State": "available",
+            "AllocationTime": "2026-01-02T17:31:43+00:00",
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "poc-m7i"
+                }
+            ],
+            "HostRecovery": "on",
+            "AllowsMultipleInstanceTypes": "on",
+            "OwnerId": "104397839040",
+            "AvailabilityZoneId": "usw2-az3",
+            "MemberOfServiceLinkedResourceGroup": false,
+            "HostMaintenance": "on"
+        }
+    ]
+}
