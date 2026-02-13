@@ -9,4 +9,5 @@ CLEAR VIEW
 
 Eventbridge Rule
 -------------------------
-Target will be lambda
+1. Target will be lambda
+2. 15 mins lambda triggering using crone like schedule: the utilization of host will change and it is not related to events so to cover that we need polling, for polling the lambda will call only DescribeHosts api
