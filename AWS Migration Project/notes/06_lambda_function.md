@@ -20,6 +20,7 @@ Roles and Policies
 1. The roles and policies for the lambda and cloudwatch created by varun.
 2. for lambda : inside the role : inside the policy: I saw to add a resource (lambdafunctioncreation)
 3. maybe , we will get the permission to create lambda function from that change.(not sure)
+4. should give the arn also.(Can get from the error until the name of lambda u given.)
 
 Tags:
 -------------------
