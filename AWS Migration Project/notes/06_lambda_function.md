@@ -14,6 +14,13 @@ Error:
 2. Varun said to me : the lambda must be created within the shared lambda vpc. Also to verify the NAT gateway is available for the shared Lambda VPC.
 3. But there was no NAT gateway created.
 4. I raised a CSRE ticket for the NAT gateway and lambda creation Issues.
-   
+
+Roles and Policies
+--------------------------
+1. The roles and policies for the lambda and cloudwatch created by varun.
+2. for lambda : inside the role : inside the policy: I saw to add a resource (lambdafunctioncreation)
+3. maybe , we will get the permission to create lambda function from that change.(not sure)
+
+
 
 
