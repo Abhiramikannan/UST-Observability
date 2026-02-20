@@ -55,3 +55,11 @@ making lambda know by this json:
 
 lambda checks the event is scheduled one(warm event ) or real infra event. Then triggers.
 if warm event= exit immediately after preparing memory and all.
+
+
+
+
+
+This is not used
+-----------------------------
+Instead of this, we are polling every 15 mins to get the host utilization . So the lambda will also wont undergo for coldstart.
