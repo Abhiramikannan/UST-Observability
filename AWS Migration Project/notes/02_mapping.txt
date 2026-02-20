@@ -25,3 +25,10 @@ That’s why the best practice is: extract and persist the mapping immediately w
 You’ll get the details if you query at the time of the event. If you wait until after termination, you risk losing them.
 
 
+
+No database-DynamoDB approach
+-----------------------------------
+1. They aggreed to have the solution without DynamoDb
+2. They only want real time data values.
+3. No historical events will be there
+
