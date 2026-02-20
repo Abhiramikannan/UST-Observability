@@ -21,6 +21,9 @@ Roles and Policies
 2. for lambda : inside the role : inside the policy: I saw to add a resource (lambdafunctioncreation)
 3. maybe , we will get the permission to create lambda function from that change.(not sure)
 
+Tags:
+-------------------
+1. Tags are very important while creating lambda function.
 
 
 
