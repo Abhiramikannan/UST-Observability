@@ -1,6 +1,7 @@
 ARCHITECTURE
 -----------------------------
-<img width="944" height="651" alt="image" src="https://github.com/user-attachments/assets/1b60f50c-3d75-4aac-985d-74fb170b322b" />
+<img width="1571" height="1029" alt="image" src="https://github.com/user-attachments/assets/930cffa1-724d-4208-a412-c0822259cc1d" />
+
 
 CLEAR VIEW
 ---------------------
