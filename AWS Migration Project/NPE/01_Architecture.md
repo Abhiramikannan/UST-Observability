@@ -15,8 +15,13 @@ What we are having?
 
 Dedicated Hosts Account 2:(Only Read only access)
 --------------------------------
-1. The Dedicated Host utilization is fetched by DescribeHosts API call by lambda from DH 1. (Cross account role required)
-2. Aws health events from Dh account 2 is sent to the default event bus  of Dh account 1, then sent to cloudwatch log group using eventbridge rule.(same eventbridge rule used for cloudtrail events forwarding)
+1. The Dedicated Host utilization is fetched by calling  DescribeHosts API call by lambda from DH 1. (Cross account role required)
+2. Aws health events from Dh account 2 is sent to the default event bus of Dh account 1, then sent to cloudwatch log group using eventbridge rule.(same eventbridge rule used for cloudtrail events forwarding)
 3. The eventbridge rule is created in Dh account 2  to forward the cloudtrail events(AllocateHosts, ReleaseHosts) to DH account 1 default bus (bus policy required in DH 1 to accept the events).(event based)
+
+LOG Groups:
+-----------------------
+1. Describe hosts : /aws/lambda/CCOE-Observability-Lambda
+2. Aws Health events/ Maintenance events and Cloudtrail events(Allocate Hosts, Release Hosts) : /aws/events/dh-observability events
 
 
