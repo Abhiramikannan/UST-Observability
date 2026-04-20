@@ -10,7 +10,7 @@ What we are having?
 3 EventBridge rules in DH 1
 ---------------------------
 1. 15 mins polling describehosts in both accounts(DH account 1, DH account 2) using Observability Lambda. DH account 1 needs lambda execution role and policy(permissions).
-2. AWS health events sent to default eventbus(automatically) and create a eventbridge rule to sent to cloudwatch log group in DH account 1.
+2. AWS health events sent to default eventbus(automatically) and created a eventbridge rule to sent to cloudwatch log group in DH account 1.
 3. Event based rule for the cloudtrail events(Allocate Hosts, Release Hosts) to cloudwatch Log group.
 
 Dedicated Hosts Account 2:(Only Read only access)
@@ -21,7 +21,9 @@ Dedicated Hosts Account 2:(Only Read only access)
 
 LOG Groups:
 -----------------------
-1. Describe hosts : /aws/lambda/CCOE-Observability-Lambda
+1. Describe hosts : /aws/lambda/CCOE-Observability-Lambda 
 2. Aws Health events/ Maintenance events and Cloudtrail events(Allocate Hosts, Release Hosts) : /aws/events/dh-observability events
+
+
 
 
