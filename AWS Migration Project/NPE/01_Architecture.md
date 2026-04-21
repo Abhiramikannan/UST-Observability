@@ -25,5 +25,9 @@ LOG Groups:
 2. Aws Health events/ Maintenance events and Cloudtrail events(Allocate Hosts, Release Hosts) : /aws/events/dh-observability events
 
 
+Flow of this Architectural Solution:
+-----------------------------------------------
+1. 15 mins scheduled eventbridge rule for calling describehosts API .
+2. 
 
 
