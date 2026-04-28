@@ -8,3 +8,21 @@ After pushing feature branch and MR
 2. So to make changes, checkout to main branch and git pull.
 3. Then create feature branch, then update the changes.
 4. Without creating feature branch and updating -> later creating feature branch your changes are lost.
+
+example
+------------------
+1. git checkout tmo/main
+2. git pull
+3. git checkout -b feature/tmo-dh-npe 
+4. make changes
+5. git add .
+6. git commit -m " updated security group"
+7. git branch
+8. git push origin feature/tmo-dh-npe
+
+Commands:
+----------------------
+1. delete branch : git branch -D feature/tmo-dh-npe
+2. Create branch : git checkout -b feature/tmo-dh-npe
+3. check branch: git branch
+4. pull latest changes: git pull
