@@ -1,0 +1,10 @@
+After clone:
+--------------------
+1. Always create a feature branch and make changes.
+
+After pushing feature branch and MR
+--------------------------
+1. After creating Merge request , Your feature branch is deleted.
+2. So to make changes, checkout to main branch and git pull.
+3. Then create feature branch, then update the changes.
+4. Without creating feature branch and updating -> later creating feature branch your changes are lost.
