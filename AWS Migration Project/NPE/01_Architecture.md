@@ -29,6 +29,11 @@ Flow of this Architectural Solution:
 -----------------------------------------------
 1. 15 mins scheduled eventbridge rule for calling describehosts API . 
 2. Eventbased trigger for aws health events and cloudtrail events.
+3. The lambda will assume role in DH account 2  from DH account 1 to fetch the describehosts API call and sent to the cloudwatch log group. Also which will hit the adx and fetch the application name details and other tags and build a mapping , save to s3 bucket.
+4. Also the health events from DH 2 is sent to the default bus of Dh account 1 and from there the eventbridge rule is used to sent the events to cloudwatch log group.
+5. Cloudtrail events from Dh 2 is also sending to default bus of DH account 1 and from there it will be sent to the cloudwatch log group.
+6. The log group for the aws health events and cloudtrail events are same.
+7. The lambda log group is different.
 
 15 mins trigger:
 -------------------------
@@ -45,6 +50,13 @@ Flow of this Architectural Solution:
 11. If the state is stopped - s3 updated to stopped, if terminated - delete from s3.
 12. If any instances are new in currently fetched describehosts, (compare s3 with current describehosts result to find new) , then hit adx and fetch details and update s3 accordingly.
 13. The 2nd run logic will be applied to next every 15 mins runs.
+
+Coding and real Implementation:
+-------------------------------------
+1. The terraform code should have a lambda layer code to invoke the lambda function and for the code to work.
+2. The requests-layer.zip file should be uploaded in the layers folder in the lambda layer s3 bucket.
+3. secret manager and the layers should be deployed in 1st deployment. (manually uploading the zip file to s3 and updating the secrets correctly instaed of PLACEHOLDERS).
+4. Then second deployment should do which contains whole Observability Solution.
 
 
 
