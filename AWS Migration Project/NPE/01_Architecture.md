@@ -51,6 +51,14 @@ Flow of this Architectural Solution:
 12. If any instances are new in currently fetched describehosts, (compare s3 with current describehosts result to find new) , then hit adx and fetch details and update s3 accordingly.
 13. The 2nd run logic will be applied to next every 15 mins runs.
 
+s3 buckets:
+----------------------
+1. three s3 buckets:
+2. S3 observability state bucket for storing mapping of adx data and describehosts
+3. Access log bucket to store the logging of s3 observability state bucket.
+4. lambda layer bucket - to upload the requests-layer.zip file for working of lambda.(If the file doesnt exists, fails to invoke lambda).
+5. TMO standard Bucket policy should be added in each buckets.
+
 Coding and real Implementation:
 -------------------------------------
 1. The terraform code should have a lambda layer code to invoke the lambda function and for the code to work.
@@ -58,6 +66,13 @@ Coding and real Implementation:
 3. secret manager and the layers should be deployed in 1st deployment. (manually uploading the zip file to s3 and updating the secrets correctly instaed of PLACEHOLDERS).
 4. Then second deployment should do which contains whole Observability Solution.
 
+
+Additional Requirements:
+---------------------------------
+1. currently we are fetching tags from tag set not from tag specification set , That is good and we are getting nodegroup, Ou, Cluster, Environment.
+2. We thought the tags wont change. But the tags will get Updated. So we didnt cover that portion like if someone updates the tags of specific one for an application , we are not fetching the updated tags now.
+3. We need to Include the logic of fetching the latest tags also.
+4. Also Currently we have 3 s3 buckets - new requiremnt to change to one.
 
 
 
