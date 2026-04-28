@@ -27,7 +27,25 @@ LOG Groups:
 
 Flow of this Architectural Solution:
 -----------------------------------------------
-1. 15 mins scheduled eventbridge rule for calling describehosts API .
-2. 
+1. 15 mins scheduled eventbridge rule for calling describehosts API . 
+2. Eventbased trigger for aws health events and cloudtrail events.
+
+15 mins trigger:
+-------------------------
+1. lambda will trigger every 15 mins to call describehosts API .
+2. First Run of lambda: When the lambda is triggered for first time - fetch describehosts API and will get the host id and instances associated in the hosts.
+3. With that Instance id we will call ADX end point and fetch the Tags(Application name and other tags) and eventname for all instances(output of describehosts).
+4. The data after hitting adx can be mapped with instance id -> host id -> application name .
+5. The mapping can be saved into s3 bucket in the files (application.json in application folder, instances.json in global.json).
+6. This will be happening in first run.
+7. 2nd run of lambda after the first trigger (next 15 mins) : It will call describehosts API and get host id and instances currently running .
+8. s3 is having the instances and host id and application mapping from previous run.(First run is very imp for s3 mapping).
+9. So the later the describe hosts output..the lambda compares the instances running currently(output from describehosts) with s3.
+10. If any instances is missing from current output and s3 is having that - it means it is terminated or stopped. Then lambda will hit the instance id in adx and fetch the state and update the s3 accordingly.
+11. If the state is stopped - s3 updated to stopped, if terminated - delete from s3.
+12. If any instances are new in currently fetched describehosts, (compare s3 with current describehosts result to find new) , then hit adx and fetch details and update s3 accordingly.
+13. The 2nd run logic will be applied to next every 15 mins runs.
+
+
 
 
