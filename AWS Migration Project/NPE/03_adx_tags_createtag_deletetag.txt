@@ -1,0 +1,36 @@
+Locally tested output of createtag and deletetags from ADX.
+-----------------------------------------------------------------
+
+
+
+
+
+✅ TAG EVENTS FOUND:
+ 
+Instance: i-036a9797a81ad3ad7
+  [2026-04-28T06:39:07Z] CreateTags → Created By = arn:aws:sts::793865741175:assumed-role/dc85-1-karpenter-sa/1777355883324722517
+  [2026-04-28T06:39:07Z] CreateTags → Created By = 
+  [2026-04-28T06:39:49Z] CreateTags → aws:eks:cluster-name = dc85-1
+  [2026-04-28T06:39:50Z] CreateTags → aws:eks:cluster-name = dc85-1
+  [2026-04-28T06:39:52Z] CreateTags → Name = ip-100-65-42-134.us-west-2.compute.internal
+  [2026-04-28T06:39:52Z] CreateTags → karpenter.sh/nodeclaim = lfapps-demand-jks4m
+  [2026-04-28T06:56:13Z] DeleteTags → aws:eks:cluster-name = dc85-1
+------------------------------------------------------------
+Instance: i-09a7335888fa06e11
+  [2026-04-27T17:05:06Z] CreateTags → Application = k8s
+  [2026-04-27T17:05:06Z] CreateTags → Environment = Production::prd
+  [2026-04-27T17:05:06Z] CreateTags → KubernetesCluster = prd-k8s-twd-w2
+  [2026-04-27T17:05:06Z] CreateTags → Owner = ConducktorSupport@T-Mobile.com
+  [2026-04-27T17:05:06Z] CreateTags → TMO.ClusterName = twd-prd-w2
+  [2026-04-27T17:05:06Z] CreateTags → Workload = Cloud-Core
+  [2026-04-27T17:05:06Z] CreateTags → cmdb_app_id = APP0009758
+  [2026-04-27T17:05:07Z] CreateTags → Created By = arn:aws:sts::849027481503:assumed-role/container-platform-palette/1777308605474577549
+  [2026-04-27T17:05:07Z] CreateTags → Created By = 
+  [2026-04-27T17:05:07Z] CreateTags → Created By = 
+------------------------------------------------------------
+Instance: i-0e0ef9af5c6105865
+  [2026-04-27T17:04:21Z] CreateTags → Created By = arn:aws:sts::449605554872:assumed-role/AWSServiceRoleForAutoScaling/AutoScaling
+  [2026-04-27T17:04:21Z] CreateTags → Created By = 
+  [2026-04-27T17:05:03Z] DeleteTags → Name = 
+  [2026-04-27T17:05:04Z] CreateTags → Name = cdp-da-Linux-commercial-runner-prd-Batch-A-large-i-0e0ef9af5c6105865
+------------------------------------------------------------
