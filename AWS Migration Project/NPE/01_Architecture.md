@@ -50,6 +50,7 @@ Flow of this Architectural Solution:
 11. If the state is stopped - s3 updated to stopped, if terminated - delete from s3.
 12. If any instances are new in currently fetched describehosts, (compare s3 with current describehosts result to find new) , then hit adx and fetch details and update s3 accordingly.
 13. The 2nd run logic will be applied to next every 15 mins runs.
+14. Also we will be publishing custom metrics like blastradius and spreadscore in every runs.(every 15 mins).
 
 s3 buckets:
 ----------------------
@@ -61,10 +62,19 @@ s3 buckets:
 
 Coding and real Implementation:
 -------------------------------------
-1. The terraform code should have a lambda layer code to invoke the lambda function and for the code to work.
-2. The requests-layer.zip file should be uploaded in the layers folder in the lambda layer s3 bucket.
-3. secret manager and the layers should be deployed in 1st deployment. (manually uploading the zip file to s3 and updating the secrets correctly instaed of PLACEHOLDERS).
-4. Then second deployment should do which contains whole Observability Solution.
+1. region should be provided from client side.(dhm-prd and dhm1-prd are the account names).
+2.  The terraform code should have a lambda layer code to invoke the lambda function and for the code to work.
+3. The requests-layer.zip file should be uploaded in the layers folder in the lambda layer s3 bucket.
+4. secret manager and the layers should be deployed in 1st deployment. (manually uploading the zip file to s3 and updating the secrets correctly instaed of PLACEHOLDERS).
+5. Then second deployment should do which contains whole Observability Solution.
+
+Cloudwatch to Grafana:
+-----------------------------------
+1. This connectivity should be done to connect the cloudwatch datasource to grafana and build dashboards.
+2. For this , an IAM user should be created with name svc as prefix. (svc_grafanacloudwatchuser)
+3. A cloudwatch policy should be attached to the user.
+4. And the credentials (access keys and secret key should be provided from client side to configure datasource).
+5. Take the grafana - > datasource -> search cloudwatch -> add -> provide the credentials -> save (Configuration ready)
 
 
 Additional Requirements:
