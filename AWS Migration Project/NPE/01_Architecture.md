@@ -24,6 +24,15 @@ LOG Groups:
 1. Describe hosts : /aws/lambda/CCOE-Observability-Lambda 
 2. Aws Health events/ Maintenance events and Cloudtrail events(Allocate Hosts, Release Hosts) : /aws/events/dh-observability events
 
+Pre-Configured Roles and policies:
+-------------------------------------
+1. Lambda IAM exceution role and policy with proper permissions in dhm-prd.(Including assume role in dhm1-prd)
+2. Cross account IAM role and policy for the lambda to read dedicated hosts details in dhm1-prd.
+3. Create IAM role and policy for the eventbridge rule(cloudtrail events and health events) in dhm1-prd to forward to dhm-prd.
+4. Create the shared lambda VPC, Subnets and attach the NAT gateway in dhm-prd.(NAT gateway is imp because we are hitting ADX from lambda - Outbound access required).
+5. Whitelist the NAT gateway Ip in ADX. (resolves conditional access policy issue(CAP).
+6. Create a IAM user and attach cloudwatch read access policy to configure cloudwatch grafana connectivity.
+
 
 Flow of this Architectural Solution:
 -----------------------------------------------
@@ -34,6 +43,7 @@ Flow of this Architectural Solution:
 5. Cloudtrail events from Dh 2 is also sending to default bus of DH account 1 and from there it will be sent to the cloudwatch log group.
 6. The log group for the aws health events and cloudtrail events are same.
 7. The lambda log group is different.
+8. Bus policy is required in Dh 1 to accept theses events from DH 2.
 
 15 mins trigger:
 -------------------------
