@@ -1,4 +1,4 @@
-```md
+
 # Observe vs New Relic
 
 ## Observe
@@ -440,4 +440,4 @@ Observe enriches and correlates telemetry data and provides capabilities for:
 - Troubleshooting
 - Root cause analysis
 - Cross-signal correlation
-```
+
